@@ -1,12 +1,12 @@
 {
   "keys": [
     {
-      "alg": "RS256",
-      "e": "AQAB",
-      "kid": "server-key",
       "kty": "RSA",
-      "n": "pg9vs6tfMmm7rjHtx1q98j7vh6AaggoRET5NXsgvxXueGFIjsDNtWki1ALRczSmKBGMkJGL0Pqf0G6j-OvdRQDA3Qk0YhDTovjScKulUBKiaSI_O2CTGrzFqh4lJQwP2eDQOY0NO6KbpGKtfwgk30cT-SxOS8Wylg1zHZUHTFjOTJ9-ZP8J6L-4xjBofjNvktLfWYuYX19gvj1xygeJLmQIH_P9cEKmrrQ7YpwBd2B-fOXzCyIn3NAxWImXc6_hHWmVhrZdWjXEDk4c_jH9GVTJZ0c5gq3dfcIexk7ilL_foRBtT2H8nOnpSLOqOfAVUyZC7vOkIclOsHuIlsMzVXQ",
-      "use": "sig"
+      "kid": "my-key",
+      "use": "sig",
+      "alg": "RS256",
+      "n": "obpCyoDivBR_BdXSa9veu8iBfk3bU9MenpIgnCmiSJ1XeMC6ekiWiw6_p1thVviaGVQKWPrgCtsNk-qnYDp6MinM-CjZJvE7Kv91VbmyDfYJ0VScSJBA5y-xk6Hb22SC5MuY9vp6DWRsgqr9YlZ-1ESu6F5dWS6Cl7dG6CQLSSteD-d3ohxSasDwma4LkCA-PS4iOWaNatU1p19-hUzXsRbXafYjcrfSEX1yr3v6_AgZAFQ07wUmQb-uSi9guEAX_xeik5-wWefWpZthXJRQykWiN-SRpJyeHOr_v8IToZX0UsphthX9qvjgWD935uS0kbAelJ2jMnK3bnlkObnoKw",
+      "e": "AQAB"
     }
   ]
 }
