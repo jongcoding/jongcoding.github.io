@@ -2267,34 +2267,141 @@
     </section>
 
     <!-- PROJECT DETAILS -->
-    <!-- PROJECT DETAILS -->
     <section id="project-details" class="section" aria-labelledby="details-title">
       <h2 class="section-title" id="details-title">프로젝트 상세 내용</h2>
 
       <article class="card" id="detail-weave">
         <header class="detail-head">
-          <h3 class="detail-title">WEAVE — 상세</h3>
+          <h3 class="detail-title">WEAVE — Semantic Gap 분류/지식 사이트 — 상세</h3>
           <div class="detail-period">
-            <time datetime="2025-05-03">2025.05.03</time> – <time datetime="2025-08-02">2025.08.02</time>
-          </div>
+            <time datetime="2024-05-14">2025.05.03</time> – <time datetime="2025-08-02">2024.07.12</time>
+          </div> 
         </header>
 
-        <p class="item-sub">React 기반 지식 사이트. GCP N2, Nginx 리버스 프록시, GitHub Actions + Docker Compose 운영.</p>
+        <p class="item-sub">Semantic Gap 기반 Root Cause 분류 체계 + 절차별 페이로드 위키. 프런트=React, 운영=GCP N2·Nginx, CI/CD=GitHub Actions+Docker Compose.</p>
+
+        <!-- 한 줄 요약 -->
+        <div class="summary summary-box">
+          <p>
+            <b>Semantic Gap</b>은 동일한 데이터/요청이 <b>컴포넌트별로 다르게 해석</b>되어 생기는 <b>의미적 불일치</b>를 악용하는 취약점 군이다.
+            기존 <i>CWE/CAPEC/OWASP</i>의 <b>결과·기법 중심</b> 한계를 보완하기 위해, <b>Root Cause 중심 분류</b>와
+            <b>공격 절차별 페이로드</b>를 한 플랫폼에서 정리해 <b>퍼플팀(방어·공격) 활용성</b>을 높혔습니다.
+          </p>
+        </div>
+
+        <!-- 핵심 지표 -->
+        <div class="kpi-row" style="margin-top:8px;">
+          <span class="kpi">분석 기간: 5/14–7/12</span>
+          <span class="kpi">분석 문서 117개</span>
+          <span class="kpi">소분류 44개 구축</span>
+          <span class="kpi">트리/태그 내비게이션</span>
+        </div>
+
+        <!-- 스크린샷 -->
+        <div class="media-grid compact" style="--gap:8px; --h:220px; margin-top:8px;">
+          <figure class="frame" data-label="홈 화면">
+            <a href="assets/weave-site.png" target="_blank" rel="noopener">
+              <img src="assets/weave-site.png" alt="WEAVE 홈: 전체 분류 현황 개요">
+            </a>
+          </figure>
+          <figure class="frame" data-label="아키텍처">
+            <a href="assets/weave-arch.png" target="_blank" rel="noopener">
+              <img src="assets/weave-arch.png" alt="GCP·Nginx·Docker Compose 아키텍처">
+            </a>
+          </figure>
+          <figure class="frame" data-label="문서">
+            <a href="assets/weave-document.png" target="_blank" rel="noopener">
+              <img src="assets/weave-document.png" alt="semantic_gap 문서">
+            </a>
+          </figure>
+        </div>
+         <!-- 스택 -->
+        <hr class="divider">
         <div class="tech-matrix">
           <div class="col"><h5>서버/인프라</h5><div class="tags"><span class="tag i-gcp">GCP N2</span><span class="tag i-nginx">Nginx</span><span class="tag i-compose">Docker Compose</span><span class="tag i-actions">GitHub Actions</span></div></div>
           <div class="col"><h5>프레임워크</h5><div class="tags"><span class="tag i-react">React</span></div></div>
-          <div class="col"><h5>언어</h5><div class="tags"><span class="tag">JS/TS</span><span class="tag">CSS</span><span class="tag">HTML</span></div></div>
-          <div class="col"><h5>기타</h5><div class="tags"><span class="tag">Reverse Proxy</span></div></div>
+          <div class="col"><h5>언어</h5><div class="tags"><span class="tag">TS/JS</span><span class="tag">CSS</span><span class="tag">HTML</span></div></div>
+          <div class="col"><h5>기타</h5><div class="tags"><span class="tag">Reverse Proxy</span><span class="tag">Analytics</span></div></div>
         </div>
-        <div class="meta-group"><span class="meta-label">링크</span>
+
+        <!-- 링크 -->
+        <div class="meta-group">
+          <span class="meta-label">링크</span>
           <div class="meta-links">
+            <a class="meta-link" href="https://semanticgap.mjsec.kr" target="_blank" rel="noopener"><svg class="ico"><use href="#i-globe"/></svg> Site</a>
             <a class="meta-link" href="https://github.com/WHS-webao/semantic_gap" target="_blank" rel="noopener"><svg class="ico"><use href="#i-github"/></svg> Repo</a>
             <a class="meta-link" href="https://github.com/WHS-webao/WHS-webao.github.io" target="_blank" rel="noopener"><svg class="ico"><use href="#i-github"/></svg> Docs Backup</a>
-            <a class="meta-link" href="https://semanticgap.mjsec.kr" target="_blank" rel="noopener"><svg class="ico"><use href="#i-globe"/></svg> Site</a>
           </div>
         </div>
+
+        <hr class="divider">
+
+        <!-- 왜 이 연구? -->
+        <h4 class="subsection-title">왜 Semantic Gap인가</h4>
+        <ul class="checklist">
+          <li><b>근본 원인 공백:</b> 기존 체계는 <b>기법/결과</b> 위주라 방어 인사이트 도출이 어렵다.</li>
+          <li><b>명칭/서술 난립:</b> 동일 현상을 서로 다른 용어로 기술 → <b>일관된 대응</b>과 사례 비교가 힘듦.</li>
+          <li><b>목표:</b> <b>Root Cause</b> 기준의 대·중·소 분류와 <b>공격 절차별 페이로드</b> 정리를 통해
+            모의해킹·스캐너·방어정책 수립에 바로 쓰이는 지식 자산 제공.</li>
+        </ul>
+
+        <hr class="divider">
+
+        <!-- 분류 체계(요약) -->
+        <h4 class="subsection-title">Root Cause 분류(5대 축)</h4>
+        <div class="factbar">
+          <span class="fact">Syntax Parsing Gap</span>
+          <span class="fact">Security Policy Gap</span>
+          <span class="fact">Perceptual Context Gap</span>
+          <span class="fact">Metadata Interpretation Gap</span>
+          <span class="fact">Data Representation Model Gap</span>
+        </div>
+        <ul class="bullet-compact" style="margin-top:6px;">
+          <li><b>Syntax Parsing Gap:</b> 구성요소별 <b>문법/파싱 규칙</b> 차이 → HRS, HPP 등.</li>
+          <li><b>Security Policy Gap:</b> WAF/필터 규칙과 실제 처리 <b>적용 불일치</b> → JWT alg 변조 등.</li>
+          <li><b>Context Boundary Gap:</b> 동일 데이터가 <b>다른 실행/보안 경계</b>로 분류 → 클릭재킹, 포커스 오용.</li>
+          <li><b>Data Representation Model Gap:</b> 인코딩/정규화/유사문자 처리 <b>불일치</b> → 필터 우회·스푸핑.</li>
+          <li><b>Metadata Interpretation Gap:</b> 헤더/쿠키/토큰 <b>우선순위/검증</b> 상이 → 세션/인증 우회.</li>
+        </ul>
+
+        <hr class="divider">
+
+        <!-- 방법 -->
+        <h4 class="subsection-title">구축 방법(현황 기반)</h4>
+        <ul class="checklist">
+          <li><b>자료 수집·분석:</b> 주간 스크래핑 + <b>Jira 커스텀 필드</b>로 추적, 실제 사례 <b>수동 검증</b>.</li>
+          <li><b>매핑 프로세스:</b> 대분류→중분류→소분류 <b>MECE</b> 매핑 및 재검토.</li>
+          <li><b>LLM 보조:</b> <b>프롬프트 엔지니어링</b>으로 분류 후보 생성·정제(검수 포함).</li>
+          <li><b>협업·리듬:</b> 주 6회 정기 회의(토 오프라인, 평일 온라인)·파이프라인 기반 진행.</li>
+        </ul>
+
+        <hr class="divider">
+
+        <!-- 결과(플랫폼 기능) -->
+        <h4 class="subsection-title">WEAVE 결과(플랫폼 기능)</h4>
+        <ul class="checklist">
+          <li><b>홈/대시보드:</b> 전체 분류 현황을 한 눈에 확인, 항목 클릭으로 상세 이동.</li>
+          <li><b>트리 네비게이션:</b> 대→중→소 계층 구조로 계통도 탐색.</li>
+          <li><b>태그 검색:</b> 테크닉/페이로드 태그로 관련 기법을 <b>교차 조회</b>.</li>
+          <li><b>절차 서술:</b> <b>Recon → Injection → Obfuscation → Validation → Exploitation → Exfiltration</b> 단계로 공격 기법 정리.</li>
+        </ul>
+
+        <hr class="divider">
+
+        <!-- 내 역할 -->
+        <h4 class="subsection-title">내 역할</h4>
+        <ul class="checklist">
+          <li><b>웹/인프라:</b> React 프런트, <b>GCP N2·Nginx</b> 운영, <b>GitHub Actions + Docker Compose</b> CI/CD.</li>
+          <li><b>콘텐츠 온보딩:</b> 사례/소분류 문서 다수의 <b>정형 템플릿화</b>, 태그/메타데이터 일관화.</li>
+          <li><b>품질화:</b> 용어/분류 기준 정리, <b>절차·페이로드</b> 표준 서술 가이드 반영.</li>
+          <li><b>운영 안정성:</b> 리포지토리 백업·복원 경로 마련, 접근/활용 <b>모니터링</b> 기반 운영.</li>
+        </ul>
+
+       
       </article>
 
+
+      <br>
       <article class="card" id="detail-reagan">
         <header class="detail-head">
           <h3 class="detail-title">Reagan — 3단계 AI 기반 악성 URL 탐지 — 상세</h3>
