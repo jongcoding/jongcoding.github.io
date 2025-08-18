@@ -1088,6 +1088,103 @@
       margin-top:8px; padding:12px 14px; border:1px solid var(--border);
       border-radius:12px; background:color-mix(in srgb,var(--brand-soft) 75%,transparent);
     }
+    /* === Project Details header (title + period right) === */
+    .detail-head{
+      display:flex; justify-content:space-between; align-items:baseline; gap:12px;
+      margin-bottom:8px; padding-bottom:8px; border-bottom:1px dashed var(--border);
+    }
+    .detail-title{
+      margin:0; font-weight:800; letter-spacing:-.015em;
+      font-size:clamp(20px, 2.6vw, 26px); line-height:1.2;
+    }
+    .detail-period{
+      color:var(--muted); font-size:13px; white-space:nowrap;
+    }
+    .detail-period .now{
+      padding:2px 6px; border-radius:999px; font-weight:700; font-size:11.5px;
+      background:var(--brand-soft); color:var(--brand-600); border:1px solid var(--border);
+    }
+    /* ===== DELDEVTOOL 카드 가독성 개선 ===== */
+    #detail-deldevtool .summary { max-width: none; }
+    #detail-deldevtool .summary-box{
+      padding:12px 14px; border:1px solid var(--border); border-radius:12px;
+      background: color-mix(in srgb, var(--brand-soft) 70%, transparent);
+      box-shadow: var(--shadow);
+    }
+    #detail-deldevtool .summary-box .lead{ margin:0 0 6px; font-size:15.5px; line-height:1.75; }
+    #detail-deldevtool .kpi-row{ display:flex; flex-wrap:wrap; gap:6px; margin-top:4px; }
+
+    #detail-deldevtool .clean-block{ margin-top:12px; }
+    #detail-deldevtool .clean-block h4{ margin:0 0 6px; font-size:16px; }
+    #detail-deldevtool .bullet-compact{ margin:6px 0 0 16px; }
+    #detail-deldevtool .bullet-compact li{ margin:4px 0; color:var(--subtext); }
+
+    /* 2열 읽기 레이아웃 (넓은 화면) */
+    #detail-deldevtool .grid-2{ display:grid; grid-template-columns: 1.2fr 1fr; gap:16px; }
+    @media (max-width: 860px){ #detail-deldevtool .grid-2{ grid-template-columns:1fr; } }
+
+    /* 브라우저별 정책 표 - 콤팩트 */
+    #detail-deldevtool .table-wrap{ margin-top:8px; }
+    #detail-deldevtool .data-table td code,
+    #detail-deldevtool .data-table th code{ font-size:12.5px; }
+    #detail-deldevtool .data-table td{ vertical-align: top; }
+    #detail-deldevtool .data-table td .muted{ color:var(--muted); font-size:12px; }
+
+    /* 체크리스트 간격 */
+    #detail-deldevtool .checklist{ margin-top:8px; }
+    #detail-deldevtool .checklist li{ margin:6px 0; }
+
+    /* 요약 카드 바로 아래 구분선 느낌 */
+    #detail-deldevtool .divider{ height:1px; background:var(--border); margin:12px 0; border:0; }
+    hr.divider{
+      border: 0;
+      height: 1px;
+      margin: 14px 0;
+      background:
+        linear-gradient(
+          90deg,
+          transparent 0,
+          color-mix(in srgb, var(--brand) 30%, var(--border)) 20%,
+          color-mix(in srgb, var(--brand) 30%, var(--border)) 80%,
+          transparent 100%
+        );
+      opacity: .9; /* 과도한 밝기 완화 */
+    }
+    /* 다크 모드: 살짝 더 어둡게 */
+    @media (prefers-color-scheme: dark){
+      hr.divider{
+        background:
+          linear-gradient(
+            90deg,
+            transparent 0,
+            color-mix(in srgb, var(--brand) 22%, var(--border)) 20%,
+            color-mix(in srgb, var(--brand) 22%, var(--border)) 80%,
+            transparent 100%
+          );
+        opacity: .85;
+      }
+    }
+
+    /* 인쇄: 단색 실선으로 가독성 유지 */
+    @media print{
+      hr.divider{
+        background: #bbb !important;
+        opacity: 1 !important;
+      }
+    }
+
+    /* 옵션: 조금 더 강조가 필요할 때 .divider--strong 클래스 추가 */
+    hr.divider.divider--strong{
+      height: 2px;
+      background:
+        linear-gradient(
+          90deg,
+          transparent 0,
+          color-mix(in srgb, var(--brand) 40%, var(--border)) 15%,
+          color-mix(in srgb, var(--brand) 40%, var(--border)) 85%,
+          transparent 100%
+        );
+    }
 
 
 
@@ -1562,7 +1659,7 @@
           </li>
           <li>
             <a class="link-chip" href="https://discord.gg/2qRzrXjjxZ" target="_blank" rel="noopener">
-              디스코드 초대 링크
+              대회 디스코드 
             </a>
           </li>
         </ul>
@@ -1606,7 +1703,7 @@
           <div class="section-block">
             <h4>Compression Side Channel이란?</h4>
             <div class="note-box">
-              <p class="lead"><b>정의.</b> 암호화 전에 이뤄지는 <b>압축 단계</b>가 데이터 중복도에 따라
+              <p class="lead">암호화 전에 이뤄지는 <b>압축 단계</b>가 데이터 중복도에 따라
                 <b>출력 길이(크기)</b>를 바꾸는 성질을 이용해, <b>길이만</b> 관찰해도 <b>비밀 일부</b>를 추론하는 부채널입니다.</p>
               <ul class="bullet-compact">
                 <li><b>핵심:</b> guess가 secret과 <b>겹칠수록</b> 압축률 증가 → <b>네트워크 패킷 길이</b>나 <b>디스크 파일/페이지 크기</b>가 <b>감소</b>.</li>
@@ -1993,7 +2090,7 @@
 
 
           <div class="project-meta meta-group">
-            <span class="role-badge">역할: 웹사이트 제작</span>
+            <span class="role-badge">역할: 웹사이트 제작 · 리서처</span>
             <span class="meta-links">
               <a class="meta-link" href="https://github.com/WHS-webao/semantic_gap" target="_blank" rel="noopener">
                 <svg class="ico"><use href="#i-github"/></svg> Repo
@@ -2023,7 +2120,7 @@
           <p class="project-desc">Reagan은 URL Detection AI, Packet Analysis AI, Break_Captcha_AI로 구성된 3단계 파이프라인을 통해 악성 URL을 자동 식별하는 크롬 익스텐션 프로그램</p>
 
           <div class="project-meta meta-group">
-            <span class="role-badge">역할: DevOps · reCAPTCHA 우회 AI</span>
+            <span class="role-badge">역할: PM, DevOps · reCAPTCHA 우회 AI</span>
             <span class="meta-links">
               <a class="meta-link" href="https://github.com/MJSEC-MJU/Reagan" target="_blank" rel="noopener">
                 <svg class="ico"><use href="#i-github"/></svg> Reagan
@@ -2054,7 +2151,7 @@
 
 
           <div class="project-meta meta-group">
-            <span class="role-badge">역할: DevOps</span>
+            <span class="role-badge">역할: PM, DevOps, Firstboold bot 개발</span>
             <span class="meta-links">
               <a class="meta-link" href="https://github.com/jongcoding/MSG_CTF_WEB" target="_blank" rel="noopener">
                 <svg class="ico"><use href="#i-github"/></svg> Front
@@ -2099,7 +2196,7 @@
           <p class="project-desc">React + Vite 기반 프런트. Ubuntu 서버 포트포워딩 + Nginx 리버스 프록시, GitHub Actions로 자동 빌드·배포.</p>
 
           <div class="project-meta meta-group">
-            <span class="role-badge">역할: DevOps (CI/CD)</span>
+            <span class="role-badge">역할: PM, DevOps (CI/CD)</span>
             <span class="meta-links">
               <a class="meta-link" href="https://github.com/MJSEC-MJU/MJSEC_LMS_FRONT" target="_blank" rel="noopener">
                 <svg class="ico"><use href="#i-github"/></svg> GitHub
@@ -2127,7 +2224,7 @@
 
 
           <div class="project-meta meta-group">
-            <span class="role-badge">역할: 개발</span>
+            <span class="role-badge">역할: 개인 개발</span>
             <span class="meta-links">
               <a class="meta-link" href="https://github.com/MJSEC-MJU/MJSEC_BOJ" target="_blank" rel="noopener">
                 <svg class="ico"><use href="#i-github"/></svg> GitHub
@@ -2154,7 +2251,7 @@
           <p class="project-desc">Windows에서 브라우저 개발자도구(DevTools)를 레지스트리로 차단/해제하는 로컬 유틸리티. PyInstaller로 단일 exe 배포.</p>
 
           <div class="project-meta meta-group">
-            <span class="role-badge">역할: 개발</span>
+            <span class="role-badge">역할: 개인 개발</span>
             <span class="meta-links">
               <a class="meta-link" href="https://github.com/jongcoding/DELDEVTOOL" target="_blank" rel="noopener">
                 <svg class="ico"><use href="#i-github"/></svg> GitHub
@@ -2170,11 +2267,18 @@
     </section>
 
     <!-- PROJECT DETAILS -->
+    <!-- PROJECT DETAILS -->
     <section id="project-details" class="section" aria-labelledby="details-title">
       <h2 class="section-title" id="details-title">프로젝트 상세 내용</h2>
 
       <article class="card" id="detail-weave">
-        <h3 class="subsection-title">WEAVE — 상세</h3>
+        <header class="detail-head">
+          <h3 class="detail-title">WEAVE — 상세</h3>
+          <div class="detail-period">
+            <time datetime="2025-05-03">2025.05.03</time> – <time datetime="2025-08-02">2025.08.02</time>
+          </div>
+        </header>
+
         <p class="item-sub">React 기반 지식 사이트. GCP N2, Nginx 리버스 프록시, GitHub Actions + Docker Compose 운영.</p>
         <div class="tech-matrix">
           <div class="col"><h5>서버/인프라</h5><div class="tags"><span class="tag i-gcp">GCP N2</span><span class="tag i-nginx">Nginx</span><span class="tag i-compose">Docker Compose</span><span class="tag i-actions">GitHub Actions</span></div></div>
@@ -2192,7 +2296,13 @@
       </article>
 
       <article class="card" id="detail-reagan">
-        <h3 class="subsection-title">Reagan — 3단계 AI 기반 악성 URL 탐지 — 상세</h3>
+        <header class="detail-head">
+          <h3 class="detail-title">Reagan — 3단계 AI 기반 악성 URL 탐지 — 상세</h3>
+          <div class="detail-period">
+            <time datetime="2025-03-03">2025.03.03</time> – <time datetime="2025-06-10">2025.06.10</time>
+          </div>
+        </header>
+
         <p class="item-sub">Chrome 확장 → 백엔드(DRF) → reCAPTCHA v2 연구용 자동 처리 → 콘텐츠/트래픽 분석 파이프라인. 내 역할: DevOps · reCAPTCHA 우회 AI.</p>
         <div class="tech-matrix">
           <div class="col"><h5>서버/인프라</h5><div class="tags"><span class="tag i-gcp">GCP E2</span><span class="tag i-nginx">Nginx</span><span class="tag i-compose">Docker Compose</span><span class="tag">HTTPS</span></div></div>
@@ -2209,7 +2319,13 @@
       </article>
 
       <article class="card" id="detail-msgctf">
-        <h3 class="subsection-title">MSG CTF 제작 — 상세</h3>
+        <header class="detail-head">
+          <h3 class="detail-title">MSG CTF 제작 — 상세</h3>
+          <div class="detail-period">
+            <time datetime="2025-01-10">2025.01.10</time> – <span class="now">현재</span>
+          </div>
+        </header>
+
         <p class="item-sub">GCP N2(Ubuntu) · Nginx · Docker Compose · GitHub Actions. Front=React+Vite, Back=Spring Boot, Discord Bot=Python.</p>
         <div class="tech-matrix">
           <div class="col"><h5>서버/인프라</h5><div class="tags"><span class="tag i-gcp">GCP N2 (Ubuntu)</span><span class="tag i-ubuntu">Ubuntu</span><span class="tag i-nginx">Nginx</span><span class="tag i-compose">Docker Compose</span><span class="tag i-actions">GitHub Actions</span></div></div>
@@ -2227,78 +2343,343 @@
       </article>
 
       <article class="card" id="detail-mjsec">
-        <h3 class="subsection-title">MJSEC Homepage (LMS Front) — 상세</h3>
+        <header class="detail-head">
+          <h3 class="detail-title">MJSEC Homepage (LMS Front) — 상세</h3>
+          <div class="detail-period">
+            <time datetime="2025-07-03">2025.07.03</time> – <span class="now">현재</span>
+          </div>
+        </header>
+
         <p class="item-sub">React + Vite. Ubuntu 서버 포트포워딩 · Nginx 리버스 프록시 · GitHub Actions 자동 배포.</p>
-        <div class="tech-matrix">
-          <div class="col"><h5>서버/인프라</h5><div class="tags"><span class="tag i-ubuntu">Ubuntu</span><span class="tag i-nginx">Nginx</span><span class="tag">포트포워딩</span><span class="tag i-actions">GitHub Actions</span></div></div>
-          <div class="col"><h5>프레임워크</h5><div class="tags"><span class="tag i-react">React</span><span class="tag i-vite">Vite</span></div></div>
-          <div class="col"><h5>언어</h5><div class="tags"><span class="tag">JS/TS</span><span class="tag">CSS</span><span class="tag">HTML</span></div></div>
-          <div class="col"><h5>기타</h5><div class="tags"><span class="tag">Reverse Proxy</span></div></div>
+
+        <!-- 소개 -->
+        <div class="summary summary-box">
+          <p>
+            <b>MJSEC HOMEPAGE</b>를 제작했고, 현재 <b>LMS 사이트</b>도 연계 개발 중입니다.
+            프런트는 <b>React + Vite</b>, 배포는 <b>Nginx 리버스 프록시</b>와 <b>GitHub Actions</b> 기반 <b>CI/CD</b>로 자동화했습니다.
+          </p>
         </div>
-        <div class="meta-group"><span class="meta-label">링크</span>
-          <div class="meta-links">
-            <a class="meta-link" href="https://github.com/MJSEC-MJU/MJSEC_LMS_FRONT" target="_blank" rel="noopener"><svg class="ico"><use href="#i-github"/></svg> GitHub</a>
-            <a class="meta-link" href="https://mjsec.kr" target="_blank" rel="noopener"><svg class="ico"><use href="#i-globe"/></svg> Site</a>
+
+        <!-- 스크린샷 갤러리 -->
+        <div class="media-grid compact" style="--gap:8px; --h:230px; margin-top:8px;">
+          <figure class="frame" data-label="Homepage">
+            <a href="assets/mjsec_hompage.png" target="_blank" rel="noopener">
+              <img src="assets/mjsec_hompage.png" alt="MJSEC 홈페이지 메인 화면 예시">
+            </a>
+          </figure>
+          <figure class="frame" data-label="CI (프리뷰)">
+            <a href="assets/mjsec-ci.png" target="_blank" rel="noopener">
+              <img src="assets/mjsec-ci.png" alt="CI 워크플로우 실행 스크린샷 예시">
+            </a>
+          </figure>
+          <figure class="frame" data-label="CD (배포)">
+            <a href="assets/mjsec-cd.png" target="_blank" rel="noopener">
+              <img src="assets/mjsec-cd.png" alt="CD 배포 파이프라인 실행 스크린샷 예시">
+            </a>
+          </figure>
+        </div>
+        <hr class="divider">
+        <!-- 기술 스택 -->
+        <div class="tech-matrix">
+          <div class="col">
+            <h5>서버/인프라</h5>
+            <div class="tags">
+              <span class="tag i-ubuntu">Ubuntu</span>
+              <span class="tag i-nginx">Nginx</span>
+              <span class="tag">포트포워딩</span>
+              <span class="tag i-actions">GitHub Actions</span>
+            </div>
+          </div>
+          <div class="col">
+            <h5>프레임워크</h5>
+            <div class="tags">
+              <span class="tag i-react">React</span>
+              <span class="tag i-vite">Vite</span>
+            </div>
+          </div>
+          <div class="col">
+            <h5>언어</h5>
+            <div class="tags">
+              <span class="tag">JS/TS</span>
+              <span class="tag">CSS</span>
+              <span class="tag">HTML</span>
+            </div>
+          </div>
+          <div class="col">
+            <h5>기타</h5>
+            <div class="tags">
+              <span class="tag">Reverse Proxy</span>
+            </div>
           </div>
         </div>
+
+        <!-- 링크 -->
+        <div class="meta-group">
+          <span class="meta-label">링크</span>
+          <div class="meta-links">
+            <a class="meta-link" href="https://github.com/MJSEC-MJU/MJSEC_LMS_FRONT" target="_blank" rel="noopener">
+              <svg class="ico"><use href="#i-github"/></svg> GitHub
+            </a>
+            <a class="meta-link" href="https://mjsec.kr" target="_blank" rel="noopener">
+              <svg class="ico"><use href="#i-globe"/></svg> Site
+            </a>
+          </div>
+        </div>
+        <hr class="divider">
+        <!-- CI 설명 -->
+        <h4 class="subsection-title" style="margin-top:12px;">CI 파이프라인(요지)</h4>
+        <ul class="checklist">
+          <li><b>트리거</b>: <code>pull_request</code>, <code>feature/**</code> 브랜치 <code>push</code></li>
+          <li><b>Build & Run</b>: <code>docker compose -f docker-compose.ci.yml up -d</code>로 컨테이너 기동(로컬 8080 → 컨테이너 80)</li>
+          <li><b>Smoke Test</b>: 최대 60초 재시도 루프로 <code>curl --head http://localhost:8080</code> <b>HTTP 200</b> 확인</li>
+          <li><b>정리</b>: 항상 <code>docker compose ... down -v</code>로 종료/볼륨 정리(깨끗한 프리뷰 보장)</li>
+        </ul>
+
+
+        <!-- CD 설명 -->
+        <h4 class="subsection-title" style="margin-top:10px;">CD 파이프라인(요지)</h4>
+        <ul class="checklist">
+          <li><b>트리거</b>: <code>main</code> 브랜치 <code>push</code></li>
+          <li><b>빌드/푸시</b>: <code>buildx</code>로 프런트 이미지를 빌드해 <b>GHCR</b>(<code>ghcr.io/owner/repo</code>)에 <b>latest/sha</b> 태그로 푸시</li>
+          <li><b>원격 준비</b>: SSH로 서버 접속 → 디렉터리·<code>.env</code> 구성 → GHCR 로그인</li>
+          <li><b>HTTP 기동</b>: 템플릿 업로드 → <code>docker compose</code>로 <b>nginx/app</b> 우선 기동 → <b>HTTP 헬스체크</b></li>
+          <li><b>SSL 발급</b>: <b>certbot</b> <code>webroot</code>로 인증서 발급/갱신 → TLS 헬퍼 파일 확보</li>
+          <li><b>HTTPS 전환</b>: HTTPS 템플릿 적용·<code>nginx -s reload</code> → 최신 이미지 <code>pull</code> 후 전체 스택 <b>무중단 재기동</b></li>
+          <li><b>검증/정리</b>: <b>HTTPS 헬스체크</b>·오래된 이미지 <code>prune</code>·성공/실패 알림</li>
+        </ul>
+
+        
       </article>
 
+      
+      <br>
       <article class="card" id="detail-mjsecboj">
-        <h3 class="subsection-title">MJSEC BOJ CONTEST — 상세</h3>
+        <header class="detail-head">
+          <h3 class="detail-title">MJSEC BOJ CONTEST — 상세</h3>
+          <div class="detail-period">
+            <time datetime="2024-08-14">2024.08.14</time> – <time datetime="2025-05-29">2025.05.29</time>
+          </div>
+        </header>
+
         <p class="item-sub">Solved.ac API 기반 백준 대회 플랫폼. 서버=GCP E2, Docker/Compose, Nginx + Gunicorn, Django.</p>
+
+        <!-- 소개 -->
+         
+        <div class="summary summary-box">
+          <p>
+            <b>MJSEC 백준 프로그래밍 대회</b>를 위한 웹사이트입니다. 참가자 제출을 <b>solved.ac API</b>로 검증하고
+            결과를 <b>실시간 리더보드</b>에 반영하도록 설계했습니다. 페이지 새로고침 없이 순위가 갱신되며,
+            운영 측면에서는 단순하고 신뢰성 높은 점수 집계가 핵심입니다.
+          </p>
+        </div>
+        <div class="media-grid compact" style="--gap:8px; --h:230px; margin-top:8px;">
+          <figure class="frame" data-label="대시보드">
+            <a href="assets/boj-dashboard.png" target="_blank" rel="noopener">
+              <img src="assets/boj-dashboard.png" alt="대회 대시보드 화면 예시">
+            </a>
+          </figure>
+          <figure class="frame" data-label="리더보드">
+            <a href="assets/boj-leaderboard.png" target="_blank" rel="noopener">
+              <img src="assets/boj-leaderboard.png" alt="실시간 리더보드 화면 예시">
+            </a>
+          </figure>
+          <figure class="frame" data-label="관리자">
+            <a href="assets/boj-admin.png" target="_blank" rel="noopener">
+              <img src="assets/boj-admin.png" alt="관리자 페이지(참가자/문제/포인트 관리) 화면 예시">
+            </a>
+          </figure>
+          
+        </div>
+        <hr class="divider">
+        <!-- 기술 스택 -->
         <div class="tech-matrix">
-          <div class="col"><h5>서버/인프라</h5><div class="tags"><span class="tag i-gcp">Ubuntu (GCP E2)</span><span class="tag i-nginx">Nginx</span><span class="tag i-gunicorn">Gunicorn</span><span class="tag i-compose">Docker Compose</span><span class="tag i-docker">Docker</span></div></div>
+          <div class="col">
+            <h5>서버/인프라</h5>
+            <div class="tags">
+              <span class="tag i-gcp">Ubuntu (GCP E2)</span>
+              <span class="tag i-nginx">Nginx</span>
+              <span class="tag i-gunicorn">Gunicorn</span>
+              <span class="tag i-compose">Docker Compose</span>
+              <span class="tag i-docker">Docker</span>
+            </div>
+          </div>
           <div class="col"><h5>프레임워크</h5><div class="tags"><span class="tag i-django">Django</span></div></div>
           <div class="col"><h5>언어</h5><div class="tags"><span class="tag i-python">Python</span><span class="tag">HTML</span></div></div>
           <div class="col"><h5>기타</h5><div class="tags"><span class="tag i-sqlite">SQLite</span><span class="tag">solved.ac API</span></div></div>
         </div>
-        <div class="meta-group"><span class="meta-label">링크</span>
+
+        <!-- 링크 -->
+        <div class="meta-group">
+          <span class="meta-label">링크</span>
           <div class="meta-links">
-            <a class="meta-link" href="https://github.com/MJSEC-MJU/MJSEC_BOJ" target="_blank" rel="noopener"><svg class="ico"><use href="#i-github"/></svg> GitHub</a>
+            <a class="meta-link" href="https://github.com/MJSEC-MJU/MJSEC_BOJ" target="_blank" rel="noopener">
+              <svg class="ico"><use href="#i-github"/></svg> GitHub
+            </a>
           </div>
         </div>
+        <hr class="divider">
+        <!-- 주요 기능 (1열 체크리스트) -->
+        <h4 class="subsection-title" style="margin-top:10px;">주요 기능</h4>
+        <ul class="checklist">
+          <li><b>다이나믹 스코어링</b>: 최신 제출 결과를 즉시 반영하여 <b>실시간 피드백</b> 제공</li>
+          <li><b>AJAX 리더보드</b>: <code>fetch</code> 기반 폴링/갱신으로 <b>새로고침 없이</b> 순위 업데이트</li>
+          <li><b>문제 제출·검증</b>: <code>requests</code>로 <b>solved.ac</b> 조회, 정답/오답 기록 및 점수 부여</li>
+          <li><b>사용자·팀 관리(관리자)</b>: 참가자, 팀, 문제 포인트, 대회 시간 등 <b>운영 도구</b> 제공</li>
+        </ul>
+
+        <!-- 검증 파이프라인 원리 -->
+        <h4 class="subsection-title" style="margin-top:10px;">검증 파이프라인 원리</h4>
+        <ol class="steps">
+          <li><b>관리 명령 호출</b>:
+            <code>python manage.py update_solved_problems --user_id &lt;handle&gt; --problem_id &lt;pid&gt;</code>
+          </li>
+          <li><b>대상 조회</b>: <code>Participant</code>·<code>ContestProblem</code> 매칭 (없으면 종료)</li>
+          <li><b>중복 방지</b>: 이미 <b>정답</b> 기록이 있으면 종료(중복 업데이트 차단)</li>
+          <li><b>solved.ac 질의</b>:
+            <code>GET https://solved.ac/api/v3/search/problem</code> 에
+            <code>query=solved_by:{handle} id:{pid}</code>로 해당 참가자의 해당 문제 해결 여부 확인
+          </li>
+          <li><b>DB 반영</b>:
+            <ul class="bullets">
+              <li><b>정답</b>: 기존 제출을 모두 삭제 후 <b>단일 정답 제출</b>만 생성(점수=<code>problem.points</code>)</li>
+              <li><b>오답</b>: 오답 제출을 <b>누적</b>해 패널티/통계 용도로 활용</li>
+            </ul>
+          </li>
+        </ol>
+
+        
       </article>
 
+      <br>
       <article class="card" id="detail-deldevtool">
-        <h3 class="subsection-title">DELDEVTOOL — 상세</h3>
-        <p class="item-sub">Windows 로컬 유틸. 브라우저 DevTools 차단/해제(레지스트리 편집) 및 PyInstaller 기반 단일 실행파일 배포.</p>
+        <header class="detail-head">
+          <h3 class="detail-title">DELDEVTOOLT — 상세</h3>
+          <div class="detail-period">
+            <time datetime="2022-12">2022.12</time> – <time datetime="2023-05">2023.05.</time>
+          </div>
+        </header>
+        <p class="item-sub">Windows 로컬 유틸. 브라우저 DevTools 차단/해제(레지스트리·설정) 및 PyInstaller 기반 단일 실행파일 배포.</p>
+        
+        <!-- 요약(가독성↑, 줄바꿈 문제 해결: max-width 해제) -->
+        <div class="summary summary-box">
+          <p class="lead">
+            군 시절 제작한 <b>Chrome / Edge / Internet Explorer / Firefox</b> 개발자 도구 차단 유틸리티입니다.
+            <b>disable.py</b>는 정책 레지스트리·사용자 설정을 추가해 DevTools를 비활성화하고,
+            <b>enable.py</b>는 해당 값을 삭제해 활성화합니다. <b>PyInstaller</b>로 단일 EXE 배포(관리자 권한 필요).<br> 재부팅을 하면 레지스트리 정책이 적용됩니다.
+          </p>
+          <!-- DELDEVTOOL 갤러리: 실행 화면 / 레지스트리 / 배포 EXE -->
+          <div class="media-grid compact" style="--gap: 8px; --h: 220px; margin-top:10px;">
+            <figure class="frame" data-label="실행 화면">
+              <a href="assets/deldevtool-run.png" target="_blank" rel="noopener">
+                <img src="assets/deldevtool-run.png" alt="DELDEVTOOL disable.py 실행 화면 (관리자 권한)">
+              </a>
+            </figure>
+            <figure class="frame" data-label="레지스트리 적용">
+              <a href="assets/deldevtool-registry.png" target="_blank" rel="noopener">
+                <img src="assets/deldevtool-registry.png" alt="Chrome/Edge/IE 정책 레지스트리 키 적용 상태">
+              </a>
+            </figure>
+            <figure class="frame" data-label="배포 EXE">
+              <a href="assets/deldevtool-exe.png" target="_blank" rel="noopener">
+                <img src="assets/deldevtool-exe.png" alt="PyInstaller로 빌드한 disable.exe (—onefile —noconsole)">
+              </a>
+            </figure>
+          </div>
+
+          <div class="kpi-row">
+            <span class="pill">레지스트리 정책</span>
+            <span class="pill">관리자 권한</span>
+          </div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- 위쪽: 기술 스택/링크 (원래 구조 유지) -->
         <div class="tech-matrix">
           <div class="col"><h5>서버/인프라</h5><div class="tags"><span class="tag">로컬(서버 없음)</span></div></div>
           <div class="col"><h5>프레임워크</h5><div class="tags"><span class="tag">— (Python 스크립트)</span></div></div>
           <div class="col"><h5>언어</h5><div class="tags"><span class="tag i-python">Python</span></div></div>
           <div class="col"><h5>기타</h5><div class="tags"><span class="tag i-windows">Windows Registry</span><span class="tag i-python">PyInstaller</span></div></div>
         </div>
-        <div class="meta-group"><span class="meta-label">링크</span>
+        <div class="meta-group">
+          <span class="meta-label">링크</span>
           <div class="meta-links">
-            <a class="meta-link" href="https://github.com/jongcoding/DELDEVTOOL" target="_blank" rel="noopener"><svg class="ico"><use href="#i-github"/></svg> GitHub</a>
+            <a class="meta-link" href="https://github.com/jongcoding/DELDEVTOOL" target="_blank" rel="noopener">
+              <svg class="ico"><use href="#i-github"/></svg> GitHub
+            </a>
           </div>
         </div>
+
+        <!-- 2열 구성: (좌) 동작 원리 / (우) 브라우저별 키 요약표 -->
+        <!-- 기존 <div class="grid-2"> ... </div> 를 아래로 교체 -->
+        <div class="clean-block">
+          <h4>브라우저별 정책 키(요약)</h4>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>브라우저</th>
+                  <th>경로/설정</th>
+                  <th>값</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Chrome</td>
+                  <td><code>HKLM\SOFTWARE\Policies\Google\Chrome</code></td>
+                  <td><code>DeveloperToolsDisabled=1</code></td>
+                </tr>
+                <tr>
+                  <td>Edge</td>
+                  <td><code>HKLM\SOFTWARE\Policies\Microsoft\Edge</code></td>
+                  <td><code>DeveloperToolsAvailability=2</code><br><span class="muted">2=완전 비활성화</span></td>
+                </tr>
+                <tr>
+                  <td>IE</td>
+                  <td>
+                    <code>...\IEDevTools</code>, <code>...\Restrictions</code> (HKLM/HKCU, 32/64비트)<br>
+                    <span class="muted">WOW6432Node 포함</span>
+                  </td>
+                  <td><code>Disabled=1</code></td>
+                </tr>
+                <tr>
+                  <td>Firefox</td>
+                  <td><code>%APPDATA%\Mozilla\Firefox\Profiles\&lt;profile&gt;\prefs.js</code></td>
+                  <td><code>user_pref("devtools.policy.disabled", true)</code><br>
+                      <span class="muted">조직 배포: <code>distribution\policies.json</code></span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="clean-block">
+          <h4>활용 방안(내부망 NAC)</h4>
+          <ul class="checklist">
+            <li><b>자세 규정</b>: DevTools 차단 값이 존재해야 정상 단말로 간주.</li>
+            <li><b>감사/점검</b> (예시)
+              <ul class="bullet-compact">
+                <li><code>reg query "HKLM\SOFTWARE\Policies\Google\Chrome" /v DeveloperToolsDisabled</code></li>
+                <li><code>reg query "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v DeveloperToolsAvailability</code></li>
+                <li><code>reg query "HKLM\SOFTWARE\Policies\Microsoft\Internet Explorer\IEDevTools" /v Disabled</code></li>
+                <li>Firefox: <code>prefs.js</code> 문자열 또는 <code>policies.json</code> 정책 파일 검사</li>
+              </ul>
+            </li>
+            <li><b>자동 시정</b>: 미준수 단말은 포털에서 <b>disable.exe(관리자)</b> 실행 유도 → 통과 시 정상 VLAN 복귀.</li>
+            <li><b>운영</b>: 브라우저/OS 업데이트 시 정책 지속성 모니터링, Firefox는 <code>policies.json</code> 전환 권장.</li>
+          </ul>
+        </div>
+
+        
+          <ul class="bullet-compact">
+            <li><b>배포</b>: <code>pyinstaller --onefile --noconsole disable.py</code> (관리자 권한 필요)</li>
+            <li><b>원복</b>: <code>enable.py</code>가 추가 키/설정 삭제</li>
+          </ul>
+        </div>
+
       </article>
-    </section>
 
-    <!-- (Optional) SKILLS placeholder -->
-    <section id="skills" class="section" aria-labelledby="skills-title" hidden>
-      <h2 class="section-title" id="skills-title">기술</h2>
-    </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section" aria-labelledby="contact-title">
-      <h2 class="section-title" id="contact-title">SNS & 포트폴리오</h2>
-      <div class="two-col">
-        <div class="card">
-          <div class="item"><div class="item-title">📷 Instagram</div><div class="item-sub">@jongactivity</div></div>
-          <div class="item"><div class="item-title">💻 GitHub</div><div class="item-sub">@jongcoding</div></div>
-          <div class="item"><div class="item-title">📝 Naver Blog</div><div class="item-sub">@ialleejy</div></div>
-        </div>
-        <div class="card">
-          <div class="item"><div class="item-title">연락하기</div>
-            <div class="tags">
-              <a class="btn" href="#intro">상단 프로필로 이동</a>
-              <a class="btn" href="#projects">프로젝트 바로가기</a>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
     <footer>© <span id="year"></span> Jong-Yun Lee. 모든 권리 보유.</footer>
