@@ -96,6 +96,12 @@
       background: linear-gradient(135deg, #667eea, #764ba2);
       box-shadow: 0 18px 34px rgba(118, 75, 162, .28);
     }
+    .profile-image { 
+        object-fit: cover;      /* 원형 안에 꽉 차게 */
+        display: block;         /* 중앙정렬/여백 안정 */
+        background: none !important; /* 그라디언트 제거 */
+        object-position: 50% calc(50% + 12px);
+      }
     .name { font-size: 28px; font-weight: 800; letter-spacing: -0.02em; margin: 0 0 4px; text-align: center; }
     .title { font-weight: 700; color: var(--brand); text-align: center; margin: 0 0 14px; }
     .basic-info { display: grid; gap: 6px; color: var(--muted); font-size: 14px; text-align: center; }
@@ -236,6 +242,858 @@
       .btn { border: 1px solid #bbb !important; }
       .tag { border: 1px solid #bbb !important; background: #f3f4f6 !important; color: #111827 !important; }
     }
+    /* --- 보안장비 표 (brand tone) --- */
+    .table-wrap{
+      margin-top:12px; border:1px solid var(--border); border-radius:10px;
+      overflow:auto; background:var(--card);
+    }
+    .data-table{ width:100%; border-collapse:separate; border-spacing:0; font-size:14px; }
+
+    /* 헤더: 섹션 타이틀과 유사한 인디고 → 인디고-600 그라디언트 */
+    .data-table thead th{
+      padding:10px 14px; text-align:left; color:#fff; font-weight:800; letter-spacing:.01em;
+      background: linear-gradient(135deg, var(--brand), var(--brand-600));
+      position:sticky; top:0; z-index:1;
+      border-bottom:1px solid color-mix(in srgb, var(--brand) 35%, var(--border));
+    }
+    .data-table thead th:first-child{ border-top-left-radius:10px; }
+    .data-table thead th:last-child{ border-top-right-radius:10px; }
+
+    /* 본문: 브랜드 소프트 톤으로 은은한 줄무늬 + hover */
+    .data-table td{
+      padding:10px 14px; border-top:1px solid var(--border); color:var(--text);
+    }
+    .data-table tbody tr:nth-child(even) td{
+      background: color-mix(in srgb, var(--brand-soft) 65%, transparent);
+    }
+    .data-table tbody tr:hover td{
+      background: color-mix(in srgb, var(--brand-soft) 85%, transparent);
+    }
+
+    /* 다크모드 미세 조정 */
+    @media (prefers-color-scheme: dark){
+      .data-table td{ border-top-color:#1f2a44; }
+      .data-table tbody tr:nth-child(even) td{
+        background: color-mix(in srgb, var(--brand-soft) 45%, transparent);
+      }
+      .data-table tbody tr:hover td{
+        background: color-mix(in srgb, var(--brand-soft) 65%, transparent);
+      }
+    }
+
+    /* (선택) 인쇄 시 가독성 ↑ */
+    @media print{
+      .data-table thead th{
+        background:#fff !important; color:#111827 !important; border-bottom:1px solid #bbb !important;
+      }
+      .data-table tbody tr:nth-child(even) td,
+      .data-table tbody tr:hover td{ background:#fff !important; }
+    }
+    /* Readability tweaks */
+    .prose{ max-width:68ch; font-size:15.5px; line-height:1.75; }
+    .prose p{ margin:8px 0 0; }
+    .lead{ font-weight:700; color:var(--text); }
+
+    .kpis{ display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; }
+    .kpi{
+      padding:6px 10px; border-radius:999px; font-size:12.5px; font-weight:700;
+      background:var(--brand-soft); color:var(--brand-600); border:1px solid var(--border);
+    }
+
+    .list-tight{ margin:6px 0 0 18px; }
+    .list-tight li{ margin:4px 0; }
+
+    details summary{
+      cursor:pointer; font-weight:700; color:var(--brand); padding:8px 0; list-style:none;
+    }
+    details[open]{ border-top:1px dashed var(--border); margin-top:10px; padding-top:10px; }
+    /* Award highlight card */
+    .card.award{ position:relative; overflow:hidden; padding:22px 20px 18px; }
+    .card.award::after{
+      content:""; position:absolute; left:0; top:0; bottom:0; width:6px;
+      background: linear-gradient(180deg, var(--brand), #7c3aed);
+    }
+    .card.award::before{
+      content:""; position:absolute; inset:-20% -10% auto -30%;
+      height:180px; border-radius:50%;
+      background: radial-gradient(60% 60% at 20% 50%,
+        color-mix(in srgb, var(--brand) 18%, transparent) 0%,
+        transparent 70%);
+      pointer-events:none;
+    }
+
+    .award-head{ display:flex; justify-content:space-between; align-items:baseline; gap:12px; }
+    .award-title{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+    .badge-award{
+      display:inline-flex; align-items:center; gap:6px;
+      padding:6px 10px; border-radius:999px; font-size:12.5px; font-weight:800;
+      color:#fff; background: linear-gradient(135deg, var(--brand), var(--brand-600));
+      box-shadow: var(--shadow);
+    }
+    .badge-award .emoji{ font-size:14px; line-height:1; }
+
+    .pill{
+      display:inline-flex; align-items:center; gap:6px;
+      padding:4px 10px; border-radius:999px; font-size:12.5px; font-weight:700;
+      background: var(--brand-soft); color: var(--brand-600);
+      border:1px solid color-mix(in srgb, var(--brand) 35%, var(--border));
+      white-space:nowrap;
+    }
+    .meta-chips{ display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; }
+
+    .checklist{ margin:10px 0 0; padding:0; list-style:none; }
+    .checklist li{ position:relative; padding-left:20px; margin:6px 0; color:var(--subtext); }
+    .checklist li::before{
+      content:"✓"; position:absolute; left:0; top:0; font-weight:900; color:var(--brand-600);
+    }
+    /* === Highlighted Achievement Card (award 스타일 재사용) === */
+    .card.highlight{ position:relative; overflow:hidden; padding:22px 20px 18px; }
+    .card.highlight::after{
+      content:""; position:absolute; left:0; top:0; bottom:0; width:6px;
+      background: linear-gradient(180deg, var(--brand), #7c3aed);
+    }
+    .card.highlight::before{
+      content:""; position:absolute; inset:-20% -10% auto -30%;
+      height:180px; border-radius:50%;
+      background: radial-gradient(60% 60% at 20% 50%,
+        color-mix(in srgb, var(--brand) 18%, transparent) 0%,
+        transparent 70%);
+      pointer-events:none;
+    }
+
+    /* 헤더/타이틀 라인 (award와 동일 패턴) */
+    .award-head, .achv-head{ display:flex; justify-content:space-between; align-items:baseline; gap:12px; }
+    .award-title, .achv-title{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+
+    /* 배지 (취약점 보고용) */
+    .badge-achv{
+      display:inline-flex; align-items:center; gap:6px;
+      padding:6px 10px; border-radius:999px; font-size:12.5px; font-weight:800;
+      color:#fff; background: linear-gradient(135deg, var(--brand), var(--brand-600));
+      box-shadow: var(--shadow);
+    }
+    .badge-achv .emoji{ font-size:14px; line-height:1; }
+
+    /* 체크리스트 (없으면 추가) */
+    .checklist{ margin:10px 0 0; padding:0; list-style:none; }
+    .checklist li{ position:relative; padding-left:20px; margin:6px 0; color:var(--subtext); }
+    .checklist li::before{
+      content:"✓"; position:absolute; left:0; top:0; font-weight:900; color:var(--brand-600);
+    }
+    .project-cover-wrap.portrait{
+      aspect-ratio: auto;           /* 16:9 강제 해제 */
+    }
+    .project-cover-wrap.portrait .project-cover{
+      width: 100%;
+      height: auto;                  /* 이미지 고유 비율 유지 */
+      object-fit: contain;           /* 전부 보이도록 */
+      background: var(--card);       /* 여백 색 */
+    }
+
+    /* (선택) 두 장을 나란히 배치하고 싶을 때 */
+    .media-row{
+      display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+    }
+    @media (max-width: 680px){
+      .media-row{ grid-template-columns: 1fr; }
+    }
+    #achievements .achv-grid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:18px;
+    }
+    /* 모바일에서는 1열 */
+    @media (max-width: 860px){
+      #achievements .achv-grid{ grid-template-columns: 1fr; }
+    }
+    /* 특정 카드를 두 칸(가로 전체) 쓰고 싶을 때 */
+    #achievements .achv-grid .span-2{ grid-column: 1 / -1; }
+    /* 읽기 쉬운 링크 카드 */
+
+    .link-card{
+      display:flex; align-items:center; gap:12px;
+      padding:12px 14px; border:1px solid var(--border); border-radius:12px;
+      background: var(--card); box-shadow: var(--shadow);
+      text-decoration:none; color: var(--text);
+    }
+    .link-card:hover{
+      border-color: color-mix(in srgb, var(--brand) 35%, var(--border));
+      background: color-mix(in srgb, var(--brand-soft) 60%, transparent);
+    }
+    .link-card .ico{ width:18px; height:18px; }
+    .link-card .meta{ display:flex; flex-direction:column; line-height:1.25; }
+    .link-card .title{ font-weight:700; }
+    .link-card .host{ font-size:12px; color: var(--muted); }
+    .brand-tistory{ color:#ff5a4a; }
+    #achievements .media-row.no-letterbox .project-cover-wrap{
+      aspect-ratio: auto;
+      height: var(--h, 320px); /* 여기 숫자로 통일 높이 조절 */
+      background: var(--card); /* 다크/라이트 일치 */
+    }
+    #achievements .media-row.no-letterbox .project-cover{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;       /* 여백 제거, 가장자리를 살짝 크롭 */
+      object-position: center;
+    }
+    /* Education 섹션 전용 3열 그리드 */
+    #education .edu-grid{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap:24px;
+    }
+    /* 화면 줄어들면 2열 → 1열로 */
+    @media (max-width: 1024px){
+      #education .edu-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 680px){
+      #education .edu-grid{ grid-template-columns: 1fr; }
+    }
+    /* === Activities - Timeline Style === */
+    .activity-card .timeline{ position:relative; margin-top:10px; }
+    .activity-card .timeline::before{
+      content:""; position:absolute; left:10px; top:0; bottom:0; width:2px;
+      background: linear-gradient(180deg, var(--border), color-mix(in srgb, var(--brand) 25%, var(--border)));
+      border-radius:2px;
+    }
+    .activity-card .entry{ position:relative; padding:10px 0 12px 28px; border-bottom:0; }
+    .activity-card .entry::before{
+      content:""; position:absolute; left:4px; top:18px; width:12px; height:12px; border-radius:50%;
+      background:#fff; box-shadow:0 0 0 2px color-mix(in srgb, var(--brand) 50%, var(--border)) inset;
+    }
+    .activity-card .entry-title{ font-weight:700; }
+    .activity-card .entry-meta{ color:var(--muted); font-size:12.5px; display:flex; gap:8px; flex-wrap:wrap; }
+    .activity-card .bullets{ margin:6px 0 0 0; padding-left:0; list-style:none; color:var(--subtext); }
+    .activity-card .bullets li{ margin:3px 0; }
+
+    /* small link chip */
+    .link-chip{
+      display:inline-flex; align-items:center; gap:6px;
+      padding:4px 8px; border-radius:999px; border:1px solid var(--border);
+      font-size:12.5px; background: color-mix(in srgb, var(--brand-soft) 75%, transparent);
+      color:var(--text);
+    }
+    .link-chip .ico{ width:14px; height:14px; display:inline-block; }
+
+    /* rank pills */
+    .pill.rank-win{ background:linear-gradient(135deg,#f59e0b,#facc15); color:#111; border:none; }
+    .pill.rank-top{ background:linear-gradient(135deg,#60a5fa,#93c5fd); color:#111; border:none; }
+    /* meta-link 아이콘 크기 통일 (혹시 안 맞는 곳 대비) */
+    .meta-link .ico{ width:14px; height:14px; display:inline-block; vertical-align:-2px; }
+    /* === Link-chip icons with white circular background === */
+    .link-chip{
+      position: relative;
+      padding-left: 36px; /* 아이콘 자리 조금 더 확보 */
+    }
+    .link-chip::before{
+      content:"";
+      position:absolute; left:10px; top:50%; transform:translateY(-50%);
+      width:20px; height:20px; border-radius:50%;
+      background-color:#fff;                 /* 흰 원 */
+      box-shadow: 0 0 0 1px var(--border) inset, 0 1px 2px rgba(0,0,0,.08);
+      background-repeat:no-repeat;
+      background-position:center;
+      background-size: 12px 12px;            /* 원 안의 아이콘 크기 */
+    }
+
+    /* 도메인별 아이콘 (흰 원 위에 표시) */
+    .link-chip[href*="github.com"]::before{
+      background-image: url('https://cdn.simpleicons.org/github');
+    }
+    .link-chip[href*="notion.so"]::before,
+    .link-chip[href*="notion.site"]::before{
+      background-image: url('https://cdn.simpleicons.org/notion');
+    }
+    .link-chip[href*="tistory.com"]::before{
+      background-image: url('https://cdn.simpleicons.org/tistory/EA5220');
+    }
+
+    /* 중복 아이콘 숨김 (HTML 안에 <img class="ico">가 있을 때) */
+    .link-chip[href*="github.com"] .ico,
+    .link-chip[href*="notion.so"] .ico,
+    .link-chip[href*="notion.site"] .ico,
+    .link-chip[href*="tistory.com"] .ico{
+      display:none;
+    }
+    /* 설명 bullets 기본 간격 */
+    .activity-card .entry .bullets{
+      margin:8px 0 0 18px;   /* 설명은 일반 불릿처럼 왼쪽 들여쓰기 */
+      color:var(--subtext);
+    }
+
+    /* 링크칩 줄: 설명 '밑에' 별도 블록으로 분리 */
+    .activity-card .entry .bullets.link-row{
+      margin:10px 0 0;       /* 설명과 살짝 간격 */
+      padding-left:0;        /* 불릿 점 제거 */
+      list-style:none;
+      display:flex; flex-wrap:wrap; gap:8px;
+      justify-content:flex-start;    /* ← 왼쪽 정렬 */
+      border-top:1px dashed var(--border);
+      padding-top:8px;
+    }
+
+    /* 칩(기존 규칙 유지, 필요시 더 콤팩트) */
+    .link-chip{
+      padding:4px 10px 4px 36px;     /* 흰 원 + 아이콘 자리 */
+      font-size:12.5px; line-height:1.2;
+    }
+
+    /* 흰 원 + 도메인 아이콘 (이미 추가했던 규칙 그대로 사용) */
+    .link-chip::before{
+      width:20px; height:20px; border-radius:50%;
+      background-color:#fff;
+      box-shadow:0 0 0 1px var(--border) inset, 0 1px 2px rgba(0,0,0,.08);
+      background-repeat:no-repeat; background-position:center; background-size:12px 12px;
+      left:10px; top:50%; transform:translateY(-50%); position:absolute; content:"";
+    }
+    /* 도메인별 아이콘 */
+    .link-chip[href*="github.com"]::before{ background-image:url('https://cdn.simpleicons.org/github'); }
+    .link-chip[href*="notion.so"]::before,
+    .link-chip[href*="notion.site"]::before{ background-image:url('https://cdn.simpleicons.org/notion'); }
+    .link-chip[href*="tistory.com"]::before{ background-image:url('https://cdn.simpleicons.org/tistory/EA5220'); }
+
+    /* HTML 안의 <img class="ico">가 있으면 중복 숨김 */
+    .link-chip[href*="github.com"] .ico,
+    .link-chip[href*="notion.so"] .ico,
+    .link-chip[href*="notion.site"] .ico,
+    .link-chip[href*="tistory.com"] .ico{ display:none; }
+    /* MSG CTF 갤러리: 두 장을 같은 높이로 */
+    .media-grid{
+      display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;
+    }
+    .media-grid .frame{
+      --media-h: 320px;                /* 필요하면 높이만 바꿔도 됨 */
+      position:relative; height:var(--media-h);
+      border:1px solid var(--border); border-radius:10px; overflow:hidden;
+      background: color-mix(in srgb, var(--brand-soft) 70%, transparent);
+      box-shadow: var(--shadow);
+    }
+    .media-grid .frame img{
+      width:100%; height:100%; display:block; object-fit:cover;
+    }
+    /* 세로 인증샷 등 비율 유지하고 싶을 때 .contain 추가 */
+    .media-grid .frame.contain img{ object-fit:contain; }
+
+    /* 좌측 상단 라벨(선택) */
+    .media-grid .frame::after{
+      content: attr(data-label);
+      position:absolute; left:10px; top:10px;
+      font-size:11.5px; font-weight:800; letter-spacing:.01em;
+      color: var(--brand-600); background: var(--brand-soft);
+      border:1px solid color-mix(in srgb, var(--brand) 35%, var(--border));
+      padding:3px 8px; border-radius:999px;
+    }
+
+    /* 카드 여백·구분선 살짝 보강 */
+    .card.highlight .prose + .meta-chips{ margin-top:8px; }
+    .card.highlight .bullets{ margin-top:8px; }
+
+    /* KPI 칩 더 콤팩트 */
+    .meta-chips .pill{ padding:4px 10px; font-weight:800; }
+
+    /* 작은 화면에서 한 줄로 */
+    @media (max-width: 680px){
+      .media-grid{ grid-template-columns:1fr; }
+    }
+    #achievements .achv-grid .span-2 .prose{ max-width: none; }
+    /* --- MSG CTF 컴팩트 카드 --- */
+    .card.compact{ padding:20px; }
+    .card.compact .content-grid{
+      display:grid; grid-template-columns: 1.25fr 1fr; gap:16px; align-items:start;
+    }
+    @media (max-width: 860px){
+      .card.compact .content-grid{ grid-template-columns:1fr; }
+    }
+
+    /* span-2 카드에서는 본문 폭 제한 해제 */
+    #achievements .achv-grid .span-2 .prose{ max-width:none; }
+
+    /* 요약 문장 */
+    .card.compact .prose{ margin-top:4px; }
+    .card.compact .prose .lead{ margin:0; }
+    .card.compact .prose .sub{ margin:6px 0 0; color:var(--subtext); font-size:13.5px; }
+
+    /* 핵심 팩트 바(작은 칩) */
+    .factbar{ display:flex; flex-wrap:wrap; gap:6px; margin:8px 0 2px; }
+    .fact{
+      display:inline-flex; align-items:center; gap:6px;
+      padding:4px 8px; border-radius:999px; font-size:12px; font-weight:800;
+      background: var(--brand-soft); color: var(--brand-600);
+      border:1px solid color-mix(in srgb, var(--brand) 35%, var(--border));
+    }
+
+    /* 참고 메모(작게, 흐리게) */
+    .note{ margin-top:6px; font-size:12.5px; color:var(--muted); }
+
+    /* 링크칩을 더 촘촘하게 */
+    .link-row.dense{ display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; }
+    .link-row.dense .link-chip{ padding:6px 10px; font-size:12.5px; }
+
+    /* 오른쪽 갤러리(두 장 같은 높이) */
+    .card.compact .media-grid{ display:grid; grid-template-columns:1fr; gap:10px; }
+    .card.compact .media-grid .frame{
+      --media-h: 260px; /* 필요하면 높이만 조절 */
+      position:relative; height:var(--media-h);
+      border:1px solid var(--border); border-radius:10px; overflow:hidden;
+      background: color-mix(in srgb, var(--brand-soft) 70%, transparent);
+      box-shadow: var(--shadow);
+    }
+    .card.compact .media-grid .frame img{
+      width:100%; height:100%; display:block; object-fit:cover;
+    }
+    .card.compact .media-grid .frame.contain img{ object-fit:contain; }
+    .card.compact .media-grid .frame::after{
+      content: attr(data-label);
+      position:absolute; left:10px; top:10px; font-size:11.5px; font-weight:800;
+      color: var(--brand-600); background: var(--brand-soft);
+      border:1px solid color-mix(in srgb, var(--brand) 35%, var(--border));
+      padding:3px 8px; border-radius:999px;
+    }
+    /* === MSG CTF 갤러리: 3열 + 겹침/잘림 방지 === */
+    .media-grid{
+      display: grid !important;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 5px;
+      align-items: stretch;
+    }
+    @media (max-width: 860px){ .media-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); } }
+    @media (max-width: 560px){ .media-grid{ grid-template-columns: 1fr; } }
+
+    /* 각 프레임: 고정 높이 박스 안에 이미지를 'contain'으로 맞춤 */
+    .frame{
+      position: relative !important;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      height: var(--h, 260px);              /* 필요시 부모나 개별 figure에서 --h로 높이 조절 */
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: color-mix(in srgb, var(--brand-soft) 85%, transparent);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      float: none;                          /* 혹시 남아있을 float 제거 */
+    }
+
+    /* 이미지가 겹치거나 늘어나지 않게 강제 */
+    .frame img{
+      position: relative !important;
+      display: block !important;
+      width: auto !important;
+      height: auto !important;
+      max-width: 100% !important;
+      max-height: 100% !important;
+      object-fit: contain !important;       /* 잘리지 않게 전체 표시 */
+      object-position: center;
+    }
+
+    /* 라벨 배지(선택) */
+    .frame::after{
+      content: attr(data-label);
+      position: absolute; left: 10px; top: 10px;
+      font-size: 12px; font-weight: 800;
+      color: var(--brand-600);
+      background: color-mix(in srgb, var(--brand-soft) 90%, transparent);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 2px 8px;
+    }
+
+    /* 필요 시 특정 이미지만 '가득 채우기'로 바꾸고 싶을 때 사용 */
+    .frame.cover img{
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;         /* 이 경우 일부가 잘릴 수 있음 */
+    }
+    /* === MSG CTF 갤러리: Compact 버전 === */
+    .media-grid{ gap: var(--gap, 14px); }         /* gap을 변수로 제어 */
+    .media-grid.compact{
+      gap: var(--gap, 8px);
+      margin: 6px 0 10px;                         /* 위아래 여백 축소 */
+    }
+    .media-grid .frame{ margin: 0 !important; }   /* figure 기본 마진 제거 */
+
+    .media-grid.compact .frame{
+      height: var(--h, 220px);                    /* 낮은 카드 높이 */
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.18);     /* 그림자도 살짝 줄임 */
+    }
+    .media-grid.compact .frame::after{
+      font-size: 11px;                            /* 라벨 배지 작게 */
+      padding: 1px 7px;
+      left: 8px; top: 8px;
+    }
+    /* link-chip의 흰 원 안에 Discord 로고 넣기 */
+    .link-chip[href*="discord.gg"]::before,
+    .link-chip[href*="discord.com"]::before{
+      background-image: url('https://cdn.simpleicons.org/discord/5865F2');
+    }
+
+    /* (선택) HTML에 <img class="ico">를 넣었다면 중복 아이콘 숨김 */
+    .link-chip[href*="discord.gg"] .ico,
+    .link-chip[href*="discord.com"] .ico{
+      display: none;
+    }
+    /* --- Live CTA (projects) --- */
+    .live-cta{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      margin-top:6px; padding:10px 12px; border:1px dashed var(--border); border-radius:12px;
+      background: linear-gradient(90deg, color-mix(in srgb, var(--brand-soft) 70%, transparent), transparent);
+    }
+    .btn.live{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 14px; border-radius:999px; font-weight:800;
+      background: var(--brand); color:#fff; border:1px solid var(--brand);
+      box-shadow: 0 8px 18px rgba(99,102,241,.25);
+    }
+    .btn.live:hover{ background: var(--brand-600); border-color: var(--brand-600); }
+
+    .ping-dot{
+      width:8px; height:8px; border-radius:50%; background:#22c55e;
+      box-shadow: 0 0 0 0 rgba(34,197,94,.6);
+      animation: ping 1.6s infinite;
+    }
+    @keyframes ping{
+      0%   { box-shadow:0 0 0 0 rgba(34,197,94,.55); }
+      70%  { box-shadow:0 0 0 10px rgba(34,197,94,0); }
+      100% { box-shadow:0 0 0 0 rgba(34,197,94,0); }
+    }
+
+    .domain{
+      display:flex; align-items:center; gap:6px;
+      color:var(--muted); font-size:12.5px; white-space:nowrap;
+    }
+    .domain .ico{ width:14px; height:14px; }
+
+    /* 커버 호버 시 우하단 "방문" 버튼 */
+    .project-cover-wrap{ position:relative; }        /* 호버 CTA 위치 기준 */
+    .cover-visit{
+      position:absolute; right:10px; bottom:10px;
+      padding:6px 10px; border-radius:8px; font-weight:700; font-size:12.5px;
+      background: var(--brand); color:#fff; border:1px solid var(--brand);
+      opacity:0; transform: translateY(6px); transition: .2s ease;
+    }
+    .project-cover-wrap:hover .cover-visit{ opacity:1; transform: translateY(0); }
+    /* --- Compact org box (icons removed) --- */
+    .org-box.slim{
+      margin-top:10px;
+      padding:10px 12px;
+      border:1px dashed var(--border);
+      border-radius:10px;
+      background: color-mix(in srgb, var(--brand-soft) 50%, transparent);
+    }
+    .org-box.slim .org-row{
+      display:flex; gap:10px; align-items:center;
+      padding:6px 0; border-top:1px dashed var(--border);
+    }
+    .org-box.slim .org-row:first-child{ border-top:0; }
+
+    .org-box.slim .org-label{
+      flex:0 0 auto;
+      padding:3px 8px;
+      border-radius:999px;
+      font-size:12px; font-weight:800;
+      color:var(--brand-600);
+      background: var(--brand-soft);
+      border:1px solid color-mix(in srgb, var(--brand) 35%, var(--border));
+      white-space:nowrap;
+    }
+    .org-box.slim .org-label .date{
+      font-weight:700; color:var(--muted); margin-left:6px;
+    }
+
+    .org-box.slim .org-list{
+      display:flex; flex-wrap:wrap; gap:6px;
+    }
+
+    /* thin chips */
+    .org-box.slim .org-chip{
+      display:inline-flex; align-items:center;
+      padding:3px 8px;                       /* 얇게 */
+      border-radius:999px;
+      font-size:12px; line-height:1.1;       /* 조밀하게 */
+      background: transparent;
+      color: var(--text);
+      border:1px solid var(--border);
+      box-shadow:none;
+    }
+    .org-box.slim .org-chip:hover{
+      border-color: color-mix(in srgb, var(--brand) 40%, var(--border));
+      background: color-mix(in srgb, var(--brand-soft) 70%, transparent);
+    }
+    .org-box.slim .org-chip.sponsor{
+      font-weight:700;
+      border-color: color-mix(in srgb, var(--brand) 45%, var(--border));
+    }
+    .project-period .now{
+      padding:2px 6px; border-radius:999px; font-weight:700; font-size:11.5px;
+      background:var(--brand-soft); color:var(--brand-600); border:1px solid var(--border);
+    }
+    #activities .two-col .span-2 { grid-column: 1 / -1; }
+    /* ===== DBREACH: 정보구조 & 가독성 보강 ===== */
+    .dbreach-card{ padding:24px 22px; }
+    .dbreach-card .prose{ max-width:72ch; font-size:16px; line-height:1.8; letter-spacing:.003em; }
+    .dbreach-card .prose p + p{ margin-top:10px; }
+    .dbreach-card code{ background:var(--code-bg); padding:0 .35em; border-radius:6px; font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+
+    /* 소제목 배지 */
+    .dbreach-card .kicker{
+      display:inline-block; font-weight:800; font-size:12.5px; letter-spacing:.04em;
+      text-transform:uppercase; color:var(--brand-600); background:var(--brand-soft);
+      padding:3px 8px; border-radius:999px; border:1px solid color-mix(in srgb, var(--brand) 35%, var(--border));
+    }
+
+    /* 구분선 */
+    .dbreach-card hr.soft{ height:1px; background:var(--border); border:0; margin:12px 0; }
+
+    /* 정의 리스트 (개요/핵심 아이디어) */
+    .deflist{ margin:10px 0 0; display:grid; grid-template-columns: 140px 1fr; gap:8px 14px; }
+    .deflist dt{
+      align-self:start; font-weight:800; font-size:12.5px; color:var(--muted);
+      text-transform:uppercase; letter-spacing:.03em; padding-top:3px;
+    }
+    .deflist dd{ margin:0; }
+
+    /* 단계(step) 목록: 공격 시나리오 */
+    .steps{ counter-reset: step; list-style:none; margin:10px 0 0; padding:0; }
+    .steps li{
+      position:relative; margin:8px 0; padding-left:36px; color:var(--subtext);
+    }
+    .steps li::before{
+      counter-increment: step; content: counter(step);
+      position:absolute; left:0; top:0; width:22px; height:22px; border-radius:50%;
+      display:grid; place-items:center; font-weight:800; font-size:12px;
+      color:var(--brand-600); background:var(--brand-soft);
+      border:1px solid color-mix(in srgb, var(--brand) 35%, var(--border));
+    }
+
+    /* 알고리즘/점수 카드 2열 */
+    .algo-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-top:10px; }
+    @media (max-width: 860px){ .algo-grid{ grid-template-columns:1fr; } }
+    .algo{
+      border:1px solid var(--border); border-radius:12px; background:color-mix(in srgb, var(--brand-soft) 70%, transparent);
+      padding:12px;
+    }
+    .algo h4{ margin:0 0 6px; font-size:13px; font-weight:800; color:var(--muted); letter-spacing:.02em; }
+    .algo .formula{
+      display:inline-block; margin:6px 0; padding:6px 8px; border-radius:8px;
+      border:1px solid var(--border); background:var(--code-bg); font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size:13px;
+    }
+    .algo .hint{ font-size:12.5px; color:var(--muted); margin-top:4px; }
+
+    /* 팩트 바(키워드/메트릭) */
+    .factbar{ display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
+    .fact{
+      display:inline-flex; align-items:center; gap:6px; padding:4px 8px; border-radius:999px; font-size:12px; font-weight:800;
+      background:var(--brand-soft); color:var(--brand-600);
+      border:1px solid color-mix(in srgb, var(--brand) 35%, var(--border));
+    }
+
+    /* 읽기 레이아웃: 본문/사이드 2열 */
+    @media (min-width: 980px){
+      .dbreach-card .reading-grid{
+        display:grid; grid-template-columns: 1.6fr 1fr; gap:24px; align-items:start;
+      }
+      .dbreach-card .reading-grid .aside{
+        position:relative; padding:12px; border:1px solid var(--border); border-radius:12px;
+        background: color-mix(in srgb, var(--brand-soft) 70%, transparent);
+      }
+      .dbreach-card .reading-grid .aside .sec{ margin-bottom:12px; }
+      .dbreach-card .reading-grid .aside .sec h4{
+        margin:0 0 6px; font-size:13px; font-weight:800; color:var(--muted); letter-spacing:.02em;
+      }
+    }
+
+    /* 갤러리(이미지) — compact 유지 */
+    .dbreach-card .media-grid.compact{ --gap:8px; --h:220px; }
+
+    /* span-2 카드에서도 본문 폭 제한 유지 */
+    #achievements .achv-grid .span-2.dbreach-card .prose{ max-width:72ch; }
+    /* DBREACH 카드 하단 키워드 영역 */
+    .dbreach-card .footer-tags{
+      margin-top: 14px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--border);
+    }
+    .dbreach-card .footer-tags .factbar{
+      gap: 8px;
+    }
+    .dbreach-card .footer-tags h4{
+      margin: 0 0 6px;
+      font-size: 13px; font-weight: 800; color: var(--muted); letter-spacing: .02em;
+    }
+    /* DBREACH 카드: 하단 링크 + 키워드 */
+    .dbreach-card .footer-links,
+    .dbreach-card .footer-tags{
+      margin-top: 14px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--border);
+    }
+
+    .dbreach-card .footer-links h4,
+    .dbreach-card .footer-tags h4{
+      margin: 0 0 6px;
+      font-size: 13px; font-weight: 800; color: var(--muted); letter-spacing: .02em;
+    }
+
+    /* 하단 링크칩은 촘촘하게 */
+    .dbreach-card .footer-links .link-row{
+      display:flex; flex-wrap:wrap; gap:8px; margin:8px 0 0; padding-left:0; list-style:none;
+    }
+
+    /* IEEE 도메인 아이콘(흰 원 안) */
+    .link-chip[href*="ieee-security.org"]::before{
+      background-image: url('https://cdn.simpleicons.org/ieee');
+    }
+    /* 기간 배지 업그레이드 */
+    .project-header{ position: relative; }
+    .project-period{
+      display:inline-flex; align-items:center; gap:6px;
+      padding:4px 10px; border-radius:999px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-600));
+      color:#fff; font-weight:800; font-size:12px;
+      border:1px solid color-mix(in srgb, #000 10%, transparent);
+      box-shadow: 0 6px 14px rgba(0,0,0,.12);
+    }
+    .project-period time{ color:#fff; opacity:.95; }
+    .project-period .now{
+      background: rgba(255,255,255,.18);
+      border-color: transparent;
+      color:#fff;
+      padding:2px 8px; border-radius:999px; font-size:11.5px; font-weight:800;
+    }
+    /* === DBREACH: 가독성↑ 컴팩트 모드 === */
+    .dbreach-card.dense{ padding:20px 18px; }
+    .dbreach-card .top-meta{ display:flex; flex-wrap:wrap; gap:6px; margin:6px 0 10px; }
+    .pill.thin{ padding:3px 8px; font-size:12px; line-height:1.15; font-weight:800; }
+
+    .dbreach-card .callout{
+      margin:10px 0; padding:10px 12px; border:1px dashed var(--border);
+      border-radius:10px; background: color-mix(in srgb, var(--brand-soft) 60%, transparent);
+    }
+
+    .dbreach-card .media-grid.compact{ --gap:8px; --h:210px; }
+    @media (min-width: 980px){
+      .dbreach-card .reading-grid{ display:grid; grid-template-columns: 1.5fr 1fr; gap:18px; align-items:start; }
+    }
+
+    /* details(접기/펼치기) */
+    .dbreach-card details summary{
+      cursor:pointer; font-weight:800; color:var(--brand); padding:8px 0; list-style:none;
+    }
+    .dbreach-card details[open]{ border-top:1px dashed var(--border); margin-top:8px; padding-top:8px; }
+
+    /* 알고리즘 미니 카드(간격 압축) */
+    .dbreach-card .algo-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:10px; }
+    @media (max-width: 860px){ .dbreach-card .algo-grid{ grid-template-columns:1fr; } }
+    .dbreach-card .algo{ border:1px solid var(--border); border-radius:10px;
+      background: color-mix(in srgb, var(--brand-soft) 70%, transparent); padding:10px; }
+    .dbreach-card .algo h4{ margin:0 0 4px; font-size:13px; color:var(--muted); }
+    .dbreach-card .algo .formula{ display:inline-block; margin:4px 0; padding:6px 8px; border-radius:8px;
+      border:1px solid var(--border); background:var(--code-bg); font-family:ui-monospace, Menlo, Consolas, monospace; font-size:12.5px; }
+    .dbreach-card .algo .hint{ font-size:12px; color:var(--muted); }
+
+    /* 하단 링크/키워드 영역 */
+    .dbreach-card .footer-links, .dbreach-card .footer-tags{
+      margin-top:12px; padding-top:10px; border-top:1px dashed var(--border);
+    }
+    .dbreach-card .footer-links .link-row{ display:flex; flex-wrap:wrap; gap:8px; margin:6px 0 0; padding-left:0; list-style:none; }
+    .dbreach-card .footer-tags h4{ margin:0 0 6px; font-size:13px; font-weight:800; color:var(--muted); letter-spacing:.02em; }
+    /* DBREACH: 사이드바 없는 단일 컬럼 오버라이드 */
+    .dbreach-card.no-aside .reading-grid{ display:block; }
+    .dbreach-card.no-aside .algo-grid{ margin-top:8px; }
+    /* DBREACH: 사이드바 없는 단일 컬럼 */
+    .dbreach-card.no-aside .reading-grid{ display:block; }
+
+    /* 얇은 칩 */
+    .pill.thin{ padding:3px 8px; font-size:12px; font-weight:800; }
+
+    /* 상단 요약 칩 묶음 */
+    .top-meta{ display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
+
+    /* 초심자용 설명/연구동기 박스 */
+    .callout{
+      margin-top:10px; padding:12px 14px;
+      border:1px solid var(--border); border-radius:12px;
+      background: color-mix(in srgb, var(--brand-soft) 75%, transparent);
+    }
+    .callout .title{
+      font-size:13px; font-weight:900; color:var(--muted); letter-spacing:.02em;
+      margin:0 0 6px;
+    }
+    .callout p{ margin:6px 0 0; color:var(--subtext); }
+    /* === DBREACH (recruiter view) 가독성 보강 === */
+    .dbreach-card.recruiter .reading-grid{ display:block; }  /* 단일 컬럼 */
+
+    .dbreach-card .section-block{
+      margin-top:12px; padding-top:10px; border-top:1px dashed var(--border);
+    }
+    .dbreach-card .section-block:first-of-type{ border-top:0; padding-top:0; }
+
+    .dbreach-card .section-block h4{
+      margin:0 0 6px; font-size:13px; font-weight:900; color:var(--muted); letter-spacing:.02em;
+    }
+
+    .dbreach-card .brief{
+      margin-top:8px; padding:12px 14px; border:1px solid var(--border); border-radius:12px;
+      background: color-mix(in srgb, var(--brand-soft) 75%, transparent);
+    }
+    .dbreach-card .brief p{ margin:6px 0 0; color:var(--subtext); }
+    .dbreach-card .brief .lead{ margin:0; }
+
+    .dbreach-card .kpi-row{ display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
+    .dbreach-card .kpi-row .kpi{ padding:4px 10px; font-size:12.5px; font-weight:800; }
+
+    .dbreach-card .bullet-compact{ margin:6px 0 0 18px; }
+    .dbreach-card .bullet-compact li{ margin:4px 0; color:var(--subtext); }
+
+    .dbreach-card .media-grid.compact{ --gap:8px; --h:210px; margin-top:8px; }
+
+    .dbreach-card .footer-links, .dbreach-card .footer-tags{
+      margin-top:14px; padding-top:10px; border-top:1px dashed var(--border);
+    }
+    .dbreach-card .footer-links h4, .dbreach-card .footer-tags h4{
+      margin:0 0 6px; font-size:13px; font-weight:900; color:var(--muted); letter-spacing:.02em;
+    }
+    .dbreach-card .note-box{margin-top:8px;padding:12px 14px;border:1px solid var(--border);border-radius:12px;background:color-mix(in srgb,var(--brand-soft) 75%,transparent);}
+    /* === DBREACH (recruiter view) — 헤더/타이틀/가독성 === */
+    .dbreach-card.recruiter .dbreach-head{
+      display:flex; justify-content:space-between; align-items:baseline; gap:12px;
+      margin-bottom:10px; padding-bottom:8px; border-bottom:1px dashed var(--border);
+    }
+    .dbreach-card.recruiter .dbreach-title{
+      margin:0; font-weight:900; letter-spacing:-0.015em;
+      font-size:clamp(22px, 3.8vw, 34px); line-height:1.2;
+    }
+    .dbreach-card.recruiter .dbreach-period{
+      color:var(--muted); font-size:13px; white-space:nowrap;
+    }
+    .dbreach-card.recruiter .dbreach-period .now{
+      padding:2px 6px; border-radius:999px; font-weight:700; font-size:11.5px;
+      background:var(--brand-soft); color:var(--brand-600); border:1px solid var(--border);
+    }
+
+    /* 본문 가독성 업 */
+    .dbreach-card.recruiter .brief .lead{ font-size:17px; line-height:1.8; margin:0; }
+    .dbreach-card.recruiter .kpi-row{ display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }
+    .dbreach-card.recruiter .section-block{ margin-top:14px; }
+    .dbreach-card.recruiter h4{ margin:0 0 6px; font-size:16px; font-weight:800; color:var(--text); }
+
+    /* 컴팩트 불릿 */
+    .bullet-compact{ margin:6px 0 0 18px; color:var(--subtext); font-size:14.5px; }
+    .bullet-compact li{ margin:4px 0; }
+
+    /* 설명 박스(이미 쓰고 있다면 중복 무시) */
+    .dbreach-card .note-box{
+      margin-top:8px; padding:12px 14px; border:1px solid var(--border);
+      border-radius:12px; background:color-mix(in srgb,var(--brand-soft) 75%,transparent);
+    }
+
+
+
+    
+
+
   </style>
 
   <!-- Inline SVG symbols (아이콘 내장: GitHub/Globe/Doc/Info) -->
@@ -264,6 +1122,15 @@
       <path d="M12 16v-4" stroke-width="2"/>
       <path d="M12 8h.01" stroke-width="2"/>
     </symbol>
+    <!-- Tistory (4-dot T) -->
+    <symbol id="i-tistory" viewBox="0 0 24 24">
+      <!-- 3개 세로 + 오른쪽 위 1개 -->
+      <circle cx="6" cy="6"  r="3" fill="currentColor"/>
+      <circle cx="6" cy="12" r="3" fill="currentColor"/>
+      <circle cx="6" cy="18" r="3" fill="currentColor"/>
+      <circle cx="12" cy="6" r="3" fill="currentColor"/>
+      <circle cx="1" cy="6" r="3" fill="currentColor"/>
+    </symbol>
   </svg>
 </head>
 <body>
@@ -290,9 +1157,16 @@
     <!-- INTRO -->
     <section id="intro" class="section" aria-labelledby="intro-title">
       <div class="profile-card">
-        <div class="profile-image" aria-hidden="true">JL</div>
-        <h2 class="name">이종윤</h2>
-        <div class="title">White Hat Hacker · 정보보안전문가</div>
+        <img
+          class="profile-image"
+          src="assets/profile.jpg"
+          alt="이종윤 프로필 사진"
+          width="100"
+          height="180"
+          loading="lazy"
+        />
+          <h2 class="name">이종윤</h2>
+        <div class="title">White Hat Hacker <Br> 정보보안전문가</div>
         <div class="basic-info">
           <div>🇰🇷 대한민국</div>
           <div>👨‍💻 25세 (2000년생)</div>
@@ -315,7 +1189,7 @@
 
     <!-- EDUCATION -->
     <section id="education" class="section" aria-labelledby="edu-title">
-      <div class="two-col">
+      <div class="edu-grid">
         <!-- Left: Education -->
         <div>
           <h2 class="section-title" id="edu-title">학력</h2>
@@ -324,7 +1198,7 @@
               <div class="item-head">
                 <div>
                   <div class="item-title">명지대학교</div>
-                  <div class="item-sub">정보통신공학과 4학년 재학</div>
+                  <div class="item-sub">정보통신공학과 4학년 2학기 휴학</div>
                 </div>
                 <div class="item-period">2020 – 현재</div>
               </div>
@@ -340,7 +1214,7 @@
           </div>
         </div>
 
-        <!-- Right: Certifications -->
+        <!-- Middle: Certifications -->
         <div>
           <h2 class="section-title" id="cert-title">자격증</h2>
           <div class="card">
@@ -364,7 +1238,39 @@
             </div>
           </div>
         </div>
-      </div>
+
+        <!-- Right: Security Training -->
+        <div>
+          <h2 class="section-title" id="train-title">보안 교육</h2>
+          <div class="card">
+            <div class="item">
+              <div class="item-head">
+                <div>
+                  <div class="item-title">화이트햇스쿨 3기</div>
+                  <div class="item-sub">KITRI</div>
+                </div>
+                <div class="item-period">
+                  <time datetime="2025-03">2025.03</time> – <time datetime="2025-09">2025.09</time>
+                </div>
+              </div>
+
+              <div class="meta-group">
+                <span class="meta-label">팀 프로젝트</span>
+                <div class="item-sub"><b>조 이름:</b> 가지마 웹바오</div>
+                <div class="item-sub"><b>주제:</b> Semantic Gap 공격에 대한 분류 체계 구축</div>
+              </div>
+
+              <!-- (선택) 트랙/역할 칩 -->
+              <!-- 이미 CSS에 .pill/.meta-chips 스타일 있으니 그대로 재사용 -->
+              <!-- 필요 없으면 이 블록은 지워도 됩니다 -->
+              <div class="meta-chips" style="margin-top:10px;">
+                <span class="pill">웹 보안</span>
+                <span class="pill">취약점 분류</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
     </section>
 
     <!-- EXPERIENCE -->
@@ -374,68 +1280,684 @@
         <div class="item">
           <div class="item-head">
             <div>
-              <div class="item-title">육군 정보보호병</div>
+              <div class="item-title">육군 정보보호병(1년 6개월)</div>
               <div class="item-sub">정보사 보안장비 운용 및 정책 관리</div>
             </div>
             <div class="item-period">2022.04 – 2023.10</div>
           </div>
-          <div class="item-sub">NAC, SIEM, Waterway IPS v3, TKMS 운용 / UTM 정책 관리 / 웹 취약점 보고 / 보안점검회의 운영팀</div>
+          <div class="item-sub">보안장비 운용 / UTM 정책 관리 / 웹 취약점 보고 / 보안장비 관제</div>
+        </div>
+        <h3 class="subsection-title">다룰 수 있는 보안장비</h3>
+        <div class="table-wrap">
+          <table class="data-table">
+            <caption class="skip">보안장비 목록</caption>
+            <thead>
+              <tr>
+                <th scope="col">회사/군</th>
+                <th scope="col">보안장비</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Genian</td><td>NAC</td></tr>
+              <tr><td>Ahnlab</td><td>TrusGuard(UTM)</td></tr>
+              <tr><td>SGA</td><td>RedCastle</td></tr>
+              <tr><td>국군</td><td>TACS(전군보안진단체계)</td></tr>
+              <tr><td>IGLOO</td><td>SPiDERTM(SIEM)</td></tr>
+              <tr><td>SoosanSM</td><td>eWalker SWG, DLP</td></tr>
+              <tr><td>SECUI</td><td>SECUI MF2(UTM)</td></tr>
+              <tr><td>Saferzone</td><td>Saferzone</td></tr>
+              <tr><td>Waterwallsystem</td><td>waterwall</td></tr>
+              <tr><td>파수(FASOO)</td><td>FASOO DRM</td></tr>
+              <tr><td>HAURI</td><td>VIROBOT MANAGER 1.0</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
-
+    <br>
+    <BR>
+    <BR>
     <!-- ACHIEVEMENTS -->
     <section id="achievements" class="section" aria-labelledby="achievements-title">
       <h2 class="section-title" id="achievements-title">주요 성과</h2>
-      <div class="achv-grid">
-        <div class="card"><div class="item"><div class="item-title">정보사 웹사이트 취약점 보고</div><div class="item-sub">XSS·CSRF·File Upload 취약점 2회 발견</div></div></div>
-        <div class="card"><div class="item"><div class="item-title">보안점검회의 운영팀</div><div class="item-sub">DevTools 보안 체크리스트 개발 (2023 2기)</div></div></div>
-      </div>
-    </section>
 
+      <div class="achv-grid">
+        <!-- 정보사 웹사이트 취약점 보고 (하이라이트 카드) -->
+        <article class="card highlight">
+          <header class="achv-head">
+            <div class="achv-title">
+              <span class="badge-achv"><span class="emoji">🔐</span> 취약점 보고</span>
+              <div class="item-title">정보사 웹사이트 취약점 보고</div>
+            </div>
+            <div class="item-period">2022.12 · 2023.02</div>
+          </header>
+          <!-- 커버 이미지 (클릭하면 원본 새 탭) -->
+          <figure class="project-cover-wrap" style="margin-top:10px;">
+            <a href="assets/achv-sec-report.png" target="_blank" rel="noopener">
+              <img class="project-cover"
+                  src="assets/achv-sec-report.png"
+                  alt="정보사 웹사이트 취약점 보고 PoC/스크린샷" />
+            </a>
+          </figure>
+
+          <div class="prose">
+            <p class="lead">XSS, CSRF, SQL Injection 등 다수 취약점 식별 및 신속 보고로 보안 강화.</p>
+            <p>
+              특히 <b>나모 웹 에디터</b>에서 확장자 검증 미흡으로 인한 <b>파일 업로드 우회</b>와
+              <b>파일명 기반 Stored XSS</b>가 가능했고, <b>form action</b> 필터링 미흡으로 <b>CSRF</b>가 발생 가능한 상태였습니다.
+            </p>
+          </div>
+
+          <div class="kpis" aria-label="핵심 요약">
+            <span class="kpi">File Upload 우회</span>
+            <span class="kpi">Stored XSS</span>
+            <span class="kpi">CSRF</span>
+            <span class="kpi">SQLi</span>
+          </div>
+
+          <!-- 불릿은 체크리스트 톤으로 변경 -->
+          <ul class="checklist">
+            <li><b>파일 업로드:</b> 확장자/Content-Type 검증 미흡 → 위험 파일 업로드 가능</li>
+            <li><b>Stored XSS:</b> 파일명 스크립트 주입 취약</li>
+            <li><b>CSRF:</b> 중요 요청에 토큰 부재 및 검증 미흡</li>
+            <li><b>SQLi:</b> 입력 검증·바인딩 미흡 의심 구간 확인</li>
+            <li><b>조치:</b> 재현 절차/가이드 제출, 화이트리스트·콘텐츠타입 검사 강화, CSRF 토큰 도입 권고</li>
+            <li><b>결과:</b> 관련 페이지 보완 및 모니터링 강화</li>
+          </ul>
+        </article>
+        <!-- 정보사령부 보안경연대회 우수상 -->
+        <article class="card award">
+          <header class="award-head">
+            <div class="award-title">
+              <span class="badge-award"><span class="emoji">🏆</span> 우수상(소장급)</span>
+              <div class="item-title">정보사령부 보안경연대회</div>
+            </div>
+            <div class="item-period"><time datetime="2023-07-25">2023.07.25</time></div>
+          </header>
+          <figure class="project-cover-wrap portrait" style="max-width:300px; margin:10px auto;">
+            <a href="assets/award.png" target="_blank" rel="noopener">
+              <img class="project-cover" src="assets/award.png" alt="정보사령부 보안경연대회 우수상 상장" />
+            </a>
+          </figure>
+          <div class="prose">
+            <p class="lead">
+              내부망 보안 강화 아이디어를 <b>도구 + 정책</b>으로 실현하여 우수상 수상.
+              (DevTools 차단 자동화, NAC 정책 적용)
+            </p>
+          </div>
+
+          <!-- 기술/적용 환경 칩 -->
+          <div class="meta-chips" aria-label="핵심 기술">
+            <span class="pill">Python3</span>
+            <span class="pill">BAT 스크립트</span>
+            <span class="pill">Windows Registry</span>
+            <span class="pill">NAC 정책</span>
+            <span class="pill">내부망 적용</span>
+          </div>
+
+          <!-- 수상 기여 내용 (개발 내역 포함) -->
+          <ul class="checklist">
+            <li><b>개발자 도구 삭제 프로그램:</b> Python3 + BAT로 주요 브라우저 DevTools를
+                <b>레지스트리 값 추가</b> 방식으로 제거·차단.</li>
+            <li><b>NAC 정책 개발:</b> DevTools <b>프로세스 실행·설치 여부</b> 및
+                <b>차단 레지스트리 키</b> 존재 점검·차단을 정책화.</li>
+            <li><b>효과:</b> DevTools 사용을 체계적으로 제한, 표준화된 배포·운영으로 내부망 보안 인프라 강화.</li>
+          </ul>
+        </article>
+
+        <!-- SPACE WAR URANUS [WEB] 1등 -->
+        <article class="card award span-2">
+          <header class="award-head">
+            <div class="award-title">
+              <span class="badge-award"><span class="emoji">🥇</span>개인전 1위</span>
+              <div class="item-title">SPACE WAR URANUS — WEB</div>
+            </div>
+            <div class="item-period"><time datetime="2025-05-25">2025.05.25</time></div>
+          </header>
+
+          <!-- 대회 기본 정보 -->
+          <div class="item-sub">주최/주관: HSPACE · 참가자 116명</div>
+
+          <!-- 대회 이미지 + 순위 이미지 (2장) -->
+          <div class="media-row no-letterbox" style="--h: 400px; margin-top:10px;">
+            <figure class="project-cover-wrap portrait">
+              <a href="assets/ctf-uranus-web.png" target="_blank" rel="noopener">
+                <img class="project-cover" src="assets/ctf-uranus-web.png" alt="SPACE WAR URANUS CTF 대회 이미지" />
+              </a>
+            </figure>
+            <figure class="project-cover-wrap portrait">
+              <a href="assets/ctf-uranus-rank.png" target="_blank" rel="noopener">
+                <img class="project-cover" src="assets/ctf-uranus-rank.png" alt="SPACE WAR URANUS CTF Web 부문 개인 순위 1위 캡처" />
+              </a>
+            </figure>
+          </div>
+
+          <div class="prose">
+            <p class="lead">HSPACE 주최 CTF에서 참가자 116명 중 Web 부문 1위 달성.</p>
+            <p>문제 의도 파악과 풀이 전략 수립에 집중하고, 핵심 원리를 정리한 <b>write-up</b>을 작성·공유했습니다.</p>
+          </div>
+
+          <!-- 가독성 좋은 write-up 카드 -->
+          <a class="link-card" href="https://ialleejy.tistory.com/54" target="_blank" rel="noopener" style="margin-top:8px;">
+            <img class="ico" src="https://cdn.simpleicons.org/tistory/EA5220" alt="Tistory" loading="lazy" />
+            <span class="meta">
+              <span class="title">SPACE WAR URANUS — WEB Write-up</span>
+              <span class="host">ialleejy.tistory.com/54</span>
+            </span>
+          </a>
+
+
+          <div class="meta-chips" aria-label="핵심 키워드" style="margin-top:8px;">
+            <span class="pill">CTF</span>
+            <span class="pill">WEB</span>
+            <span class="pill">풀이 전략</span>
+            <span class="pill">Write-up</span>
+          </div>
+
+          <ul class="checklist">
+            <li>문제 의도/요구사항 분석</li>
+            <li>공격 표면·풀이 전략 설계</li>
+            <li>핵심 취약점/원리 설명 중심으로 정리</li>
+            <li>완성된 write-up 공개 및 공유</li>
+          </ul>
+        </article>
+        <!-- MSG CTF 2025 — 공동 주최·운영·문제 출제 -->
+      <article class="card highlight span-2">
+        <header class="achv-head">
+          <div class="achv-title">
+            <span class="badge-achv"><span class="emoji">🛠️</span> 대회 운영·출제</span>
+            <div class="item-title">MSG CTF 2025 — 공동 주최·운영·문제 출제</div>
+          </div>
+          <div class="item-period">
+            <time datetime="2025-03-29">2025.03.29</time>
+          </div>
+        </header>
+
+        <!-- 갤러리: 대회 이미지 + 순위 + 디스코드 공지 -->
+        <!-- 갤러리: 3열 / 높이 280px -->
+        <div class="media-grid compact" style="--gap: 8px; --h: 230px;">
+          <figure class="frame" data-label="대회 이미지">
+            <a href="assets/msg-ctf-hero.png" target="_blank" rel="noopener">
+              <img src="assets/msg-ctf-hero.png" alt="MSG CTF 2025 대회 홍보/진행 이미지">
+            </a>
+          </figure>
+          <figure class="frame" data-label="순위">
+            <a href="assets/msg-ctf-rank.png" target="_blank" rel="noopener">
+              <img src="assets/msg-ctf-rank.png" alt="MSG CTF 2025 순위 캡처">
+            </a>
+          </figure>
+          <figure class="frame" data-label="공지(Discord)">
+            <a href="assets/msg-ctf-discord.png" target="_blank" rel="noopener">
+              <img src="assets/msg-ctf-discord.png" alt="MSG CTF 공지(Discord) 스크린샷">
+            </a>
+          </figure>
+        </div>
+
+
+        <div class="prose">
+          <p class="lead">10:00–22:00 진행, 총 <b>26문제</b> 출제, <b>3개 대학</b> 동아리 <b>65명</b> 참가.</p>
+          <p>사전 <b>부하 테스트</b>로 서버 안정성 검증, 대회 중 <b>디스코드 봇</b>으로 공지/이슈 즉시 대응해 무중단 운영.</p>
+          <p>
+            보안 실력이 부족해 대회 참가를 주저하는 부원들을 위해 신입 부원도 부담 없이 참여할 수 있는
+            <b>입문자 친화</b> 대회로 기획했습니다. 정보보안 인재 양성과 보안 역량 강화, 그리고
+            <b>대학 간 교류·협력</b> 증진을 목표로 했습니다.
+            <br><br>- 25년 11월 8일에 해당 대회를 리뉴얼하고 HSPACE 후원을 받아 오프라인 대회로 개최할 예정입니다.
+          </p>
+        </div>
+
+        <div class="meta-chips" aria-label="핵심 지표">
+          <span class="pill">26문제</span>
+          <span class="pill">참가 65명</span>
+          <span class="pill">3개 동아리</span>
+          <span class="pill">부하 테스트 통과</span>
+          <span class="pill">디스코드 봇 공지</span>
+        </div>
+
+        <div class="org-box slim">
+          <!-- 공동 주최 -->
+          <div class="org-row">
+            <span class="org-label">공동 주최</span>
+            <div class="org-list">
+              <span class="org-chip">명지대 MJSEC</span>
+              <span class="org-chip">세종대 SSG</span>
+              <span class="org-chip">건국대 seKUrity</span>
+            </div>
+          </div>
+
+          <!-- 예정 + 후원 -->
+          <div class="org-row">
+            <span class="org-label">예정 <span class="date"><time datetime="2025-11-08">2025.11.08</time></span></span>
+            <div class="org-list">
+              <span class="org-chip">명지대 MJSEC</span>
+              <span class="org-chip">중앙대 Securious</span>
+              <span class="org-chip">건국대 seKUrity</span>
+              <span class="org-chip">순천향대 Security First</span>
+              <span class="org-chip">상명대 CodeCure</span>
+              <span class="org-chip sponsor">HSPACE</span>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-- 링크칩 -->
+        <ul class="bullets link-row">
+          <li>
+            <a class="link-chip" href="https://github.com/MJSEC-MJU/MSG_CTF_PROBLEM/tree/main/jmt" target="_blank" rel="noopener">
+              <span class="ico-wrap"><img class="ico" src="https://cdn.simpleicons.org/github/000000" alt="GitHub"></span>
+              문제: JWT Signature Confusion
+            </a>
+          </li>
+          <li>
+            <a class="link-chip" href="https://github.com/MJSEC-MJU/MSG_CTF_PROBLEM/tree/main/django_session" target="_blank" rel="noopener">
+              <span class="ico-wrap"><img class="ico" src="https://cdn.simpleicons.org/github/000000" alt="GitHub"></span>
+              문제: Session Hijacking
+            </a>
+          </li>
+          <li>
+            <a class="link-chip" href="https://plucky-ink-23c.notion.site/MSG_CTF_WEB-Project-1770f19c72be802e9358da5441dec400" target="_blank" rel="noopener">
+              <span class="ico-wrap"><img class="ico" src="https://cdn.simpleicons.org/notion/000000" alt="Notion"></span>
+              회의록(노션)
+            </a>
+          </li>
+          <li>
+            <a class="link-chip" href="https://discord.gg/2qRzrXjjxZ" target="_blank" rel="noopener">
+              디스코드 초대 링크
+            </a>
+          </li>
+        </ul>
+
+      </article>
+
+
+
+      </div>
+      
+    </section>
+    <BR>
     <!-- ACTIVITIES -->
     <section id="activities" class="section" aria-labelledby="activities-title">
       <h2 class="section-title" id="activities-title">활동</h2>
       <div class="two-col">
-        <!-- 대회 -->
-        <div class="card">
+        <!-- 학부 연구 (DBREACH) — 보안 리크루터 가독성 버전 (사이드바/자세히보기 없음) -->
+        <div class="card activity-card span-2 dbreach-card recruiter" id="dbreach">
+          <header class="dbreach-head">
+            <h3 class="dbreach-title">학부 연구 — DBREACH 압축 사이드채널</h3>
+            <div class="dbreach-period">
+              <time datetime="2024-12-18">2024.12.18</time> – <span class="now">현재</span>
+            </div>
+          </header>
+
+
+          <!-- Executive summary -->
+          <div class="brief">
+            <p class="lead"> <b>secret–guess 중복</b>이 생기면 <b>압축률이 증가하고 on-disk 크기(Δsize)가 감소합니다.</b>  
+              이 <b>길이 신호</b>만 반복 관찰해 비밀을 단계적으로 추론하는 <b>DBREACH</b> 공격을
+              <b>MariaDB(InnoDB)</b>에서 <b>재현 가능한 Docker</b> 환경과 함께 구현·평가했습니다.</p>
+            <div class="kpi-row">
+              <span class="kpi">Docker 환경 재현</span>
+              <span class="kpi">MariaDB 버전 고정</span>
+              <span class="kpi">K-of-N attack</span>
+              <span class="kpi">노이즈 정규화 스코어링</span>
+              <span class="kpi">싱글톤 재검증</span>
+            </div>
+          </div>
+          <!-- Compression Side Channel 설명 -->
+          <div class="section-block">
+            <h4>Compression Side Channel이란?</h4>
+            <div class="note-box">
+              <p class="lead"><b>정의.</b> 암호화 전에 이뤄지는 <b>압축 단계</b>가 데이터 중복도에 따라
+                <b>출력 길이(크기)</b>를 바꾸는 성질을 이용해, <b>길이만</b> 관찰해도 <b>비밀 일부</b>를 추론하는 부채널입니다.</p>
+              <ul class="bullet-compact">
+                <li><b>핵심:</b> guess가 secret과 <b>겹칠수록</b> 압축률 증가 → <b>네트워크 패킷 길이</b>나 <b>디스크 파일/페이지 크기</b>가 <b>감소</b>.</li>
+                <li><b>관측 지점</b>: InnoDB/WiredTiger <b>on-disk 크기</b>·WAL 바이트 등.</li>
+                <li><b>위협 모델:</b> <b>chosen-plaintext/insert</b> — 공격자가 guess를 시스템에 주입/반영하게 만들고 길이 변화를 반복 관찰.</li>
+                <li><b>왜 위험한가:</b> 애플리케이션 로그 없이도 <b>길이</b>만으로 새며, <b>암호화만</b>으론 방어가 어렵습니다.</li>
+                <li><b>완화:</b> 비밀과 attacker-controlled 입력을 <b>같이 압축 금지</b>, 민감 테이블 <b>페이지 압축 비활성화</b>, <b>고정 길이/패딩</b>, 
+                  flush 스케줄 제어, <b>변화 탐지</b> 기반 모니터링(Δsize threshold) 등.</li>
+              </ul>
+              
+            </div>
+          </div>
+
+
+          <!-- 보안적 의미 -->
+          <div class="section-block">
+            <h4>왜 중요한가 (보안 관점)</h4>
+            <ul class="bullet-compact">
+              <li><b>암호화만으론 부족:</b> 데이터가 암호화돼 있어도 <b>압축 후 길이</b>와 <b>페이지/파일 크기 메타데이터</b>는 <b>측정 가능</b>할 수 있음.</li>
+              <li><b>낮은 가시성:</b> 파일 크기 변화를 악용하므로 <b>애플리케이션 로그</b>만으로는 <b>탐지 난해</b>.</li>
+              <li><b>현실성:</b> 웹의 <i>CRIME/BREACH</i>가 네트워크 길이를 본다면, DBREACH는 <b>저장 매체 길이</b>를 본다는 점이 다름.</li>
+            </ul>
+          </div>
+
+          <!-- 내 역할 -->
+          <div class="section-block">
+            <h4>내 역할</h4>
+            <ul class="checklist">
+              <li><b>공격 루프</b> 자동화: 삽입→동기화→크기 샘플링→<b>정규화/스코어링</b>→후보 업데이트.</li>
+              <li><b>스코어러</b>: Δsize에 <b>Z-정규화/중앙값</b> 적용해 디스크/캐시 노이즈 완화.</li>
+              <li><b>K-of-N attack</b>: 질의 수를 줄이는 구조 설계, <b>싱글톤 재검증</b>으로 오탐 관리.</li>
+              <li><b>실험/배포</b>: 논문 계열 <b>MariaDB 버전 고정</b> + <b>Docker</b> 격리, InnoDB <b>page compression(zlib)</b>·<b>file-per-table</b> 구성.</li>
+              <li><b>문서화</b>: GitHub(<code>compression-side</code>) 및 노션에 실험 절차/결과 정리.</li>
+            </ul>
+          </div>
+
+          <!-- 기술 설계 -->
+          <div class="section-block">
+            <h4>설계 핵심(Tech)</h4>
+            <ul class="bullet-compact">
+              <li><b>신호(Δsize):</b> guess 삽입 전/후 <b>.ibd</b> 크기(또는 페이지 크기) 비교.</li>
+              <li><b>정규화:</b> 라운드별 분포를 기준화(Z, median)하여 <b>환경 노이즈</b>(buffer flush, 배경 작업) 억제.</li>
+              <li><b>선정:</b> Δsize가 큰 상위 <b>k</b>개만 다음 라운드(<b>K-of-N</b>)로 승급, 싱글톤 재검증으로 안정화.</li>
+            </ul>
+          </div>
+
+          <!-- 공격 흐름 (채용자가 빠르게 훑도록 5단계) -->
+          <div class="section-block">
+            <h4>공격 흐름</h4>
+            <ol class="steps">
+              <li><b>Baseline</b> 구성: filler 데이터로 기준 상태 확립.</li>
+              <li><b>Secret</b> 포함 테이블 준비.</li>
+              <li><b>Guess</b> 삽입(순차/그룹) 후 Δsize 측정.</li>
+              <li><b>스코어링</b>·정규화 → 상위 후보 선별.</li>
+              <li><b>수렴</b>: K-of-N 반복·싱글톤 재검증.</li>
+            </ol>
+          </div>
+
+          <!-- 수치식은 간명하게 유지 -->
+          <div class="section-block">
+            <h4>스코어링(간단식)</h4>
+            <div class="algo-grid">
+              <div class="algo">
+                <h4>MariaDB</h4>
+                <div>추가 바이트를 점진 삽입하며 <b>최초로 크기 감소</b>가 관측된 지점을 점수화:</div>
+                <div class="formula">score = 1 / bytesShrunkForCurrentGuess</div>
+                <div class="hint">적은 바이트로 감소 유도될수록 점수↑ → 중복도↑.</div>
+              </div>
+              <div class="algo">
+                <h4>WiredTiger(참고 실험)</h4>
+                <div class="formula">score = 1 - (b_yes - b) / max(b_yes - b_no, 1)</div>
+                <div class="hint">b_no: 무효 기준, b_yes: 이상, b: 현재 측정값.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 갤러리: 실험 컨텍스트 -->
+          <div class="media-grid compact">
+            <figure class="frame" data-label="실험 환경">
+              <img src="assets/dbreach-setup.png" alt="victim 테이블 생성 및 실험 환경 구성">
+            </figure>
+            <figure class="frame" data-label="공격 루프">
+              <img src="assets/dbreach-loop.png" alt="guess·secret 중복도에 따른 압축 크기 신호 추출 루프">
+            </figure>
+            <figure class="frame" data-label="k-of-n 공격 시연">
+              <img src="assets/dbreach-group.png" alt="k-of-n 공격으로 후보 수렴 예시">
+            </figure>
+          </div>
+
+          <!-- 결과 / 한계 · 다음 단계 -->
+          <div class="section-block">
+            <h4>결과</h4>
+            <ul class="checklist">
+              <li><b>재현 성공:</b> 버전 고정 MariaDB + Docker로 <b>안정적 Δsize 신호</b> 확보.</li>
+              <li><b>효율화 구조 검증:</b> <b>K-of-N</b> + 정규화 스코어러로 <b>탐색 효율</b> 향상.</li>
+              <li><b>공유 자산:</b> 누구나 시험 가능한 <b>공개 코드·환경</b> 제공.</li>
+            </ul>
+            <h4 class="subsection-title" style="margin-top:8px;">한계 · 다음</h4>
+            <ul class="bullet-compact">
+              <li><b>노이즈 원인:</b> 파일시스템 캐시/백그라운드 압축 스케줄러 변동.</li>
+              <li><b>가정:</b> guess 삽입 영향권 확보(낮은 권한이라도 쓰기/유도 필요).</li>
+              <li><b>다음:</b> 페이지 패딩·고정 크기 쓰기, Encrypt-then-Compress 구조, <b>변화 탐지 기반</b> 모니터링으로 <b>방어 실험</b> 예정.</li>
+            </ul>
+          </div>
+
+          <!-- 링크 & 키워드 -->
+          <div class="footer-links">
+            <h4>링크</h4>
+            <ul class="link-row">
+              <li><a class="link-chip" href="https://github.com/jongcoding/compression-side" target="_blank" rel="noopener">GitHub: compression-side</a></li>
+              <li><a class="link-chip" href="https://www.notion.so/dbreach-attack-code-19110e1b513780388c51e433398afb36" target="_blank" rel="noopener">노션: Attack Code 정리</a></li>
+              <li><a class="link-chip" href="https://sp2023.ieee-security.org/" target="_blank" rel="noopener">IEEE S&amp;P 2023 (G-DBREACH)</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-tags">
+            <h4>핵심 키워드</h4>
+            <div class="factbar">
+              <span class="fact">Compression Side Channel</span>
+              <span class="fact">DBREACH</span>
+              <span class="fact">Δsize Signal</span>
+              <span class="fact">Noise Normalization</span>
+              <span class="fact">K-of-N Group Test</span>
+              <span class="fact">Dockerized Repro</span>
+              <span class="fact">MariaDB/InnoDB</span>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+        <!-- 대회 (최신순 타임라인) -->
+        <div class="card activity-card">
           <h3 class="subsection-title">대회</h3>
-          <div class="item-sub">2019 – 현재 · CTF 및 각종 보안 경진대회</div>
-          <div class="activity-list">
+          <div class="item-sub">CTF 및 각종 보안 경진대회 (최신순)</div>
+
+          <div class="timeline">
+            <!-- 2025.08.16 -->
             <div class="entry">
-              <div class="entry-title">MJSEC CTF</div>
-              <div class="entry-meta"><span>참가·운영</span><span>명지대학교</span></div>
-              <ul class="bullets"><li>교내 정기 대회 참여 및 운영 지원</li></ul>
+              <div class="entry-title">CCE 2025 — 일반부문 참가</div>
+              <div class="entry-meta">
+                <span><time datetime="2025-08-16">2025.08.16</time></span>
+                <span class="pill">60위</span>
+              </div>
+              <ul class="bullets">
+                <li>
+                  <a class="link-chip" href="https://ialleejy.tistory.com/55" target="_blank" rel="noopener">
+                    <img class="ico" src="https://cdn.simpleicons.org/tistory/EA5220" alt="Tistory"> Write-up
+                  </a>
+                </li>
+              </ul>
             </div>
+
+            <!-- 2025.08.11–13 -->
             <div class="entry">
-              <div class="entry-title">LG U+ Hackthon 2024</div>
-              <div class="entry-meta"><span>참가</span></div>
+              <div class="entry-title">White Hat School CTF 2025 참가</div>
+              <div class="entry-meta">
+                <span><time datetime="2025-08-11">2025.08.11</time>–<time datetime="2025-08-13">08.13</time></span>
+                <span class="pill rank-top">20위</span>
+              </div>
             </div>
+
+            <!-- 2025.05.25 -->
             <div class="entry">
-              <div class="entry-title">BOJ Contest</div>
-              <div class="entry-meta"><span>알고리즘 대회</span><span>등급: GOLD 1</span></div>
+              <div class="entry-title">HSPACE — SPACE WAR URANUS [WEB] 참가</div>
+              <div class="entry-meta">
+                <span><time datetime="2025-05-25">2025.05.25</time></span>
+                <span class="pill rank-win">1위</span>
+                <span class="pill">CTF</span>
+              </div>
+              <ul class="bullets">
+                <li>
+                  <a class="link-chip" href="https://ialleejy.tistory.com/54" target="_blank" rel="noopener">
+                    <img class="ico" src="https://cdn.simpleicons.org/tistory/EA5220" alt="Tistory"> Write-up
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- 2025.04.26 -->
+            <div class="entry">
+              <div class="entry-title">Hackathon Sejong 2025 참가</div>
+              <div class="entry-meta">
+                <span><time datetime="2025-04-26">2025.04.26</time></span>
+                <span class="pill">57위</span>
+              </div>
+              <ul class="bullets">
+                <li>
+                  <a class="link-chip" href="https://ialleejy.tistory.com/49" target="_blank" rel="noopener">
+                    <img class="ico" src="https://cdn.simpleicons.org/tistory/EA5220" alt="Tistory"> Write-up
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- 2024.11.16 -->
+            <div class="entry">
+              <div class="entry-title">LG U+ 2024 SECURITY HACKATHON 참가</div>
+              <div class="entry-meta">
+                <span><time datetime="2024-11-16">2024.11.16</time></span>
+              </div>
+              <ul class="bullets">
+                <li>
+                  <a class="link-chip" href="https://ialleejy.tistory.com/11" target="_blank" rel="noopener">
+                    <img class="ico" src="https://cdn.simpleicons.org/tistory/EA5220" alt="Tistory"> Write-up
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- 2024.10.04 -->
+            <div class="entry">
+              <div class="entry-title">FIESTA 2024 참가</div>
+              <div class="entry-meta">
+                <span><time datetime="2024-10-04">2024.10.04</time></span>
+              </div>
+            </div>
+
+            <!-- 2024.08.03 -->
+            <div class="entry">
+              <div class="entry-title">CCE 2024 — 일반부문 참가</div>
+              <div class="entry-meta">
+                <span><time datetime="2024-08-03">2024.08.03</time></span>
+              </div>
+            </div>
+
+            <!-- 2023.06.10 -->
+            <div class="entry">
+              <div class="entry-title">CCE 2023 — 공공부문 참가</div>
+              <div class="entry-meta">
+                <span><time datetime="2023-06-10">2023.06.10</time></span>
+              </div>
+            </div>
+
+            <!-- 2022.09.24 -->
+            <div class="entry">
+              <div class="entry-title">CCE 2022 — 공공부문 참가</div>
+              <div class="entry-meta">
+                <span><time datetime="2022-09-24">2022.09.24</time></span>
+              </div>
             </div>
           </div>
         </div>
-        <!-- 보안 동아리 활동 -->
-        <div class="card">
+
+        <!-- 보안 동아리 활동 (타임라인) -->
+        <div class="card activity-card">
           <h3 class="subsection-title">보안 동아리 활동</h3>
-          <div class="item-sub">2019 – 현재 · 멘토링 · 운영</div>
-          <div class="activity-list">
+
+          <div class="timeline">
+
+            <!-- NEW: MJSEC 2.5기 멘토 -->
             <div class="entry">
-              <div class="entry-title">MJSEC (명지대 정보보안 동아리)</div>
-              <div class="entry-meta"><span>운영</span><span>2024 – 현재</span></div>
-              <ul class="bullets"><li>교내 CTF 개최/운영, 문제은행 구축</li></ul>
+              <div class="entry-title">MJSEC 2.5기 멘토링</div>
+              <div class="entry-meta">
+                <span>앱해킹(안드로이드) 기초 · DevOps 멘토</span>
+                <span><time datetime="2025-07-01">2025.07.01</time> – <time datetime="2025-08-29">2025.08.29</time></span>
+              </div>
             </div>
+
+            <!-- 기존: MJSEC CTF 2025 -->
             <div class="entry">
-              <div class="entry-title">seKUrify</div>
-              <div class="entry-meta"><span>웹 해킹 멘토</span><span>2019.03 – 2019.09</span></div>
-              <ul class="bullets"><li>웹 해킹 교육 및 멘토링</li></ul>
+              <div class="entry-title">MJSEC CTF 2025</div>
+              <div class="entry-meta"><span>대회 주최·운영·문제 출제</span><span><time datetime="2025-06-17">2025.06.17</time></span></div>
+              <ul class="bullets link-row">
+                <li><a class="link-chip" href="https://github.com/MJSEC-MJU/MJSEC_CTF_2025" target="_blank" rel="noopener">출제 문제</a></li>
+                <li><a class="link-chip" href="https://github.com/MJSEC-MJU/MJSEC_CTF_CHALLENGE" target="_blank" rel="noopener">직접 개발한 대회용 웹</a></li>
+                <li><a class="link-chip" href="https://plucky-ink-23c.notion.site/MJSEC_CTF-2025-21e0f19c72be80cb9d3ec9241321762f?pvs=74" target="_blank" rel="noopener">활동 사진</a></li>
+              </ul>
             </div>
+
+            <!-- NEW: MJSEC 2기 멘토 -->
+            <div class="entry">
+              <div class="entry-title">MJSEC 2기 멘토링</div>
+              <div class="entry-meta">
+                <span>웹해킹 심화 · 포너블 기초 멘토</span>
+                <span><time datetime="2025-03-11">2025.03.11</time> – <time datetime="2025-06-17">2025.06.17</time></span>
+              </div>
+            </div>
+
+            <!-- 기존: MJSEC BOJ CONTEST 2025 -->
+            <div class="entry">
+              <div class="entry-title">MJSEC BOJ CONTEST 2025</div>
+              <div class="entry-meta"><span>대회 주최·운영·문제 출제</span><span><time datetime="2025-06-03">2025.06.03</time></span></div>
+              <ul class="bullets link-row">
+                <li><a class="link-chip" href="https://github.com/MJSEC-MJU/MJSEC_BOJ" target="_blank" rel="noopener">직접 개발한 대회용 웹</a></li>
+                <li><a class="link-chip" href="https://plucky-ink-23c.notion.site/MJSEC-BOJ-CONTEST-2025-21b0f19c72be8111acf8ef4458b67514" target="_blank" rel="noopener">활동 사진(2025)</a></li>
+              </ul>
+            </div>
+
+            <!-- NEW: MJSEC 1.5기 멘토 -->
+            <div class="entry">
+              <div class="entry-title">MJSEC 1.5기 멘토링</div>
+              <div class="entry-meta">
+                <span>포렌식 기초 · 웹해킹 심화 멘토 · 리버싱 스터디</span>
+                <span><time datetime="2025-01-07">2025.01.07</time> – <time datetime="2025-02-28">2025.02.28</time></span>
+              </div>
+            </div>
+
+            <!-- NEW: MJSEC 1기 멘토 -->
+            <div class="entry">
+              <div class="entry-title">MJSEC 1기 멘토링</div>
+              <div class="entry-meta">
+                <span>웹해킹 기초 멘토 · 포너블 스터디</span>
+                <span><time datetime="2024-09-10">2024.09.10</time> – <time datetime="2024-12-17">2024.12.17</time></span>
+              </div>
+            </div>
+
+            <!-- 기존: MJSEC BOJ CONTEST 2024 -->
+            <div class="entry">
+              <div class="entry-title">MJSEC BOJ CONTEST 2024</div>
+              <div class="entry-meta"><span>대회 주최·운영·문제 출제</span><span><time datetime="2024-11-16">2024.11.16</time></span></div>
+              <ul class="bullets link-row">
+                <li><a class="link-chip" href="https://github.com/MJSEC-MJU/MJSEC_BOJ" target="_blank" rel="noopener">직접 개발한 대회용 웹</a></li>
+                <li><a class="link-chip" href="https://plucky-ink-23c.notion.site/MJSEC-BOJ-CONTEST-2024-21b0f19c72be81f5b8f5e5e2efa8662d?source=copy_link" target="_blank" rel="noopener">활동 사진(2024)</a></li>
+              </ul>
+            </div>
+
+            <!-- 기존: MJSEC CTF 2024 -->
+            <div class="entry">
+              <div class="entry-title">MJSEC CTF 2024</div>
+              <div class="entry-meta"><span>대회 주최·운영·문제 출제</span><span><time datetime="2024-10-10">2024.10.10</time></span></div>
+              <ul class="bullets link-row">
+                <li><a class="link-chip" href="https://github.com/MJSEC-MJU/MJSEC_CTF_CHALLENGE" target="_blank" rel="noopener">대회용 웹</a></li>
+                <li><a class="link-chip" href="https://plucky-ink-23c.notion.site/MJSEC-CTF-2024-21b0f19c72be8148b977c04ddca143ed" target="_blank" rel="noopener">활동 사진</a></li>
+              </ul>
+            </div>
+
+            <!-- NEW: 창단 -->
+            <div class="entry">
+              <div class="entry-title">MJSEC 창단 · 초기 회장</div>
+              <div class="entry-meta"><span>명지대학교 유일 보안동아리</span><span><time datetime="2024-07-10">2024.07.10</time></span></div>
+            </div>
+
+            <!-- 기존: seKUrity -->
+            <div class="entry">
+              <div class="entry-title">seKUrity</div>
+              <div class="entry-meta"><span>웹 해킹 수료</span><span>2019.03 – 2019.09</span></div>
+            </div>
+
           </div>
         </div>
-      </div>
+
     </section>
+
+
 
     <!-- PROJECTS (Cards / summary) -->
     <section id="projects" class="section" aria-labelledby="projects-title">
@@ -445,23 +1967,30 @@
         <!-- 1) WEAVE -->
         <article class="card">
           <div class="project-header">
-            <div class="project-title">WEAVE 웹사이트</div>
-          </div>
-          <figure class="project-cover-wrap">
-            <img class="project-cover" src="assets/weave.png" alt="WEAVE 대표 이미지" onerror="this.remove(); this.parentElement.classList.add('placeholder')" />
-          </figure>
-          <p class="project-desc">React 기반 지식 사이트. GCP N2 서버, Nginx 리버스 프록시, GitHub Actions & Docker Compose 운영.</p>
-
-          <div class="meta-group">
-            <span class="meta-label">기술 스택</span>
-            <div class="tags">
-              <span class="tag i-react">React</span>
-              <span class="tag i-nginx">Nginx</span>
-              <span class="tag i-actions">GitHub Actions</span>
-              <span class="tag i-compose">Docker Compose</span>
-              <span class="tag i-gcp">GCP N2</span>
+            <div class="project-title">WHS 3rd Project: WEAVE</div>
+            <div class="project-period">
+              <time datetime="2025-05-03">2025.05.03</time> – <time datetime="2025-08-02">2025.08.02</time>
             </div>
           </div>
+          <figure class="project-cover-wrap">
+            <img class="project-cover" src="assets/weave.png" alt="WEAVE 대표 이미지"
+                onerror="this.remove(); this.parentElement.classList.add('placeholder')" />
+            <!-- 커버 호버 CTA -->
+            <a class="cover-visit" href="https://semanticgap.mjsec.kr" target="_blank" rel="noopener" aria-label="WEAVE 사이트 열기">방문하기 →</a>
+          </figure>
+
+          <!-- Live 강조 영역 -->
+          <div class="live-cta">
+            <a class="btn live" href="https://semanticgap.mjsec.kr" target="_blank" rel="noopener" aria-label="WEAVE 사이트 바로 열기">
+              <span class="ping-dot" aria-hidden="true"></span> 배포중
+            </a>
+            <span class="domain">
+              <svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg>
+              semanticgap.mjsec.kr
+            </span>
+          </div>
+          <p class="project-desc">Web Semantic Gap 취약점의 Root Cause 기반 분류체계 플랫폼</p>
+
 
           <div class="project-meta meta-group">
             <span class="role-badge">역할: 웹사이트 제작</span>
@@ -471,9 +2000,6 @@
               </a>
               <a class="meta-link" href="https://github.com/WHS-webao/WHS-webao.github.io" target="_blank" rel="noopener">
                 <svg class="ico"><use href="#i-github"/></svg> Docs Backup
-              </a>
-              <a class="meta-link" href="https://semanticgap.mjsec.kr" target="_blank" rel="noopener">
-                <svg class="ico"><use href="#i-globe"/></svg> Site
               </a>
               <a class="meta-link" href="#detail-weave">
                 <svg class="ico"><use href="#i-info"/></svg> 상세
@@ -486,25 +2012,15 @@
         <article class="card">
           <div class="project-header">
             <div class="project-title">Reagan — 악성 URL 탐지 (3단계 AI)</div>
+            <div class="project-period">
+              <time datetime="2025-03-03">2025.03.03</time> – <time datetime="2025-06-10">2025.06.10</time>
+            </div>
           </div>
+
           <figure class="project-cover-wrap">
             <img class="project-cover" src="assets/reagan.png" alt="Reagan 대표 이미지" onerror="this.remove(); this.parentElement.classList.add('placeholder')" />
           </figure>
-          <p class="project-desc">Chrome Extension + <b>React</b> + <b>Django REST Framework</b> 3단계 AI 파이프라인. GCP E2 · Nginx · Docker Compose.</p>
-
-          <div class="meta-group">
-            <span class="meta-label">기술 스택</span>
-            <div class="tags">
-              <span class="tag i-react">React</span>
-              <span class="tag i-chromeext">Chrome Extension</span>
-              <span class="tag i-django">Django REST Framework</span>
-              <span class="tag i-compose">Docker Compose</span>
-              <span class="tag i-nginx">Nginx</span>
-              <span class="tag i-gcp">GCP E2</span>
-              <span class="tag i-opencv">YOLOv8(대체)</span>
-              <span class="tag i-selenium">Selenium</span>
-            </div>
-          </div>
+          <p class="project-desc">Reagan은 URL Detection AI, Packet Analysis AI, Break_Captcha_AI로 구성된 3단계 파이프라인을 통해 악성 URL을 자동 식별하는 크롬 익스텐션 프로그램</p>
 
           <div class="project-meta meta-group">
             <span class="role-badge">역할: DevOps · reCAPTCHA 우회 AI</span>
@@ -526,27 +2042,16 @@
         <article class="card">
           <div class="project-header">
             <div class="project-title">MSG CTF 제작</div>
+            <div class="project-period">
+              <time datetime="2025-01-10">2025.01.10</time> – <span class="now">현재</span>
+            </div>
           </div>
+
           <figure class="project-cover-wrap">
             <img class="project-cover" src="assets/msg_ctf.png" alt="MSG CTF 대표 이미지" onerror="this.remove(); this.parentElement.classList.add('placeholder')" />
           </figure>
-          <p class="project-desc">교내 CTF 운영용 서비스. GCP N2(Ubuntu) 서버에서 Nginx · Docker Compose · Actions로 배포. Front는 React+Vite, Back은 Spring Boot, 봇은 Python.</p>
+          <p class="project-desc">CTFd를 사용하지 않고 웹, 디스코드봇을 자체 개발한 MSG CTF 대회 플랫폼. </p>
 
-          <div class="meta-group">
-            <span class="meta-label">기술 스택</span>
-            <div class="tags">
-              <span class="tag i-gcp">GCP N2</span>
-              <span class="tag i-ubuntu">Ubuntu</span>
-              <span class="tag i-nginx">Nginx</span>
-              <span class="tag i-compose">Docker Compose</span>
-              <span class="tag i-actions">GitHub Actions</span>
-              <span class="tag i-react">React</span>
-              <span class="tag i-vite">Vite</span>
-              <span class="tag i-spring">Spring Boot</span>
-              <span class="tag i-java">Java</span>
-              <span class="tag i-python">Python (Bot)</span>
-            </div>
-          </div>
 
           <div class="project-meta meta-group">
             <span class="role-badge">역할: DevOps</span>
@@ -571,31 +2076,33 @@
         <article class="card">
           <div class="project-header">
             <div class="project-title">MJSEC Homepage (LMS Front)</div>
-          </div>
-          <figure class="project-cover-wrap">
-            <img class="project-cover" src="assets/mjsec_hompage.png" alt="MJSEC 홈페이지 대표 이미지" onerror="this.remove(); this.parentElement.classList.add('placeholder')" />
-          </figure>
-          <p class="project-desc">React + Vite 기반 프런트. Ubuntu 서버 포트포워딩 + Nginx 리버스 프록시, GitHub Actions로 자동 빌드·배포.</p>
-
-          <div class="meta-group">
-            <span class="meta-label">기술 스택</span>
-            <div class="tags">
-              <span class="tag i-react">React</span>
-              <span class="tag i-vite">Vite</span>
-              <span class="tag i-nginx">Nginx</span>
-              <span class="tag i-ubuntu">Ubuntu</span>
-              <span class="tag i-actions">GitHub Actions</span>
+            <div class="project-period">
+              <time datetime="2025-07-03">2025.07.03</time> – <span class="now">현재</span>
             </div>
           </div>
+
+          <figure class="project-cover-wrap">
+            <img class="project-cover" src="assets/mjsec_hompage.png" alt="MJSEC 홈페이지 대표 이미지"
+                onerror="this.remove(); this.parentElement.classList.add('placeholder')" />
+            <a class="cover-visit" href="https://mjsec.kr" target="_blank" rel="noopener" aria-label="MJSEC 사이트 열기">방문하기 →</a>
+          </figure>
+
+          <div class="live-cta">
+            <a class="btn live" href="https://mjsec.kr" target="_blank" rel="noopener" aria-label="MJSEC 사이트 바로 열기">
+              <span class="ping-dot" aria-hidden="true"></span> 배포중
+            </a>
+            <span class="domain">
+              <svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg>
+              mjsec.kr
+            </span>
+          </div>
+          <p class="project-desc">React + Vite 기반 프런트. Ubuntu 서버 포트포워딩 + Nginx 리버스 프록시, GitHub Actions로 자동 빌드·배포.</p>
 
           <div class="project-meta meta-group">
             <span class="role-badge">역할: DevOps (CI/CD)</span>
             <span class="meta-links">
               <a class="meta-link" href="https://github.com/MJSEC-MJU/MJSEC_LMS_FRONT" target="_blank" rel="noopener">
                 <svg class="ico"><use href="#i-github"/></svg> GitHub
-              </a>
-              <a class="meta-link" href="https://mjsec.kr" target="_blank" rel="noopener">
-                <svg class="ico"><use href="#i-globe"/></svg> Site
               </a>
               <a class="meta-link" href="#detail-mjsec">
                 <svg class="ico"><use href="#i-info"/></svg> 상세
@@ -608,24 +2115,16 @@
         <article class="card">
           <div class="project-header">
             <div class="project-title">MJSEC BOJ CONTEST</div>
+            <div class="project-period">
+              <time datetime="2024-08-14">2024.08.14</time> – <time datetime="2025-05-29">2025.05.29</time>
+            </div>
           </div>
+
           <figure class="project-cover-wrap">
             <img class="project-cover" src="assets/mjsec_boj.png" alt="MJSEC BOJ CONTEST 대표 이미지" onerror="this.remove(); this.parentElement.classList.add('placeholder')" />
           </figure>
           <p class="project-desc">Solved.ac API를 활용한 백준 코딩대회 플랫폼. GCP E2 + Docker/Compose, Nginx + Gunicorn, Django 기반.</p>
 
-          <div class="meta-group">
-            <span class="meta-label">기술 스택</span>
-            <div class="tags">
-              <span class="tag i-gcp">GCP E2</span>
-              <span class="tag i-nginx">Nginx</span>
-              <span class="tag i-docker">Docker</span>
-              <span class="tag i-compose">Docker Compose</span>
-              <span class="tag i-gunicorn">Gunicorn</span>
-              <span class="tag i-django">Django</span>
-              <span class="tag i-python">Python</span>
-            </div>
-          </div>
 
           <div class="project-meta meta-group">
             <span class="role-badge">역할: 개발</span>
@@ -644,20 +2143,15 @@
         <article class="card">
           <div class="project-header">
             <div class="project-title">DELDEVTOOL</div>
+            <div class="project-period">
+              <time datetime="2022-12-01">2022.12</time> – <time datetime="2023-05-31">2023.05</time>
+            </div>
           </div>
+
           <figure class="project-cover-wrap">
             <img class="project-cover" src="assets/deldevtool.png" alt="DELDEVTOOL 대표 이미지" onerror="this.remove(); this.parentElement.classList.add('placeholder')" />
           </figure>
           <p class="project-desc">Windows에서 브라우저 개발자도구(DevTools)를 레지스트리로 차단/해제하는 로컬 유틸리티. PyInstaller로 단일 exe 배포.</p>
-
-          <div class="meta-group">
-            <span class="meta-label">기술 스택</span>
-            <div class="tags">
-              <span class="tag i-python">Python</span>
-              <span class="tag i-windows">Windows Registry</span>
-              <span class="tag i-python">PyInstaller</span>
-            </div>
-          </div>
 
           <div class="project-meta meta-group">
             <span class="role-badge">역할: 개발</span>
