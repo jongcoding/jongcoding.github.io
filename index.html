@@ -201,7 +201,7 @@
     .item { border-bottom: 1px solid var(--border); padding: 12px 0 18px; }
     .item:last-child { border-bottom: 0; }
     .item-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
-    .item-title { font-weight: 700; }
+    .item-title { font-weight: 700; font-size:18px}
     .item-sub { color: var(--muted); font-size: 13px; }
     .item-period { color: var(--muted); font-size: 13px; white-space: nowrap; }
 
@@ -234,6 +234,7 @@
     .skip:focus { position: static; width: auto; height: auto; padding: 10px; background: var(--brand); color: #fff; border-radius: 8px; }
 
     /* Print */
+
     @media print {
       .nav { position: static !important; background: #fff !important; border: none !important; box-shadow: none !important; }
       .container { padding: 0 10mm !important; }
@@ -242,6 +243,25 @@
       .btn { border: 1px solid #bbb !important; }
       .tag { border: 1px solid #bbb !important; background: #f3f4f6 !important; color: #111827 !important; }
     }
+
+    @media print {
+
+      #project-details{
+        break-before: auto !important;
+        break-after: auto !important;
+        break-inside: auto !important;
+        page-break-before: auto !important;
+        page-break-after: auto !important;
+        page-break-inside: auto !important;
+      }
+
+      #project-details .card,
+      #project-details .profile-card{
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+    }
+
     /* --- 보안장비 표 (brand tone) --- */
     .table-wrap{
       margin-top:12px; border:1px solid var(--border); border-radius:10px;
@@ -300,7 +320,12 @@
       background:var(--brand-soft); color:var(--brand-600); border:1px solid var(--border);
     }
 
-    .list-tight{ margin:6px 0 0 18px; }
+    .list-tight{
+      margin: 6px 0 0;         /* 좌측 18px 여백 제거 */
+      padding-left: 0;         /* 기본 패딩 제거 */
+      text-align: center;      /* 텍스트 가운데 */
+      list-style-position: inside; 
+    }
     .list-tight li{ margin:4px 0; }
 
     details summary{
@@ -326,7 +351,7 @@
     .award-title{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
     .badge-award{
       display:inline-flex; align-items:center; gap:6px;
-      padding:6px 10px; border-radius:999px; font-size:12.5px; font-weight:800;
+      padding:6px 10px; border-radius:999px; font-size:15px; font-weight:800;
       color:#fff; background: linear-gradient(135deg, var(--brand), var(--brand-600));
       box-shadow: var(--shadow);
     }
@@ -368,7 +393,7 @@
     /* 배지 (취약점 보고용) */
     .badge-achv{
       display:inline-flex; align-items:center; gap:6px;
-      padding:6px 10px; border-radius:999px; font-size:12.5px; font-weight:800;
+      padding:6px 10px; border-radius:999px; font-size:15px; font-weight:800;
       color:#fff; background: linear-gradient(135deg, var(--brand), var(--brand-600));
       box-shadow: var(--shadow);
     }
@@ -1240,12 +1265,11 @@
       <a href="#intro">소개</a>
       <a href="#education">학력</a>
       <a href="#skills">기술</a>
-      <a href="#experience">보안 경력</a>
+      <a href="#experience">보안 경험</a>
       <a href="#achievements">성과</a>
       <a href="#activities">활동</a>
       <a href="#projects">프로젝트</a>
       <a href="#project-details">상세</a>
-      <a href="#contact">연락처</a>
       <div class="spacer"></div>
     </div>
   </nav>
@@ -1267,7 +1291,12 @@
         <div class="basic-info">
           <div>🇰🇷 대한민국</div>
           <div>👨‍💻 25세 (2000년생)</div>
-          <div>📏 182cm / 80kg</div>
+            <ul class="list-tight" aria-label="연락처 및 링크">
+              <a class="link-chip" href="mailto:ialleejy@gmail.com">ialleejy@gmail.com</a><br>
+              <a class="link-chip" href="https://github.com/jongcoding" target="_blank" rel="noopener">GitHub: jongcoding</a><br>
+              <a class="link-chip" href="https://ialleejy.tistory.com" target="_blank" rel="noopener">Tistory 블로그</a><br>
+              <span  aria-label="전화번호">📞 010-7997-9935</span></li>
+          </ul>
         </div>
       </div>
       <div class="intro-copy">
@@ -1278,8 +1307,7 @@
           실제 환경에서의 문제 해결 능력을 검증받았습니다.
         </p>
         <div class="cta">
-          <a class="btn primary" href="#projects" aria-label="프로젝트 섹션으로 이동">포트폴리오 보기</a>
-          <a class="btn ghost" href="#contact">연락하기</a>
+          <a class="btn primary" href="#experience" aria-label="프로젝트 섹션으로 이동">포트폴리오 보기</a>
         </div>
       </div>
     </section>
@@ -1369,10 +1397,52 @@
         </div>
 
     </section>
+    <!-- SKILLS (added to match nav) -->
+    <section id="skills" class="section" aria-labelledby="skills-title">
+      <h2 class="section-title" id="skills-title">기술</h2>
+      <div class="tech-matrix">
+        <div class="col">
+          <h5>언어</h5>
+          <div class="tags">
+            <span class="tag i-python">Python</span>
+            <span class="tag">JS/TS</span>
+            <span class="tag i-java">Java</span>
+            <span class="tag">SQL</span>
+          </div>
+        </div>
+        <div class="col">
+          <h5>웹/프레임워크</h5>
+          <div class="tags">
+            <span class="tag i-react">React</span>
+            <span class="tag i-django">Django/DRF</span>
+            <span class="tag i-spring">Spring</span>
+          </div>
+        </div>
+        <div class="col">
+          <h5>DevOps/인프라</h5>
+          <div class="tags">
+            <span class="tag i-nginx">Nginx</span>
+            <span class="tag i-docker">Docker</span>
+            <span class="tag i-compose">Docker Compose</span>
+            <span class="tag i-actions">GitHub Actions</span>
+            <span class="tag i-gcp">GCP</span>
+            <span class="tag i-ubuntu">Ubuntu</span>
+          </div>
+        </div>
+        <div class="col">
+          <h5>DB/캐시</h5>
+          <div class="tags">
+            <span class="tag i-mysql">MySQL/MariaDB</span>
+            <span class="tag i-redis">Redis</span>
+            <span class="tag i-sqlite">SQLite</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- EXPERIENCE -->
     <section id="experience" class="section" aria-labelledby="exp-title">
-      <h2 class="section-title" id="exp-title">보안 경력</h2>
+      <h2 class="section-title" id="exp-title">보안 경험</h2>
       <div class="card">
         <div class="item">
           <div class="item-head">
@@ -1411,9 +1481,7 @@
         </div>
       </div>
     </section>
-    <br>
-    <BR>
-    <BR>
+
     <!-- ACHIEVEMENTS -->
     <section id="achievements" class="section" aria-labelledby="achievements-title">
       <h2 class="section-title" id="achievements-title">주요 성과</h2>
@@ -1671,7 +1739,10 @@
       </div>
       
     </section>
-    <BR>
+    
+
+          
+
     <!-- ACTIVITIES -->
     <section id="activities" class="section" aria-labelledby="activities-title">
       <h2 class="section-title" id="activities-title">활동</h2>
@@ -2265,6 +2336,8 @@
 
       </div>
     </section>
+    <br>
+
 
     <!-- PROJECT DETAILS -->
     <section id="project-details" class="section" aria-labelledby="details-title">
@@ -2402,6 +2475,7 @@
 
 
       <br>
+
       <article class="card" id="detail-reagan">
         <header class="detail-head">
           <h3 class="detail-title">Reagan — 3단계 AI 기반 악성 URL 탐지 — 상세</h3>
@@ -2522,6 +2596,7 @@
       <BR>
 
 
+
       <article class="card" id="detail-msgctf">
         <header class="detail-head">
           <h3 class="detail-title">MSG CTF 제작 — 상세</h3>
@@ -2616,8 +2691,8 @@
 
         
       </article>
+      <BR>
 
-      <br>
       <article class="card" id="detail-mjsec">
         <header class="detail-head">
           <h3 class="detail-title">MJSEC Homepage (LMS Front) — 상세</h3>
@@ -2729,9 +2804,8 @@
 
         
       </article>
+      <BR>
 
-      
-      <br>
       <article class="card" id="detail-mjsecboj">
         <header class="detail-head">
           <h3 class="detail-title">MJSEC BOJ CONTEST — 상세</h3>
@@ -2828,6 +2902,7 @@
 
         
       </article>
+ 
 
       <br>
       <article class="card" id="detail-deldevtool">
@@ -2960,6 +3035,8 @@
 
 
     </section>
+
+</main>
 
     <footer>© <span id="year"></span> Jong-Yun Lee. 모든 권리 보유.</footer>
   </main>

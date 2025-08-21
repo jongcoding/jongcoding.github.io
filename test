@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>이종윤 — 보안 포트폴리오</title>
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1f2937; /* slate-800 */
+      --subtext: #4b5563; /* slate-600 */
+      --muted: #6b7280;  /* slate-500 */
+      --card: #ffffff;
+      --border: #e5e7eb; /* gray-200 */
+      --brand: #6366f1;  /* indigo-500 */
+      --brand-600: #5458ee;
+      --brand-soft: #eef2ff;
+      --tag-bg: #eef2ff;
+      --code-bg: #f8fafc;
+      --shadow: 0 10px 30px rgba(99, 102, 241, 0.10);
+      --radius: 14px;
+      --radius-sm: 10px;
+      --maxw: 1120px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b1020;
+        --text: #e5e7eb;
+        --subtext: #cbd5e1;
+        --muted: #94a3b8;
+        --card: #0f172a;
+        --border: #1f2a44;
+        --brand: #8b8dfb;
+        --brand-600: #9a9cfd;
+        --brand-soft: #11183a;
+        --tag-bg: #141b3a;
+        --code-bg: #0b122b;
+        --shadow: 0 12px 30px rgba(0,0,0,.35);
+      }
+    }
+
+    /* Base */
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", Apple SD Gothic Neo, "Malgun Gothic", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { color: var(--brand-600); }
+
+    /* Layout */
+    .container { max-width: var(--maxw); margin: 0 auto; padding: 28px 20px 80px; }
+    .section { margin: 64px 0; }
+    .section-title {
+      font-size: 28px; font-weight: 800; letter-spacing: -0.015em; margin: 0 0 22px;
+      display: inline-flex; align-items: center; gap: 10px;
+    }
+    .section-title::before {
+      content: ""; width: 8px; height: 22px; border-radius: 6px; background: linear-gradient(135deg, var(--brand), #7c3aed);
+    }
+
+    /* Top Nav */
+    .nav {
+      position: sticky; top: 0; z-index: 50; backdrop-filter: saturate(1.1) blur(6px);
+      background: color-mix(in srgb, var(--bg) 86%, transparent);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner { max-width: var(--maxw); margin: 0 auto; padding: 10px 20px; display: flex; gap: 18px; align-items: center; }
+    .brand { font-weight: 800; letter-spacing: -0.02em; }
+    .spacer { flex: 1; }
+    .nav a { color: var(--subtext); font-size: 14px; padding: 8px 10px; border-radius: 8px; }
+    .nav a:hover, .nav a:focus-visible { background: var(--brand-soft); color: var(--brand-600); outline: none; }
+
+    /* Intro (Hero) */
+    #intro { display: grid; grid-template-columns: 280px 1fr; gap: 40px; align-items: center; }
+    @media (max-width: 860px) { #intro { grid-template-columns: 1fr; text-align: center; } }
+
+    .profile-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 26px; box-shadow: var(--shadow); }
+    .profile-image { width: 180px; height: 180px; margin: 8px auto 18px; border-radius: 999px; display: block; object-fit: cover; object-position: 50% calc(50% + 12px); background: none !important; }
+    .name { font-size: 28px; font-weight: 800; letter-spacing: -0.02em; margin: 0 0 4px; text-align: center; }
+    .title { font-weight: 700; color: var(--brand); text-align: center; margin: 0 0 14px; }
+    .basic-info { display: grid; gap: 6px; color: var(--muted); font-size: 14px; text-align: center; }
+
+    .intro-copy h1 { font-size: clamp(30px, 5vw, 46px); line-height: 1.15; margin: 0 0 12px; letter-spacing: -0.02em; }
+    .intro-copy p { font-size: 18px; color: var(--subtext); margin: 0 0 18px; }
+    .cta { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 18px; border-radius: 10px; font-weight: 600; border: 1px solid var(--border); }
+    .btn.primary { background: var(--brand); border-color: var(--brand); color: #fff; }
+    .btn.primary:hover { background: var(--brand-600); }
+    .btn.ghost { background: color-mix(in srgb, var(--brand-soft) 55%, transparent); color: var(--text); }
+
+    /* Cards & grids */
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 20px; transition: transform .2s ease, box-shadow .2s ease; }
+    .card:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+
+    .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
+    .project-header { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; margin-bottom: 6px; }
+    .project-title { font-weight: 700; }
+    .project-period { font-size: 12px; color: var(--muted); white-space: nowrap; }
+    .project-desc { color: var(--subtext); font-size: 14px; margin: 8px 0 12px; }
+
+    .meta-label { display:block; font-size:12px; color:var(--muted); margin:8px 0 6px; letter-spacing:.02em; }
+    .meta-group { border-top:1px dashed var(--border); padding-top:10px; margin-top:10px; }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag { position: relative; display: inline-flex; align-items: center; padding: 4px 8px 4px 30px; border-radius: 999px; font-size: 11.5px; font-weight: 600; letter-spacing: .02em; background: var(--tag-bg); color: var(--text); border: 1px solid color-mix(in srgb, var(--brand) 18%, var(--border)); line-height: 1.2; }
+    .tag::before{ content:""; position:absolute; left:6px; top:50%; transform:translateY(-50%); width:18px; height:18px; border-radius:50%; background:#fff no-repeat center/14px 14px; box-shadow: 0 0 0 1px var(--border) inset; }
+    @media (prefers-color-scheme: dark){ .tag::before{ background:#fff no-repeat center/14px 14px; box-shadow: 0 0 0 1px rgba(255,255,255,.08) inset; } }
+
+    /* Devicon shortcuts */
+    .i-python::before{ background-image:url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg'); }
+    .i-react::before{ background-image:url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'); }
+    .i-vite::before{ background-image:url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg'); }
+    .i-nginx::before{ background-image:url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg'); }
+    .i-docker::before{ background-image:url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg'); }
+    .i-compose::before{ background-image:url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg'); }
+    .i-actions::before{ background-image:url('https://cdn.simpleicons.org/githubactions'); }
+    .i-gcp::before{ background-image:url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg'); }
+    .i-ubuntu::before{ background-image:url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain.svg'); }
+    .i-spring::before{ background-image:url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg'); }
+    .i-java::before{ background-image:url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg'); }
+    .i-mysql::before{ background-image:url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg'); }
+    .i-redis::before{ background-image:url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg'); }
+    .i-django::before{ background-image:url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg'); }
+    .i-chromeext::before{ background-image:url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlechrome/googlechrome-plain.svg'); }
+    .i-selenium::before{ background-image:url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg'); }
+    .i-opencv::before{ background-image:url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg'); }
+    .i-gunicorn::before{ background-image:url('https://cdn.simpleicons.org/gunicorn'); }
+    .i-sqlite::before{ background-image:url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-plain.svg'); }
+    .i-windows::before{ background-image:url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg'); }
+
+    .project-cover-wrap { aspect-ratio: 16/9; width: 100%; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: #f8fafc; margin: 10px 0 12px; position:relative; }
+    .project-cover { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .project-cover-wrap.placeholder { position: relative; background: linear-gradient(135deg, #f8fafc, #eef2ff); }
+    .project-cover-wrap.placeholder::after { content: '대표 이미지'; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 12px; }
+    @media print { .project-cover-wrap { break-inside: avoid; } }
+
+    .project-meta { display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap; margin:8px 0 0; }
+    .role-badge { background: var(--brand-soft); color: var(--brand-600); border: 1px solid var(--border); padding: 4px 10px; border-radius: 999px; font-size: 12.5px; font-weight: 700; }
+
+    .meta-links { display:flex; gap:8px; flex-wrap:wrap; }
+    .meta-link { display:inline-flex; align-items:center; gap:6px; padding:6px 10px; border-radius:8px; border:1px solid var(--border); color: var(--subtext); font-size:12.5px; }
+    .meta-link:hover { color: var(--brand-600); border-color: color-mix(in srgb, var(--brand) 40%, var(--border)); }
+    .meta-link .ico { width:16px; height:16px; display:inline-block; }
+    @media print { .meta-link::after { content: " (" attr(href) ")"; font-size: 10px; color: #6b7280; } }
+
+    .achv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    @media (max-width: 860px) { .two-col { grid-template-columns: 1fr; } }
+
+    .item { border-bottom: 1px solid var(--border); padding: 12px 0 18px; }
+    .item:last-child { border-bottom: 0; }
+    .item-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+    .item-title { font-weight: 700; font-size:18px }
+    .item-sub { color: var(--muted); font-size: 13px; }
+    .item-period { color: var(--muted); font-size: 13px; white-space: nowrap; }
+
+    .activity-list .entry { border-bottom: 1px solid var(--border); padding: 10px 0; }
+    .activity-list .entry:last-child { border-bottom: 0; }
+    .activity-list .entry-title { font-weight: 700; }
+    .activity-list .entry-meta { color: var(--muted); font-size: 12.5px; display: flex; gap: 10px; flex-wrap: wrap; }
+    .activity-list .bullets { margin: 6px 0 0 16px; }
+    @media print { .activity-list .entry { break-inside: avoid; } }
+
+    .subsection-title { font-size: 18px; font-weight: 700; margin: 6px 0 10px; display: inline-flex; align-items: center; gap: 8px; }
+    .subsection-title::before { content: ""; width: 4px; height: 16px; border-radius: 3px; background: var(--border); }
+    @media print { .subsection-title::before { background: #999; } }
+
+    .tech-matrix { display:grid; grid-template-columns: repeat(4, 1fr); gap:16px; margin-top:8px; }
+    .tech-matrix .col h5 { margin:0 0 6px; font-size:13px; color:var(--muted); }
+    @media (max-width: 860px){ .tech-matrix{ grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 520px){ .tech-matrix{ grid-template-columns: 1fr; } }
+
+    footer { margin-top: 80px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; }
+
+    .skip { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+    .skip:focus { position: static; width: auto; height: auto; padding: 10px; background: var(--brand); color: #fff; border-radius: 8px; }
+
+    @media print {
+      .nav { position: static !important; background: #fff !important; border: none !important; box-shadow: none !important; }
+      .container { padding: 0 10mm !important; }
+      .section { margin: 12mm 0 !important; page-break-before: auto; page-break-after: auto; }
+      .card, .profile-card { break-inside: avoid; box-shadow: none !important; border: 1px solid #ddd !important; }
+      .btn { border: 1px solid #bbb !important; }
+      .tag { border: 1px solid #bbb !important; background: #f3f4f6 !important; color: #111827 !important; }
+    }
+
+    /* --- 표 스타일 --- */
+    .table-wrap{ margin-top:12px; border:1px solid var(--border); border-radius:10px; overflow:auto; background:var(--card); }
+    .data-table{ width:100%; border-collapse:separate; border-spacing:0; font-size:14px; }
+    .data-table thead th{ padding:10px 14px; text-align:left; color:#fff; font-weight:800; letter-spacing:.01em; background: linear-gradient(135deg, var(--brand), var(--brand-600)); position:sticky; top:0; z-index:1; border-bottom:1px solid color-mix(in srgb, var(--brand) 35%, var(--border)); }
+    .data-table thead th:first-child{ border-top-left-radius:10px; }
+    .data-table thead th:last-child{ border-top-right-radius:10px; }
+    .data-table td{ padding:10px 14px; border-top:1px solid var(--border); color:var(--text); }
+    .data-table tbody tr:nth-child(even) td{ background: color-mix(in srgb, var(--brand-soft) 65%, transparent); }
+    .data-table tbody tr:hover td{ background: color-mix(in srgb, var(--brand-soft) 85%, transparent); }
+    @media (prefers-color-scheme: dark){ .data-table td{ border-top-color:#1f2a44; } .data-table tbody tr:nth-child(even) td{ background: color-mix(in srgb, var(--brand-soft) 45%, transparent); } .data-table tbody tr:hover td{ background: color-mix(in srgb, var(--brand-soft) 65%, transparent); } }
+    @media print{ .data-table thead th{ background:#fff !important; color:#111827 !important; border-bottom:1px solid #bbb !important; } .data-table tbody tr:nth-child(even) td, .data-table tbody tr:hover td{ background:#fff !important; } }
+
+    /* prose */
+    .prose{ max-width:68ch; font-size:15.5px; line-height:1.75; }
+    .prose p{ margin:8px 0 0; }
+    .lead{ font-weight:700; color:var(--text); }
+
+    .kpis{ display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; }
+    .kpi{ padding:6px 10px; border-radius:999px; font-size:12.5px; font-weight:700; background:var(--brand-soft); color:var(--brand-600); border:1px solid var(--border); }
+
+    .list-tight{ margin:6px 0 0 18px; }
+    .list-tight li{ margin:4px 0; }
+
+    details summary{ cursor:pointer; font-weight:700; color:var(--brand); padding:8px 0; list-style:none; }
+    details[open]{ border-top:1px dashed var(--border); margin-top:10px; padding-top:10px; }
+
+    /* highlight cards */
+    .card.award,.card.highlight{ position:relative; overflow:hidden; padding:22px 20px 18px; }
+    .card.award::after,.card.highlight::after{ content:""; position:absolute; left:0; top:0; bottom:0; width:6px; background: linear-gradient(180deg, var(--brand), #7c3aed); }
+    .card.award::before,.card.highlight::before{ content:""; position:absolute; inset:-20% -10% auto -30%; height:180px; border-radius:50%; background: radial-gradient(60% 60% at 20% 50%, color-mix(in srgb, var(--brand) 18%, transparent) 0%, transparent 70%); pointer-events:none; }
+
+    .award-head, .achv-head{ display:flex; justify-content:space-between; align-items:baseline; gap:12px; }
+    .award-title, .achv-title{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+
+    .badge-award,.badge-achv{ display:inline-flex; align-items:center; gap:6px; padding:6px 10px; border-radius:999px; font-size:15px; font-weight:800; color:#fff; background: linear-gradient(135deg, var(--brand), var(--brand-600)); box-shadow: var(--shadow); }
+    .badge-award .emoji,.badge-achv .emoji{ font-size:14px; line-height:1; }
+
+    .checklist{ margin:10px 0 0; padding:0; list-style:none; }
+    .checklist li{ position:relative; padding-left:20px; margin:6px 0; color:var(--subtext); }
+    .checklist li::before{ content:"✓"; position:absolute; left:0; top:0; font-weight:900; color:var(--brand-600); }
+
+    .project-cover-wrap.portrait{ aspect-ratio: auto; }
+    .project-cover-wrap.portrait .project-cover{ width: 100%; height: auto; object-fit: contain; background: var(--card); }
+
+    .media-row{ display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    @media (max-width: 680px){ .media-row{ grid-template-columns: 1fr; } }
+
+    #achievements .achv-grid{ display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap:18px; }
+    @media (max-width: 860px){ #achievements .achv-grid{ grid-template-columns: 1fr; } }
+    #achievements .achv-grid .span-2{ grid-column: 1 / -1; }
+
+    .link-card{ display:flex; align-items:center; gap:12px; padding:12px 14px; border:1px solid var(--border); border-radius:12px; background: var(--card); box-shadow: var(--shadow); text-decoration:none; color: var(--text); }
+    .link-card:hover{ border-color: color-mix(in srgb, var(--brand) 35%, var(--border)); background: color-mix(in srgb, var(--brand-soft) 60%, transparent); }
+    .link-card .ico{ width:18px; height:18px; }
+    .link-card .meta{ display:flex; flex-direction:column; line-height:1.25; }
+    .link-card .title{ font-weight:700; }
+    .link-card .host{ font-size:12px; color: var(--muted); }
+
+    .media-grid{ display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; align-items: stretch; }
+    @media (max-width: 860px){ .media-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); } }
+    @media (max-width: 560px){ .media-grid{ grid-template-columns: 1fr; } }
+    .frame{ position: relative; display: flex; align-items: center; justify-content: center; height: var(--h, 260px); border: 1px solid var(--border); border-radius: 12px; background: color-mix(in srgb, var(--brand-soft) 85%, transparent); overflow: hidden; box-shadow: var(--shadow); }
+    .frame img{ display: block; max-width: 100%; max-height: 100%; object-fit: contain; object-position: center; }
+    .frame::after{ content: attr(data-label); position: absolute; left: 10px; top: 10px; font-size: 12px; font-weight: 800; color: var(--brand-600); background: color-mix(in srgb, var(--brand-soft) 90%, transparent); border: 1px solid var(--border); border-radius: 999px; padding: 2px 8px; }
+
+    .media-grid.compact{ gap: 8px; }
+    .media-grid.compact .frame{ --h: 220px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,.18); }
+    .media-grid.compact .frame::after{ font-size: 11px; padding: 1px 7px; left: 8px; top: 8px; }
+
+    /* link-chip with white circular icon bg */
+    .link-chip{ position: relative; display:inline-flex; align-items:center; gap:6px; padding:4px 10px 4px 36px; border-radius:999px; border:1px solid var(--border); font-size:12.5px; background: color-mix(in srgb, var(--brand-soft) 75%, transparent); color:var(--text); line-height:1.2; }
+    .link-chip .ico{ width:14px; height:14px; }
+    .link-chip::before{ content:""; position:absolute; left:10px; top:50%; transform:translateY(-50%); width:20px; height:20px; border-radius:50%; background-color:#fff; box-shadow:0 0 0 1px var(--border) inset, 0 1px 2px rgba(0,0,0,.08); background-repeat:no-repeat; background-position:center; background-size:12px 12px; }
+    .link-chip[href*="github.com"]::before{ background-image: url('https://cdn.simpleicons.org/github'); }
+    .link-chip[href*="notion.so"]::before, .link-chip[href*="notion.site"]::before{ background-image: url('https://cdn.simpleicons.org/notion'); }
+    .link-chip[href*="tistory.com"]::before{ background-image: url('https://cdn.simpleicons.org/tistory/EA5220'); }
+    .link-chip[href*="discord.gg"]::before, .link-chip[href*="discord.com"]::before{ background-image: url('https://cdn.simpleicons.org/discord/5865F2'); }
+
+    .pill{ display:inline-flex; align-items:center; gap:6px; padding:4px 10px; border-radius:999px; font-size:12.5px; font-weight:700; background: var(--brand-soft); color: var(--brand-600); border:1px solid color-mix(in srgb, var(--brand) 35%, var(--border)); white-space:nowrap; }
+    .pill.rank-win{ background:linear-gradient(135deg,#f59e0b,#facc15); color:#111; border:none; }
+    .pill.rank-top{ background:linear-gradient(135deg,#60a5fa,#93c5fd); color:#111; border:none; }
+
+    .live-cta{ display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:6px; padding:10px 12px; border:1px dashed var(--border); border-radius:12px; background: linear-gradient(90deg, color-mix(in srgb, var(--brand-soft) 70%, transparent), transparent); }
+    .btn.live{ display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:999px; font-weight:800; background: var(--brand); color:#fff; border:1px solid var(--brand); box-shadow: 0 8px 18px rgba(99,102,241,.25); }
+    .btn.live:hover{ background: var(--brand-600); border-color: var(--brand-600); }
+    .ping-dot{ width:8px; height:8px; border-radius:50%; background:#22c55e; box-shadow: 0 0 0 0 rgba(34,197,94,.6); animation: ping 1.6s infinite; }
+    @keyframes ping{ 0%{ box-shadow:0 0 0 0 rgba(34,197,94,.55);} 70%{ box-shadow:0 0 0 10px rgba(34,197,94,0);} 100%{ box-shadow:0 0 0 0 rgba(34,197,94,0);} }
+
+    .domain{ display:flex; align-items:center; gap:6px; color:var(--muted); font-size:12.5px; white-space:nowrap; }
+    .domain .ico{ width:14px; height:14px; }
+
+    .cover-visit{ position:absolute; right:10px; bottom:10px; padding:6px 10px; border-radius:8px; font-weight:700; font-size:12.5px; background: var(--brand); color:#fff; border:1px solid var(--brand); opacity:0; transform: translateY(6px); transition: .2s ease; }
+    .project-cover-wrap:hover .cover-visit{ opacity:1; transform: translateY(0); }
+
+    .org-box.slim{ margin-top:10px; padding:10px 12px; border:1px dashed var(--border); border-radius:10px; background: color-mix(in srgb, var(--brand-soft) 50%, transparent); }
+    .org-box.slim .org-row{ display:flex; gap:10px; align-items:center; padding:6px 0; border-top:1px dashed var(--border); }
+    .org-box.slim .org-row:first-child{ border-top:0; }
+    .org-box.slim .org-label{ flex:0 0 auto; padding:3px 8px; border-radius:999px; font-size:12px; font-weight:800; color:var(--brand-600); background: var(--brand-soft); border:1px solid color-mix(in srgb, var(--brand) 35%, var(--border)); white-space:nowrap; }
+    .org-box.slim .org-label .date{ font-weight:700; color:var(--muted); margin-left:6px; }
+    .org-box.slim .org-list{ display:flex; flex-wrap:wrap; gap:6px; }
+    .org-box.slim .org-chip{ display:inline-flex; align-items:center; padding:3px 8px; border-radius:999px; font-size:12px; line-height:1.1; background: transparent; color: var(--text); border:1px solid var(--border); box-shadow:none; }
+    .org-box.slim .org-chip.sponsor{ font-weight:700; border-color: color-mix(in srgb, var(--brand) 45%, var(--border)); }
+
+    .project-period .now{ padding:2px 6px; border-radius:999px; font-weight:700; font-size:11.5px; background:var(--brand-soft); color:var(--brand-600); border:1px solid var(--border); }
+
+    /* DBREACH card (kept, trimmed where possible for size) */
+    .activity-card .timeline{ position:relative; margin-top:10px; }
+    .activity-card .timeline::before{ content:""; position:absolute; left:10px; top:0; bottom:0; width:2px; background: linear-gradient(180deg, var(--border), color-mix(in srgb, var(--brand) 25%, var(--border))); border-radius:2px; }
+    .activity-card .entry{ position:relative; padding:10px 0 12px 28px; border-bottom:0; }
+    .activity-card .entry::before{ content:""; position:absolute; left:4px; top:18px; width:12px; height:12px; border-radius:50%; background:#fff; box-shadow:0 0 0 2px color-mix(in srgb, var(--brand) 50%, var(--border)) inset; }
+    .activity-card .entry-title{ font-weight:700; }
+    .activity-card .entry-meta{ color:var(--muted); font-size:12.5px; display:flex; gap:8px; flex-wrap:wrap; }
+    .activity-card .bullets{ margin:6px 0 0 0; padding-left:0; list-style:none; color:var(--subtext); }
+
+    /* divider */
+    hr.divider{ border:0; height:1px; margin:14px 0; background: linear-gradient(90deg, transparent 0, color-mix(in srgb, var(--brand) 30%, var(--border)) 20%, color-mix(in srgb, var(--brand) 30%, var(--border)) 80%, transparent 100%); opacity:.9; }
+    @media (prefers-color-scheme: dark){ hr.divider{ background:linear-gradient(90deg, transparent 0, color-mix(in srgb, var(--brand) 22%, var(--border)) 20%, color-mix(in srgb, var(--brand) 22%, var(--border)) 80%, transparent 100%); opacity:.85; } }
+    @media print{ hr.divider{ background:#bbb !important; opacity:1 !important; } }
+    hr.divider.divider--strong{ height:2px; background: linear-gradient(90deg, transparent 0, color-mix(in srgb, var(--brand) 40%, var(--border)) 15%, color-mix(in srgb, var(--brand) 40%, var(--border)) 85%, transparent 100%); }
+  </style>
+
+  <!-- Inline SVG symbols -->
+  <svg aria-hidden="true" style="position:absolute; width:0; height:0; overflow:hidden">
+    <symbol id="i-github" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59c.4.07.55-.17.55-.38c0-.19-.01-.82-.01-1.49c-2.01.37-2.53-.49-2.69-.94c-.09-.23-.48-.94-.82-1.13c-.28-.15-.68-.52-.01-.53c.63-.01 1.08.58 1.23.82c.72 1.21 1.87.87 2.33.66c.07-.52.28-.87.51-1.07c-1.78-.2-3.64-.89-3.64-3.95c0-.87.31-1.59.82-2.15c-.08-.2-.36-1.01.08-2.11c0 0 .67-.21 2.2.82c.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82c.44 1.1.16 1.91.08 2.11c.51.56.82 1.27.82 2.15c0 3.07-1.87 3.75-3.65 3.95c.29.25.54.73.54 1.48c0 1.07-.01 1.93-.01 2.2c0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M2 12h20" stroke-width="2"/><path d="M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20" stroke-width="2"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke-width="2"/><path d="M14 2v6h6" stroke-width="2"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M12 16v-4" stroke-width="2"/><path d="M12 8h.01" stroke-width="2"/></symbol>
+  </svg>
+</head>
+<body>
+  <a class="skip" href="#main">본문으로 바로가기</a>
+
+  <!-- Sticky navigation -->
+  <nav class="nav" aria-label="주요 링크">
+    <div class="nav-inner">
+      <div class="brand">Jong-Yun Lee</div>
+      <a href="#intro">소개</a>
+      <a href="#education">학력</a>
+      <a href="#skills">기술</a>
+      <a href="#experience">보안 경험</a>
+      <a href="#achievements">성과</a>
+      <a href="#activities">활동</a>
+      <a href="#projects">프로젝트</a>
+      <a href="#project-details">상세</a>
+      <div class="spacer"></div>
+    </div>
+  </nav>
+
+  <main id="main" class="container">
+    <!-- INTRO -->
+    <section id="intro" class="section" aria-labelledby="intro-title">
+      <div class="profile-card">
+        <img class="profile-image" src="assets/profile.jpg" alt="이종윤 프로필 사진" width="180" height="180" loading="lazy" />
+        <h2 class="name">이종윤</h2>
+        <div class="title">White Hat Hacker<br>정보보안전문가</div>
+        <div class="basic-info">
+          <div>🇰🇷 대한민국</div>
+          <div>👨‍💻 25세 (2000년생)</div>
+          <ul class="list-tight" aria-label="연락처 및 링크">
+            <li><a class="link-chip" href="mailto:ialleejy@gmail.com">ialleejy@gmail.com</a></li>
+            <li><a class="link-chip" href="https://github.com/jongcoding" target="_blank" rel="noopener">GitHub: jongcoding</a></li>
+            <li><a class="link-chip" href="https://ialleejy.tistory.com" target="_blank" rel="noopener">Tistory 블로그</a></li>
+            <li><span class="link-chip" aria-label="전화번호">📞 전화번호</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="intro-copy">
+        <h1 id="intro-title">보안 전문성과 창의적 사고로 디지털 세상을 지킵니다</h1>
+        <p>
+          정보보안 분야에서 4년간의 실무 경험과 지속적인 학습을 통해
+          화이트해킹, 웹 보안, 시스템 보안 전문성을 쌓아왔습니다. CTF 운영과 실무 프로젝트를 통해
+          실제 환경에서의 문제 해결 능력을 검증받았습니다.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="#experience" aria-label="보안 경험 섹션으로 이동">포트폴리오 보기</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="section" aria-labelledby="edu-title">
+      <div class="edu-grid">
+        <!-- Left: Education -->
+        <div>
+          <h2 class="section-title" id="edu-title">학력</h2>
+          <div class="card">
+            <div class="item">
+              <div class="item-head">
+                <div>
+                  <div class="item-title">명지대학교</div>
+                  <div class="item-sub">정보통신공학과 4학년 2학기 휴학</div>
+                </div>
+                <div class="item-period">2020 – 현재</div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-head">
+                <div>
+                  <div class="item-title">동패고등학교</div>
+                  <div class="item-sub">졸업</div>
+                </div>
+                <div class="item-period">—</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Middle: Certifications -->
+        <div>
+          <h2 class="section-title" id="cert-title">자격증</h2>
+          <div class="card">
+            <div class="item">
+              <div class="item-head">
+                <div>
+                  <div class="item-title">SQLD</div>
+                  <div class="item-sub">SQL 개발자</div>
+                </div>
+                <div class="item-period">2024-06-21</div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-head">
+                <div>
+                  <div class="item-title">정보처리기능사</div>
+                  <div class="item-sub">기초 개발 자격</div>
+                </div>
+                <div class="item-period">2021-10</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Security Training -->
+        <div>
+          <h2 class="section-title" id="train-title">보안 교육</h2>
+          <div class="card">
+            <div class="item">
+              <div class="item-head">
+                <div>
+                  <div class="item-title">화이트햇스쿨 3기</div>
+                  <div class="item-sub">KITRI</div>
+                </div>
+                <div class="item-period">
+                  <time datetime="2025-03">2025.03</time> – <time datetime="2025-09">2025.09</time>
+                </div>
+              </div>
+
+              <div class="meta-group">
+                <span class="meta-label">팀 프로젝트</span>
+                <div class="item-sub"><b>조 이름:</b> 가지마 웹바오</div>
+                <div class="item-sub"><b>주제:</b> Semantic Gap 공격에 대한 분류 체계 구축</div>
+              </div>
+
+              <div class="meta-chips" style="margin-top:10px;">
+                <span class="pill">웹 보안</span>
+                <span class="pill">취약점 분류</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS (added to match nav) -->
+    <section id="skills" class="section" aria-labelledby="skills-title">
+      <h2 class="section-title" id="skills-title">기술</h2>
+      <div class="tech-matrix">
+        <div class="col">
+          <h5>언어</h5>
+          <div class="tags">
+            <span class="tag i-python">Python</span>
+            <span class="tag">JS/TS</span>
+            <span class="tag i-java">Java</span>
+            <span class="tag">SQL</span>
+          </div>
+        </div>
+        <div class="col">
+          <h5>웹/프레임워크</h5>
+          <div class="tags">
+            <span class="tag i-react">React</span>
+            <span class="tag i-django">Django/DRF</span>
+            <span class="tag i-spring">Spring</span>
+          </div>
+        </div>
+        <div class="col">
+          <h5>DevOps/인프라</h5>
+          <div class="tags">
+            <span class="tag i-nginx">Nginx</span>
+            <span class="tag i-docker">Docker</span>
+            <span class="tag i-compose">Docker Compose</span>
+            <span class="tag i-actions">GitHub Actions</span>
+            <span class="tag i-gcp">GCP</span>
+            <span class="tag i-ubuntu">Ubuntu</span>
+          </div>
+        </div>
+        <div class="col">
+          <h5>DB/캐시</h5>
+          <div class="tags">
+            <span class="tag i-mysql">MySQL/MariaDB</span>
+            <span class="tag i-redis">Redis</span>
+            <span class="tag i-sqlite">SQLite</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section" aria-labelledby="exp-title">
+      <h2 class="section-title" id="exp-title">보안 경험</h2>
+      <div class="card">
+        <div class="item">
+          <div class="item-head">
+            <div>
+              <div class="item-title">육군 정보보호병(1년 6개월)</div>
+              <div class="item-sub">정보사 보안장비 운용 및 정책 관리</div>
+            </div>
+            <div class="item-period">2022.04 – 2023.10</div>
+          </div>
+          <div class="item-sub">보안장비 운용 / UTM 정책 관리 / 웹 취약점 보고 / 보안장비 관제</div>
+        </div>
+        <h3 class="subsection-title">다룰 수 있는 보안장비</h3>
+        <div class="table-wrap">
+          <table class="data-table">
+            <caption class="skip">보안장비 목록</caption>
+            <thead>
+              <tr>
+                <th scope="col">회사/군</th>
+                <th scope="col">보안장비</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Genian</td><td>NAC</td></tr>
+              <tr><td>Ahnlab</td><td>TrusGuard(UTM)</td></tr>
+              <tr><td>SGA</td><td>RedCastle</td></tr>
+              <tr><td>국군</td><td>TACS(전군보안진단체계)</td></tr>
+              <tr><td>IGLOO</td><td>SPiDERTM(SIEM)</td></tr>
+              <tr><td>SoosanSM</td><td>eWalker SWG, DLP</td></tr>
+              <tr><td>SECUI</td><td>SECUI MF2(UTM)</td></tr>
+              <tr><td>Saferzone</td><td>Saferzone</td></tr>
+              <tr><td>Waterwallsystem</td><td>Waterwall</td></tr>
+              <tr><td>파수(FASOO)</td><td>FASOO DRM</td></tr>
+              <tr><td>HAURI</td><td>VIROBOT MANAGER 1.0</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements" class="section" aria-labelledby="achievements-title">
+      <h2 class="section-title" id="achievements-title">주요 성과</h2>
+      <div class="achv-grid">
+        <!-- 취약점 보고 -->
+        <article class="card highlight">
+          <header class="achv-head">
+            <div class="achv-title">
+              <span class="badge-achv"><span class="emoji">🔐</span> 취약점 보고</span>
+              <div class="item-title">정보사 웹사이트 취약점 보고</div>
+            </div>
+            <div class="item-period">2022.12 · 2023.02</div>
+          </header>
+          <figure class="project-cover-wrap" style="margin-top:10px;">
+            <a href="assets/achv-sec-report.png" target="_blank" rel="noopener">
+              <img class="project-cover" src="assets/achv-sec-report.png" alt="정보사 웹사이트 취약점 보고 PoC/스크린샷" />
+            </a>
+          </figure>
+          <div class="prose">
+            <p class="lead">XSS, CSRF, SQL Injection 등 다수 취약점 식별 및 신속 보고로 보안 강화.</p>
+            <p>특히 <b>나모 웹 에디터</b>에서 확장자 검증 미흡으로 인한 <b>파일 업로드 우회</b>와 <b>파일명 기반 Stored XSS</b>가 가능했고, <b>form action</b> 필터링 미흡으로 <b>CSRF</b>가 발생 가능한 상태였습니다.</p>
+          </div>
+          <div class="kpis" aria-label="핵심 요약">
+            <span class="kpi">File Upload 우회</span>
+            <span class="kpi">Stored XSS</span>
+            <span class="kpi">CSRF</span>
+            <span class="kpi">SQLi</span>
+          </div>
+          <ul class="checklist">
+            <li><b>파일 업로드:</b> 확장자/Content-Type 검증 미흡 → 위험 파일 업로드 가능</li>
+            <li><b>Stored XSS:</b> 파일명 스크립트 주입 취약</li>
+            <li><b>CSRF:</b> 중요 요청에 토큰 부재 및 검증 미흡</li>
+            <li><b>SQLi:</b> 입력 검증·바인딩 미흡 의심 구간 확인</li>
+            <li><b>조치:</b> 재현 절차/가이드 제출, 화이트리스트·콘텐츠타입 검사 강화, CSRF 토큰 도입 권고</li>
+            <li><b>결과:</b> 관련 페이지 보완 및 모니터링 강화</li>
+          </ul>
+        </article>
+
+        <!-- 우수상 -->
+        <article class="card award">
+          <header class="award-head">
+            <div class="award-title">
+              <span class="badge-award"><span class="emoji">🏆</span> 우수상(소장급)</span>
+              <div class="item-title">정보사령부 보안경연대회</div>
+            </div>
+            <div class="item-period"><time datetime="2023-07-25">2023.07.25</time></div>
+          </header>
+          <figure class="project-cover-wrap portrait" style="max-width:300px; margin:10px auto;">
+            <a href="assets/award.png" target="_blank" rel="noopener">
+              <img class="project-cover" src="assets/award.png" alt="정보사령부 보안경연대회 우수상 상장" />
+            </a>
+          </figure>
+          <div class="prose">
+            <p class="lead">내부망 보안 강화 아이디어를 <b>도구 + 정책</b>으로 실현하여 우수상 수상. (DevTools 차단 자동화, NAC 정책 적용)</p>
+          </div>
+          <div class="meta-chips" aria-label="핵심 기술">
+            <span class="pill">Python3</span>
+            <span class="pill">BAT 스크립트</span>
+            <span class="pill">Windows Registry</span>
+            <span class="pill">NAC 정책</span>
+            <span class="pill">내부망 적용</span>
+          </div>
+          <ul class="checklist">
+            <li><b>개발자 도구 삭제 프로그램:</b> Python3 + BAT로 주요 브라우저 DevTools를 <b>레지스트리 값 추가</b> 방식으로 제거·차단.</li>
+            <li><b>NAC 정책 개발:</b> DevTools <b>프로세스 실행·설치 여부</b> 및 <b>차단 레지스트리 키</b> 존재 점검·차단을 정책화.</li>
+            <li><b>효과:</b> DevTools 사용 제한을 표준화된 배포/운영으로 구현, 내부망 보안 인프라 강화.</li>
+          </ul>
+        </article>
+
+        <!-- SPACE WAR URANUS 1위 -->
+        <article class="card award span-2">
+          <header class="award-head">
+            <div class="award-title">
+              <span class="badge-award"><span class="emoji">🥇</span>개인전 1위</span>
+              <div class="item-title">SPACE WAR URANUS — WEB</div>
+            </div>
+            <div class="item-period"><time datetime="2025-05-25">2025.05.25</time></div>
+          </header>
+          <div class="item-sub">주최/주관: HSPACE · 참가자 116명</div>
+          <div class="media-row no-letterbox" style="--h: 400px; margin-top:10px;">
+            <figure class="project-cover-wrap portrait">
+              <a href="assets/ctf-uranus-web.png" target="_blank" rel="noopener"><img class="project-cover" src="assets/ctf-uranus-web.png" alt="SPACE WAR URANUS CTF 대회 이미지" /></a>
+            </figure>
+            <figure class="project-cover-wrap portrait">
+              <a href="assets/ctf-uranus-rank.png" target="_blank" rel="noopener"><img class="project-cover" src="assets/ctf-uranus-rank.png" alt="SPACE WAR URANUS CTF Web 부문 개인 순위 1위 캡처" /></a>
+            </figure>
+          </div>
+          <div class="prose">
+            <p class="lead">HSPACE 주최 CTF에서 참가자 116명 중 Web 부문 1위 달성.</p>
+            <p>문제 의도 파악과 풀이 전략 수립에 집중하고, 핵심 원리를 정리한 <b>write-up</b>을 작성·공유했습니다.</p>
+          </div>
+          <a class="link-card" href="https://ialleejy.tistory.com/54" target="_blank" rel="noopener" style="margin-top:8px;">
+            <img class="ico" src="https://cdn.simpleicons.org/tistory/EA5220" alt="Tistory" loading="lazy" />
+            <span class="meta"><span class="title">SPACE WAR URANUS — WEB Write-up</span><span class="host">ialleejy.tistory.com/54</span></span>
+          </a>
+          <div class="meta-chips" aria-label="핵심 키워드" style="margin-top:8px;">
+            <span class="pill">CTF</span><span class="pill">WEB</span><span class="pill">풀이 전략</span><span class="pill">Write-up</span>
+          </div>
+          <ul class="checklist">
+            <li>문제 의도/요구사항 분석</li>
+            <li>공격 표면·풀이 전략 설계</li>
+            <li>핵심 취약점/원리 설명 중심 정리</li>
+            <li>완성된 write-up 공개</li>
+          </ul>
+        </article>
+
+        <!-- MSG CTF 2025 -->
+        <article class="card highlight span-2">
+          <header class="achv-head">
+            <div class="achv-title">
+              <span class="badge-achv"><span class="emoji">🛠️</span> 대회 운영·출제</span>
+              <div class="item-title">MSG CTF 2025 — 공동 주최·운영·문제 출제</div>
+            </div>
+            <div class="item-period"><time datetime="2025-03-29">2025.03.29</time></div>
+          </header>
+          <div class="media-grid compact" style="--gap: 8px; --h: 230px;">
+            <figure class="frame" data-label="대회 이미지"><a href="assets/msg-ctf-hero.png" target="_blank" rel="noopener"><img src="assets/msg-ctf-hero.png" alt="MSG CTF 2025 대회 홍보/진행 이미지"></a></figure>
+            <figure class="frame" data-label="순위"><a href="assets/msg-ctf-rank.png" target="_blank" rel="noopener"><img src="assets/msg-ctf-rank.png" alt="MSG CTF 2025 순위 캡처"></a></figure>
+            <figure class="frame" data-label="공지(Discord)"><a href="assets/msg-ctf-discord.png" target="_blank" rel="noopener"><img src="assets/msg-ctf-discord.png" alt="MSG CTF 공지(Discord) 스크린샷"></a></figure>
+          </div>
+          <div class="prose">
+            <p class="lead">10:00–22:00 진행, 총 <b>26문제</b> 출제
