@@ -7,8 +7,8 @@
   <script type="speculationrules">
     { "prerender": [{ "urls": ["index_ko.html"] }] }
   </script>
-  <title>Jong-Yun Lee — Offensive Cloud Security Portfolio</title>
-  <meta name="description" content="Jong-Yun Lee — Offensive cloud and web security researcher. DEF CON 34 CTF Finalist (The Seoul Sauna Shogunate). AWS Bedrock Agent security, RAG knowledge-base poisoning, web exploitation research, DevSecOps and security tooling." />
+  <title>ialleejy - Jong-Yun Lee Offensive Security Portfolio</title>
+  <meta name="description" content="ialleejy (Jong-Yun Lee) - offensive cloud and web security researcher focused on AWS Bedrock Agent security, RAG knowledge-base poisoning, web exploitation research, DevSecOps, and security tooling." />
   <link rel="alternate" hreflang="ko" href="index_ko.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,7 +36,7 @@
       --maxw: 1140px;
       --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
       --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
-      --serif: var(--sans); /* serif removed — display headlines now use Inter */
+      --serif: var(--sans); /* serif removed - display headlines now use Inter */
       /* legacy aliases mapped to the new system (so older rules still resolve cleanly) */
       --brand: var(--accent);
       --brand-600: var(--text);
@@ -81,7 +81,7 @@
     .section { margin: 80px 0; padding-top: 32px; border-top: 1px solid var(--line); }
     .section:first-of-type { border-top: 0; padding-top: 0; margin-top: 0; }
 
-    /* Section title — mono prefix + large display headline */
+    /* Section title - mono prefix + large display headline */
     .section-title {
       font-family: var(--sans);
       font-weight: 800;
@@ -120,7 +120,7 @@
     }
     .section-title.is-sub::before { display: none; }
 
-    /* Top Nav — minimal hairline */
+    /* Top Nav - minimal hairline */
     .nav {
       position: sticky; top: 0; z-index: 50;
       background: rgba(12, 12, 14, 0.88);
@@ -177,7 +177,7 @@
       background: linear-gradient(135deg, #667eea, #764ba2);
       box-shadow: 0 18px 34px rgba(118, 75, 162, .28);
     }
-    .profile-image { 
+    .profile-image {
         object-fit: cover;      /* 원형 안에 꽉 차게 */
         display: block;         /* 중앙정렬/여백 안정 */
         background: none !important; /* 그라디언트 제거 */
@@ -278,6 +278,7 @@
     /* Project cover image */
     .project-cover-wrap { aspect-ratio: 16/9; width: 100%; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: #f8fafc; margin: 10px 0 12px; }
     .project-cover { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .project-cover.contain { object-fit: contain; padding: 16px; box-sizing: border-box; background: #fff; }
     .project-cover-wrap.placeholder { position: relative; background: linear-gradient(135deg, #0d0d10, #131318); }
     .project-cover-wrap.placeholder::after { content: 'Cover image'; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 12px; }
     @media print { .project-cover-wrap { break-inside: avoid; } }
@@ -348,6 +349,17 @@
     /* Accessibility */
     .skip { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
     .skip:focus { position: static; width: auto; height: auto; padding: 10px; background: var(--brand); color: #fff; border-radius: 8px; }
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
 
     /* Print */
 
@@ -440,7 +452,7 @@
       margin: 6px 0 0;         /* 좌측 18px 여백 제거 */
       padding-left: 0;         /* 기본 패딩 제거 */
       text-align: center;      /* 텍스트 가운데 */
-      list-style-position: inside; 
+      list-style-position: inside;
     }
     .list-tight li{ margin:4px 0; }
 
@@ -1045,7 +1057,7 @@
       }
     }
 
-    /* 갤러리(이미지) — compact 유지 */
+    /* 갤러리(이미지) - compact 유지 */
     .dbreach-card .media-grid.compact{ --gap:8px; --h:220px; }
 
     /* span-2 카드에서도 본문 폭 제한 유지 */
@@ -1197,7 +1209,7 @@
       margin:0 0 6px; font-size:13px; font-weight:900; color:var(--muted); letter-spacing:.02em;
     }
     .dbreach-card .note-box{margin-top:8px;padding:12px 14px;border:1px solid var(--border);border-radius:12px;background:color-mix(in srgb,var(--brand-soft) 75%,transparent);}
-    /* === DBREACH (recruiter view) — 헤더/타이틀/가독성 === */
+    /* === DBREACH (recruiter view) - 헤더/타이틀/가독성 === */
     .dbreach-card.recruiter .dbreach-head{
       display:flex; justify-content:space-between; align-items:baseline; gap:12px;
       margin-bottom:10px; padding-bottom:8px; border-bottom:1px dashed var(--border);
@@ -1392,7 +1404,7 @@
       font-size: 13px;
     }
 
-    /* Hero — compact, fits within first viewport */
+    /* Hero - compact, fits within first viewport */
     #intro.hero {
       min-height: calc(86svh - 64px);
       margin: 0 0 24px;
@@ -1526,6 +1538,14 @@
       filter: saturate(.96) contrast(1.02);
     }
     .identity-body { padding: 14px; }
+    .identity-handle {
+      margin: 0 0 4px;
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .02em;
+      color: var(--accent);
+    }
     .identity-body .name {
       margin: 0;
       text-align: left;
@@ -1773,7 +1793,7 @@
     }
     .hero-stat strong, .proof-card strong { letter-spacing: -0.01em; }
 
-    /* ─── DEF CON 34 — CTF Finalist feature ──────────────────────────── */
+    /* ─── World CTF finalist feature ─────────────────────────────────── */
     @keyframes dc-ticker { to { transform: translateX(-50%); } }
     @keyframes dc-scan   { from { top: -14%; } to { top: 114%; } }
     @keyframes dc-blink  { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
@@ -1890,7 +1910,7 @@
     .hero .hero-proof-grid { animation: rise .8s cubic-bezier(.16,1,.3,1) .42s both; }
     .hero .hero-cta     { animation: rise .8s cubic-bezier(.16,1,.3,1) .52s both; }
     .hero .hero-side    { animation: rise .9s cubic-bezier(.16,1,.3,1) .3s both; }
-    /* cursor spotlight inside the DEF CON card (element injected by JS) */
+    /* cursor spotlight inside the featured CTF card (element injected by JS) */
     .dc-spot {
       position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: 0;
       transition: opacity .4s ease;
@@ -1960,7 +1980,7 @@
     .tag:hover::before { filter: none; }
 
     /* ════════════════════════════════════════════════════════════════════
-       MODERN ENGINE — 2025/26 platform features, progressively enhanced.
+       MODERN ENGINE - 2025/26 platform features, progressively enhanced.
        Everything below degrades to the flat editorial baseline when a
        feature is absent, so no browser is left broken.
        ════════════════════════════════════════════════════════════════════ */
@@ -1981,7 +2001,7 @@
       .tile.t-defcon { border-radius: 14px; }
     }
 
-    /* rotating conic glow-edge — the signature centrepiece treatment */
+    /* rotating conic glow-edge - the signature centrepiece treatment */
     @keyframes bd-spin { to { --bd-angle: 360deg; } }
     .glow-edge { position: relative; isolation: isolate; }
     .glow-edge::after {
@@ -2025,7 +2045,7 @@
       }
     }
 
-    /* bento tiles are containers — type scales with the tile, not the viewport */
+    /* bento tiles are containers - type scales with the tile, not the viewport */
     .tile { container-type: inline-size; }
     @container (min-width: 1px) {
       .t-big { font-size: clamp(34px, 17cqi, 64px); }
@@ -2049,7 +2069,7 @@
       }
     }
 
-    /* popover / dialog enter–leave choreography (@starting-style + allow-discrete) */
+    /* popover / dialog enter-leave choreography (@starting-style + allow-discrete) */
     /* fallback for engines without the Popover API: stay hidden there,
        while the second rule (dropped by old parsers) restores visibility */
     [popover] { display: none; }
@@ -2082,7 +2102,7 @@
     }
     .lb-hint:hover { color: var(--accent); }
 
-    /* CSS-only carousel — ::scroll-button / ::scroll-marker, zero JS */
+    /* CSS-only carousel - ::scroll-button / ::scroll-marker, zero JS */
     @supports selector(::scroll-button(right)) and (anchor-name: --a) {
       .cssr {
         display: flex !important; gap: 10px;
@@ -2139,7 +2159,23 @@
     }
     .nav a:hover { color: var(--text); background: transparent; }
     .nav a.active { color: var(--accent); }
-    .brand { font-weight: 800; letter-spacing: -0.02em; font-size: 14px; }
+    .brand {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 8px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      font-size: 14px;
+    }
+    .brand::after { content: none; }
+    .brand-handle { color: var(--accent); font-weight: 900; }
+    .brand-name {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .02em;
+    }
+    @media (max-width: 720px) { .brand-name { display: none; } }
     .nav-meta {
       display: inline-flex; align-items: center; gap: 8px;
       margin-right: 6px;
@@ -2162,6 +2198,13 @@
       font-family: "Instrument Serif", Georgia, serif;
       font-style: italic; font-weight: 400;
       font-size: 1.04em; letter-spacing: -0.01em;
+      color: var(--accent);
+    }
+    .hero-copy h1 .hero-handle {
+      font-family: var(--mono);
+      font-size: .86em;
+      font-weight: 800;
+      letter-spacing: -0.04em;
       color: var(--accent);
     }
     .hero-summary { font-size: 16.5px; max-width: 560px; margin-top: 22px; }
@@ -2374,6 +2417,15 @@
       font-family: var(--mono); font-size: 10.5px; letter-spacing: .22em; text-transform: uppercase; color: var(--muted);
     }
     .cp-eyebrow::before { content: ""; width: 20px; height: 1px; background: var(--accent); }
+    .cp-handle {
+      margin: -4px 0 12px;
+      font-family: var(--mono);
+      font-size: clamp(22px, 5vw, 32px);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: var(--accent);
+    }
     .cp-mail {
       display: block; font-family: var(--mono); font-size: clamp(17px, 4vw, 21px);
       color: var(--text); text-decoration: none;
@@ -2383,8 +2435,267 @@
     .cp-links { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
     .cp-hint { margin: 18px 0 0; font-family: var(--mono); font-size: 9.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
 
+    /* Portfolio guide pet */
+    .portfolio-bot {
+      position: fixed;
+      right: clamp(14px, 2.2vw, 28px);
+      bottom: clamp(14px, 2.2vw, 28px);
+      z-index: 90;
+      width: min(360px, calc(100vw - 28px));
+      pointer-events: none;
+    }
+    .bot-panel,
+    .bot-toggle,
+    .bot-nudge {
+      pointer-events: auto;
+    }
+    .bot-panel {
+      margin-bottom: 10px;
+      border: 1px solid var(--line-strong);
+      border-radius: 8px;
+      background: rgba(13, 13, 16, .94);
+      color: var(--text);
+      overflow: hidden;
+      box-shadow: 0 22px 70px rgba(0, 0, 0, .42);
+      backdrop-filter: blur(12px) saturate(1.05);
+    }
+    .bot-panel[hidden] { display: none; }
+    .bot-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(135deg, rgba(239, 68, 68, .12), rgba(255, 255, 255, .03));
+    }
+    .bot-title {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+    .bot-status {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 10.5px;
+      line-height: 1.35;
+    }
+    .bot-close {
+      width: 30px;
+      height: 30px;
+      margin-left: auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .03);
+      color: var(--subtext);
+      cursor: pointer;
+      font-size: 22px;
+      line-height: 1;
+    }
+    .bot-close:hover,
+    .bot-close:focus-visible {
+      color: var(--text);
+      border-color: var(--accent);
+      outline: none;
+    }
+    .bot-body { padding: 12px; }
+    .bot-answer {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .025);
+      padding: 12px;
+    }
+    .bot-answer h3 {
+      margin: 0 0 6px;
+      font-size: 13.5px;
+      line-height: 1.3;
+    }
+    .bot-answer p {
+      margin: 0;
+      color: var(--subtext);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    .bot-jump {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      margin-top: 10px;
+      padding: 6px 9px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .bot-jump:hover,
+    .bot-jump:focus-visible {
+      color: var(--accent);
+      border-color: var(--accent);
+      outline: none;
+    }
+    .bot-jump[hidden] { display: none; }
+    .bot-quick {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .bot-chip {
+      min-height: 36px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .025);
+      color: var(--subtext);
+      cursor: pointer;
+      font: 700 12px/1.2 var(--sans);
+    }
+    .bot-chip:hover,
+    .bot-chip:focus-visible,
+    .bot-chip.is-active {
+      color: var(--text);
+      border-color: var(--accent);
+      background: rgba(239, 68, 68, .12);
+      outline: none;
+    }
+    .bot-foot {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 10.5px;
+      line-height: 1.45;
+    }
+    .bot-nudge {
+      width: max-content;
+      max-width: calc(100% - 74px);
+      margin: 0 76px -58px auto;
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(13, 13, 16, .9);
+      color: var(--subtext);
+      font-size: 12px;
+      font-weight: 700;
+      box-shadow: 0 16px 50px rgba(0, 0, 0, .28);
+      transition: opacity .18s ease, transform .18s ease;
+    }
+    .portfolio-bot.is-open .bot-nudge {
+      opacity: 0;
+      transform: translateY(4px);
+      pointer-events: none;
+    }
+    .bot-toggle {
+      display: grid;
+      place-items: center;
+      width: 64px;
+      height: 64px;
+      margin-left: auto;
+      border: 1px solid var(--line-strong);
+      border-radius: 8px;
+      background: radial-gradient(circle at 50% 18%, rgba(239, 68, 68, .24), transparent 38%), #101014;
+      color: var(--text);
+      cursor: pointer;
+      box-shadow: 0 18px 60px rgba(0, 0, 0, .38);
+    }
+    .bot-toggle:hover,
+    .bot-toggle:focus-visible {
+      border-color: var(--accent);
+      outline: none;
+    }
+    .bot-avatar {
+      position: relative;
+      display: block;
+      width: 42px;
+      height: 40px;
+    }
+    .bot-face {
+      position: absolute;
+      left: 3px;
+      right: 3px;
+      bottom: 2px;
+      height: 28px;
+      border: 2px solid currentColor;
+      border-radius: 8px;
+      background: linear-gradient(180deg, #18181d, #0b0b0e);
+    }
+    .bot-face::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: -10px;
+      width: 2px;
+      height: 9px;
+      background: currentColor;
+      transform: translateX(-50%);
+    }
+    .bot-face::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: -15px;
+      width: 8px;
+      height: 8px;
+      border: 2px solid currentColor;
+      border-radius: 50%;
+      background: var(--accent);
+      transform: translateX(-50%);
+      box-shadow: 0 0 18px rgba(239, 68, 68, .55);
+    }
+    .bot-eye {
+      position: absolute;
+      top: 10px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #9ef2d1;
+      box-shadow: 0 0 12px rgba(158, 242, 209, .75);
+    }
+    .bot-eye:first-child { left: 9px; }
+    .bot-eye:last-child { right: 9px; }
+    .bot-mini {
+      width: 34px;
+      height: 32px;
+      flex: 0 0 auto;
+    }
+    .bot-mini .bot-face {
+      height: 22px;
+      border-width: 1.5px;
+    }
+    .bot-mini .bot-face::after {
+      width: 6px;
+      height: 6px;
+      top: -13px;
+    }
+    .bot-mini .bot-eye {
+      top: 8px;
+      width: 5px;
+      height: 5px;
+    }
+    @media (max-width: 560px) {
+      .portfolio-bot {
+        right: 12px;
+        bottom: 12px;
+        width: calc(100vw - 24px);
+      }
+      .bot-panel {
+        max-height: calc(100vh - 96px);
+        overflow: auto;
+      }
+      .bot-nudge {
+        max-width: calc(100% - 68px);
+        margin-right: 68px;
+      }
+      .bot-toggle {
+        width: 58px;
+        height: 58px;
+      }
+    }
+
     @media print {
-      .contact-pop, .lightbox { display: none; }
+      .contact-pop, .lightbox, .portfolio-bot { display: none; }
       .pd { border: 0; }
       .pd > summary { display: none; }
       .pd .detail-title { display: block; }
@@ -2452,7 +2763,10 @@
   <!-- Sticky navigation -->
   <nav class="nav" aria-label="Main navigation">
     <div class="nav-inner">
-      <div class="brand">Jong-Yun Lee</div>
+      <div class="brand">
+        <span class="brand-handle">@ialleejy</span>
+        <span class="brand-name">Jong-Yun Lee</span>
+      </div>
       <a href="#intro">About</a>
       <a href="#career">Focus</a>
       <a href="#timeline">Timeline</a>
@@ -2471,6 +2785,7 @@
   <!-- Contact panel (native Popover API) -->
   <div id="contact-pop" popover class="contact-pop" aria-label="Contact">
     <p class="cp-eyebrow">Contact</p>
+    <p class="cp-handle">@ialleejy</p>
     <a class="cp-mail" href="mailto:ialleejy@gmail.com">ialleejy@gmail.com</a>
     <div class="cp-links">
       <a class="link-chip" href="https://github.com/jongcoding" target="_blank" rel="noopener">GitHub</a>
@@ -2485,13 +2800,13 @@
     <section id="intro" class="hero section" aria-labelledby="intro-title">
       <div class="hero-copy">
         <p class="eyebrow">Portfolio · 2026</p>
-        <a class="hero-flash" href="#defcon34">
+        <a class="hero-flash" href="https://ialleejy.tistory.com" target="_blank" rel="noopener">
           <span class="hf-dot" aria-hidden="true"></span>
-          DEF CON 34 CTF Finalist · <b>The Seoul Sauna Shogunate</b>
+          Hacker handle · <b>@ialleejy</b>
         </a>
-        <h1 id="intro-title">Offensive cloud research, web exploitation, and <em>security tooling</em>.</h1>
+        <h1 id="intro-title"><span class="hero-handle">ialleejy</span>: offensive cloud research, web exploitation, and security tooling.</h1>
         <p class="hero-summary">
-          I research cloud / AI-agent attack surfaces and ship reproducible labs, web exploitation scenarios, and tools.
+          Jong-Yun Lee works under the handle ialleejy, researching cloud / AI-agent attack surfaces and shipping reproducible labs, web exploitation scenarios, and tools.
         </p>
 
         <div class="hero-cta">
@@ -2522,6 +2837,7 @@
             />
           </div>
           <div class="identity-body">
+            <p class="identity-handle">@ialleejy</p>
             <h2 class="name">Jong-Yun Lee</h2>
             <p class="identity-role">Offensive Cloud / Web Security Researcher</p>
             <div class="identity-links" aria-label="Contact and links">
@@ -2539,15 +2855,15 @@
     <!-- FACT TICKER -->
     <div class="site-ticker" aria-hidden="true">
       <div class="st-track">
-        <span>DEF CON 34 CTF Finalist</span><span class="st-sep">✦</span>
-        <span>The Seoul Sauna Shogunate</span><span class="st-sep">✦</span>
+        <span>ialleejy</span><span class="st-sep">✦</span>
+        <span>Offensive Cloud Research</span><span class="st-sep">✦</span>
         <span>ENKI WhiteHat Content Team</span><span class="st-sep">✦</span>
         <span>CODEGATE 2026 Challenge Author</span><span class="st-sep">✦</span>
         <span>HACKTHEON Sejong 2026 Author</span><span class="st-sep">✦</span>
         <span>AWS Bedrock Agent Research</span><span class="st-sep">✦</span>
         <span>MJSEC Founder</span><span class="st-sep">✦</span>
-        <span>DEF CON 34 CTF Finalist</span><span class="st-sep">✦</span>
-        <span>The Seoul Sauna Shogunate</span><span class="st-sep">✦</span>
+        <span>ialleejy</span><span class="st-sep">✦</span>
+        <span>Offensive Cloud Research</span><span class="st-sep">✦</span>
         <span>ENKI WhiteHat Content Team</span><span class="st-sep">✦</span>
         <span>CODEGATE 2026 Challenge Author</span><span class="st-sep">✦</span>
         <span>HACKTHEON Sejong 2026 Author</span><span class="st-sep">✦</span>
@@ -2556,14 +2872,14 @@
       </div>
     </div>
 
-    <!-- AT A GLANCE — bento board -->
+    <!-- AT A GLANCE - bento board -->
     <section id="glance" class="section bento-section" aria-label="At a glance">
       <p class="eyebrow">At a glance</p>
       <div class="bento">
         <a class="tile t-defcon glow-edge" href="#defcon34">
-          <span class="t-label">DEF CON 34 · CTF Finals</span>
-          <span class="t-big">#7<small>worldwide</small></span>
-          <span class="t-foot">The Seoul Sauna Shogunate · 8,641 pts · Las Vegas, Aug 2026</span>
+          <span class="t-label">World CTF Finals</span>
+          <span class="t-big">#7<small>qualifier</small></span>
+          <span class="t-foot">The Seoul Sauna Shogunate · 8,641 pts · Aug 2026</span>
         </a>
         <div class="tile">
           <span class="t-label">Now</span>
@@ -2590,16 +2906,16 @@
 
     <!-- FOCUS -->
     <section id="career" class="section" aria-labelledby="career-title">
-      <h2 class="section-title" id="career-title" data-eyebrow="S.01 — Focus">Focus</h2>
+      <h2 class="section-title" id="career-title" data-eyebrow="S.01 - Focus">Focus</h2>
       <div class="card">
         <div class="item">
           <div class="item-head">
             <div>
-              <div class="item-title">ENKI WhiteHat — Content Team</div>
+              <div class="item-title">ENKI WhiteHat - Content Team</div>
               <div class="item-sub">Offensive security research · Cloud / AI-agent attack scenario research · Web exploitation content R&amp;D</div>
             </div>
             <div class="item-period">
-              <time datetime="2026-03">2026.03</time> – <span class="now">Present</span>
+              <time datetime="2026-03">2026.03</time> - <span class="now">Present</span>
             </div>
           </div>
           <div class="meta-chips" style="margin-top:8px;">
@@ -2614,11 +2930,11 @@
         <div class="item">
           <div class="item-head">
             <div>
-              <div class="item-title">Offensive Cloud Research — GnawLab / Bedrock Agent</div>
+              <div class="item-title">Offensive Cloud Research - GnawLab / Bedrock Agent</div>
               <div class="item-sub">Researching AWS Bedrock Agent knowledge-base poisoning and RAG-backed AI-agent attack paths</div>
             </div>
             <div class="item-period">
-              <time datetime="2026">2026</time> – <span class="now">Present</span>
+              <time datetime="2026">2026</time> - <span class="now">Present</span>
             </div>
           </div>
           <div class="meta-chips" style="margin-top:8px;">
@@ -2632,7 +2948,7 @@
         <div class="item">
           <div class="item-head">
             <div>
-              <div class="item-title">External Security Research Content — CODEGATE · HACKTHEON</div>
+              <div class="item-title">External Security Research Content - CODEGATE · HACKTHEON</div>
               <div class="item-sub">Designing realistic web exploitation scenarios with reference exploits, write-ups and reproducible deployment artifacts</div>
             </div>
             <div class="item-period">2026</div>
@@ -2649,12 +2965,12 @@
 
     <!-- TIMELINE -->
     <section id="timeline" class="section" aria-labelledby="timeline-title">
-      <h2 class="section-title" id="timeline-title" data-eyebrow="S.02 — Timeline">Timeline</h2>
+      <h2 class="section-title" id="timeline-title" data-eyebrow="S.02 - Timeline">Timeline</h2>
       <p class="section-sub">Six milestones, from internal vulnerability disclosure to offensive cloud research.</p>
 
       <div class="milestones" aria-label="Career milestones">
         <article class="milestone">
-          <span class="ms-year">2022 — 2023</span>
+          <span class="ms-year">2022 - 2023</span>
           <h3>DIA Security</h3>
           <p>Internal web vulnerability disclosure (XSS / CSRF / SQLi / file upload bypass) and a DevTools-blocking policy tool. Excellence Award.</p>
           <div class="ms-chips">
@@ -2704,7 +3020,7 @@
         </article>
 
         <article class="milestone">
-          <span class="ms-year">2026 · Q1–Q2</span>
+          <span class="ms-year">2026 · Q1-Q2</span>
           <h3>External Authoring</h3>
           <p>Lead-organized INC0GNITO Quals 2026 (108 teams). Authored Web challenges for CODEGATE 2026 &amp; HACKTHEON Sejong 2026.</p>
           <div class="ms-chips">
@@ -2721,7 +3037,7 @@
       <div class="edu-grid">
         <!-- Left: Education -->
         <div>
-          <h2 class="section-title" id="edu-title" data-eyebrow="S.03 — Education">Education</h2>
+          <h2 class="section-title" id="edu-title" data-eyebrow="S.03 - Education">Education</h2>
           <div class="card">
             <div class="item">
               <div class="item-head">
@@ -2729,7 +3045,7 @@
                   <div class="item-title">Myongji University</div>
                   <div class="item-sub">B.S. in Information &amp; Communication Engineering · 4th year (expected graduation: <time datetime="2026-08">Aug 2026</time>)</div>
                 </div>
-                <div class="item-period">2020 – 2026.08 (expected)</div>
+                <div class="item-period">2020 - 2026.08 (expected)</div>
               </div>
             </div>
             <div class="item">
@@ -2779,7 +3095,7 @@
                   <div class="item-sub">KITRI (Korea IT Research Institute)</div>
                 </div>
                 <div class="item-period">
-                  <time datetime="2025-03">2025.03</time> – <time datetime="2025-09">2025.09</time>
+                  <time datetime="2025-03">2025.03</time> - <time datetime="2025-09">2025.09</time>
                 </div>
               </div>
 
@@ -2800,7 +3116,7 @@
     </section>
     <!-- SKILLS (added to match nav) -->
     <section id="skills" class="section" aria-labelledby="skills-title">
-      <h2 class="section-title" id="skills-title" data-eyebrow="S.04 — Skills">Skills</h2>
+      <h2 class="section-title" id="skills-title" data-eyebrow="S.04 - Skills">Skills</h2>
       <div class="tech-matrix">
         <div class="col">
           <h5>Languages</h5>
@@ -2875,16 +3191,16 @@
 
     <!-- EXPERIENCE -->
     <section id="experience" class="section" aria-labelledby="exp-title">
-      <h2 class="section-title" id="exp-title" data-eyebrow="S.05 — Experience">Security Experience</h2>
+      <h2 class="section-title" id="exp-title" data-eyebrow="S.05 - Experience">Security Experience</h2>
       <div class="card">
         <!-- Military service -->
         <div class="item">
           <div class="item-head">
             <div>
-              <div class="item-title">ROK Army — Information Security Soldier (1 year 6 months)</div>
-              <div class="item-sub">DIA (Defense Intelligence Agency) — Security appliance operations & policy management</div>
+              <div class="item-title">ROK Army - Information Security Soldier (1 year 6 months)</div>
+              <div class="item-sub">DIA (Defense Intelligence Agency) - Security appliance operations & policy management</div>
             </div>
-            <div class="item-period">2022.04 – 2023.10</div>
+            <div class="item-period">2022.04 - 2023.10</div>
           </div>
           <div class="item-sub">Security appliance ops / UTM policy management / Web vulnerability reporting / SOC monitoring</div>
         </div>
@@ -2918,10 +3234,10 @@
 
     <!-- ACHIEVEMENTS -->
     <section id="achievements" class="section" aria-labelledby="achievements-title">
-      <h2 class="section-title" id="achievements-title" data-eyebrow="S.06 — Evidence">Key Achievements</h2>
+      <h2 class="section-title" id="achievements-title" data-eyebrow="S.06 - Evidence">Key Achievements</h2>
 
       <div class="achv-grid">
-        <!-- DEF CON 34 CTF Finals — The Seoul Sauna Shogunate -->
+        <!-- World CTF Finals - The Seoul Sauna Shogunate -->
         <article class="defcon-feature" id="defcon34" aria-labelledby="defcon34-title">
           <span class="dc-corner tl" aria-hidden="true"></span>
           <span class="dc-corner tr" aria-hidden="true"></span>
@@ -2931,11 +3247,11 @@
 
           <div class="dc-ticker" aria-hidden="true">
             <div class="dc-ticker-track">
-              <span>DEF CON CTF FINALS 2026</span><span class="dc-sep">✦</span>
+              <span>WORLD CTF FINALS 2026</span><span class="dc-sep">✦</span>
               <span>THE SEOUL SAUNA SHOGUNATE</span><span class="dc-sep">✦</span>
               <span>QUALIFIER RANK 7 · 8,641 PTS</span><span class="dc-sep">✦</span>
               <span>LAS VEGAS · AUGUST 2026</span><span class="dc-sep">✦</span>
-              <span>DEF CON CTF FINALS 2026</span><span class="dc-sep">✦</span>
+              <span>WORLD CTF FINALS 2026</span><span class="dc-sep">✦</span>
               <span>THE SEOUL SAUNA SHOGUNATE</span><span class="dc-sep">✦</span>
               <span>QUALIFIER RANK 7 · 8,641 PTS</span><span class="dc-sep">✦</span>
               <span>LAS VEGAS · AUGUST 2026</span><span class="dc-sep">✦</span>
@@ -2949,19 +3265,19 @@
               <span class="dc-outline">CTF FINALIST</span><span class="dc-cursor" aria-hidden="true"></span>
             </h3>
             <p class="dc-sub">
-              Placed <b>7th worldwide (8,641 pts)</b> at the DEF CON CTF Qualifier 2026 with team
+              Placed <b>7th worldwide (8,641 pts)</b> at the 2026 CTF qualifier with team
               <b>The Seoul Sauna Shogunate</b>. Competing at the <b>DEF CON 34 CTF Finals</b> in Las Vegas, August 2026.
             </p>
 
-            <div class="dc-stats" aria-label="DEF CON 34 qualifier result">
+            <div class="dc-stats" aria-label="CTF qualifier result">
               <div class="dc-stat"><span class="k">Quals Rank</span><span class="v"><span class="num">#7</span><small>worldwide</small></span></div>
               <div class="dc-stat"><span class="k">Score</span><span class="v">8,641<small>points</small></span></div>
               <div class="dc-stat"><span class="k">Team</span><span class="v">Seoul Sauna<small>The Seoul Sauna Shogunate</small></span></div>
-              <div class="dc-stat"><span class="k">Finals</span><span class="v">AUG 2026<small>DEF CON 34 · Las Vegas</small></span></div>
+              <div class="dc-stat"><span class="k">Finals</span><span class="v">AUG 2026<small>Las Vegas</small></span></div>
             </div>
 
             <div class="dc-foot">
-              <a class="link-chip" href="https://ctftime.org/event/3205/" target="_blank" rel="noopener">CTFtime · DEF CON CTF Qualifier 2026</a>
+              <a class="link-chip" href="https://ctftime.org/event/3205/" target="_blank" rel="noopener">CTFtime · 2026 Qualifier</a>
               <a class="link-chip" href="https://defcon.org/html/links/dc-ctf.html" target="_blank" rel="noopener">DEF CON CTF Archive</a>
             </div>
           </div>
@@ -3009,7 +3325,7 @@
             <li><b>Outcome:</b> Pages were patched and monitoring was enhanced.</li>
           </ul>
         </article>
-        <!-- DIA Security Competition — Excellence Award -->
+        <!-- DIA Security Competition - Excellence Award -->
         <article class="card award">
           <header class="award-head">
             <div class="award-title">
@@ -3020,7 +3336,7 @@
           </header>
           <figure class="project-cover-wrap portrait" style="max-width:300px; margin:10px auto;">
             <a href="assets/award.png" target="_blank" rel="noopener">
-              <img class="project-cover" src="assets/award.png" alt="Award certificate — DIA Security Competition" />
+              <img class="project-cover" src="assets/award.png" alt="Award certificate - DIA Security Competition" />
             </a>
           </figure>
           <div class="prose">
@@ -3051,7 +3367,7 @@
           <header class="award-head">
             <div class="award-title">
               <span class="badge-award">1st place (Individual)</span>
-              <div class="item-title">SPACE WAR URANUS — WEB</div>
+              <div class="item-title">SPACE WAR URANUS - WEB</div>
             </div>
             <div class="item-period"><time datetime="2025-05-25">2025.05.25</time></div>
           </header>
@@ -3068,7 +3384,7 @@
             </figure>
             <figure class="project-cover-wrap portrait">
               <a href="assets/ctf-uranus-rank.png" target="_blank" rel="noopener">
-                <img class="project-cover" src="assets/ctf-uranus-rank.png" alt="SPACE WAR URANUS — Web track 1st place ranking screenshot" />
+                <img class="project-cover" src="assets/ctf-uranus-rank.png" alt="SPACE WAR URANUS - Web track 1st place ranking screenshot" />
               </a>
             </figure>
           </div>
@@ -3081,7 +3397,7 @@
           <a class="link-card" href="https://ialleejy.tistory.com/54" target="_blank" rel="noopener" style="margin-top:8px;">
             <img class="ico" src="https://cdn.simpleicons.org/tistory/EA5220" alt="Tistory" loading="lazy" />
             <span class="meta">
-              <span class="title">SPACE WAR URANUS — WEB Write-up</span>
+              <span class="title">SPACE WAR URANUS - WEB Write-up</span>
               <span class="host">ialleejy.tistory.com/54</span>
             </span>
           </a>
@@ -3102,7 +3418,7 @@
           </ul>
         </article>
 
-        <!-- Gamgyul (Tangerine) CTF — 1st place, 156 participants -->
+        <!-- Gamgyul (Tangerine) CTF - 1st place, 156 participants -->
         <article class="card award">
           <header class="award-head">
             <div class="award-title">
@@ -3123,12 +3439,12 @@
           </div>
         </article>
 
-        <!-- MSG CTF 2025 — co-host, ops, challenge author -->
+        <!-- MSG CTF 2025 - co-host, ops, challenge author -->
       <article class="card highlight span-2">
         <header class="achv-head">
           <div class="achv-title">
             <span class="badge-achv">CTF Operations &amp; Authoring</span>
-            <div class="item-title">MSG CTF 2025 — Co-host · Operations · Challenge Author</div>
+            <div class="item-title">MSG CTF 2025 - Co-host · Operations · Challenge Author</div>
           </div>
           <div class="item-period">
             <time datetime="2025-03-29">2025.03.29</time>
@@ -3155,7 +3471,7 @@
 
 
         <div class="prose">
-          <p class="lead">10:00–22:00 event · <b>26 challenges</b> authored · <b>65 participants</b> across <b>3 universities</b>.</p>
+          <p class="lead">10:00-22:00 event · <b>26 challenges</b> authored · <b>65 participants</b> across <b>3 universities</b>.</p>
           <p>Validated server stability with prior <b>load testing</b>; ran with zero downtime via a <b>Discord bot</b> that handled live announcements / incident response.</p>
           <p>
             We designed a <b>beginner-friendly</b> CTF so new club members hesitant about their security skills could participate without pressure.
@@ -3177,9 +3493,9 @@
           <div class="org-row">
             <span class="org-label">Co-hosts</span>
             <div class="org-list">
-              <span class="org-chip">Myongji Univ. — MJSEC</span>
-              <span class="org-chip">Sejong Univ. — SSG</span>
-              <span class="org-chip">Konkuk Univ. — seKUrity</span>
+              <span class="org-chip">Myongji Univ. - MJSEC</span>
+              <span class="org-chip">Sejong Univ. - SSG</span>
+              <span class="org-chip">Konkuk Univ. - seKUrity</span>
             </div>
           </div>
 
@@ -3187,11 +3503,11 @@
           <div class="org-row">
             <span class="org-label">Upcoming <span class="date"><time datetime="2025-11-08">2025.11.08</time></span></span>
             <div class="org-list">
-              <span class="org-chip">Myongji — MJSEC</span>
-              <span class="org-chip">Chung-Ang — Securious</span>
-              <span class="org-chip">Konkuk — seKUrity</span>
-              <span class="org-chip">Soonchunhyang — Security First</span>
-              <span class="org-chip">Sangmyung — CodeCure</span>
+              <span class="org-chip">Myongji - MJSEC</span>
+              <span class="org-chip">Chung-Ang - Securious</span>
+              <span class="org-chip">Konkuk - seKUrity</span>
+              <span class="org-chip">Soonchunhyang - Security First</span>
+              <span class="org-chip">Sangmyung - CodeCure</span>
               <span class="org-chip sponsor">HSPACE (sponsor)</span>
             </div>
           </div>
@@ -3200,8 +3516,8 @@
 
 
         <ul class="checklist" style="margin-top:8px;">
-          <li><b>Featured Challenge A — Django Session:</b> <code>.git</code> forensics → <b>SECRET_KEY</b> recovery → <b>HMAC</b> session forging chain.</li>
-          <li><b>Featured Challenge B — reCAPTCHA bypass:</b> Bypassing <b>reCAPTCHA v2 / v3 + GeeTest</b> via <b>PoW / HMAC / Pulse / YOLOv8 / OpenCV</b> automation.</li>
+          <li><b>Featured Challenge A - Django Session:</b> <code>.git</code> forensics → <b>SECRET_KEY</b> recovery → <b>HMAC</b> session forging chain.</li>
+          <li><b>Featured Challenge B - reCAPTCHA bypass:</b> Bypassing <b>reCAPTCHA v2 / v3 + GeeTest</b> via <b>PoW / HMAC / Pulse / YOLOv8 / OpenCV</b> automation.</li>
           <li><b>Operations:</b> Co-hosted 1st &amp; 2nd MSG CTF (2025.03 / 2025.11): ~100 participants · ~50 teams · 24 challenges.</li>
         </ul>
 
@@ -3239,12 +3555,12 @@
 
       </article>
 
-      <!-- INC0GNITO Festival CTF QUALS 2026 — Lead organizer & Web challenge author -->
+      <!-- INC0GNITO Festival CTF QUALS 2026 - Lead organizer & Web challenge author -->
       <article class="card highlight span-2">
         <header class="achv-head">
           <div class="achv-title">
             <span class="badge-achv">CTF Lead Organizer &amp; Web Author</span>
-            <div class="item-title">INC0GNITO Festival CTF — Quals 2026</div>
+            <div class="item-title">INC0GNITO Festival CTF - Quals 2026</div>
           </div>
           <div class="item-period">
             <time datetime="2026-02-07">2026.02.07</time>
@@ -3269,14 +3585,14 @@
         </div>
 
         <ul class="checklist">
-          <li><b>Edge Gate</b> — <b>HTTP Request Smuggling → RCE</b> chain on a CDN/edge-proxy topology.</li>
-          <li><b>INVISIBLE</b> — <b>CSS side-channel exfiltration</b> against a state-rendering oracle.</li>
-          <li><b>MJSEC Forge Console</b> — <b>DNS Rebinding + Cache Poisoning → SSRF</b> primitive against an admin console.</li>
+          <li><b>Edge Gate</b> - <b>HTTP Request Smuggling → RCE</b> chain on a CDN/edge-proxy topology.</li>
+          <li><b>INVISIBLE</b> - <b>CSS side-channel exfiltration</b> against a state-rendering oracle.</li>
+          <li><b>MJSEC Forge Console</b> - <b>DNS Rebinding + Cache Poisoning → SSRF</b> primitive against an admin console.</li>
           <li><b>Operations:</b> Ran the entire competition: challenge design, infra packaging, scoreboard ops and live announcements / hint distribution.</li>
         </ul>
 
         <ul class="bullets link-row" style="margin-top:8px;">
-          <li><a class="link-chip" href="https://dreamhack.io/ctf/792" target="_blank" rel="noopener">Dreamhack CTF #792 — INC0GNITO Quals 2026</a></li>
+          <li><a class="link-chip" href="https://dreamhack.io/ctf/792" target="_blank" rel="noopener">Dreamhack CTF #792 - INC0GNITO Quals 2026</a></li>
         </ul>
       </article>
 
@@ -3285,7 +3601,7 @@
         <header class="achv-head">
           <div class="achv-title">
             <span class="badge-achv">External CTF Challenge Author</span>
-            <div class="item-title">CTF Challenge Authoring — CODEGATE 2026 · HACKTHEON Sejong 2026</div>
+            <div class="item-title">CTF Challenge Authoring - CODEGATE 2026 · HACKTHEON Sejong 2026</div>
           </div>
           <div class="item-period">
             <time datetime="2026-03-28">2026.03</time> · <time datetime="2026-04-25">2026.04</time>
@@ -3303,13 +3619,13 @@
 
         <div class="org-box slim" style="margin-top:8px;">
           <div class="org-row">
-            <span class="org-label">CODEGATE 2026 <span class="date"><time datetime="2026-03-28">Prelim 2026.03.28</time> · <time datetime="2026-07-23">Finals 2026.07.23–24, COEX Seoul</time></span></span>
+            <span class="org-label">CODEGATE 2026 <span class="date"><time datetime="2026-03-28">Prelim 2026.03.28</time> · <time datetime="2026-07-23">Finals 2026.07.23-24, COEX Seoul</time></span></span>
             <div class="org-list">
               <span class="org-chip">Web · <b>Sealed Board</b></span>
             </div>
           </div>
           <div class="org-row">
-            <span class="org-label">HACKTHEON Sejong 2026 <span class="date"><time datetime="2026-04-25">Prelim 2026.04.25</time> · <time datetime="2026-07-09">Finals 2026.07.09–10, Sejong Conv. Center</time></span></span>
+            <span class="org-label">HACKTHEON Sejong 2026 <span class="date"><time datetime="2026-04-25">Prelim 2026.04.25</time> · <time datetime="2026-07-09">Finals 2026.07.09-10, Sejong Conv. Center</time></span></span>
             <div class="org-list">
               <span class="org-chip">Web · <b>Phantompass</b></span>
               <span class="org-chip">Web · <b>Observatory</b></span>
@@ -3326,9 +3642,9 @@
         </div>
 
         <ul class="checklist">
-          <li><b>CODEGATE 2026 — Sealed Board (Web):</b> Authored a Web challenge for the preliminary round of one of Korea's most renowned international hacking competitions (Online · 2026.03.28).</li>
-          <li><b>HACKTHEON Sejong 2026 — Phantompass (Web):</b> Authored a Web challenge focused on authentication / credential-handling pitfalls (Online prelim · 2026.04.25).</li>
-          <li><b>HACKTHEON Sejong 2026 — Observatory (Web):</b> Authored a Web challenge centered on observation-side / information-leak primitives (Online prelim · 2026.04.25).</li>
+          <li><b>CODEGATE 2026 - Sealed Board (Web):</b> Authored a Web challenge for the preliminary round of one of Korea's most renowned international hacking competitions (Online · 2026.03.28).</li>
+          <li><b>HACKTHEON Sejong 2026 - Phantompass (Web):</b> Authored a Web challenge focused on authentication / credential-handling pitfalls (Online prelim · 2026.04.25).</li>
+          <li><b>HACKTHEON Sejong 2026 - Observatory (Web):</b> Authored a Web challenge centered on observation-side / information-leak primitives (Online prelim · 2026.04.25).</li>
           <li><b>Operations:</b> Delivered reference solutions, intended write-ups and reproducible deployment artifacts (Dockerfile / Compose) for the organizers.</li>
         </ul>
 
@@ -3341,29 +3657,29 @@
       </article>
 
       </div>
-      
-    </section>
-    
 
-          
+    </section>
+
+
+
 
     <!-- ACTIVITIES -->
     <section id="activities" class="section" aria-labelledby="activities-title">
-      <h2 class="section-title" id="activities-title" data-eyebrow="S.07 — Activities">Activities</h2>
+      <h2 class="section-title" id="activities-title" data-eyebrow="S.07 - Activities">Activities</h2>
       <div class="two-col">
         <!-- Undergraduate research (DBREACH) -->
         <div class="card activity-card span-2 dbreach-card recruiter" id="dbreach">
           <header class="dbreach-head">
-            <h3 class="dbreach-title">Undergraduate Research — DBREACH Compression Side-Channel</h3>
+            <h3 class="dbreach-title">Undergraduate Research - DBREACH Compression Side-Channel</h3>
             <div class="dbreach-period">
-              <time datetime="2024-12-18">2024.12.18</time> – <span class="now">Present</span>
+              <time datetime="2024-12-18">2024.12.18</time> - <span class="now">Present</span>
             </div>
           </header>
 
 
           <!-- Executive summary -->
           <div class="brief">
-            <p class="lead">When the <b>secret and the guess overlap</b>, the <b>compression ratio increases and on-disk size (Δsize) decreases.</b>  
+            <p class="lead">When the <b>secret and the guess overlap</b>, the <b>compression ratio increases and on-disk size (Δsize) decreases.</b>
               We implemented and evaluated the <b>DBREACH</b> attack, which iteratively observes only this <b>length signal</b> to recover the secret,
               on <b>MariaDB (InnoDB)</b> in a <b>reproducible Docker</b> environment.</p>
             <div class="kpi-row">
@@ -3383,12 +3699,12 @@
               <ul class="bullet-compact">
                 <li><b>Core idea:</b> The more a guess overlaps the secret, the higher the compression ratio → <b>packet length</b> or <b>file/page size</b> on disk <b>decreases</b>.</li>
                 <li><b>Observation points:</b> InnoDB / WiredTiger <b>on-disk size</b>, WAL bytes, etc.</li>
-                <li><b>Threat model:</b> <b>chosen-plaintext/insert</b> — the attacker injects/reflects guesses and repeatedly observes length changes.</li>
+                <li><b>Threat model:</b> <b>chosen-plaintext/insert</b> - the attacker injects/reflects guesses and repeatedly observes length changes.</li>
                 <li><b>Why dangerous:</b> Leaks via <b>length alone</b>, with no application logs needed; <b>encryption alone</b> doesn't defend.</li>
                 <li><b>Mitigations:</b> Don't compress secrets together with attacker-controlled input, disable <b>page compression</b> on sensitive tables, enforce <b>fixed length / padding</b>,
                   control flush schedules, and add <b>change-detection</b> monitoring (Δsize threshold).</li>
               </ul>
-              
+
             </div>
           </div>
 
@@ -3522,12 +3838,12 @@
           <div class="item-sub">CTFs and other security competitions (newest first)</div>
 
           <div class="timeline">
-            <!-- 2026.05: DEF CON CTF Qualifier 2026 — Finals qualified -->
+            <!-- 2026.05: DEF CON CTF Qualifier 2026 - Finals qualified -->
             <div class="entry">
-              <div class="entry-title">DEF CON CTF Qualifier 2026 — The Seoul Sauna Shogunate</div>
+              <div class="entry-title">DEF CON CTF Qualifier 2026 - The Seoul Sauna Shogunate</div>
               <div class="entry-meta">
                 <span>Team: <b>The Seoul Sauna Shogunate</b></span>
-                <span><time datetime="2026-05-22">2026.05.22</time>–<time datetime="2026-05-24">05.24</time></span>
+                <span><time datetime="2026-05-22">2026.05.22</time>-<time datetime="2026-05-24">05.24</time></span>
                 <span class="pill rank-win">7th worldwide · DEF CON 34 Finals</span>
               </div>
               <ul class="bullets">
@@ -3537,7 +3853,7 @@
 
             <!-- 2026: RubiyaLab CTF results -->
             <div class="entry">
-              <div class="entry-title">UofTCTF 2026 — RubiyaLab</div>
+              <div class="entry-title">UofTCTF 2026 - RubiyaLab</div>
               <div class="entry-meta">
                 <span>Team: <b>RubiyaLab</b></span>
                 <span><time datetime="2026-01">2026.01</time></span>
@@ -3546,7 +3862,7 @@
             </div>
 
             <div class="entry">
-              <div class="entry-title">0xL4ugh CTF v5 — RubiyaLab</div>
+              <div class="entry-title">0xL4ugh CTF v5 - RubiyaLab</div>
               <div class="entry-meta">
                 <span>Team: <b>RubiyaLab</b></span>
                 <span><time datetime="2026-01">2026.01</time></span>
@@ -3555,7 +3871,7 @@
             </div>
 
             <div class="entry">
-              <div class="entry-title">0xFUN CTF 2026 — RubiyaLab</div>
+              <div class="entry-title">0xFUN CTF 2026 - RubiyaLab</div>
               <div class="entry-meta">
                 <span>Team: <b>RubiyaLab</b></span>
                 <span><time datetime="2026">2026</time></span>
@@ -3563,7 +3879,7 @@
               </div>
             </div>
 
-            <!-- 2025.12 — Gamgyul (Tangerine) CTF -->
+            <!-- 2025.12 - Gamgyul (Tangerine) CTF -->
             <div class="entry">
               <div class="entry-title">Gamgyul (Tangerine) CTF</div>
               <div class="entry-meta">
@@ -3576,7 +3892,7 @@
 
             <!-- 2025.08.16 -->
             <div class="entry">
-              <div class="entry-title">CCE 2025 — General Track (Participant)</div>
+              <div class="entry-title">CCE 2025 - General Track (Participant)</div>
               <div class="entry-meta">
                 <span><time datetime="2025-08-16">2025.08.16</time></span>
                 <span class="pill">Rank 60</span>
@@ -3590,18 +3906,18 @@
               </ul>
             </div>
 
-            <!-- 2025.08.11–13 -->
+            <!-- 2025.08.11-13 -->
             <div class="entry">
               <div class="entry-title">White Hat School CTF 2025 (Participant)</div>
               <div class="entry-meta">
-                <span><time datetime="2025-08-11">2025.08.11</time>–<time datetime="2025-08-13">08.13</time></span>
+                <span><time datetime="2025-08-11">2025.08.11</time>-<time datetime="2025-08-13">08.13</time></span>
                 <span class="pill rank-top">Rank 20</span>
               </div>
             </div>
 
             <!-- 2025.05.25 -->
             <div class="entry">
-              <div class="entry-title">HSPACE — SPACE WAR URANUS [WEB] (Participant)</div>
+              <div class="entry-title">HSPACE - SPACE WAR URANUS [WEB] (Participant)</div>
               <div class="entry-meta">
                 <span><time datetime="2025-05-25">2025.05.25</time></span>
                 <span class="pill rank-win">1st place</span>
@@ -3657,7 +3973,7 @@
 
             <!-- 2024.08.03 -->
             <div class="entry">
-              <div class="entry-title">CCE 2024 — General Track (Participant)</div>
+              <div class="entry-title">CCE 2024 - General Track (Participant)</div>
               <div class="entry-meta">
                 <span><time datetime="2024-08-03">2024.08.03</time></span>
               </div>
@@ -3665,7 +3981,7 @@
 
             <!-- 2023.06.10 -->
             <div class="entry">
-              <div class="entry-title">CCE 2023 — Public Sector Track (Participant)</div>
+              <div class="entry-title">CCE 2023 - Public Sector Track (Participant)</div>
               <div class="entry-meta">
                 <span><time datetime="2023-06-10">2023.06.10</time></span>
               </div>
@@ -3673,7 +3989,7 @@
 
             <!-- 2022.09.24 -->
             <div class="entry">
-              <div class="entry-title">CCE 2022 — Public Sector Track (Participant)</div>
+              <div class="entry-title">CCE 2022 - Public Sector Track (Participant)</div>
               <div class="entry-meta">
                 <span><time datetime="2022-09-24">2022.09.24</time></span>
               </div>
@@ -3689,7 +4005,7 @@
 
             <!-- 2026: External CTF challenge authoring -->
             <div class="entry">
-              <div class="entry-title">HACKTHEON Sejong 2026 — Web Challenge Author</div>
+              <div class="entry-title">HACKTHEON Sejong 2026 - Web Challenge Author</div>
               <div class="entry-meta">
                 <span>Authored: <b>Phantompass</b>, <b>Observatory</b> (Web · Online prelim)</span>
                 <span><time datetime="2026-04-25">2026.04.25</time></span>
@@ -3701,7 +4017,7 @@
             </div>
 
             <div class="entry">
-              <div class="entry-title">CODEGATE 2026 — Web Challenge Author</div>
+              <div class="entry-title">CODEGATE 2026 - Web Challenge Author</div>
               <div class="entry-meta">
                 <span>Authored: <b>Sealed Board</b> (Web · Online prelim)</span>
                 <span><time datetime="2026-03-28">2026.03.28</time></span>
@@ -3712,9 +4028,9 @@
               </ul>
             </div>
 
-            <!-- 2026.02 — INC0GNITO QUALS 2026 -->
+            <!-- 2026.02 - INC0GNITO QUALS 2026 -->
             <div class="entry">
-              <div class="entry-title">INC0GNITO Festival CTF — Quals 2026 (Lead Organizer · Web Author)</div>
+              <div class="entry-title">INC0GNITO Festival CTF - Quals 2026 (Lead Organizer · Web Author)</div>
               <div class="entry-meta">
                 <span>108 teams · 315 participants · authored 3 Web challenges (Edge Gate / INVISIBLE / MJSEC Forge Console)</span>
                 <span><time datetime="2026-02-07">2026.02.07</time></span>
@@ -3724,9 +4040,9 @@
               </ul>
             </div>
 
-            <!-- MJSEC seminar — reCAPTCHA v2 bypass talk -->
+            <!-- MJSEC seminar - reCAPTCHA v2 bypass talk -->
             <div class="entry">
-              <div class="entry-title">MJSEC Seminar — Talk: Google reCAPTCHA v2 Bypass</div>
+              <div class="entry-title">MJSEC Seminar - Talk: Google reCAPTCHA v2 Bypass</div>
               <div class="entry-meta">
                 <span>Internal seminar talk on reCAPTCHA v2 bypass research (PoW / YOLOv8 / OpenCV)</span>
                 <span><time datetime="2025">2025</time></span>
@@ -3735,10 +4051,10 @@
 
             <!-- MJSEC 2.5th cohort mentoring -->
             <div class="entry">
-              <div class="entry-title">MJSEC Mentoring — 2.5th Cohort</div>
+              <div class="entry-title">MJSEC Mentoring - 2.5th Cohort</div>
               <div class="entry-meta">
                 <span>Mobile App Hacking (Android) basics · DevOps mentor</span>
-                <span><time datetime="2025-07-01">2025.07.01</time> – <time datetime="2025-08-29">2025.08.29</time></span>
+                <span><time datetime="2025-07-01">2025.07.01</time> - <time datetime="2025-08-29">2025.08.29</time></span>
               </div>
             </div>
 
@@ -3755,10 +4071,10 @@
 
             <!-- MJSEC 2nd cohort mentoring -->
             <div class="entry">
-              <div class="entry-title">MJSEC Mentoring — 2nd Cohort</div>
+              <div class="entry-title">MJSEC Mentoring - 2nd Cohort</div>
               <div class="entry-meta">
                 <span>Advanced Web Hacking · Pwnable basics</span>
-                <span><time datetime="2025-03-11">2025.03.11</time> – <time datetime="2025-06-17">2025.06.17</time></span>
+                <span><time datetime="2025-03-11">2025.03.11</time> - <time datetime="2025-06-17">2025.06.17</time></span>
               </div>
             </div>
 
@@ -3774,19 +4090,19 @@
 
             <!-- MJSEC 1.5th cohort mentoring -->
             <div class="entry">
-              <div class="entry-title">MJSEC Mentoring — 1.5th Cohort</div>
+              <div class="entry-title">MJSEC Mentoring - 1.5th Cohort</div>
               <div class="entry-meta">
                 <span>Forensics basics · Advanced Web Hacking · Reversing study</span>
-                <span><time datetime="2025-01-07">2025.01.07</time> – <time datetime="2025-02-28">2025.02.28</time></span>
+                <span><time datetime="2025-01-07">2025.01.07</time> - <time datetime="2025-02-28">2025.02.28</time></span>
               </div>
             </div>
 
             <!-- MJSEC 1st cohort mentoring -->
             <div class="entry">
-              <div class="entry-title">MJSEC Mentoring — 1st Cohort</div>
+              <div class="entry-title">MJSEC Mentoring - 1st Cohort</div>
               <div class="entry-meta">
                 <span>Web Hacking basics · Pwnable study</span>
-                <span><time datetime="2024-09-10">2024.09.10</time> – <time datetime="2024-12-17">2024.12.17</time></span>
+                <span><time datetime="2024-09-10">2024.09.10</time> - <time datetime="2024-12-17">2024.12.17</time></span>
               </div>
             </div>
 
@@ -3819,7 +4135,7 @@
             <!-- seKUrity -->
             <div class="entry">
               <div class="entry-title">seKUrity</div>
-              <div class="entry-meta"><span>Completed Web Hacking program</span><span>2019.03 – 2019.09</span></div>
+              <div class="entry-meta"><span>Completed Web Hacking program</span><span>2019.03 - 2019.09</span></div>
             </div>
 
           </div>
@@ -3831,20 +4147,20 @@
 
     <!-- PROJECTS (Cards / summary) -->
     <section id="projects" class="section" aria-labelledby="projects-title">
-      <h2 class="section-title" id="projects-title" data-eyebrow="S.08 — Projects">Featured Projects</h2>
+      <h2 class="section-title" id="projects-title" data-eyebrow="S.08 - Projects">Featured Projects</h2>
       <div class="project-grid">
 
         <!-- 0) Watchdog (NEW, latest) -->
         <article class="card project-watchdog">
           <div class="project-header">
-            <div class="project-title">Watchdog — Bug Bounty AI Agent (Monorepo)</div>
+            <div class="project-title">Watchdog - Bug Bounty AI Agent (Monorepo)</div>
             <div class="project-period">
-              <time datetime="2026">2026</time> – <span class="now">Present</span>
+              <time datetime="2026">2026</time> - <span class="now">Present</span>
             </div>
           </div>
           <figure class="project-cover-wrap">
             <img class="project-cover" src="assets/watchdog.png" alt="Watchdog cover image"
-                onerror="this.remove(); this.parentElement.classList.add('placeholder')" />
+                onerror="this.parentElement.classList.add('placeholder'); this.remove()" />
           </figure>
           <p class="project-desc">A bug-bounty AI Agent monorepo. Fixed API contract + verified pipelines first: Django/DRF backend stub, dummy findings, Dockerized E2E smoke and CI/CD with secret-scan, image-scan and SBOM.</p>
 
@@ -3861,19 +4177,19 @@
           </div>
         </article>
 
-        <!-- 0.5) GnawLab — Offensive Cloud + Bedrock AI Agent KB Poisoning (NEW) -->
+        <!-- 0.5) GnawLab - Offensive Cloud + Bedrock AI Agent KB Poisoning (NEW) -->
         <article class="card project-offcloud">
           <div class="project-header">
-            <div class="project-title">GnawLab — Bedrock AI Agent KB Poisoning Scenario</div>
+            <div class="project-title">GnawLab - Bedrock AI Agent KB Poisoning Scenario</div>
             <div class="project-period">
-              <time datetime="2026">2026</time> – <span class="now">Present</span>
+              <time datetime="2026">2026</time> - <span class="now">Present</span>
             </div>
           </div>
           <figure class="project-cover-wrap">
-            <img class="project-cover" src="assets/gnawlab.png" alt="GnawLab cover image"
-                onerror="this.remove(); this.parentElement.classList.add('placeholder')" />
+            <img class="project-cover contain" src="assets/gnawlab.png" alt="GnawLab cover image"
+                onerror="this.parentElement.classList.add('placeholder'); this.remove()" />
           </figure>
-          <p class="project-desc">Contributor to <b>GnawLab</b>, a community-driven offensive cloud security training ground (Beaver Dam Community). Authored a <b>Bedrock AI Agent — Knowledge Base Poisoning</b> scenario showing how RAG-backed agents can be hijacked through poisoned S3 documents.</p>
+          <p class="project-desc">Contributor to <b>GnawLab</b>, a community-driven offensive cloud security training ground (Beaver Dam Community). Authored a <b>Bedrock AI Agent - Knowledge Base Poisoning</b> scenario showing how RAG-backed agents can be hijacked through poisoned S3 documents.</p>
 
           <div class="project-meta meta-group">
             <span class="role-badge">Role: Scenario Author · Offensive Cloud / AI</span>
@@ -3893,12 +4209,12 @@
           <div class="project-header">
             <div class="project-title">WHS 3rd Project: WEAVE</div>
             <div class="project-period">
-              <time datetime="2025-05-03">2025.05.03</time> – <time datetime="2025-08-02">2025.08.02</time>
+              <time datetime="2025-05-03">2025.05.03</time> - <time datetime="2025-08-02">2025.08.02</time>
             </div>
           </div>
           <figure class="project-cover-wrap">
             <img class="project-cover" src="assets/weave.png" alt="WEAVE cover image"
-                onerror="this.remove(); this.parentElement.classList.add('placeholder')" />
+                onerror="this.parentElement.classList.add('placeholder'); this.remove()" />
             <a class="cover-visit" href="https://semanticgap.mjsec.kr" target="_blank" rel="noopener" aria-label="Open WEAVE site">Visit →</a>
           </figure>
 
@@ -3911,7 +4227,7 @@
               semanticgap.mjsec.kr
             </span>
           </div>
-          <p class="project-desc">A Root-Cause–oriented classification platform for Web Semantic Gap vulnerabilities.</p>
+          <p class="project-desc">A Root-Cause-oriented classification platform for Web Semantic Gap vulnerabilities.</p>
 
 
           <div class="project-meta meta-group">
@@ -3933,14 +4249,14 @@
         <!-- 2) Reagan -->
         <article class="card">
           <div class="project-header">
-            <div class="project-title">Reagan — Malicious-URL Detection (3-stage AI)</div>
+            <div class="project-title">Reagan - Malicious-URL Detection (3-stage AI)</div>
             <div class="project-period">
-              <time datetime="2025-03-03">2025.03.03</time> – <time datetime="2025-06-10">2025.06.10</time>
+              <time datetime="2025-03-03">2025.03.03</time> - <time datetime="2025-06-10">2025.06.10</time>
             </div>
           </div>
 
           <figure class="project-cover-wrap">
-            <img class="project-cover" src="assets/reagan.png" alt="Reagan cover image" onerror="this.remove(); this.parentElement.classList.add('placeholder')" />
+            <img class="project-cover" src="assets/reagan.png" alt="Reagan cover image" onerror="this.parentElement.classList.add('placeholder'); this.remove()" />
           </figure>
           <p class="project-desc">A Chrome extension that automatically classifies malicious URLs through a 3-stage pipeline: URL Detection AI, Packet Analysis AI and Break-CAPTCHA AI.</p>
 
@@ -3965,12 +4281,12 @@
           <div class="project-header">
             <div class="project-title">MSG CTF Platform</div>
             <div class="project-period">
-              <time datetime="2025-01-10">2025.01.10</time> – <span class="now">Present</span>
+              <time datetime="2025-01-10">2025.01.10</time> - <span class="now">Present</span>
             </div>
           </div>
 
           <figure class="project-cover-wrap">
-            <img class="project-cover" src="assets/msg_ctf.png" alt="MSG CTF cover image" onerror="this.remove(); this.parentElement.classList.add('placeholder')" />
+            <img class="project-cover" src="assets/msg_ctf.png" alt="MSG CTF cover image" onerror="this.parentElement.classList.add('placeholder'); this.remove()" />
           </figure>
           <p class="project-desc">A custom CTF platform built without CTFd: front-end, back-end and Discord bot all developed in-house.</p>
 
@@ -3999,13 +4315,13 @@
           <div class="project-header">
             <div class="project-title">MJSEC Homepage (LMS Front)</div>
             <div class="project-period">
-              <time datetime="2025-07-03">2025.07.03</time> – <span class="now">Present</span>
+              <time datetime="2025-07-03">2025.07.03</time> - <span class="now">Present</span>
             </div>
           </div>
 
           <figure class="project-cover-wrap">
             <img class="project-cover" src="assets/mjsec_hompage.png" alt="MJSEC homepage cover image"
-                onerror="this.remove(); this.parentElement.classList.add('placeholder')" />
+                onerror="this.parentElement.classList.add('placeholder'); this.remove()" />
             <a class="cover-visit" href="https://mjsec.kr" target="_blank" rel="noopener" aria-label="Open MJSEC site">Visit →</a>
           </figure>
 
@@ -4038,12 +4354,12 @@
           <div class="project-header">
             <div class="project-title">MJSEC BOJ CONTEST</div>
             <div class="project-period">
-              <time datetime="2024-08-14">2024.08.14</time> – <time datetime="2025-05-29">2025.05.29</time>
+              <time datetime="2024-08-14">2024.08.14</time> - <time datetime="2025-05-29">2025.05.29</time>
             </div>
           </div>
 
           <figure class="project-cover-wrap">
-            <img class="project-cover" src="assets/mjsec_boj.png" alt="MJSEC BOJ CONTEST cover image" onerror="this.remove(); this.parentElement.classList.add('placeholder')" />
+            <img class="project-cover" src="assets/mjsec_boj.png" alt="MJSEC BOJ CONTEST cover image" onerror="this.parentElement.classList.add('placeholder'); this.remove()" />
           </figure>
           <p class="project-desc">Baekjoon programming-contest platform powered by the Solved.ac API. GCP E2 + Docker / Compose, Nginx + Gunicorn, Django.</p>
 
@@ -4066,12 +4382,12 @@
           <div class="project-header">
             <div class="project-title">DELDEVTOOL</div>
             <div class="project-period">
-              <time datetime="2022-12-01">2022.12</time> – <time datetime="2023-05-31">2023.05</time>
+              <time datetime="2022-12-01">2022.12</time> - <time datetime="2023-05-31">2023.05</time>
             </div>
           </div>
 
           <figure class="project-cover-wrap">
-            <img class="project-cover" src="assets/deldevtool.png" alt="DELDEVTOOL cover image" onerror="this.remove(); this.parentElement.classList.add('placeholder')" />
+            <img class="project-cover" src="assets/deldevtool.png" alt="DELDEVTOOL cover image" onerror="this.parentElement.classList.add('placeholder'); this.remove()" />
           </figure>
           <p class="project-desc">A Windows local utility that disables / enables browser DevTools via the registry; ships as a single exe via PyInstaller.</p>
 
@@ -4095,15 +4411,15 @@
 
     <!-- PROJECT DETAILS -->
     <section id="project-details" class="section" aria-labelledby="details-title">
-      <h2 class="section-title" id="details-title" data-eyebrow="S.09 — Details">Project Details</h2>
+      <h2 class="section-title" id="details-title" data-eyebrow="S.09 - Details">Project Details</h2>
       <p class="section-sub">Architecture, threat model, attack flow and defensive takeaways for each project.</p>
 
-      <!-- WATCHDOG (NEW) — full detail -->
+      <!-- WATCHDOG (NEW) - full detail -->
       <article class="card" id="detail-watchdog">
         <header class="detail-head">
-          <h3 class="detail-title">Watchdog — Bug-Bounty AI Agent (Monorepo) — Details</h3>
+          <h3 class="detail-title">Watchdog - Bug-Bounty AI Agent (Monorepo) - Details</h3>
           <div class="detail-period">
-            <time datetime="2026">2026</time> – <span class="now">Present</span>
+            <time datetime="2026">2026</time> - <span class="now">Present</span>
           </div>
         </header>
 
@@ -4187,7 +4503,7 @@
         <h4 class="subsection-title">CI / CD (Summary)</h4>
         <ul class="checklist">
           <li><b>CI</b> (<code>.github/workflows/ci.yml</code>): <b>gitleaks</b> secret scan · <b>Trivy</b> image scan (fail on HIGH/CRITICAL) · <b>Syft</b> SBOM generation &amp; upload · docker-compose-based <b>E2E smoke</b>.</li>
-          <li><b>CD</b> (<code>.github/workflows/cd.yml</code>): GitHub <b>Environments</b> — <b>staging</b> automatic, <b>production</b> approval-gated · post-deploy smoke when <code>BASE_URL</code> / <code>SMOKE_TARGET_URL</code> are configured.</li>
+          <li><b>CD</b> (<code>.github/workflows/cd.yml</code>): GitHub <b>Environments</b> - <b>staging</b> automatic, <b>production</b> approval-gated · post-deploy smoke when <code>BASE_URL</code> / <code>SMOKE_TARGET_URL</code> are configured.</li>
         </ul>
 
         <hr class="divider">
@@ -4213,16 +4529,16 @@
       </article>
       <br>
 
-      <!-- GnawLab — Bedrock AI Agent KB Poisoning detail -->
+      <!-- GnawLab - Bedrock AI Agent KB Poisoning detail -->
       <article class="card" id="detail-gnawlab">
         <header class="detail-head">
-          <h3 class="detail-title">GnawLab — Bedrock AI Agent KB Poisoning Scenario — Details</h3>
+          <h3 class="detail-title">GnawLab - Bedrock AI Agent KB Poisoning Scenario - Details</h3>
           <div class="detail-period">
-            <time datetime="2026">2026</time> – <span class="now">Present</span>
+            <time datetime="2026">2026</time> - <span class="now">Present</span>
           </div>
         </header>
 
-        <p class="item-sub"><b>GnawLab</b> (Beaver Dam Community) is a community-driven offensive cloud security training ground. I contribute the <b>Bedrock AI Agent — Knowledge Base (RAG) Poisoning</b> scenario.</p>
+        <p class="item-sub"><b>GnawLab</b> (Beaver Dam Community) is a community-driven offensive cloud security training ground. I contribute the <b>Bedrock AI Agent - Knowledge Base (RAG) Poisoning</b> scenario.</p>
 
         <div class="summary summary-box">
           <p>
@@ -4230,7 +4546,7 @@
             This scenario builds a realistic AWS environment where an <b>Amazon Bedrock Agent</b> uses a
             <b>Knowledge Base (RAG)</b> backed by S3 documents. An attacker who can write to those documents
             injects malicious instructions; during retrieval the agent <b>follows the attacker's instructions</b>
-            instead of the operator's — a classic <b>indirect prompt injection</b> via RAG.
+            instead of the operator's - a classic <b>indirect prompt injection</b> via RAG.
           </p>
         </div>
 
@@ -4341,10 +4657,10 @@
 
       <article class="card" id="detail-weave">
         <header class="detail-head">
-          <h3 class="detail-title">WEAVE — Semantic Gap Knowledge Platform — Details</h3>
+          <h3 class="detail-title">WEAVE - Semantic Gap Knowledge Platform - Details</h3>
           <div class="detail-period">
-            <time datetime="2025-05-03">2025.05.03</time> – <time datetime="2025-08-02">2025.08.02</time>
-          </div> 
+            <time datetime="2025-05-03">2025.05.03</time> - <time datetime="2025-08-02">2025.08.02</time>
+          </div>
         </header>
 
         <p class="item-sub">Root-Cause taxonomy for Semantic-Gap vulnerabilities + a per-step payload wiki. Front=React, Ops=GCP N2 · Nginx, CI/CD=GitHub Actions + Docker Compose.</p>
@@ -4352,16 +4668,16 @@
         <!-- One-line summary -->
         <div class="summary summary-box">
           <p>
-            <b>Semantic Gap</b> is a class of vulnerabilities exploiting <b>semantic mismatches</b> — the same data/request
+            <b>Semantic Gap</b> is a class of vulnerabilities exploiting <b>semantic mismatches</b> - the same data/request
             being <b>interpreted differently across components</b>. Existing taxonomies (<i>CWE / CAPEC / OWASP</i>)
-            are <b>outcome- and technique-centric</b>; WEAVE complements them with a <b>Root-Cause–oriented</b> taxonomy
+            are <b>outcome- and technique-centric</b>; WEAVE complements them with a <b>Root-Cause-oriented</b> taxonomy
             and <b>per-step attack payloads</b> in one platform, improving usability for both <b>red and blue teams</b>.
           </p>
         </div>
 
         <!-- KPIs -->
         <div class="kpi-row" style="margin-top:8px;">
-          <span class="kpi">Analysis: 5/14–7/12</span>
+          <span class="kpi">Analysis: 5/14-7/12</span>
           <span class="kpi">117 documents analyzed</span>
           <span class="kpi">44 sub-categories built</span>
           <span class="kpi">Tree / Tag navigation</span>
@@ -4411,7 +4727,7 @@
         <ul class="checklist">
           <li><b>Root-cause gap:</b> Existing taxonomies are technique/outcome-focused, making defensive insight hard to derive.</li>
           <li><b>Inconsistent terminology:</b> The same phenomenon is described with different terms, making cross-case comparison hard.</li>
-          <li><b>Goal:</b> Provide a <b>Root-Cause–based</b> hierarchy plus <b>per-step attack payloads</b> as immediately useful knowledge for red-teaming, scanning and defensive policy work.</li>
+          <li><b>Goal:</b> Provide a <b>Root-Cause-based</b> hierarchy plus <b>per-step attack payloads</b> as immediately useful knowledge for red-teaming, scanning and defensive policy work.</li>
         </ul>
 
         <hr class="divider">
@@ -4466,7 +4782,7 @@
           <li><b>Operational stability:</b> Repository backup / restore paths and access / usage <b>monitoring</b>.</li>
         </ul>
 
-       
+
       </article>
 
 
@@ -4474,9 +4790,9 @@
 
       <article class="card" id="detail-reagan">
         <header class="detail-head">
-          <h3 class="detail-title">Reagan — 3-stage AI Malicious-URL Detection — Details</h3>
+          <h3 class="detail-title">Reagan - 3-stage AI Malicious-URL Detection - Details</h3>
           <div class="detail-period">
-            <time datetime="2025-03-03">2025.03.03</time> – <time datetime="2025-06-10">2025.06.10</time>
+            <time datetime="2025-03-03">2025.03.03</time> - <time datetime="2025-06-10">2025.06.10</time>
           </div>
         </header>
 
@@ -4552,9 +4868,9 @@
         <!-- Pipeline -->
         <h4 class="subsection-title">Full Pipeline (3 stages)</h4>
         <ol class="steps">
-          <li><b>Stage 1 — URL-feature detection:</b> Lightweight <b>LightGBM</b> classifies URL / content features in real time (extension shows a warning).</li>
-          <li><b>Stage 2 — CAPTCHA handling:</b> <b>Selenium + fine-tuned YOLOv8</b> auto-solves reCAPTCHA v2 puzzles (board-diff detection · retries · natural mouse movement).</li>
-          <li><b>Stage 3 — Packet / TLS / HTML classification:</b> Backend extracts network · domain · TLS · HTML metadata features and uses a <b>RandomForest</b> to return malicious / phishing verdicts as JSON.</li>
+          <li><b>Stage 1 - URL-feature detection:</b> Lightweight <b>LightGBM</b> classifies URL / content features in real time (extension shows a warning).</li>
+          <li><b>Stage 2 - CAPTCHA handling:</b> <b>Selenium + fine-tuned YOLOv8</b> auto-solves reCAPTCHA v2 puzzles (board-diff detection · retries · natural mouse movement).</li>
+          <li><b>Stage 3 - Packet / TLS / HTML classification:</b> Backend extracts network · domain · TLS · HTML metadata features and uses a <b>RandomForest</b> to return malicious / phishing verdicts as JSON.</li>
         </ol>
 
         <hr class="divider divider--soft">
@@ -4587,7 +4903,7 @@
           <li><b>Backend:</b> When DRF creates an <code>AnalysisRequest</code>, three tasks are auto-derived and state-managed; CORS / BasicAuth, Gunicorn.</li>
           <li><b>Data:</b> Fine-tuned YOLOv8 on a reCAPTCHA dataset (e.g. Mandourah); the packet AI uses TLS / domain / HTML / network logs for features.</li>
         </ul>
-       
+
       </article>
       <BR>
 
@@ -4595,9 +4911,9 @@
 
       <article class="card" id="detail-msgctf">
         <header class="detail-head">
-          <h3 class="detail-title">MSG CTF Platform — Details</h3>
+          <h3 class="detail-title">MSG CTF Platform - Details</h3>
           <div class="detail-period">
-            <time datetime="2025-01-10">2025.01.10</time> – <span class="now">Present</span>
+            <time datetime="2025-01-10">2025.01.10</time> - <span class="now">Present</span>
           </div>
         </header>
 
@@ -4632,7 +4948,7 @@
             </a>
           </figure>
         </div>
-        
+
         <hr class="divider">
         <!-- Tech stack -->
         <div class="tech-matrix">
@@ -4683,15 +4999,15 @@
           <li><b>Discord Bot:</b> Announcement / hint broadcasting, ops commands, FirstBlood event notifications.</li>
         </ul>
 
-        
+
       </article>
       <BR>
 
       <article class="card" id="detail-mjsec">
         <header class="detail-head">
-          <h3 class="detail-title">MJSEC Homepage (LMS Front) — Details</h3>
+          <h3 class="detail-title">MJSEC Homepage (LMS Front) - Details</h3>
           <div class="detail-period">
-            <time datetime="2025-07-03">2025.07.03</time> – <span class="now">Present</span>
+            <time datetime="2025-07-03">2025.07.03</time> - <span class="now">Present</span>
           </div>
         </header>
 
@@ -4797,22 +5113,22 @@
           <li><b>Verify / Cleanup:</b> <b>HTTPS health check</b> · <code>prune</code> stale images · success / failure notifications</li>
         </ul>
 
-        
+
       </article>
       <BR>
 
       <article class="card" id="detail-mjsecboj">
         <header class="detail-head">
-          <h3 class="detail-title">MJSEC BOJ CONTEST — Details</h3>
+          <h3 class="detail-title">MJSEC BOJ CONTEST - Details</h3>
           <div class="detail-period">
-            <time datetime="2024-08-14">2024.08.14</time> – <time datetime="2025-05-29">2025.05.29</time>
+            <time datetime="2024-08-14">2024.08.14</time> - <time datetime="2025-05-29">2025.05.29</time>
           </div>
         </header>
 
         <p class="item-sub">Baekjoon contest platform powered by the Solved.ac API. Server = GCP E2, Docker / Compose, Nginx + Gunicorn, Django.</p>
 
         <!-- Intro -->
-         
+
         <div class="summary summary-box">
           <p>
             A website for the <b>MJSEC Baekjoon programming contest</b>. Submissions are validated through the
@@ -4836,7 +5152,7 @@
               <img src="assets/boj-admin.png" alt="Example of admin page (participant / problem / point management)">
             </a>
           </figure>
-          
+
         </div>
         <hr class="divider">
         <!-- Tech stack -->
@@ -4895,20 +5211,20 @@
           </li>
         </ol>
 
-        
+
       </article>
- 
+
 
       <br>
       <article class="card" id="detail-deldevtool">
         <header class="detail-head">
-          <h3 class="detail-title">DELDEVTOOL — Details</h3>
+          <h3 class="detail-title">DELDEVTOOL - Details</h3>
           <div class="detail-period">
-            <time datetime="2022-12">2022.12</time> – <time datetime="2023-05">2023.05</time>
+            <time datetime="2022-12">2022.12</time> - <time datetime="2023-05">2023.05</time>
           </div>
         </header>
         <p class="item-sub">A Windows local utility. Disable / enable browser DevTools via registry &amp; settings; ships as a single PyInstaller exe.</p>
-        
+
         <!-- Summary -->
         <div class="summary summary-box">
           <p class="lead">
@@ -4947,7 +5263,7 @@
         <!-- Tech stack / Links -->
         <div class="tech-matrix">
           <div class="col"><h5>Server / Infra</h5><div class="tags"><span class="tag">Local (no server)</span></div></div>
-          <div class="col"><h5>Framework</h5><div class="tags"><span class="tag">— (Python script)</span></div></div>
+          <div class="col"><h5>Framework</h5><div class="tags"><span class="tag">- (Python script)</span></div></div>
           <div class="col"><h5>Languages</h5><div class="tags"><span class="tag i-python">Python</span></div></div>
           <div class="col"><h5>Other</h5><div class="tags"><span class="tag i-windows">Windows Registry</span><span class="tag i-python">PyInstaller</span></div></div>
         </div>
@@ -5019,7 +5335,7 @@
           </ul>
         </div>
 
-        
+
           <ul class="bullet-compact">
             <li><b>Build:</b> <code>pyinstaller --onefile --noconsole disable.py</code> (admin required)</li>
             <li><b>Revert:</b> <code>enable.py</code> deletes the added keys / settings</li>
@@ -5036,11 +5352,11 @@
   <footer class="site-footer">
     <div class="footer-cta">
       <p class="f-eyebrow">Contact</p>
-      <h2 class="f-title">Let's <em>talk</em>.</h2>
+      <h2 class="f-title">Reach <em>@ialleejy</em>.</h2>
       <a class="f-mail" href="mailto:ialleejy@gmail.com">ialleejy@gmail.com</a>
     </div>
     <div class="footer-meta">
-      <span>© <span id="year"></span> Jong-Yun Lee</span>
+      <span>© <span id="year"></span> @ialleejy / Jong-Yun Lee</span>
       <span>
         <a href="https://github.com/jongcoding" target="_blank" rel="noopener">GitHub</a> ·
         <a href="https://www.linkedin.com/in/jongyun-lee-753747122/" target="_blank" rel="noopener">LinkedIn</a> ·
@@ -5055,6 +5371,50 @@
     <img alt="" />
     <button class="lb-hint" command="close" commandfor="lightbox">ESC or click to close</button>
   </dialog>
+
+  <section class="portfolio-bot" data-portfolio-bot aria-label="Portfolio guide">
+    <div class="bot-panel" id="portfolio-bot-panel" hidden>
+      <div class="bot-head">
+        <span class="bot-avatar bot-mini" aria-hidden="true">
+          <span class="bot-face">
+            <span class="bot-eye"></span>
+            <span class="bot-eye"></span>
+          </span>
+        </span>
+        <div>
+          <p class="bot-title">JY Guide</p>
+          <span class="bot-status">Portfolio shortcuts</span>
+        </div>
+        <button class="bot-close" type="button" aria-label="Close guide">x</button>
+      </div>
+      <div class="bot-body">
+        <div class="bot-answer" aria-live="polite">
+          <h3 class="bot-answer-title">Highlights</h3>
+          <p class="bot-answer-text">Pick a topic to jump to the strongest parts: cloud security work, CTF evidence, projects, tech stack, and contact links.</p>
+          <a class="bot-jump" href="#projects">Open projects</a>
+        </div>
+        <div class="bot-quick" aria-label="Suggested topics">
+          <button class="bot-chip is-active" type="button" data-bot-topic="projects">Projects</button>
+          <button class="bot-chip" type="button" data-bot-topic="gnawlab">GnawLab</button>
+          <button class="bot-chip" type="button" data-bot-topic="security">Security</button>
+          <button class="bot-chip" type="button" data-bot-topic="stack">Tech Stack</button>
+          <button class="bot-chip" type="button" data-bot-topic="watchdog">Watchdog</button>
+          <button class="bot-chip" type="button" data-bot-topic="contact">Contact</button>
+        </div>
+        <p class="bot-foot">Topic shortcuts for this page.</p>
+      </div>
+    </div>
+    <div class="bot-nudge" aria-hidden="true">Portfolio guide</div>
+    <button class="bot-toggle" type="button" aria-expanded="false" aria-controls="portfolio-bot-panel" aria-label="Open guide">
+      <span class="bot-avatar" aria-hidden="true">
+        <span class="bot-face">
+          <span class="bot-eye"></span>
+          <span class="bot-eye"></span>
+        </span>
+      </span>
+      <span class="sr-only">Open guide</span>
+    </button>
+  </section>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
@@ -5093,7 +5453,7 @@
       });
     })();
 
-    // cursor spotlight on the DEF CON card
+    // cursor spotlight on the featured CTF card
     (function () {
       var dc = document.querySelector('.defcon-feature');
       if (!dc || matchMedia('(hover: none)').matches) return;
@@ -5160,7 +5520,7 @@
         d.setAttribute('name', 'pd');
         var s = document.createElement('summary');
         var t = art.querySelector('.detail-title');
-        s.textContent = t ? t.textContent.replace(/\s*—\s*Details\s*$/, '') : 'Details';
+        s.textContent = t ? t.textContent.replace(/\s*-\s*Details\s*$/, '') : 'Details';
         d.appendChild(s);
         art.parentNode.insertBefore(d, art);
         d.appendChild(art);
@@ -5178,6 +5538,98 @@
       // print everything, not just the open panel
       addEventListener('beforeprint', function () {
         document.querySelectorAll('details.pd').forEach(function (d) { d.open = true; });
+      });
+    })();
+
+    // portfolio guide pet
+    (function () {
+      var bot = document.querySelector('[data-portfolio-bot]');
+      if (!bot) return;
+
+      var panel = bot.querySelector('.bot-panel');
+      var toggle = bot.querySelector('.bot-toggle');
+      var close = bot.querySelector('.bot-close');
+      var title = bot.querySelector('.bot-answer-title');
+      var text = bot.querySelector('.bot-answer-text');
+      var jump = bot.querySelector('.bot-jump');
+      var chips = [].slice.call(bot.querySelectorAll('[data-bot-topic]'));
+      var sr = toggle.querySelector('.sr-only');
+
+      var replies = {
+        projects: {
+          title: 'Featured projects',
+          text: 'Key cards: GnawLab, Watchdog, WEAVE, Reagan, MSG CTF, MJSEC, and DELDEVTOOL. Each card lists role, stack, links, and a matching detail panel.',
+          href: '#projects',
+          label: 'Open projects'
+        },
+        gnawlab: {
+          title: 'GnawLab',
+          text: 'GnawLab covers offensive cloud research for Beaver Dam Community. This scenario focuses on Bedrock AI Agent Knowledge Base poisoning through hostile RAG documents.',
+          href: '#detail-gnawlab',
+          label: 'Open GnawLab details'
+        },
+        security: {
+          title: 'Security evidence',
+          text: 'Best evidence: world-final CTF qualification, CTF wins, challenge authoring, ENKI WhiteHat work, and security projects with deployment or test artifacts.',
+          href: '#achievements',
+          label: 'Open evidence'
+        },
+        stack: {
+          title: 'Tech stack',
+          text: 'The portfolio leans on Python, Django/DRF, React/Vite, Docker, Nginx, GitHub Actions, AWS/GCP, and security automation around web and cloud attack surfaces.',
+          href: '#skills',
+          label: 'Open skills'
+        },
+        watchdog: {
+          title: 'Watchdog',
+          text: 'Watchdog is a bug-bounty agent monorepo focused on API contracts, dummy findings, Dockerized E2E smoke tests, secret scanning, image scanning, and SBOM output.',
+          href: '#detail-watchdog',
+          label: 'Open Watchdog details'
+        },
+        contact: {
+          title: 'Contact',
+          text: 'For collaboration or security work, email is the fastest route. GitHub, LinkedIn, and write-ups are also linked in the contact panel and footer.',
+          href: 'mailto:ialleejy@gmail.com',
+          label: 'Email Jong-Yun'
+        }
+      };
+
+      function setOpen(open) {
+        bot.classList.toggle('is-open', open);
+        panel.hidden = !open;
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'Close guide' : 'Open guide');
+        if (sr) sr.textContent = open ? 'Close guide' : 'Open guide';
+      }
+
+      function render(topic) {
+        var reply = replies[topic] || replies.projects;
+        title.textContent = reply.title;
+        text.textContent = reply.text;
+        jump.href = reply.href;
+        jump.textContent = reply.label;
+        jump.hidden = !reply.href;
+        chips.forEach(function (chip) {
+          chip.classList.toggle('is-active', chip.getAttribute('data-bot-topic') === topic);
+        });
+      }
+
+      toggle.addEventListener('click', function () {
+        var nextOpen = panel.hidden;
+        setOpen(nextOpen);
+        if (nextOpen) render('projects');
+      });
+      close.addEventListener('click', function () {
+        setOpen(false);
+        toggle.focus();
+      });
+      chips.forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          render(chip.getAttribute('data-bot-topic'));
+        });
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !panel.hidden) setOpen(false);
       });
     })();
 
