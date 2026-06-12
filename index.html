@@ -3,23 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#060607" />
+  <script type="speculationrules">
+    { "prerender": [{ "urls": ["index_ko.html"] }] }
+  </script>
   <title>Jong-Yun Lee — Offensive Cloud Security Portfolio</title>
-  <meta name="description" content="Jong-Yun Lee — Offensive cloud and web security researcher. AWS Bedrock Agent security, RAG knowledge-base poisoning, web exploitation research, DevSecOps and security tooling." />
+  <meta name="description" content="Jong-Yun Lee — Offensive cloud and web security researcher. DEF CON 34 CTF Finalist (The Seoul Sauna Shogunate). AWS Bedrock Agent security, RAG knowledge-base poisoning, web exploitation research, DevSecOps and security tooling." />
   <link rel="alternate" hreflang="ko" href="index_ko.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
   <style>
     /* ─── Editorial Dossier · Dark ────────────────────────────────────── */
     :root {
       color-scheme: dark;
-      --bg: #0c0c0e;             /* warm near-black */
-      --bg-elev: #111114;
+      --bg: #060607;             /* near-pure black */
+      --bg-elev: #0d0d10;
       --text: #ededed;
       --subtext: #b6b6b6;
       --muted: #7a7a7e;
-      --card: #0c0c0e;
+      --card: #0a0a0c;
       --line: #1f1f23;           /* hairline divider */
       --line-strong: #2c2c31;
       --paper: #f3efe7;          /* warm off-white (used sparingly) */
@@ -274,7 +278,7 @@
     /* Project cover image */
     .project-cover-wrap { aspect-ratio: 16/9; width: 100%; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: #f8fafc; margin: 10px 0 12px; }
     .project-cover { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .project-cover-wrap.placeholder { position: relative; background: linear-gradient(135deg, #f8fafc, #eef2ff); }
+    .project-cover-wrap.placeholder { position: relative; background: linear-gradient(135deg, #0d0d10, #131318); }
     .project-cover-wrap.placeholder::after { content: 'Cover image'; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 12px; }
     @media print { .project-cover-wrap { break-inside: avoid; } }
 
@@ -613,8 +617,8 @@
     .link-chip .ico{ width:14px; height:14px; display:inline-block; }
 
     /* rank pills */
-    .pill.rank-win{ background:linear-gradient(135deg,#f59e0b,#facc15); color:#111; border:none; }
-    .pill.rank-top{ background:linear-gradient(135deg,#60a5fa,#93c5fd); color:#111; border:none; }
+    .pill.rank-win{ background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+    .pill.rank-top{ background: transparent; color: var(--text); border: 1px solid var(--line-strong); }
     /* meta-link 아이콘 크기 통일 (혹시 안 맞는 곳 대비) */
     .meta-link .ico{ width:14px; height:14px; display:inline-block; vertical-align:-2px; }
     /* === Link-chip icons with white circular background === */
@@ -878,21 +882,21 @@
     }
     .btn.live{
       display:inline-flex; align-items:center; gap:8px;
-      padding:10px 14px; border-radius:999px; font-weight:800;
-      background: var(--brand); color:#fff; border:1px solid var(--brand);
-      box-shadow: 0 8px 18px rgba(99,102,241,.25);
+      padding:10px 14px; border-radius:0; font-weight:600;
+      background: var(--accent); color:#fff; border:1px solid var(--accent);
+      box-shadow: none;
     }
-    .btn.live:hover{ background: var(--brand-600); border-color: var(--brand-600); }
+    .btn.live:hover{ background: transparent; color: var(--accent); border-color: var(--accent); }
 
     .ping-dot{
-      width:8px; height:8px; border-radius:50%; background:#22c55e;
-      box-shadow: 0 0 0 0 rgba(34,197,94,.6);
+      width:8px; height:8px; border-radius:50%; background:#fff;
+      box-shadow: 0 0 0 0 rgba(255,255,255,.6);
       animation: ping 1.6s infinite;
     }
     @keyframes ping{
-      0%   { box-shadow:0 0 0 0 rgba(34,197,94,.55); }
-      70%  { box-shadow:0 0 0 10px rgba(34,197,94,0); }
-      100% { box-shadow:0 0 0 0 rgba(34,197,94,0); }
+      0%   { box-shadow:0 0 0 0 rgba(255,255,255,.55); }
+      70%  { box-shadow:0 0 0 10px rgba(255,255,255,0); }
+      100% { box-shadow:0 0 0 0 rgba(255,255,255,0); }
     }
 
     .domain{
@@ -1322,44 +1326,9 @@
           transparent 100%
         );
     }
-    /* === 2026 refresh: sharper first screen, less template-like tone === */
-    :root {
-      --bg: #f6f7f4;
-      --text: #15191f;
-      --subtext: #414a54;
-      --muted: #737b84;
-      --card: #ffffff;
-      --border: #dfe4dc;
-      --brand: #0f766e;
-      --brand-600: #0b5f59;
-      --brand-soft: #e7f3ef;
-      --tag-bg: #eef5f1;
-      --code-bg: #f1f4f2;
-      --shadow: 0 14px 34px rgba(21, 25, 31, .07);
-      --radius: 8px;
-      --radius-sm: 8px;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #101311;
-        --text: #edf2ee;
-        --subtext: #c8d0ca;
-        --muted: #9ba59f;
-        --card: #171b18;
-        --border: #2b332e;
-        --brand: #4fd1b8;
-        --brand-600: #76dfca;
-        --brand-soft: #142820;
-        --tag-bg: #172b24;
-        --code-bg: #111a16;
-        --shadow: 0 18px 42px rgba(0, 0, 0, .34);
-      }
-    }
-
+    /* === Single palette: editorial dark for everyone (no OS-theme fork) === */
     body {
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.78), transparent 340px),
-        var(--bg);
+      background: var(--bg);
       letter-spacing: 0;
     }
     .container { padding-top: 20px; }
@@ -1425,7 +1394,7 @@
 
     /* Hero — compact, fits within first viewport */
     #intro.hero {
-      min-height: calc(100svh - 64px);
+      min-height: calc(86svh - 64px);
       margin: 0 0 24px;
       padding: 24px 0 24px;
       display: grid;
@@ -1743,8 +1712,8 @@
 
     /* ─── Section title accent (dark theme) ───────────────────────────── */
     .section-title::before {
-      background: linear-gradient(180deg, var(--brand), var(--accent));
-      box-shadow: 0 0 14px rgba(139, 141, 251, .55);
+      background: var(--accent);
+      box-shadow: none;
     }
     .section-title {
       letter-spacing: -0.02em;
@@ -1804,6 +1773,639 @@
     }
     .hero-stat strong, .proof-card strong { letter-spacing: -0.01em; }
 
+    /* ─── DEF CON 34 — CTF Finalist feature ──────────────────────────── */
+    @keyframes dc-ticker { to { transform: translateX(-50%); } }
+    @keyframes dc-scan   { from { top: -14%; } to { top: 114%; } }
+    @keyframes dc-blink  { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+    @keyframes dc-pulse  { 0%, 100% { box-shadow: 0 0 0 0 rgba(239,68,68,.55); } 70% { box-shadow: 0 0 0 8px rgba(239,68,68,0); } }
+
+    /* Hero announcement strip */
+    .hero-flash {
+      display: inline-flex; align-items: center; gap: 6px 10px;
+      flex-wrap: wrap; max-width: 100%;
+      margin: 0 0 20px; padding: 9px 14px;
+      border: 1px dashed var(--line-strong);
+      background: transparent;
+      font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--text); text-decoration: none;
+    }
+    .hero-flash:hover { border-color: var(--accent); color: var(--text); }
+    .hero-flash .hf-dot { flex: none; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); animation: dc-pulse 2.2s ease-out infinite; }
+    .hero-flash b { color: var(--accent); font-weight: 600; }
+
+    /* Feature card */
+    .defcon-feature {
+      position: relative; grid-column: 1 / -1; overflow: hidden; isolation: isolate;
+      border: 1px solid var(--line-strong);
+      background:
+        radial-gradient(1100px 480px at 88% -20%, rgba(239,68,68,.16), transparent 62%),
+        radial-gradient(720px 360px at -8% 115%, rgba(239,68,68,.07), transparent 60%),
+        #0a0a0c;
+    }
+    .defcon-feature::after { /* faint CRT scanlines */
+      content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+      background: repeating-linear-gradient(0deg, rgba(255,255,255,.02) 0 1px, transparent 1px 3px);
+    }
+    .dc-scanbar {
+      position: absolute; left: 0; right: 0; top: -14%; height: 72px; z-index: 0; pointer-events: none;
+      background: linear-gradient(180deg, transparent, rgba(239,68,68,.08), transparent);
+      animation: dc-scan 7s linear infinite;
+    }
+    /* target-reticle corners */
+    .dc-corner { position: absolute; width: 22px; height: 22px; z-index: 3; pointer-events: none; }
+    .dc-corner::before, .dc-corner::after { content: ""; position: absolute; top: 0; left: 0; background: var(--accent); }
+    .dc-corner::before { width: 100%; height: 2px; }
+    .dc-corner::after  { width: 2px; height: 100%; }
+    .dc-corner.tl { top: 0; left: 0; }
+    .dc-corner.tr { top: 0; right: 0; transform: scaleX(-1); }
+    .dc-corner.bl { bottom: 0; left: 0; transform: scaleY(-1); }
+    .dc-corner.br { bottom: 0; right: 0; transform: scale(-1); }
+
+    /* marquee ticker */
+    .dc-ticker { position: relative; z-index: 1; display: flex; overflow: hidden; border-bottom: 1px solid var(--line); background: rgba(255,255,255,.02); }
+    .dc-ticker-track { display: flex; flex: none; align-items: center; white-space: nowrap; animation: dc-ticker 30s linear infinite; }
+    .dc-ticker-track > span { display: inline-block; padding: 9px 0; font-family: var(--mono); font-size: 10.5px; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); }
+    .dc-ticker-track > .dc-sep { color: var(--accent); padding: 9px 16px; }
+
+    .dc-body { position: relative; z-index: 2; padding: 36px 36px 32px; }
+    .dc-eyebrow { display: flex; align-items: center; gap: 12px; font-family: var(--mono); font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: var(--accent); }
+    .dc-eyebrow::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, rgba(239,68,68,.45), transparent); }
+    .dc-title { margin: 16px 0 0; font-weight: 900; font-size: clamp(44px, 7.4vw, 96px); line-height: .95; letter-spacing: -0.045em; color: var(--text); }
+    .dc-title .dc-accent { color: var(--accent); }
+    .dc-title .dc-outline { color: transparent; -webkit-text-stroke: 1.5px var(--text); }
+    .dc-cursor { display: inline-block; width: .42em; height: .72em; margin-left: .1em; background: var(--accent); animation: dc-blink 1.1s steps(1) infinite; }
+    .dc-sub { margin: 18px 0 0; max-width: 72ch; color: var(--subtext); font-size: 15.5px; line-height: 1.7; }
+    .dc-sub b { color: var(--text); }
+
+    .dc-stats { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 30px; border: 1px solid var(--line); background: rgba(255,255,255,.015); }
+    .dc-stat { min-width: 0; padding: 16px 18px 14px; border-left: 1px solid var(--line); }
+    .dc-stat:first-child { border-left: 0; }
+    .dc-stat .k { display: block; font-family: var(--mono); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+    .dc-stat .v { display: block; margin-top: 8px; font-weight: 800; font-size: clamp(19px, 2.1vw, 26px); letter-spacing: -0.02em; line-height: 1.1; color: var(--text); }
+    .dc-stat .v small { display: block; margin-top: 4px; font-weight: 500; font-size: 12px; letter-spacing: 0; color: var(--subtext); }
+    .dc-stat .v .num { color: var(--accent); }
+    .dc-foot { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+
+    @media (max-width: 860px) {
+      .dc-body { padding: 26px 20px 24px; }
+      .dc-stats { grid-template-columns: 1fr 1fr; }
+      .dc-stat:nth-child(odd) { border-left: 0; }
+      .dc-stat:nth-child(n+3) { border-top: 1px solid var(--line); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .dc-ticker-track, .dc-cursor, .hero-flash .hf-dot { animation: none; }
+      .dc-scanbar { display: none; }
+    }
+    @media print {
+      .dc-scanbar, .defcon-feature::after { display: none; }
+    }
+
+    /* ─── Motion & texture ───────────────────────────────────────────── */
+    /* film-grain overlay */
+    body::before {
+      content: ""; position: fixed; inset: 0; z-index: 999; pointer-events: none;
+      opacity: .028;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+    /* reading progress hairline */
+    #scroll-progress {
+      position: fixed; top: 0; left: 0; height: 2px; width: 0;
+      background: var(--accent); z-index: 1001;
+    }
+    /* scroll reveal (class applied by JS only, so no-JS readers see everything) */
+    .reveal { opacity: 0; transform: translateY(16px); }
+    .reveal.in-view {
+      opacity: 1; transform: none;
+      transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1);
+    }
+    /* card micro-interactions */
+    .card { transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+    .card:hover { transform: translateY(-2px); border-color: var(--line-strong); }
+    /* hero entrance */
+    @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+    .hero .eyebrow      { animation: rise .7s cubic-bezier(.16,1,.3,1) .05s both; }
+    .hero .hero-flash   { animation: rise .7s cubic-bezier(.16,1,.3,1) .14s both; }
+    .hero h1            { animation: rise .8s cubic-bezier(.16,1,.3,1) .22s both; }
+    .hero .hero-summary { animation: rise .8s cubic-bezier(.16,1,.3,1) .32s both; }
+    .hero .hero-proof-grid { animation: rise .8s cubic-bezier(.16,1,.3,1) .42s both; }
+    .hero .hero-cta     { animation: rise .8s cubic-bezier(.16,1,.3,1) .52s both; }
+    .hero .hero-side    { animation: rise .9s cubic-bezier(.16,1,.3,1) .3s both; }
+    /* cursor spotlight inside the DEF CON card (element injected by JS) */
+    .dc-spot {
+      position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: 0;
+      transition: opacity .4s ease;
+      background: radial-gradient(420px 420px at var(--mx, 50%) var(--my, 50%), rgba(239,68,68,.10), transparent 62%);
+    }
+    .defcon-feature:hover .dc-spot { opacity: 1; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero .eyebrow, .hero .hero-flash, .hero h1, .hero .hero-summary,
+      .hero .hero-proof-grid, .hero .hero-cta, .hero .hero-side { animation: none; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .card:hover { transform: none; }
+    }
+    @media print {
+      body::before, #scroll-progress, .dc-spot { display: none; }
+      .reveal { opacity: 1 !important; transform: none !important; }
+    }
+
+    /* ─── Site-wide design upgrade ───────────────────────────────────── */
+
+    /* full-bleed elements use 100vw; keep the scrollbar from causing horizontal overflow */
+    html, body { overflow-x: clip; }
+
+    /* one label language: mono, uppercase, hairline */
+    .badge-award, .badge-achv {
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      border-radius: 0;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      padding: 4px 9px;
+      box-shadow: none;
+    }
+    .project-period {
+      background: transparent;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-family: var(--mono);
+      border-radius: 0;
+    }
+    .data-table thead th {
+      background: transparent;
+      color: var(--muted);
+      border-bottom: 1px solid var(--line-strong);
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .pill.rank-win { color: var(--accent) !important; border-color: var(--accent) !important; }
+    .pill.rank-top { color: var(--text) !important; border-color: var(--line-strong) !important; }
+
+    /* surfaces share one motif: dashed hairline, solid on hover */
+    .card, .milestone, .identity-card, .proof-card { border-style: dashed; }
+    .card:hover, .milestone:hover, .identity-card:hover, .proof-card:hover { border-style: solid; }
+    .btn { border-radius: 0 !important; }
+    .badge-award, .badge-achv, .pill, .kpi, .role-badge, .fact { border-radius: 0 !important; }
+
+    /* third-party icons render monochrome until hovered */
+    .link-chip .ico, .link-card .ico { filter: grayscale(1) brightness(1.2); transition: filter .2s ease; }
+    .link-chip:hover .ico, .link-card:hover .ico { filter: none; }
+    .tag::before { filter: grayscale(1) brightness(1.25); transition: filter .2s ease; }
+    .tag:hover::before { filter: none; }
+
+    /* ════════════════════════════════════════════════════════════════════
+       MODERN ENGINE — 2025/26 platform features, progressively enhanced.
+       Everything below degrades to the flat editorial baseline when a
+       feature is absent, so no browser is left broken.
+       ════════════════════════════════════════════════════════════════════ */
+
+    /* registered custom properties → genuinely animatable angle/length */
+    @property --bd-angle { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+    @property --beam     { syntax: "<percentage>"; inherits: false; initial-value: 0%; }
+
+    /* "data-chip" corner language: a cut (beveled) corner where supported,
+       a plain square everywhere else. Used for buttons + bento tiles. */
+    @supports (corner-shape: bevel) {
+      .btn, .tile, .badge-award, .badge-achv, .dc-stat, .proof-card {
+        border-radius: 9px;
+        corner-shape: bevel;
+      }
+      .btn { border-radius: 7px; }
+      .badge-award, .badge-achv { border-radius: 6px; }
+      .tile.t-defcon { border-radius: 14px; }
+    }
+
+    /* rotating conic glow-edge — the signature centrepiece treatment */
+    @keyframes bd-spin { to { --bd-angle: 360deg; } }
+    .glow-edge { position: relative; isolation: isolate; }
+    .glow-edge::after {
+      content: ""; position: absolute; inset: 0; z-index: 0; padding: 1px;
+      border-radius: inherit;
+      background: conic-gradient(from var(--bd-angle),
+        transparent 0 62%, color-mix(in oklab, var(--accent) 85%, white) 78%, var(--accent) 84%, transparent 92%);
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+              mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+              mask-composite: exclude;
+      animation: bd-spin 7s linear infinite;
+      pointer-events: none;
+    }
+    @media (prefers-reduced-motion: reduce) { .glow-edge::after { animation: none; } }
+    @supports not ((mask-composite: exclude) or (-webkit-mask-composite: xor)) {
+      .glow-edge::after { display: none; }
+    }
+
+    /* sticky nav reacts the moment it becomes stuck (scroll-state query) */
+    @supports (container-type: scroll-state) {
+      .nav { container-type: scroll-state; }
+      @container scroll-state(stuck: top) {
+        .nav-inner { padding-top: 10px; padding-bottom: 10px; }
+        .nav-inner::after {
+          content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 1px;
+          background: linear-gradient(90deg, transparent, var(--accent) 18%, var(--accent) 82%, transparent);
+        }
+        .brand::after { color: var(--accent); }
+      }
+    }
+    .nav-inner { position: relative; transition: padding .25s ease; }
+
+    /* fluid type with a hard floor/ceiling via clamp + container width */
+    .hero-copy h1 { font-size: clamp(2.4rem, 1.2rem + 4.4vw, 4.9rem); }
+
+    /* optical cap-height trimming on display type (text-box, 2025 baseline) */
+    @supports (text-box: trim-both cap alphabetic) {
+      .hero-copy h1, .section-title, .f-title, .t-big, .dc-title {
+        text-box: trim-both cap alphabetic;
+      }
+    }
+
+    /* bento tiles are containers — type scales with the tile, not the viewport */
+    .tile { container-type: inline-size; }
+    @container (min-width: 1px) {
+      .t-big { font-size: clamp(34px, 17cqi, 64px); }
+    }
+    .tile.t-defcon { container-type: inline-size; }
+    @container (min-width: 320px) {
+      .tile.t-defcon .t-big, .t-defcon .t-big { font-size: clamp(64px, 24cqi, 156px); }
+    }
+
+    /* contact panel docks under its button (CSS Anchor Positioning + fallbacks) */
+    @supports (anchor-name: --a) {
+      .nav-contact { anchor-name: --contact-btn; }
+      .contact-pop {
+        inset: auto; margin: 0;
+        position: fixed;
+        position-anchor: --contact-btn;
+        top: calc(anchor(bottom) + 10px);
+        right: anchor(right);
+        position-try-fallbacks: flip-block;
+        width: min(380px, 92vw);
+      }
+    }
+
+    /* popover / dialog enter–leave choreography (@starting-style + allow-discrete) */
+    /* fallback for engines without the Popover API: stay hidden there,
+       while the second rule (dropped by old parsers) restores visibility */
+    [popover] { display: none; }
+    [popover]:popover-open { display: block; }
+    .contact-pop, .lightbox {
+      transition:
+        opacity .26s ease,
+        transform .3s cubic-bezier(.16, 1, .3, 1),
+        overlay .3s allow-discrete,
+        display .3s allow-discrete;
+    }
+    .contact-pop:not(:popover-open) { opacity: 0; transform: translateY(-8px) scale(.985); }
+    .lightbox:not([open]) { opacity: 0; transform: scale(.96); }
+    @starting-style {
+      .contact-pop:popover-open { opacity: 0; transform: translateY(-8px) scale(.985); }
+      .lightbox[open] { opacity: 0; transform: scale(.96); }
+    }
+    .contact-pop::backdrop, .lightbox::backdrop {
+      transition: background-color .3s ease, overlay .3s allow-discrete, display .3s allow-discrete;
+    }
+    @starting-style {
+      .contact-pop:popover-open::backdrop { background-color: rgba(4,4,5,0); }
+      .lightbox[open]::backdrop { background-color: rgba(4,4,5,0); }
+    }
+    .lb-hint { /* declarative close (Invoker Commands) styled as a caption */
+      display: block; margin: 10px auto 0; padding: 4px 10px;
+      background: none; border: 0; cursor: pointer;
+      font-family: var(--mono); font-size: 10px; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--muted);
+    }
+    .lb-hint:hover { color: var(--accent); }
+
+    /* CSS-only carousel — ::scroll-button / ::scroll-marker, zero JS */
+    @supports selector(::scroll-button(right)) and (anchor-name: --a) {
+      .cssr {
+        display: flex !important; gap: 10px;
+        overflow-x: auto; overscroll-behavior-x: contain;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        anchor-name: --cssr;
+        scroll-marker-group: after;
+        margin-bottom: 46px;
+      }
+      .cssr > * { flex: 0 0 72%; min-width: 0; scroll-snap-align: center; }
+      .cssr::scroll-button(*) {
+        position: fixed; position-anchor: --cssr;
+        top: calc(anchor(bottom) + 10px);
+        width: 36px; height: 26px;
+        display: grid; place-items: center;
+        border: 1px solid var(--line-strong); background: var(--bg-elev);
+        color: var(--text); font-family: var(--mono); font-size: 13px;
+        cursor: pointer;
+      }
+      .cssr::scroll-button(*):hover { border-color: var(--accent); color: var(--accent); }
+      .cssr::scroll-button(*):disabled { opacity: .3; cursor: default; }
+      .cssr::scroll-button(left)  { content: "←" / "Previous image"; right: calc(anchor(right) + 44px); }
+      .cssr::scroll-button(right) { content: "→" / "Next image"; right: anchor(right); }
+      .cssr::scroll-marker-group {
+        position: fixed; position-anchor: --cssr;
+        top: calc(anchor(bottom) + 18px);
+        left: anchor(left);
+        display: flex; gap: 8px;
+      }
+      .cssr > *::scroll-marker {
+        content: "" / "Go to image";
+        width: 26px; height: 3px;
+        background: var(--line-strong);
+        cursor: pointer;
+      }
+      .cssr > *::scroll-marker:target-current { background: var(--accent); }
+    }
+
+    /* scrollbar */
+    html { scrollbar-color: #2c2c31 var(--bg); scrollbar-width: thin; }
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: #232327; border: 3px solid var(--bg); border-radius: 8px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+    /* navigation */
+    .nav { border-bottom: 1px solid var(--line); }
+    .nav a {
+      font-family: var(--mono); font-size: 10.5px; font-weight: 500;
+      letter-spacing: .16em; text-transform: uppercase;
+      border-radius: 0; padding: 6px 9px;
+      transition: color .2s ease;
+    }
+    .nav a:hover { color: var(--text); background: transparent; }
+    .nav a.active { color: var(--accent); }
+    .brand { font-weight: 800; letter-spacing: -0.02em; font-size: 14px; }
+    .nav-meta {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-right: 6px;
+      font-family: var(--mono); font-size: 10px; letter-spacing: .18em;
+      color: var(--muted); white-space: nowrap;
+    }
+    .nav-meta .nm-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: dc-pulse 2.4s ease-out infinite; }
+    @media (max-width: 960px) { .nav-meta { display: none; } }
+
+    /* hero scale-up */
+    #intro.hero { position: relative; }
+    .hero-copy h1 {
+      max-width: none;
+      font-size: clamp(40px, 5.8vw, 76px);
+      line-height: 1.01;
+      letter-spacing: -0.045em;
+      font-weight: 850;
+    }
+    .hero-copy h1 em {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-style: italic; font-weight: 400;
+      font-size: 1.04em; letter-spacing: -0.01em;
+      color: var(--accent);
+    }
+    .hero-summary { font-size: 16.5px; max-width: 560px; margin-top: 22px; }
+    .hero-proof-grid { margin-top: 28px; }
+    .hero-cta { margin-top: 26px; }
+    .scroll-cue {
+      position: absolute; left: 50%; bottom: 10px; transform: translateX(-50%);
+      display: inline-flex; flex-direction: column; align-items: center; gap: 8px;
+      font-family: var(--mono); font-size: 9.5px; letter-spacing: .34em; text-transform: uppercase;
+      color: var(--muted); text-decoration: none;
+    }
+    .scroll-cue::after {
+      content: ""; width: 1px; height: 34px;
+      background: linear-gradient(180deg, var(--accent), transparent);
+      animation: cue-drop 1.8s ease-in-out infinite;
+      transform-origin: top;
+    }
+    .scroll-cue:hover { color: var(--text); }
+    @keyframes cue-drop { 0% { transform: scaleY(0); } 45% { transform: scaleY(1); } 100% { transform: scaleY(0); transform-origin: bottom; } }
+
+    /* full-bleed fact ticker under the hero */
+    .site-ticker {
+      width: 100vw; margin-left: calc(50% - 50vw);
+      overflow: hidden; display: flex;
+      border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.015);
+    }
+    .site-ticker .st-track { display: flex; flex: none; align-items: center; white-space: nowrap; animation: dc-ticker 46s linear infinite; }
+    .site-ticker:hover .st-track { animation-play-state: paused; }
+    .site-ticker .st-track > span {
+      display: inline-block; padding: 13px 0;
+      font-family: var(--mono); font-size: 11px; letter-spacing: .26em; text-transform: uppercase;
+      color: var(--subtext);
+    }
+    .site-ticker .st-track > .st-sep { color: var(--accent); padding: 13px 22px; }
+
+    /* sections: more air, bigger titles */
+    .section { margin: 104px 0; padding-top: 40px; }
+    .section-title { font-size: clamp(38px, 5.4vw, 68px); letter-spacing: -0.04em; }
+
+    /* card cursor spotlight (coordinates set by JS) */
+    .card { position: relative; }
+    .card::after {
+      content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0;
+      transition: opacity .35s ease;
+      background: radial-gradient(360px 360px at var(--mx, 50%) var(--my, 50%), rgba(255,255,255,.045), transparent 60%);
+    }
+    .card:hover::after { opacity: 1; }
+
+    /* footer */
+    .site-footer {
+      width: 100vw; margin-left: calc(50% - 50vw);
+      margin-top: 120px; border-top: 1px solid var(--line);
+    }
+    .footer-cta {
+      max-width: var(--maxw); margin: 0 auto; padding: 96px 24px 72px;
+    }
+    .f-eyebrow {
+      margin: 0 0 18px; display: flex; align-items: center; gap: 12px;
+      font-family: var(--mono); font-size: 11px; letter-spacing: .24em; text-transform: uppercase;
+      color: var(--muted);
+    }
+    .f-eyebrow::before { content: ""; width: 24px; height: 1px; background: var(--accent); }
+    .f-title {
+      margin: 0; font-weight: 900;
+      font-size: clamp(48px, 9vw, 120px); line-height: .98; letter-spacing: -0.05em;
+      color: var(--text);
+    }
+    .f-title em { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-weight: 400; color: var(--accent); }
+    .f-mail {
+      display: inline-block; margin-top: 34px;
+      font-family: var(--mono); font-size: clamp(16px, 2.4vw, 24px); letter-spacing: .02em;
+      color: var(--text); text-decoration: none;
+      border-bottom: 1px solid var(--line-strong);
+      padding-bottom: 6px;
+      transition: border-color .25s ease, color .25s ease;
+    }
+    .f-mail:hover { color: var(--accent); border-color: var(--accent); }
+    .footer-meta {
+      max-width: var(--maxw); margin: 0 auto; padding: 22px 24px 30px;
+      display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between;
+      border-top: 1px solid var(--line);
+      font-family: var(--mono); font-size: 11px; letter-spacing: .06em; color: var(--muted);
+    }
+    .footer-meta a { color: var(--muted); text-decoration: none; }
+    .footer-meta a:hover { color: var(--accent); }
+
+    /* ─── Modern platform features ───────────────────────────────────── */
+
+    /* cross-document view transitions (index ↔ ko) */
+    @view-transition { navigation: auto; }
+
+    /* typography niceties */
+    h1, .section-title, .f-title, .t-mid { text-wrap: balance; }
+    .prose p, .checklist li, .section-sub { text-wrap: pretty; }
+
+    /* bento board */
+    .bento-section { border-top: 0; padding-top: 0; margin: 56px 0 96px; }
+    .bento-section .eyebrow { margin-bottom: 14px; }
+    .bento {
+      display: grid; gap: 10px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-auto-rows: minmax(136px, auto);
+    }
+    .tile {
+      position: relative; overflow: clip;
+      display: flex; flex-direction: column; justify-content: space-between; gap: 12px;
+      padding: 20px;
+      border: 1px dashed var(--line);
+      background: var(--card);
+      color: var(--text); text-decoration: none;
+      transition: border-color .25s ease, transform .25s ease;
+    }
+    .tile:hover { border-style: solid; border-color: var(--line-strong); transform: translateY(-2px); color: var(--text); }
+    .t-label { font-family: var(--mono); font-size: 9.5px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+    .t-big { font-weight: 900; font-size: clamp(38px, 4.4vw, 60px); line-height: .95; letter-spacing: -0.04em; }
+    .t-big small { font-size: .3em; font-weight: 600; color: var(--subtext); letter-spacing: .02em; margin-left: 8px; }
+    .t-mid { font-weight: 800; font-size: clamp(17px, 1.6vw, 21px); line-height: 1.2; letter-spacing: -0.02em; }
+    .t-foot { font-family: var(--mono); font-size: 10.5px; color: var(--muted); line-height: 1.55; }
+    .tile.t-defcon {
+      grid-column: span 2; grid-row: span 2;
+      border-color: rgba(239, 68, 68, .45);
+      background: radial-gradient(440px 280px at 85% -10%, rgba(239,68,68,.14), transparent 62%), var(--card);
+    }
+    .tile.t-defcon .t-big { font-size: clamp(72px, 9vw, 136px); color: var(--accent); }
+    .tile.t-defcon:hover { border-color: var(--accent); }
+    @media (max-width: 980px) { .bento { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 540px) {
+      .bento { grid-template-columns: 1fr; }
+      .tile.t-defcon { grid-column: auto; grid-row: auto; }
+    }
+
+    /* scroll-driven animations: pure CSS, zero JS (Chrome/Edge; others just show content) */
+    @media (prefers-reduced-motion: no-preference) {
+      @supports (animation-timeline: view()) {
+        @keyframes sda-enter { from { opacity: 0; transform: translateY(26px); } }
+        .section .card, .milestone, .tile, .defcon-feature, .section-title, .section-sub {
+          animation: sda-enter linear both;
+          animation-timeline: view();
+          animation-range: entry 0% entry 45%;
+        }
+      }
+      @supports (animation-timeline: scroll()) {
+        @keyframes sda-grow { to { transform: scaleX(1); } }
+        #scroll-progress {
+          width: 100%; transform: scaleX(0); transform-origin: 0 50%;
+          animation: sda-grow linear both;
+          animation-timeline: scroll(root);
+        }
+      }
+    }
+
+    /* project details: exclusive native accordions (<details name>) */
+    .pd { border: 1px dashed var(--line); margin: 10px 0; background: var(--card); }
+    .pd[open] { border-style: solid; border-color: var(--line-strong); }
+    .pd > summary {
+      list-style: none; cursor: pointer;
+      display: flex; align-items: baseline; gap: 14px;
+      padding: 18px 22px;
+      font-weight: 750; font-size: 16.5px; letter-spacing: -0.015em;
+    }
+    .pd > summary::-webkit-details-marker { display: none; }
+    .pd > summary::before {
+      content: "+"; font-family: var(--mono); font-size: 15px; color: var(--accent);
+      width: 14px; flex: none;
+    }
+    .pd[open] > summary::before { content: "−"; }
+    .pd > summary:hover { color: var(--accent); }
+    .pd article.card { border: 0 !important; margin: 0; }
+    .pd article.card::after { display: none; }
+    .pd .detail-title { display: none; }
+    /* animate open/close where the platform supports it */
+    @supports (interpolate-size: allow-keywords) {
+      :root { interpolate-size: allow-keywords; }
+      .pd::details-content {
+        height: 0; overflow: clip;
+        transition: height .45s cubic-bezier(.16,1,.3,1), content-visibility .45s allow-discrete;
+      }
+      .pd[open]::details-content { height: auto; }
+    }
+
+    /* image lightbox (native <dialog>) */
+    .lightbox { border: 0; padding: 0; background: transparent; max-width: none; max-height: none; }
+    .lightbox img {
+      display: block; max-width: 92vw; max-height: 88vh;
+      border: 1px solid var(--line-strong); background: var(--bg);
+    }
+    .lightbox::backdrop { background: rgba(4,4,5,.82); backdrop-filter: blur(6px); }
+    .lightbox .lb-hint {
+      margin: 10px 0 0; text-align: center;
+      font-family: var(--mono); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted);
+    }
+
+    /* contact panel (native Popover API) */
+    .nav-contact {
+      cursor: pointer; background: none; border: 0; padding: 6px 9px;
+      font-family: var(--mono); font-size: 10.5px; font-weight: 500;
+      letter-spacing: .16em; text-transform: uppercase; color: var(--muted);
+    }
+    .nav-contact:hover { color: var(--accent); }
+    .contact-pop {
+      position: fixed; inset: 0; margin: auto;
+      width: min(440px, 92vw); height: fit-content;
+      border: 1px solid var(--line-strong); background: var(--bg-elev); color: var(--text);
+      padding: 30px;
+    }
+    .contact-pop::backdrop { background: rgba(4,4,5,.75); backdrop-filter: blur(5px); }
+    .cp-eyebrow {
+      margin: 0 0 16px; display: flex; align-items: center; gap: 10px;
+      font-family: var(--mono); font-size: 10.5px; letter-spacing: .22em; text-transform: uppercase; color: var(--muted);
+    }
+    .cp-eyebrow::before { content: ""; width: 20px; height: 1px; background: var(--accent); }
+    .cp-mail {
+      display: block; font-family: var(--mono); font-size: clamp(17px, 4vw, 21px);
+      color: var(--text); text-decoration: none;
+      border-bottom: 1px solid var(--line-strong); padding-bottom: 8px;
+    }
+    .cp-mail:hover { color: var(--accent); border-color: var(--accent); }
+    .cp-links { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+    .cp-hint { margin: 18px 0 0; font-family: var(--mono); font-size: 9.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+
+    @media print {
+      .contact-pop, .lightbox { display: none; }
+      .pd { border: 0; }
+      .pd > summary { display: none; }
+      .pd .detail-title { display: block; }
+    }
+
+    @media (max-width: 720px) {
+      .hero-copy h1 { font-size: clamp(33px, 9.4vw, 44px); }
+      .scroll-cue { display: none; }
+      .f-title { font-size: clamp(40px, 13vw, 64px); }
+      .nav-contact { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .site-ticker .st-track, .scroll-cue::after, .nav-meta .nm-dot { animation: none; }
+      .card::after { display: none; }
+    }
+    @media print {
+      .site-ticker, .scroll-cue, .nav-meta, .card::after { display: none; }
+      .site-footer, .footer-cta, .footer-meta { width: auto; margin-left: 0; padding: 20px 0; }
+      .f-title { font-size: 28px; }
+    }
+
   </style>
 
   <!-- Inline SVG symbols (아이콘 내장: GitHub/Globe/Doc/Info) -->
@@ -1844,6 +2446,7 @@
   </svg>
 </head>
 <body>
+  <div id="scroll-progress" aria-hidden="true"></div>
   <a class="skip" href="#main">Skip to main content</a>
 
   <!-- Sticky navigation -->
@@ -1859,37 +2462,37 @@
       <a href="#activities">Activities</a>
       <a href="#projects">Projects</a>
       <div class="spacer"></div>
+      <span class="nav-meta"><span class="nm-dot" aria-hidden="true"></span>SEOUL <span id="nav-clock">--:--</span></span>
+      <button class="nav-contact" popovertarget="contact-pop">Contact</button>
       <a href="index_ko.html" title="한국어 버전" aria-label="Korean version">KO</a>
     </div>
   </nav>
+
+  <!-- Contact panel (native Popover API) -->
+  <div id="contact-pop" popover class="contact-pop" aria-label="Contact">
+    <p class="cp-eyebrow">Contact</p>
+    <a class="cp-mail" href="mailto:ialleejy@gmail.com">ialleejy@gmail.com</a>
+    <div class="cp-links">
+      <a class="link-chip" href="https://github.com/jongcoding" target="_blank" rel="noopener">GitHub</a>
+      <a class="link-chip" href="https://www.linkedin.com/in/jongyun-lee-753747122/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="link-chip" href="https://ialleejy.tistory.com" target="_blank" rel="noopener">Write-ups</a>
+    </div>
+    <p class="cp-hint">ESC or click outside to close</p>
+  </div>
 
   <main id="main" class="container">
     <!-- INTRO -->
     <section id="intro" class="hero section" aria-labelledby="intro-title">
       <div class="hero-copy">
         <p class="eyebrow">Portfolio · 2026</p>
+        <a class="hero-flash" href="#defcon34">
+          <span class="hf-dot" aria-hidden="true"></span>
+          DEF CON 34 CTF Finalist · <b>The Seoul Sauna Shogunate</b>
+        </a>
         <h1 id="intro-title">Offensive cloud research, web exploitation, and <em>security tooling</em>.</h1>
         <p class="hero-summary">
           I research cloud / AI-agent attack surfaces and ship reproducible labs, web exploitation scenarios, and tools.
         </p>
-
-        <div class="hero-proof-grid" aria-label="Portfolio highlights">
-          <div class="proof-card">
-            <span>Current Focus</span>
-            <strong>Offensive Cloud / AI Agent Security</strong>
-            <p>AWS Bedrock Agent, RAG knowledge-base poisoning, and cloud attack-path research.</p>
-          </div>
-          <div class="proof-card">
-            <span>Research Track</span>
-            <strong>ENKI WhiteHat Content Team</strong>
-            <p>Offensive security research, web exploitation, and scenario-based content R&amp;D.</p>
-          </div>
-          <div class="proof-card">
-            <span>Builder</span>
-            <strong>Security tooling + DevSecOps</strong>
-            <p>Shipped reproducible labs, security platforms, and automation pipelines.</p>
-          </div>
-        </div>
 
         <div class="hero-cta">
           <a class="btn primary" href="#achievements">
@@ -1929,17 +2532,60 @@
             </div>
           </div>
         </div>
-        <div class="hero-stat-row" aria-label="Selected achievements">
-          <div class="hero-stat">
-            <strong>GnawLab</strong>
-            <span>Bedrock AI Agent KB poisoning scenario</span>
-          </div>
-          <div class="hero-stat">
-            <strong>CODEGATE</strong>
-            <span>Official Web challenge author, 2026</span>
-          </div>
-        </div>
       </aside>
+      <a class="scroll-cue" href="#career">Scroll</a>
+    </section>
+
+    <!-- FACT TICKER -->
+    <div class="site-ticker" aria-hidden="true">
+      <div class="st-track">
+        <span>DEF CON 34 CTF Finalist</span><span class="st-sep">✦</span>
+        <span>The Seoul Sauna Shogunate</span><span class="st-sep">✦</span>
+        <span>ENKI WhiteHat Content Team</span><span class="st-sep">✦</span>
+        <span>CODEGATE 2026 Challenge Author</span><span class="st-sep">✦</span>
+        <span>HACKTHEON Sejong 2026 Author</span><span class="st-sep">✦</span>
+        <span>AWS Bedrock Agent Research</span><span class="st-sep">✦</span>
+        <span>MJSEC Founder</span><span class="st-sep">✦</span>
+        <span>DEF CON 34 CTF Finalist</span><span class="st-sep">✦</span>
+        <span>The Seoul Sauna Shogunate</span><span class="st-sep">✦</span>
+        <span>ENKI WhiteHat Content Team</span><span class="st-sep">✦</span>
+        <span>CODEGATE 2026 Challenge Author</span><span class="st-sep">✦</span>
+        <span>HACKTHEON Sejong 2026 Author</span><span class="st-sep">✦</span>
+        <span>AWS Bedrock Agent Research</span><span class="st-sep">✦</span>
+        <span>MJSEC Founder</span><span class="st-sep">✦</span>
+      </div>
+    </div>
+
+    <!-- AT A GLANCE — bento board -->
+    <section id="glance" class="section bento-section" aria-label="At a glance">
+      <p class="eyebrow">At a glance</p>
+      <div class="bento">
+        <a class="tile t-defcon glow-edge" href="#defcon34">
+          <span class="t-label">DEF CON 34 · CTF Finals</span>
+          <span class="t-big">#7<small>worldwide</small></span>
+          <span class="t-foot">The Seoul Sauna Shogunate · 8,641 pts · Las Vegas, Aug 2026</span>
+        </a>
+        <div class="tile">
+          <span class="t-label">Now</span>
+          <span class="t-mid">ENKI WhiteHat · Content Team</span>
+          <span class="t-foot">Offensive cloud · web exploitation R&amp;D</span>
+        </div>
+        <div class="tile">
+          <span class="t-label">CTF Wins</span>
+          <span class="t-big">2<small>× 1st place</small></span>
+          <span class="t-foot">SPACE WAR URANUS Web · Gamgyul CTF</span>
+        </div>
+        <div class="tile">
+          <span class="t-label">Challenge Author</span>
+          <span class="t-mid">CODEGATE · HACKTHEON · INC0GNITO</span>
+          <span class="t-foot">Web challenges shipped through 2026</span>
+        </div>
+        <div class="tile">
+          <span class="t-label">Research</span>
+          <span class="t-mid">AWS Bedrock Agent · KB Poisoning</span>
+          <span class="t-foot">RAG attack-path scenarios (GnawLab)</span>
+        </div>
+      </div>
     </section>
 
     <!-- FOCUS -->
@@ -2004,13 +2650,13 @@
     <!-- TIMELINE -->
     <section id="timeline" class="section" aria-labelledby="timeline-title">
       <h2 class="section-title" id="timeline-title" data-eyebrow="S.02 — Timeline">Timeline</h2>
-      <p class="section-sub">Six milestones — from internal vulnerability disclosure to offensive cloud research.</p>
+      <p class="section-sub">Six milestones, from internal vulnerability disclosure to offensive cloud research.</p>
 
       <div class="milestones" aria-label="Career milestones">
         <article class="milestone">
           <span class="ms-year">2022 — 2023</span>
           <h3>DIA Security</h3>
-          <p>Internal web vulnerability disclosure (XSS / CSRF / SQLi / file upload bypass) and DevTools-blocking policy tool — Excellence Award.</p>
+          <p>Internal web vulnerability disclosure (XSS / CSRF / SQLi / file upload bypass) and a DevTools-blocking policy tool. Excellence Award.</p>
           <div class="ms-chips">
             <span class="ms-chip">vuln disclosure</span>
             <span class="ms-chip">policy tool</span>
@@ -2030,7 +2676,7 @@
         <article class="milestone">
           <span class="ms-year">2025</span>
           <h3>WHS · DBREACH</h3>
-          <p>White Hat School 3rd cohort — Semantic Gap research (WEAVE). Reproduced DBREACH compression side-channel on MariaDB / InnoDB.</p>
+          <p>White Hat School 3rd cohort: Semantic Gap research (WEAVE). Reproduced the DBREACH compression side-channel on MariaDB / InnoDB.</p>
           <div class="ms-chips">
             <span class="ms-chip">semantic gap</span>
             <span class="ms-chip">side-channel</span>
@@ -2275,11 +2921,57 @@
       <h2 class="section-title" id="achievements-title" data-eyebrow="S.06 — Evidence">Key Achievements</h2>
 
       <div class="achv-grid">
+        <!-- DEF CON 34 CTF Finals — The Seoul Sauna Shogunate -->
+        <article class="defcon-feature" id="defcon34" aria-labelledby="defcon34-title">
+          <span class="dc-corner tl" aria-hidden="true"></span>
+          <span class="dc-corner tr" aria-hidden="true"></span>
+          <span class="dc-corner bl" aria-hidden="true"></span>
+          <span class="dc-corner br" aria-hidden="true"></span>
+          <div class="dc-scanbar" aria-hidden="true"></div>
+
+          <div class="dc-ticker" aria-hidden="true">
+            <div class="dc-ticker-track">
+              <span>DEF CON CTF FINALS 2026</span><span class="dc-sep">✦</span>
+              <span>THE SEOUL SAUNA SHOGUNATE</span><span class="dc-sep">✦</span>
+              <span>QUALIFIER RANK 7 · 8,641 PTS</span><span class="dc-sep">✦</span>
+              <span>LAS VEGAS · AUGUST 2026</span><span class="dc-sep">✦</span>
+              <span>DEF CON CTF FINALS 2026</span><span class="dc-sep">✦</span>
+              <span>THE SEOUL SAUNA SHOGUNATE</span><span class="dc-sep">✦</span>
+              <span>QUALIFIER RANK 7 · 8,641 PTS</span><span class="dc-sep">✦</span>
+              <span>LAS VEGAS · AUGUST 2026</span><span class="dc-sep">✦</span>
+            </div>
+          </div>
+
+          <div class="dc-body">
+            <span class="dc-eyebrow">World Hacking Championship · Capture The Flag</span>
+            <h3 class="dc-title" id="defcon34-title">
+              DEF&nbsp;CON <span class="dc-accent">34</span><br />
+              <span class="dc-outline">CTF FINALIST</span><span class="dc-cursor" aria-hidden="true"></span>
+            </h3>
+            <p class="dc-sub">
+              Placed <b>7th worldwide (8,641 pts)</b> at the DEF CON CTF Qualifier 2026 with team
+              <b>The Seoul Sauna Shogunate</b>. Competing at the <b>DEF CON 34 CTF Finals</b> in Las Vegas, August 2026.
+            </p>
+
+            <div class="dc-stats" aria-label="DEF CON 34 qualifier result">
+              <div class="dc-stat"><span class="k">Quals Rank</span><span class="v"><span class="num">#7</span><small>worldwide</small></span></div>
+              <div class="dc-stat"><span class="k">Score</span><span class="v">8,641<small>points</small></span></div>
+              <div class="dc-stat"><span class="k">Team</span><span class="v">Seoul Sauna<small>The Seoul Sauna Shogunate</small></span></div>
+              <div class="dc-stat"><span class="k">Finals</span><span class="v">AUG 2026<small>DEF CON 34 · Las Vegas</small></span></div>
+            </div>
+
+            <div class="dc-foot">
+              <a class="link-chip" href="https://ctftime.org/event/3205/" target="_blank" rel="noopener">CTFtime · DEF CON CTF Qualifier 2026</a>
+              <a class="link-chip" href="https://defcon.org/html/links/dc-ctf.html" target="_blank" rel="noopener">DEF CON CTF Archive</a>
+            </div>
+          </div>
+        </article>
+
         <!-- DIA web vulnerability report (highlight) -->
         <article class="card highlight">
           <header class="achv-head">
             <div class="achv-title">
-              <span class="badge-achv"><span class="emoji">🔐</span> Vulnerability Report</span>
+              <span class="badge-achv">Vulnerability Report</span>
               <div class="item-title">DIA Website Vulnerability Disclosure</div>
             </div>
             <div class="item-period">2022.12 · 2023.02</div>
@@ -2294,7 +2986,7 @@
           </figure>
 
           <div class="prose">
-            <p class="lead">Identified and rapidly reported multiple vulnerabilities (XSS, CSRF, SQL Injection) — strengthened the overall security posture.</p>
+            <p class="lead">Identified and reported multiple vulnerabilities (XSS, CSRF, SQL Injection). The affected pages were patched.</p>
             <p>
               In particular, <b>Namo Web Editor</b> allowed <b>arbitrary file upload</b> due to weak extension
               validation and <b>filename-based Stored XSS</b>; weak <b>form action</b> filtering further enabled <b>CSRF</b>.
@@ -2313,7 +3005,7 @@
             <li><b>Stored XSS:</b> Filename allowed script injection.</li>
             <li><b>CSRF:</b> Critical requests lacked tokens / proper validation.</li>
             <li><b>SQLi:</b> Suspicious surfaces with weak input validation / binding.</li>
-            <li><b>Remediation:</b> Submitted reproduction steps and guidance — recommended whitelist + Content-Type checks and CSRF token introduction.</li>
+            <li><b>Remediation:</b> Submitted reproduction steps and guidance, recommending whitelist + Content-Type checks and CSRF tokens.</li>
             <li><b>Outcome:</b> Pages were patched and monitoring was enhanced.</li>
           </ul>
         </article>
@@ -2321,7 +3013,7 @@
         <article class="card award">
           <header class="award-head">
             <div class="award-title">
-              <span class="badge-award"><span class="emoji">🏆</span> Excellence Award (2-Star General level)</span>
+              <span class="badge-award">Excellence Award (2-Star General level)</span>
               <div class="item-title">DIA Security Competition</div>
             </div>
             <div class="item-period"><time datetime="2023-07-25">2023.07.25</time></div>
@@ -2358,7 +3050,7 @@
         <article class="card award span-2">
           <header class="award-head">
             <div class="award-title">
-              <span class="badge-award"><span class="emoji">🥇</span>1st place (Individual)</span>
+              <span class="badge-award">1st place (Individual)</span>
               <div class="item-title">SPACE WAR URANUS — WEB</div>
             </div>
             <div class="item-period"><time datetime="2025-05-25">2025.05.25</time></div>
@@ -2414,10 +3106,10 @@
         <article class="card award">
           <header class="award-head">
             <div class="award-title">
-              <span class="badge-award"><span class="emoji">🥇</span> 1st place (Individual)</span>
+              <span class="badge-award">1st place (Individual)</span>
               <div class="item-title">Gamgyul (Tangerine) CTF</div>
             </div>
-            <div class="item-period">2024</div>
+            <div class="item-period"><time datetime="2025-12">2025.12</time></div>
           </header>
           <div class="item-sub">156 participants</div>
           <div class="prose">
@@ -2435,7 +3127,7 @@
       <article class="card highlight span-2">
         <header class="achv-head">
           <div class="achv-title">
-            <span class="badge-achv"><span class="emoji">🛠️</span> CTF Operations & Authoring</span>
+            <span class="badge-achv">CTF Operations &amp; Authoring</span>
             <div class="item-title">MSG CTF 2025 — Co-host · Operations · Challenge Author</div>
           </div>
           <div class="item-period">
@@ -2443,7 +3135,7 @@
           </div>
         </header>
 
-        <div class="media-grid compact" style="--gap: 8px; --h: 230px;">
+        <div class="media-grid compact cssr" style="--gap: 8px; --h: 230px;">
           <figure class="frame" data-label="Event">
             <a href="assets/msg-ctf-hero.png" target="_blank" rel="noopener">
               <img src="assets/msg-ctf-hero.png" alt="MSG CTF 2025 event poster / live image">
@@ -2510,7 +3202,7 @@
         <ul class="checklist" style="margin-top:8px;">
           <li><b>Featured Challenge A — Django Session:</b> <code>.git</code> forensics → <b>SECRET_KEY</b> recovery → <b>HMAC</b> session forging chain.</li>
           <li><b>Featured Challenge B — reCAPTCHA bypass:</b> Bypassing <b>reCAPTCHA v2 / v3 + GeeTest</b> via <b>PoW / HMAC / Pulse / YOLOv8 / OpenCV</b> automation.</li>
-          <li><b>Operations:</b> Co-hosted 1st &amp; 2nd MSG CTF (2025.03 / 2025.11) — ~100 participants · ~50 teams · 24 challenges.</li>
+          <li><b>Operations:</b> Co-hosted 1st &amp; 2nd MSG CTF (2025.03 / 2025.11): ~100 participants · ~50 teams · 24 challenges.</li>
         </ul>
 
         <ul class="bullets link-row">
@@ -2551,7 +3243,7 @@
       <article class="card highlight span-2">
         <header class="achv-head">
           <div class="achv-title">
-            <span class="badge-achv"><span class="emoji">🎯</span> CTF Lead Organizer &amp; Web Author</span>
+            <span class="badge-achv">CTF Lead Organizer &amp; Web Author</span>
             <div class="item-title">INC0GNITO Festival CTF — Quals 2026</div>
           </div>
           <div class="item-period">
@@ -2560,7 +3252,7 @@
         </header>
 
         <div class="prose">
-          <p class="lead">Led overall <b>operations &amp; planning</b> and authored <b>3 Web challenges</b> for INC0GNITO Quals 2026 — <b>108 teams · 315 participants</b>.</p>
+          <p class="lead">Led overall <b>operations &amp; planning</b> and authored <b>3 Web challenges</b> for INC0GNITO Quals 2026 (<b>108 teams · 315 participants</b>).</p>
           <p>
             Designed multi-stage exploit scenarios that explicitly suppress <b>one-shot LLM solutions</b> through staged solving flows
             and verification checkpoints (<b>anti-LLM</b> challenge engineering). All challenges were packaged as reproducible
@@ -2580,7 +3272,7 @@
           <li><b>Edge Gate</b> — <b>HTTP Request Smuggling → RCE</b> chain on a CDN/edge-proxy topology.</li>
           <li><b>INVISIBLE</b> — <b>CSS side-channel exfiltration</b> against a state-rendering oracle.</li>
           <li><b>MJSEC Forge Console</b> — <b>DNS Rebinding + Cache Poisoning → SSRF</b> primitive against an admin console.</li>
-          <li><b>Operations:</b> Ran the entire competition — challenge design, infra packaging, scoreboard ops and live announcements / hint distribution.</li>
+          <li><b>Operations:</b> Ran the entire competition: challenge design, infra packaging, scoreboard ops and live announcements / hint distribution.</li>
         </ul>
 
         <ul class="bullets link-row" style="margin-top:8px;">
@@ -2592,7 +3284,7 @@
       <article class="card highlight span-2">
         <header class="achv-head">
           <div class="achv-title">
-            <span class="badge-achv"><span class="emoji">✍️</span> External CTF Challenge Author</span>
+            <span class="badge-achv">External CTF Challenge Author</span>
             <div class="item-title">CTF Challenge Authoring — CODEGATE 2026 · HACKTHEON Sejong 2026</div>
           </div>
           <div class="item-period">
@@ -2672,7 +3364,7 @@
           <!-- Executive summary -->
           <div class="brief">
             <p class="lead">When the <b>secret and the guess overlap</b>, the <b>compression ratio increases and on-disk size (Δsize) decreases.</b>  
-              We implemented and evaluated the <b>DBREACH</b> attack — which iteratively observes only this <b>length signal</b> to recover the secret —
+              We implemented and evaluated the <b>DBREACH</b> attack, which iteratively observes only this <b>length signal</b> to recover the secret,
               on <b>MariaDB (InnoDB)</b> in a <b>reproducible Docker</b> environment.</p>
             <div class="kpi-row">
               <span class="kpi">Dockerized reproduction</span>
@@ -2706,7 +3398,7 @@
             <h4>Why it matters (Security perspective)</h4>
             <ul class="bullet-compact">
               <li><b>Encryption is not enough:</b> Even with encryption, <b>post-compression length</b> and <b>page/file size metadata</b> can still be <b>measurable</b>.</li>
-              <li><b>Low visibility:</b> Exploits file-size changes — very hard to detect from <b>application logs</b> alone.</li>
+              <li><b>Low visibility:</b> Exploits file-size changes, which are hard to detect from <b>application logs</b> alone.</li>
               <li><b>Realism:</b> Whereas web-side <i>CRIME / BREACH</i> observe network length, <b>DBREACH</b> observes <b>storage-medium length</b>.</li>
             </ul>
           </div>
@@ -2830,6 +3522,19 @@
           <div class="item-sub">CTFs and other security competitions (newest first)</div>
 
           <div class="timeline">
+            <!-- 2026.05: DEF CON CTF Qualifier 2026 — Finals qualified -->
+            <div class="entry">
+              <div class="entry-title">DEF CON CTF Qualifier 2026 — The Seoul Sauna Shogunate</div>
+              <div class="entry-meta">
+                <span>Team: <b>The Seoul Sauna Shogunate</b></span>
+                <span><time datetime="2026-05-22">2026.05.22</time>–<time datetime="2026-05-24">05.24</time></span>
+                <span class="pill rank-win">7th worldwide · DEF CON 34 Finals</span>
+              </div>
+              <ul class="bullets">
+                <li><a class="link-chip" href="https://ctftime.org/event/3205/" target="_blank" rel="noopener">CTFtime · DEF CON CTF Qualifier 2026</a></li>
+              </ul>
+            </div>
+
             <!-- 2026: RubiyaLab CTF results -->
             <div class="entry">
               <div class="entry-title">UofTCTF 2026 — RubiyaLab</div>
@@ -2855,6 +3560,17 @@
                 <span>Team: <b>RubiyaLab</b></span>
                 <span><time datetime="2026">2026</time></span>
                 <span class="pill">Participated</span>
+              </div>
+            </div>
+
+            <!-- 2025.12 — Gamgyul (Tangerine) CTF -->
+            <div class="entry">
+              <div class="entry-title">Gamgyul (Tangerine) CTF</div>
+              <div class="entry-meta">
+                <span>156 participants</span>
+                <span><time datetime="2025-12">2025.12</time></span>
+                <span class="pill rank-win">1st place</span>
+                <span class="pill">CTF</span>
               </div>
             </div>
 
@@ -2936,17 +3652,6 @@
               <div class="entry-title">FIESTA 2024 (Participant)</div>
               <div class="entry-meta">
                 <span><time datetime="2024-10-04">2024.10.04</time></span>
-              </div>
-            </div>
-
-            <!-- 2024 — Gamgyul (Tangerine) CTF -->
-            <div class="entry">
-              <div class="entry-title">Gamgyul (Tangerine) CTF</div>
-              <div class="entry-meta">
-                <span>156 participants</span>
-                <span><time datetime="2024">2024</time></span>
-                <span class="pill rank-win">1st place</span>
-                <span class="pill">CTF</span>
               </div>
             </div>
 
@@ -3267,7 +3972,7 @@
           <figure class="project-cover-wrap">
             <img class="project-cover" src="assets/msg_ctf.png" alt="MSG CTF cover image" onerror="this.remove(); this.parentElement.classList.add('placeholder')" />
           </figure>
-          <p class="project-desc">A custom CTF platform built without CTFd — front-end, back-end and Discord bot all developed in-house.</p>
+          <p class="project-desc">A custom CTF platform built without CTFd: front-end, back-end and Discord bot all developed in-house.</p>
 
 
           <div class="project-meta meta-group">
@@ -3391,7 +4096,7 @@
     <!-- PROJECT DETAILS -->
     <section id="project-details" class="section" aria-labelledby="details-title">
       <h2 class="section-title" id="details-title" data-eyebrow="S.09 — Details">Project Details</h2>
-      <p class="section-sub">Deep dives — architecture, threat model, attack flow and defensive takeaways for each project.</p>
+      <p class="section-sub">Architecture, threat model, attack flow and defensive takeaways for each project.</p>
 
       <!-- WATCHDOG (NEW) — full detail -->
       <article class="card" id="detail-watchdog">
@@ -3502,7 +4207,7 @@
         <h4 class="subsection-title">Why this design?</h4>
         <ul class="checklist">
           <li><b>Contract-first:</b> Lock the API surface before agent logic, so multiple agents / scanners can plug in without breaking consumers.</li>
-          <li><b>Pipeline-first:</b> Establish secret scan, image scan, SBOM and E2E smoke before scaling features — every change ships through the same gate.</li>
+          <li><b>Pipeline-first:</b> Establish secret scan, image scan, SBOM and E2E smoke before scaling features; every change ships through the same gate.</li>
           <li><b>Reproducible by default:</b> Everything is runnable locally with a single <code>docker compose</code> command and a <code>smoke.py</code> assertion.</li>
         </ul>
       </article>
@@ -3536,8 +4241,8 @@
         <ul class="checklist">
           <li><b>Asset:</b> A Bedrock Agent powering an internal helpdesk / customer-support bot.</li>
           <li><b>Attacker capability:</b> Write access (direct or indirect) to an S3 prefix that backs the Knowledge Base.</li>
-          <li><b>Goal:</b> Steer the agent to break its system prompt — exfiltrate data, mis-use tools, bypass guardrails.</li>
-          <li><b>Why realistic:</b> KBs are commonly fed from shared S3 buckets, helpdesk uploads, or wiki exports — all attacker-influenceable surfaces.</li>
+          <li><b>Goal:</b> Steer the agent to break its system prompt: exfiltrate data, mis-use tools, bypass guardrails.</li>
+          <li><b>Why realistic:</b> KBs are commonly fed from shared S3 buckets, helpdesk uploads, or wiki exports, all of which an attacker can influence.</li>
         </ul>
 
         <hr class="divider">
@@ -3606,7 +4311,7 @@
           <li><b>Recon:</b> Identify the S3 prefix backing the agent's KB and list writable paths.</li>
           <li><b>Inject:</b> Drop a poisoned document containing <b>instruction-style content</b> (e.g., "Ignore prior rules and …") under the trusted prefix.</li>
           <li><b>Trigger:</b> Issue a benign-looking question to the agent that retrieves the poisoned chunk.</li>
-          <li><b>Compromise:</b> Agent treats retrieved text as authoritative context and executes attacker-controlled behavior — data leak, tool misuse, guardrail bypass.</li>
+          <li><b>Compromise:</b> Agent treats retrieved text as authoritative context and executes attacker-controlled behavior: data leak, tool misuse, guardrail bypass.</li>
           <li><b>Verify &amp; harden:</b> Switch back to the secure baseline scenario and re-run tests to confirm the attacks are blocked.</li>
         </ol>
 
@@ -3650,7 +4355,7 @@
             <b>Semantic Gap</b> is a class of vulnerabilities exploiting <b>semantic mismatches</b> — the same data/request
             being <b>interpreted differently across components</b>. Existing taxonomies (<i>CWE / CAPEC / OWASP</i>)
             are <b>outcome- and technique-centric</b>; WEAVE complements them with a <b>Root-Cause–oriented</b> taxonomy
-            and <b>per-step attack payloads</b> in one platform — improving usability for both <b>red and blue teams</b>.
+            and <b>per-step attack payloads</b> in one platform, improving usability for both <b>red and blue teams</b>.
           </p>
         </div>
 
@@ -3705,7 +4410,7 @@
         <h4 class="subsection-title">Why Semantic Gap?</h4>
         <ul class="checklist">
           <li><b>Root-cause gap:</b> Existing taxonomies are technique/outcome-focused, making defensive insight hard to derive.</li>
-          <li><b>Inconsistent terminology:</b> The same phenomenon is described with different terms — making cross-case comparison hard.</li>
+          <li><b>Inconsistent terminology:</b> The same phenomenon is described with different terms, making cross-case comparison hard.</li>
           <li><b>Goal:</b> Provide a <b>Root-Cause–based</b> hierarchy plus <b>per-step attack payloads</b> as immediately useful knowledge for red-teaming, scanning and defensive policy work.</li>
         </ul>
 
@@ -3901,7 +4606,7 @@
         <!-- Summary -->
         <div class="summary summary-box">
           <p>
-            <b>MSG CTF</b> is an in-house CTF platform — front-end, back-end and Discord bot are all <b>self-built</b>
+            <b>MSG CTF</b> is an in-house CTF platform: front-end, back-end and Discord bot are all <b>self-built</b>
             instead of using CTFd. It includes ops automation (announcements / hints / FirstBlood), a real-time
             scoreboard, and challenge / team management.
             Detailed design and code are in the <a href="https://github.com/MJSEC-MJU/MSG_CTF_BACK" target="_blank" rel="noopener"><b>Back repository</b></a>.
@@ -4326,13 +5031,174 @@
 
     </section>
 
-</main>
-
-    <footer>© <span id="year"></span> Jong-Yun Lee. All rights reserved. · <a href="index_ko.html">한국어 버전</a></footer>
   </main>
+
+  <footer class="site-footer">
+    <div class="footer-cta">
+      <p class="f-eyebrow">Contact</p>
+      <h2 class="f-title">Let's <em>talk</em>.</h2>
+      <a class="f-mail" href="mailto:ialleejy@gmail.com">ialleejy@gmail.com</a>
+    </div>
+    <div class="footer-meta">
+      <span>© <span id="year"></span> Jong-Yun Lee</span>
+      <span>
+        <a href="https://github.com/jongcoding" target="_blank" rel="noopener">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/jongyun-lee-753747122/" target="_blank" rel="noopener">LinkedIn</a> ·
+        <a href="https://ialleejy.tistory.com" target="_blank" rel="noopener">Write-ups</a> ·
+        <a href="index_ko.html">한국어</a>
+      </span>
+    </div>
+  </footer>
+
+  <!-- image lightbox (native <dialog>) -->
+  <dialog id="lightbox" class="lightbox" aria-label="Image viewer">
+    <img alt="" />
+    <button class="lb-hint" command="close" commandfor="lightbox">ESC or click to close</button>
+  </dialog>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // reading progress hairline (JS fallback; CSS scroll-timeline takes over where supported)
+    (function () {
+      if (CSS.supports && CSS.supports('animation-timeline: scroll()')) return;
+      var bar = document.getElementById('scroll-progress');
+      function update() {
+        var h = document.documentElement;
+        var max = h.scrollHeight - h.clientHeight;
+        bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+      }
+      addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+
+    // scroll reveal (JS fallback; CSS view-timeline takes over where supported)
+    (function () {
+      if (CSS.supports && CSS.supports('animation-timeline: view()')) return;
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      if (!('IntersectionObserver' in window)) return;
+      var els = document.querySelectorAll('.section-title, .section-sub, .section .card, .milestone, .defcon-feature');
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('in-view');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -6% 0px' });
+      els.forEach(function (el) {
+        if (el.getBoundingClientRect().top < innerHeight) return; // already on screen
+        el.classList.add('reveal');
+        io.observe(el);
+      });
+    })();
+
+    // cursor spotlight on the DEF CON card
+    (function () {
+      var dc = document.querySelector('.defcon-feature');
+      if (!dc || matchMedia('(hover: none)').matches) return;
+      var spot = document.createElement('div');
+      spot.className = 'dc-spot';
+      dc.appendChild(spot);
+      dc.addEventListener('mousemove', function (e) {
+        var r = dc.getBoundingClientRect();
+        dc.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        dc.style.setProperty('--my', (e.clientY - r.top) + 'px');
+      });
+    })();
+
+    // cursor spotlight on every card
+    (function () {
+      if (matchMedia('(hover: none)').matches) return;
+      document.querySelectorAll('.card').forEach(function (c) {
+        c.addEventListener('mousemove', function (e) {
+          var r = c.getBoundingClientRect();
+          c.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+          c.style.setProperty('--my', (e.clientY - r.top) + 'px');
+        });
+      });
+    })();
+
+    // Seoul clock in the nav
+    (function () {
+      var el = document.getElementById('nav-clock');
+      if (!el) return;
+      var fmt = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'Asia/Seoul' });
+      function tick() { el.textContent = fmt.format(new Date()); }
+      tick();
+      setInterval(tick, 30000);
+    })();
+
+    // nav scrollspy
+    (function () {
+      if (!('IntersectionObserver' in window)) return;
+      var links = [].slice.call(document.querySelectorAll('.nav a[href^="#"]'));
+      if (!links.length) return;
+      var map = {};
+      links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          links.forEach(function (a) { a.classList.remove('active'); });
+          var a = map[e.target.id];
+          if (a) a.classList.add('active');
+        });
+      }, { rootMargin: '-35% 0px -60% 0px' });
+      Object.keys(map).forEach(function (id) {
+        var s = document.getElementById(id);
+        if (s) io.observe(s);
+      });
+    })();
+
+    // project details → exclusive native accordions (<details name="pd">)
+    (function () {
+      var sec = document.getElementById('project-details');
+      if (!sec) return;
+      sec.querySelectorAll(':scope > article').forEach(function (art) {
+        var d = document.createElement('details');
+        d.className = 'pd';
+        d.setAttribute('name', 'pd');
+        var s = document.createElement('summary');
+        var t = art.querySelector('.detail-title');
+        s.textContent = t ? t.textContent.replace(/\s*—\s*Details\s*$/, '') : 'Details';
+        d.appendChild(s);
+        art.parentNode.insertBefore(d, art);
+        d.appendChild(art);
+      });
+      // deep links (#detail-xxx) and in-page anchors still open the right panel
+      function openFor(hash) {
+        if (!hash) return;
+        var el = document.querySelector(hash);
+        if (!el) return;
+        var d = el.closest('details.pd');
+        if (d) d.open = true;
+      }
+      addEventListener('hashchange', function () { openFor(location.hash); });
+      openFor(location.hash);
+      // print everything, not just the open panel
+      addEventListener('beforeprint', function () {
+        document.querySelectorAll('details.pd').forEach(function (d) { d.open = true; });
+      });
+    })();
+
+    // image links open in a native <dialog> lightbox instead of a new tab
+    (function () {
+      var dlg = document.getElementById('lightbox');
+      if (!dlg || typeof dlg.showModal !== 'function') return;
+      var img = dlg.querySelector('img');
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest('a[href]');
+        if (!a) return;
+        var href = a.getAttribute('href') || '';
+        if (!/^assets\/.+\.(png|jpe?g|webp|gif)$/i.test(href)) return;
+        e.preventDefault();
+        img.src = href;
+        var alt = a.querySelector('img');
+        img.alt = alt ? alt.alt : '';
+        dlg.showModal();
+      });
+      dlg.addEventListener('click', function () { dlg.close(); });
+    })();
   </script>
 </body>
 </html>

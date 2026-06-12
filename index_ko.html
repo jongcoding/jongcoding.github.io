@@ -218,6 +218,57 @@
     .subsection-title::before { content: ""; width: 4px; height: 16px; border-radius: 3px; background: var(--border); }
     @media print { .subsection-title::before { background: #999; } }
 
+    /* ─── DEF CON 34 — CTF 파이널리스트 피처 ─────────────────────────── */
+    @keyframes dcko-blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+    @keyframes dcko-pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(239,68,68,.55); } 70% { box-shadow: 0 0 0 8px rgba(239,68,68,0); } }
+
+    .hero-flash {
+      display: inline-flex; align-items: center; gap: 10px;
+      margin: 12px 0 4px; padding: 8px 14px;
+      border-radius: 999px; border: 1px solid rgba(239,68,68,.35);
+      background: rgba(239,68,68,.07);
+      font-size: 12.5px; font-weight: 700; color: var(--text); text-decoration: none;
+    }
+    .hero-flash:hover { border-color: #ef4444; }
+    .hero-flash .hf-dot { flex: none; width: 7px; height: 7px; border-radius: 50%; background: #ef4444; animation: dcko-pulse 2.2s ease-out infinite; }
+    .hero-flash b { color: #ef4444; }
+
+    .defcon-feature {
+      grid-column: 1 / -1; position: relative; overflow: hidden;
+      border-radius: var(--radius); border: 1px solid #2c2c31;
+      padding: 30px 28px;
+      color: #ededed;
+      background:
+        radial-gradient(900px 420px at 88% -20%, rgba(239,68,68,.18), transparent 62%),
+        radial-gradient(600px 320px at -8% 115%, rgba(239,68,68,.08), transparent 60%),
+        #0b0b0d;
+      box-shadow: var(--shadow);
+    }
+    .defcon-feature .dc-eyebrow { display: flex; align-items: center; gap: 10px; font-family: ui-monospace, Consolas, monospace; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: #ef4444; }
+    .defcon-feature .dc-eyebrow::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, rgba(239,68,68,.45), transparent); }
+    .defcon-feature .dc-title { margin: 12px 0 0; font-weight: 900; font-size: clamp(36px, 6.4vw, 72px); line-height: .98; letter-spacing: -0.04em; color: #fff; }
+    .defcon-feature .dc-title .dc-accent { color: #ef4444; }
+    .defcon-feature .dc-title .dc-outline { color: transparent; -webkit-text-stroke: 1.4px #fff; }
+    .defcon-feature .dc-cursor { display: inline-block; width: .42em; height: .72em; margin-left: .1em; background: #ef4444; animation: dcko-blink 1.1s steps(1) infinite; }
+    .defcon-feature .dc-sub { margin: 14px 0 0; max-width: 72ch; color: #b6b6b6; line-height: 1.7; }
+    .defcon-feature .dc-sub b { color: #fff; }
+    .defcon-feature .dc-stats { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 22px; border: 1px solid #2c2c31; border-radius: 10px; overflow: hidden; background: rgba(255,255,255,.02); }
+    .defcon-feature .dc-stat { min-width: 0; padding: 14px 16px 12px; border-left: 1px solid #2c2c31; }
+    .defcon-feature .dc-stat:first-child { border-left: 0; }
+    .defcon-feature .dc-stat .k { display: block; font-family: ui-monospace, Consolas, monospace; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: #7a7a7e; }
+    .defcon-feature .dc-stat .v { display: block; margin-top: 6px; font-weight: 800; font-size: clamp(17px, 2vw, 24px); line-height: 1.15; color: #fff; }
+    .defcon-feature .dc-stat .v small { display: block; margin-top: 3px; font-weight: 500; font-size: 12px; color: #b6b6b6; }
+    .defcon-feature .dc-stat .v .num { color: #ef4444; }
+    @media (max-width: 860px) {
+      .defcon-feature { padding: 24px 18px; }
+      .defcon-feature .dc-stats { grid-template-columns: 1fr 1fr; }
+      .defcon-feature .dc-stat:nth-child(odd) { border-left: 0; }
+      .defcon-feature .dc-stat:nth-child(n+3) { border-top: 1px solid #2c2c31; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .defcon-feature .dc-cursor, .hero-flash .hf-dot { animation: none; }
+    }
+
     /* Tech matrix (details) */
     .tech-matrix {
       display:grid; grid-template-columns: repeat(4, 1fr); gap:16px; margin-top:8px;
@@ -1301,6 +1352,10 @@
       </div>
       <div class="intro-copy">
         <h1 id="intro-title">보안 전문성과 창의적 사고로 디지털 세상을 지킵니다</h1>
+        <a class="hero-flash" href="#defcon34">
+          <span class="hf-dot" aria-hidden="true"></span>
+          DEF CON 34 CTF 본선 진출 · <b>The Seoul Sauna Shogunate</b>
+        </a>
         <p>
           정보보안 분야에서 4년간의 실무 경험과 지속적인 학습을 통해
           화이트해킹, 웹 보안, 시스템 보안 전문성을 쌓아왔습니다. CTF 운영과 실무 프로젝트를 통해
@@ -1487,6 +1542,26 @@
       <h2 class="section-title" id="achievements-title">주요 성과</h2>
 
       <div class="achv-grid">
+        <!-- DEF CON 34 CTF Finals 진출 — The Seoul Sauna Shogunate -->
+        <article class="defcon-feature" id="defcon34" aria-labelledby="defcon34-ko-title">
+          <span class="dc-eyebrow">World Hacking Championship · DEF CON CTF</span>
+          <h3 class="dc-title" id="defcon34-ko-title">
+            DEF&nbsp;CON <span class="dc-accent">34</span><br />
+            <span class="dc-outline">CTF FINALIST</span><span class="dc-cursor" aria-hidden="true"></span>
+          </h3>
+          <p class="dc-sub">
+            DEF CON CTF Qualifier 2026에서 <b>The Seoul Sauna Shogunate</b> 팀으로
+            <b>세계 7위(8,641점)</b>를 기록했습니다. 2026년 8월 라스베이거스에서 열리는
+            <b>DEF CON 34 본선</b>에 출전합니다.
+          </p>
+          <div class="dc-stats" aria-label="DEF CON 34 예선 결과">
+            <div class="dc-stat"><span class="k">예선 순위</span><span class="v"><span class="num">#7</span><small>세계</small></span></div>
+            <div class="dc-stat"><span class="k">점수</span><span class="v">8,641<small>points</small></span></div>
+            <div class="dc-stat"><span class="k">팀</span><span class="v">Seoul Sauna<small>The Seoul Sauna Shogunate</small></span></div>
+            <div class="dc-stat"><span class="k">본선</span><span class="v">2026.08<small>DEF CON 34 · Las Vegas</small></span></div>
+          </div>
+        </article>
+
         <!-- 정보사 웹사이트 취약점 보고 (하이라이트 카드) -->
         <article class="card highlight">
           <header class="achv-head">
@@ -1918,6 +1993,19 @@
           <div class="item-sub">CTF 및 각종 보안 경진대회 (최신순)</div>
 
           <div class="timeline">
+            <!-- 2026.05: DEF CON CTF Qualifier 2026 — 본선 진출 -->
+            <div class="entry">
+              <div class="entry-title">DEF CON CTF Qualifier 2026 — The Seoul Sauna Shogunate</div>
+              <div class="entry-meta">
+                <span>팀: <b>The Seoul Sauna Shogunate</b></span>
+                <span><time datetime="2026-05-22">2026.05.22</time>–<time datetime="2026-05-24">05.24</time></span>
+                <span class="pill rank-win">세계 7위 · DEF CON 34 본선 진출</span>
+              </div>
+              <ul class="bullets">
+                <li><a class="link-chip" href="https://ctftime.org/event/3205/" target="_blank" rel="noopener">CTFtime · DEF CON CTF Qualifier 2026</a></li>
+              </ul>
+            </div>
+
             <!-- 2025.08.16 -->
             <div class="entry">
               <div class="entry-title">CCE 2025 — 일반부문 참가</div>
