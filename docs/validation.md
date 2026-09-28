@@ -9,10 +9,13 @@ Both English and Korean pages checked at widths of 320, 390, 768, 1024 and 1440 
 - No horizontal page overflow at any of the ten language/viewport combinations
 - No broken page images or missing local files
 - MSGCTF, GnawLab, WEAVE, INC0GNITO and ENKI WhiteHat marks checked at their displayed size
+- The current MSGCTF project uses the 2026 frontend logo, with original source pixels and transparency preserved and empty margins excluded by its SVG viewport
 - Official AWS, Azure, Google Cloud, Bedrock, S3 and Lambda artwork loads from local files
 - All seven MSGCTF roles appear across four selectable scenes at every tested width
 - Each selected scene shows one action and its outcome, with two or three supporting service names and no page movement when changing scenes
 - Mobile scenes place 24-pixel action headings above their interface illustrations
+- Preview descriptions use 15–16-pixel text, service names use 13-pixel text, and primary interface results use 17–18-pixel text after removing duplicate labels and nested framing
+- Larger shared body and link text and stronger secondary-text contrast checked across both language versions
 - The complete role descriptions remain available in a native disclosure and all seven repository links remain visible outside it
 - No JavaScript exceptions or browser console errors during the checks
 - One primary heading per page, unique element IDs, named links, and valid in-page anchor targets

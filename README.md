@@ -58,7 +58,10 @@ These are conceptual overviews, with the original research screenshots available
 All previews include chapter progress, with a sixteen-second timeline for MSGCTF and nine seconds for the other three
 
 MSGCTF, GnawLab, WEAVE, INC0GNITO and ENKI WhiteHat use their source artwork alongside the relevant project or role
+The current MSGCTF project uses the 2026 frontend's maple-leaf and mountain mark, with the original transparent PNG preserved and its empty margins cropped only in the display viewport
+The separate 2025 archive keeps its historical artwork
 The MSGCTF preview spans the project width, placing an action heading beside an interface example on desktop and above it on mobile
+Body and link text use larger sizes and stronger contrast, while the preview removes repeated toolbars and captions to emphasize the action and result
 Validation checks lead to a registered release, a participant action produces a creation request, cloud selection reveals a team workspace, and a health alert leads to a recovery request
 The illustrations summarize the design and do not claim to be recordings of the production interface
 Four scene buttons let visitors choose a stage and pause there to read at their own pace

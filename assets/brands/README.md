@@ -7,7 +7,8 @@ Cloud-provider marks describe the project's integrations and do not imply sponso
 
 | Local asset | Original source |
 | --- | --- |
-| `msgctf.png` | [MSG-CTF organization](https://github.com/MSG-CTF) / [organization avatar](https://avatars.githubusercontent.com/u/299351422?v=4) |
+| `msgctf-2026.png` | [MSGCTF 2026 frontend logo](https://github.com/MSG-CTF/front-team/blob/1ee323c27cb4ce2fed99cb8a86abe6389761528d/public/assets/login/logo-cutout.png), also used by its login and rules screens |
+| `msgctf.png` | Earlier [MSG-CTF organization avatar](https://avatars.githubusercontent.com/u/299351422?v=4), retained as a historical asset and no longer used for the current project |
 | `incognito.png` | [Incognito-CTF organization](https://github.com/Incognito-CTF) / [organization avatar](https://avatars.githubusercontent.com/u/244930413?v=4) |
 | `weave.png` | [WEAVE website repository](https://github.com/WHS-webao/WHS-webao.github.io) / [logo2.png](https://raw.githubusercontent.com/WHS-webao/WHS-webao.github.io/main/logo2.png) |
 | `enki.svg` | [ENKI WhiteHat official site](https://www.enki.co.kr/company/about) / [English logo animation](https://framerusercontent.com/assets/uAXOsr6dTwP5KiabgPyxGYJGvWw.json) |
@@ -26,6 +27,10 @@ The Azure mark comes from the [official V24 icon package](https://arch-center.az
 ENKI's SVG is a static rendering of the final frame of its official English wordmark animation, with empty canvas space trimmed through the SVG viewBox
 The original paths and colors are retained
 The Lottie renderer is used only to prepare that static asset and is not included in the website
+
+The 2026 MSGCTF logo is copied unchanged from frontend commit 1ee323c27cb4ce2fed99cb8a86abe6389761528d
+An inline SVG viewBox of 231 321 792 581 frames the artwork inside the original 1254-pixel square PNG, leaving its colors, pixels and transparency unchanged
+The updated mark is used in the current project's heading and motion preview, while the earlier 2025 project materials retain their original artwork
 
 Other source files are copied unchanged and displayed with their original aspect ratios and colors
 Names and trademarks belong to their respective owners

@@ -10,6 +10,7 @@ Updated 28 September 2026
 - [DEF CON CTF Qualifier 2026 scoreboard](https://ctftime.org/event/3205/), listing The Seoul Sauna Shogunate in seventh place with 8,641 points
 - The owner's direct confirmation of DEF CON finals participation, Demo Labs presentation and graduation from Myongji University
 - [MSG-CTF organization](https://github.com/MSG-CTF), including the public frontend, backend, scheduler, broker, runtime, DevSecOps and monitoring repositories
+- [MSGCTF 2026 frontend logo](https://github.com/MSG-CTF/front-team/blob/1ee323c27cb4ce2fed99cb8a86abe6389761528d/public/assets/login/logo-cutout.png), used by the official login screen and copied unchanged for the current project
 - [Resource Broker provider inventory](https://github.com/MSG-CTF/resource-broker/blob/41f53e2502dff6e4c315431eec805151fdd89d6e/README.md) and [provider enum](https://github.com/MSG-CTF/resource-broker/blob/41f53e2502dff6e4c315431eec805151fdd89d6e/app/domain/enums.py), confirming AWS, Azure and GCP VM inventory and Kubernetes runtime support
 - [Frontend platform contract](https://github.com/MSG-CTF/front-team/blob/main/README.md), [DevSecOps release flow](https://github.com/MSG-CTF/msgctf-devsecops/blob/main/README.md) and [Sentinel responsibilities](https://github.com/MSG-CTF/sentinel/blob/dev/README.md), used for the platform scenes and role descriptions
 - The owner's clarification that vendors means cloud providers, rather than event sponsors
@@ -82,13 +83,17 @@ Visitors can select any scene to pause there, including static selection when re
 The other three previews use staged entrances, document transfer, taxonomy expansion, data-block movement and chapter progress on nine-second timelines
 
 Project headings use the original MSGCTF, GnawLab, WEAVE and INC0GNITO marks, with the ENKI WhiteHat wordmark in the employment section
+The current MSGCTF project and preview use the 2026 frontend's maple-leaf and mountain mark instead of the organization's older red avatar
+The PNG's colors and transparency are unchanged, with an SVG display viewport removing empty outer margins, while the 2025 archive retains its historical material
 The full-width platform preview places a large action heading beside an interface illustration on desktop, stacking the two on mobile
+Repeated interface toolbars and captions are removed, leaving larger action results and short descriptions with service names as secondary context
+The shared page styles increase smaller body and link text sizes and strengthen muted text contrast
 Official AWS, Azure and Google Cloud artwork appears inside the placement example, with the selected provider leading to creation of an isolated team workspace
 The seven component repository links remain visible outside the optional role overview
 GnawLab uses AWS S3, Bedrock and Lambda service icons to identify the illustrated knowledge source, agent and action group
 WEAVE moves through a folder index, an expanded case sheet and a two-column interpretation comparison
 All brand images are local assets, retain their original colors and aspect ratios, and are decoded before their preview begins
-Decorative brand images in headings have empty alt text and the complete project or company name remains available as heading text
+Decorative brand images in headings have empty alt text or are hidden from assistive technology, while the complete project or company name remains available as heading text
 The SVG previews keep their accessible titles and descriptions in both languages
 
 The original research assets and unrelated repository files are retained
