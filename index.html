@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#fafaf8">
+  <meta name="theme-color" content="#ffffff">
   <title>Jong-Yun Lee / Security Research &amp; Cloud Platforms</title>
   <meta name="description" content="Security researcher at ENKI WhiteHat / DEF CON 34 CTF finalist and Demo Labs speaker / Building MSGCTF Cloud Platform">
   <link rel="canonical" href="https://jongcoding.github.io/">
@@ -21,12 +21,14 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/portfolio.css">
+  <link rel="stylesheet" href="assets/portfolio-motion.css">
+  <script src="assets/portfolio-motion.js" defer></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="wordmark" href="#top" aria-label="Jong-Yun Lee">ialleejy</a>
+      <a class="wordmark" href="#top" aria-label="Jong-Yun Lee">Jong-Yun Lee</a>
       <div class="header-right">
         <nav class="nav" aria-label="Main navigation">
           <a href="#projects">Work</a>
@@ -43,135 +45,162 @@
   <main class="wrap" id="main" tabindex="-1">
     <section class="hero" aria-labelledby="intro-title">
       <div class="hero-text">
-        <p class="eyebrow">Security Researcher / Seoul</p>
         <h1 id="intro-title">Jong-Yun Lee</h1>
-        <p class="hero-role">Web &amp; cloud security research<br> CTF infrastructure development</p>
-        <p class="hero-copy">I research web and cloud security and create CTF challenges at ENKI WhiteHat<br> Currently building MSGCTF Cloud Platform with the team</p>
-        <div class="hero-links"><div class="link-row" aria-label="Contact &amp; profiles"><a href="https://github.com/jongcoding" target="_blank" rel="noopener noreferrer">GitHub<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="https://www.linkedin.com/in/jongyun-lee-753747122/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="https://ialleejy.tistory.com" target="_blank" rel="noopener noreferrer">Blog<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="mailto:ialleejy@gmail.com">Email<span class="arrow" aria-hidden="true">↗</span></a></div></div>
+        <p class="hero-identity">이종윤<span>ialleejy</span></p>
+        <p class="hero-role">Web &amp; cloud security researcher</p>
+        <p class="hero-copy">Security research and CTF challenge design at ENKI WhiteHat<br> Currently designing and building MSGCTF Cloud Platform with the team</p>
+        <div class="hero-links"><div class="link-row" aria-label="Contact &amp; profiles"><a href="https://github.com/jongcoding" target="_blank" rel="noopener noreferrer">GitHub</a>
+<a href="https://www.linkedin.com/in/jongyun-lee-753747122/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+<a href="https://ialleejy.tistory.com" target="_blank" rel="noopener noreferrer">Blog</a>
+<a href="mailto:ialleejy@gmail.com">Email</a></div></div>
       </div>
       <figure class="portrait">
         <img src="assets/profile.jpg" alt="Portrait of Jong-Yun Lee" width="413" height="531" fetchpriority="high">
-        <figcaption><span>@ialleejy</span><span>Jong-Yun Lee / 이종윤</span></figcaption>
       </figure>
     </section>
 
     <section class="highlights" aria-label="Selected highlights">
       <article id="defcon34">
-        <p class="eyebrow">DEF CON 34 / Las Vegas / 2026</p>
-        <h2>CTF Finalist</h2>
+        <p class="eyebrow">2026</p>
+        <h2>DEF CON 34 <span>CTF Finals</span></h2>
         <p>Competed in the finals with The Seoul Sauna Shogunate</p>
         <p class="highlight-note">7th in the qualifier / 8,641 points</p>
-        <div class="link-row" aria-label="Related links"><a href="https://ctftime.org/event/3205/" target="_blank" rel="noopener noreferrer">Qualifier results<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="https://defcon.org/html/links/dc-ctf.html" target="_blank" rel="noopener noreferrer">DEF CON CTF<span class="arrow" aria-hidden="true">↗</span></a></div>
+        <div class="link-row" aria-label="Related links"><a href="https://ctftime.org/event/3205/" target="_blank" rel="noopener noreferrer">Qualifier results</a>
+<a href="https://defcon.org/html/links/dc-ctf.html" target="_blank" rel="noopener noreferrer">DEF CON CTF</a></div>
       </article>
       <article id="demolabs">
-        <p class="eyebrow">DEF CON 34 / Demo Labs / 2026</p>
-        <h2>Demo Labs Speaker</h2>
+        <p class="eyebrow">2026</p>
+        <h2>DEF CON 34 <span>Demo Labs</span></h2>
         <p>Presented GnawLab, an open-source AWS security lab</p>
         <p class="highlight-note">August 7 &amp; 8 / Las Vegas Convention Center</p>
-        <div class="link-row" aria-label="Related links"><a href="https://info.defcon.org/defcon34/content/66504" target="_blank" rel="noopener noreferrer">Talk on Hacker Tracker<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="https://info.defcon.org/defcon34/people/67239" target="_blank" rel="noopener noreferrer">Speaker profile<span class="arrow" aria-hidden="true">↗</span></a></div>
+        <div class="link-row" aria-label="Related links"><a href="https://info.defcon.org/defcon34/content/66504" target="_blank" rel="noopener noreferrer">Talk on Hacker Tracker</a>
+<a href="https://info.defcon.org/defcon34/people/67239" target="_blank" rel="noopener noreferrer">Speaker profile</a></div>
       </article>
     </section>
 
     <section class="section" id="projects" aria-labelledby="work-title">
-      <div class="section-heading"><h2 id="work-title">Selected work</h2><p>Current work &amp; research</p></div>
+      <div class="section-heading"><h2 id="work-title">Selected projects</h2><p></p></div>
       <article class="feature" id="msgctf">
         <div class="feature-main">
           <div class="feature-copy">
-            <p class="project-meta"><span class="status">In development</span><span>2026 / Team project</span></p>
+            <p class="project-meta"><span class="status">In progress</span><span>2026</span></p>
             <h3>MSGCTF<br> <span>Cloud Platform</span></h3>
             <p class="project-description">A CTF operations platform connecting challenge deployment, team instances and service monitoring</p>
             <dl class="contribution">
               <div><dt>My role</dt><dd>Architecture design and cross-service integration review<br> Instance lifecycle and operational validation</dd></div>
               <div><dt>Current scope</dt><dd>Isolated runtimes / CI/CD / monitoring / KOTH scoring</dd></div>
             </dl>
-            <a href="https://github.com/MSG-CTF" target="_blank" rel="noopener noreferrer" class="feature-link">MSG-CTF on GitHub<span class="arrow" aria-hidden="true">↗</span></a>
+            <a href="https://github.com/MSG-CTF" target="_blank" rel="noopener noreferrer" class="feature-link">MSG-CTF on GitHub</a>
           </div>
-          <figure class="architecture">
-            <div class="diagram-label"><span>Instance lifecycle</span><span>Architecture overview</span></div>
-            <img src="assets/msgctf-architecture.svg" alt="Instance creation flows from the platform API through the scheduler and resource broker to an isolated runtime" width="460" height="286">
-            <figcaption>Integration and operational validation in progress</figcaption>
-          </figure>
+          <figure class="project-film film-msgctf" data-film="msgctf" data-state="ready" data-duration="9000">
+      <div class="film-stage"><svg class="flow-scene" viewBox="0 0 560 348" role="img" aria-labelledby="msg-film-title msg-film-desc">
+          <title id="msg-film-title">Instance lifecycle</title>
+          <desc id="msg-film-desc">A schematic of an API request reaching the scheduler, capacity selection through the broker and instance creation in an isolated runtime</desc>
+          <text class="scene-name" x="30" y="34">MSGCTF</text><text class="scene-kind" x="530" y="34" text-anchor="end">Architecture</text>
+          <path class="scene-rule" d="M30 52H530"/>
+          <g class="flow-guides"><path d="M164 172H216"/><path d="M350 172H378V112H406"/><path d="M350 172H378V248H406"/></g>
+          <g class="flow-traces"><path class="trace-api" pathLength="100" d="M164 172H216"/><path class="trace-broker" pathLength="100" d="M350 172H378V112H406"/><path class="trace-runtime" pathLength="100" d="M350 172H378V248H406"/></g>
+          <g class="flow-node api-node"><rect x="32" y="142" width="132" height="60"/><text x="98" y="177">Platform API</text></g>
+          <g class="flow-node scheduler-node"><rect x="216" y="136" width="134" height="72"/><text x="283" y="177">Scheduler</text></g>
+          <g class="flow-node broker-node"><rect x="406" y="82" width="126" height="60"/><text x="469" y="117">Resource Broker</text></g>
+          <g class="flow-node runtime-node"><rect x="406" y="218" width="126" height="60"/><text x="469" y="253">Isolated Runtime</text></g>
+          <text class="flow-label" x="188" y="158" text-anchor="middle">request</text>
+          <text class="flow-label" x="400" y="68" text-anchor="end">capacity</text>
+          <text class="flow-label" x="400" y="299" text-anchor="end">workload</text>
+          <g class="instance-slip"><rect x="434" y="279" width="72" height="22"/><path d="m447 290 4 4 7-8"/><text x="477" y="294">ready</text></g>
+          <text class="scene-foot" x="30" y="324">Request</text><text class="scene-foot" x="216" y="324">Schedule</text><text class="scene-foot" x="532" y="324" text-anchor="end">Isolate</text>
+        </svg><div class="film-progress" aria-hidden="true"></div></div>
+      <figcaption><span id="msgctf-film-caption">Instance lifecycle</span><button type="button" hidden aria-describedby="msgctf-film-caption" data-play="Play preview" data-pause="Pause" data-resume="Resume" data-replay="Replay"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path class="play-icon" d="M4 2.5 12 8 4 13.5Z"/><path class="pause-icon" d="M5 3v10M11 3v10"/></svg><span>Play preview</span></button></figcaption>
+    </figure>
         </div>
         <div class="feature-repositories">
           <p>Component repositories</p>
-          <div class="link-row" aria-label="MSGCTF component repositories"><a href="https://github.com/MSG-CTF/front-team" target="_blank" rel="noopener noreferrer">Frontend<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="https://github.com/MSG-CTF/msg-backend" target="_blank" rel="noopener noreferrer">Backend<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="https://github.com/MSG-CTF/instance-scheduler" target="_blank" rel="noopener noreferrer">Scheduler<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="https://github.com/MSG-CTF/resource-broker" target="_blank" rel="noopener noreferrer">Resource Broker<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="https://github.com/MSG-CTF/secure-provisioner" target="_blank" rel="noopener noreferrer">Runtime<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="https://github.com/MSG-CTF/msgctf-devsecops" target="_blank" rel="noopener noreferrer">DevSecOps<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="https://github.com/MSG-CTF/sentinel" target="_blank" rel="noopener noreferrer">Monitoring<span class="arrow" aria-hidden="true">↗</span></a></div>
+          <div class="link-row" aria-label="MSGCTF component repositories"><a href="https://github.com/MSG-CTF/front-team" target="_blank" rel="noopener noreferrer">Frontend</a>
+<a href="https://github.com/MSG-CTF/msg-backend" target="_blank" rel="noopener noreferrer">Backend</a>
+<a href="https://github.com/MSG-CTF/instance-scheduler" target="_blank" rel="noopener noreferrer">Scheduler</a>
+<a href="https://github.com/MSG-CTF/resource-broker" target="_blank" rel="noopener noreferrer">Resource Broker</a>
+<a href="https://github.com/MSG-CTF/secure-provisioner" target="_blank" rel="noopener noreferrer">Runtime</a>
+<a href="https://github.com/MSG-CTF/msgctf-devsecops" target="_blank" rel="noopener noreferrer">DevSecOps</a>
+<a href="https://github.com/MSG-CTF/sentinel" target="_blank" rel="noopener noreferrer">Monitoring</a></div>
         </div>
       </article>
 
       <article class="project-row" id="detail-gnawlab">
-        <a class="project-preview logo-preview" href="https://github.com/Beaver-Dam-Community/GnawLab" target="_blank" rel="noopener noreferrer" aria-label="GnawLab GitHub">
-          <img src="assets/gnawlab.png" alt="GnawLab" width="1194" height="432" loading="lazy">
-          <span>Open-source AWS security lab</span>
-        </a>
+        <figure class="project-film film-gnawlab" data-film="gnawlab" data-state="ready" data-duration="9000">
+      <div class="film-stage"><svg class="cloud-scene" viewBox="0 0 560 348" role="img" aria-labelledby="gnaw-film-title gnaw-film-desc">
+          <title id="gnaw-film-title">RAG & agent trust boundaries</title><desc id="gnaw-film-desc">A conceptual view of documents, a Bedrock Agent and an action group across trust boundaries</desc>
+          <text class="scene-name" x="30" y="34">GnawLab</text><text class="scene-kind" x="530" y="34" text-anchor="end">AWS Bedrock</text><path class="scene-rule" d="M30 52H530"/>
+          <path class="cloud-boundary" d="M200 89V268M383 89V268"/>
+          <g class="flow-guides"><path d="M169 179H226"/><path d="M346 179H405"/></g>
+          <g class="flow-traces"><path class="trace-knowledge" pathLength="100" d="M169 179H226"/><path class="trace-action" pathLength="100" d="M346 179H405"/></g>
+          <g class="document-sheet"><path d="M67 109V82h34l12 12v29H67"/><path d="M101 82v13h12M78 105h23M78 114h16"/></g>
+          <g class="flow-node kb-node"><rect x="37" y="140" width="132" height="78"/><text x="103" y="178">Knowledge</text><text x="103" y="197">base</text></g>
+          <g class="flow-node agent-node"><rect x="226" y="140" width="120" height="78"/><text x="286" y="178">Bedrock</text><text x="286" y="197">Agent</text></g>
+          <g class="flow-node action-node"><rect x="405" y="140" width="119" height="78"/><text x="464" y="178">Action</text><text x="464" y="197">group</text></g>
+          <text class="flow-label" x="200" y="286" text-anchor="middle">Documents & model</text><text class="flow-label" x="383" y="286" text-anchor="middle">Response & action</text>
+          <text class="scene-foot" x="30" y="324">Bedrock Agent scenario contribution</text><text class="scene-foot" x="530" y="324" text-anchor="end">Terraform / AWS</text>
+        </svg><div class="film-progress" aria-hidden="true"></div></div>
+      <figcaption><span id="gnawlab-film-caption">RAG & agent trust boundaries</span><button type="button" hidden aria-describedby="gnawlab-film-caption" data-play="Play preview" data-pause="Pause" data-resume="Resume" data-replay="Replay"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path class="play-icon" d="M4 2.5 12 8 4 13.5Z"/><path class="pause-icon" d="M5 3v10M11 3v10"/></svg><span>Play preview</span></button></figcaption>
+    </figure>
         <div class="project-copy">
-          <p class="project-meta">Cloud security / 2026</p>
+          <p class="project-meta">2026</p>
           <h3>GnawLab</h3>
           <p>An open-source lab that recreates real-world AWS security incidents with Terraform<br> Contributed an AWS Bedrock Agent scenario and co-presented at DEF CON 34 Demo Labs</p>
           <p class="role-line">Contribution <span>Trust boundaries between RAG knowledge bases and agents</span></p>
-          <div class="link-row" aria-label="Related links"><a href="https://github.com/Beaver-Dam-Community/GnawLab" target="_blank" rel="noopener noreferrer">GitHub<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="https://info.defcon.org/defcon34/content/66504" target="_blank" rel="noopener noreferrer">Demo Labs talk<span class="arrow" aria-hidden="true">↗</span></a></div>
+          <div class="link-row" aria-label="Related links"><a href="https://github.com/Beaver-Dam-Community/GnawLab" target="_blank" rel="noopener noreferrer">GitHub</a>
+<a href="https://info.defcon.org/defcon34/content/66504" target="_blank" rel="noopener noreferrer">Demo Labs talk</a></div>
         </div>
       </article>
 
       <article class="project-row" id="detail-weave">
-        <a class="project-preview" href="assets/weave-site.png" target="_blank" rel="noopener noreferrer" aria-label="View the WEAVE screenshot">
-          <img src="assets/weave-site.png" alt="WEAVE taxonomy of Semantic Gap vulnerabilities" width="1525" height="956" loading="lazy">
-        </a>
+        <figure class="project-film film-weave" data-film="weave" data-state="ready" data-duration="9000">
+      <div class="film-stage"><div class="research-scene"><div class="research-scene-head"><span>WEAVE</span><span>Project materials</span></div><div class="research-frames"><div class="research-frame frame-1"><img src="assets/weave-site.png" alt="Vulnerability taxonomy" loading="lazy" width="1000" height="640"><p>Vulnerability taxonomy</p></div><div class="research-frame frame-2"><img src="assets/weave-arch.png" alt="Platform architecture" loading="lazy" width="1000" height="640"><p>Platform architecture</p></div><div class="research-frame frame-3"><img src="assets/weave-document.png" alt="Research documentation" loading="lazy" width="1000" height="640"><p>Research documentation</p></div></div></div><div class="film-progress" aria-hidden="true"></div></div>
+      <figcaption><span id="weave-film-caption">From cases to a taxonomy</span><button type="button" hidden aria-describedby="weave-film-caption" data-play="Play preview" data-pause="Pause" data-resume="Resume" data-replay="Replay"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path class="play-icon" d="M4 2.5 12 8 4 13.5Z"/><path class="pause-icon" d="M5 3v10M11 3v10"/></svg><span>Play preview</span></button></figcaption>
+    </figure>
         <div class="project-copy">
-          <p class="project-meta">Security knowledge / 2025</p>
+          <p class="project-meta">2025</p>
           <h3>WEAVE</h3>
           <p>A knowledge platform for Semantic Gap vulnerabilities caused by differing interpretations between components<br> Defined the research scope and organized cases into a root-cause taxonomy</p>
           <p class="role-line">Role <span>Research scope &amp; taxonomy / WhiteHat School, 3rd cohort</span></p>
-          <div class="link-row" aria-label="Related links"><a href="https://github.com/WHS-webao/semantic_gap" target="_blank" rel="noopener noreferrer">Research GitHub<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="https://github.com/WHS-webao/WHS-webao.github.io" target="_blank" rel="noopener noreferrer">Website GitHub<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="https://semanticgap.mjsec.kr" target="_blank" rel="noopener noreferrer">Website<span class="arrow" aria-hidden="true">↗</span></a></div>
-          <details class="resource-details"><summary>Screenshots &amp; materials</summary><div class="link-row" aria-label="Related links"><a href="assets/weave-site.png" target="_blank" rel="noopener noreferrer">Taxonomy<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="assets/weave-arch.png" target="_blank" rel="noopener noreferrer">Architecture<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="assets/weave-document.png" target="_blank" rel="noopener noreferrer">Research document<span class="arrow" aria-hidden="true">↗</span></a></div></details>
+          <div class="link-row" aria-label="Related links"><a href="https://github.com/WHS-webao/semantic_gap" target="_blank" rel="noopener noreferrer">Research GitHub</a>
+<a href="https://github.com/WHS-webao/WHS-webao.github.io" target="_blank" rel="noopener noreferrer">Website GitHub</a>
+<a href="https://semanticgap.mjsec.kr" target="_blank" rel="noopener noreferrer">Website</a></div>
+          <details class="resource-details"><summary>Screenshots &amp; materials</summary><div class="link-row" aria-label="Related links"><a href="assets/weave-site.png" target="_blank" rel="noopener noreferrer">Taxonomy</a>
+<a href="assets/weave-arch.png" target="_blank" rel="noopener noreferrer">Architecture</a>
+<a href="assets/weave-document.png" target="_blank" rel="noopener noreferrer">Research document</a></div></details>
         </div>
       </article>
 
       <article class="project-row" id="dbreach">
-        <a class="project-preview" href="assets/dbreach-setup.png" target="_blank" rel="noopener noreferrer" aria-label="View the DBREACH experiment setup">
-          <img src="assets/dbreach-setup.png" alt="MariaDB compression side-channel experiment setup" width="991" height="571" loading="lazy">
-        </a>
+        <figure class="project-film film-dbreach" data-film="dbreach" data-state="ready" data-duration="9000">
+      <div class="film-stage"><div class="research-scene"><div class="research-scene-head"><span>DBREACH</span><span>Project materials</span></div><div class="research-frames"><div class="research-frame frame-1"><img src="assets/dbreach-setup.png" alt="MariaDB experiment setup" loading="lazy" width="1000" height="640"><p>MariaDB experiment setup</p></div><div class="research-frame frame-2"><img src="assets/dbreach-loop.png" alt="Measurement flow" loading="lazy" width="1000" height="640"><p>Measurement flow</p></div><div class="research-frame frame-3"><img src="assets/dbreach-group.png" alt="Experiment record" loading="lazy" width="1000" height="640"><p>Experiment record</p></div></div></div><div class="film-progress" aria-hidden="true"></div></div>
+      <figcaption><span id="dbreach-film-caption">Experiment setup & research</span><button type="button" hidden aria-describedby="dbreach-film-caption" data-play="Play preview" data-pause="Pause" data-resume="Resume" data-replay="Replay"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path class="play-icon" d="M4 2.5 12 8 4 13.5Z"/><path class="pause-icon" d="M5 3v10M11 3v10"/></svg><span>Play preview</span></button></figcaption>
+    </figure>
         <div class="project-copy">
-          <p class="project-meta">Undergraduate research / Started December 2024</p>
+          <p class="project-meta">Started December 2024</p>
           <h3>DBREACH</h3>
           <p>Undergraduate research into size differences produced by database compression<br> Built a MariaDB environment with Docker and examined measurement noise and reproducibility</p>
           <p class="role-line">Role <span>Research &amp; experiment setup / MariaDB, Python, Docker</span></p>
-          <div class="link-row" aria-label="Related links"><a href="https://github.com/jongcoding/compression-side" target="_blank" rel="noopener noreferrer">GitHub<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="https://www.notion.so/dbreach-attack-code-19110e1b513780388c51e433398afb36" target="_blank" rel="noopener noreferrer">Research notes<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="https://sp2023.ieee-security.org/" target="_blank" rel="noopener noreferrer">Reference: S&amp;P 2023<span class="arrow" aria-hidden="true">↗</span></a></div>
-          <details class="resource-details"><summary>Screenshots &amp; materials</summary><div class="link-row" aria-label="Related links"><a href="assets/dbreach-setup.png" target="_blank" rel="noopener noreferrer">Experiment setup<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="assets/dbreach-loop.png" target="_blank" rel="noopener noreferrer">Measurement flow<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="assets/dbreach-group.png" target="_blank" rel="noopener noreferrer">Experiment record<span class="arrow" aria-hidden="true">↗</span></a></div></details>
+          <div class="link-row" aria-label="Related links"><a href="https://github.com/jongcoding/compression-side" target="_blank" rel="noopener noreferrer">GitHub</a>
+<a href="https://www.notion.so/dbreach-attack-code-19110e1b513780388c51e433398afb36" target="_blank" rel="noopener noreferrer">Research notes</a>
+<a href="https://sp2023.ieee-security.org/" target="_blank" rel="noopener noreferrer">Reference: S&amp;P 2023</a></div>
+          <details class="resource-details"><summary>Screenshots &amp; materials</summary><div class="link-row" aria-label="Related links"><a href="assets/dbreach-setup.png" target="_blank" rel="noopener noreferrer">Experiment setup</a>
+<a href="assets/dbreach-loop.png" target="_blank" rel="noopener noreferrer">Measurement flow</a>
+<a href="assets/dbreach-group.png" target="_blank" rel="noopener noreferrer">Experiment record</a></div></details>
         </div>
       </article>
     </section>
 
     <section class="section" id="experience" aria-labelledby="experience-title">
-      <div class="section-heading"><h2 id="experience-title">Experience</h2><p>Research, challenge design &amp; operations</p></div>
+      <div class="section-heading"><h2 id="experience-title">Experience</h2><p></p></div>
       <article class="job" id="enki">
         <div class="job-heading">
           <p class="project-meta">March 2026 ~ Present</p>
           <h3>ENKI WhiteHat</h3>
           <p class="job-role">Security Researcher<br> Content Team</p>
-          <a href="https://info.defcon.org/defcon34/people/67239" target="_blank" rel="noopener noreferrer" class="text-link">Public speaker profile<span class="arrow" aria-hidden="true">↗</span></a>
+          <a href="https://info.defcon.org/defcon34/people/67239" target="_blank" rel="noopener noreferrer" class="text-link">Public speaker profile</a>
         </div>
         <div class="job-body">
-          <p class="job-intro">Turning web and cloud security research<br> into CTF challenges and hands-on labs</p>
           <dl class="workstreams">
             <div><dt>Web research &amp; challenge design</dt><dd>Designed vulnerability scenarios around real service architectures and authored Web challenges for CODEGATE and HACKTHEON</dd></div>
             <div><dt>Cloud &amp; AI agent security</dt><dd>Researched trust boundaries across applications and cloud services, including AWS Bedrock Agents, RAG knowledge bases, OIDC flows and IAM trust policies</dd></div>
@@ -182,113 +211,136 @@
               <p class="challenge-event">CODEGATE 2026</p>
               <h4>Sealed Board</h4>
               <p>Web challenge author / Qualifier, March 28</p>
-              <div class="link-row" aria-label="Related links"><a href="http://ctf.codegate.org/" target="_blank" rel="noopener noreferrer">Competition<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="https://ctftime.org/event/3131" target="_blank" rel="noopener noreferrer">CTFtime<span class="arrow" aria-hidden="true">↗</span></a></div>
+              <div class="link-row" aria-label="Related links"><a href="http://ctf.codegate.org/" target="_blank" rel="noopener noreferrer">Competition</a>
+<a href="https://ctftime.org/event/3131" target="_blank" rel="noopener noreferrer">CTFtime</a></div>
             </div>
             <div>
               <p class="challenge-event">HACKTHEON Sejong 2026</p>
               <h4>Phantompass / Observatory</h4>
               <p>Two Web challenges / Qualifier, April 25</p>
-              <div class="link-row" aria-label="Related links"><a href="https://hacktheon.org/y2026/eng" target="_blank" rel="noopener noreferrer">Competition<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="https://ctftime.org/event/3199/" target="_blank" rel="noopener noreferrer">CTFtime<span class="arrow" aria-hidden="true">↗</span></a></div>
+              <div class="link-row" aria-label="Related links"><a href="https://hacktheon.org/y2026/eng" target="_blank" rel="noopener noreferrer">Competition</a>
+<a href="https://ctftime.org/event/3199/" target="_blank" rel="noopener noreferrer">CTFtime</a></div>
             </div>
           </div>
         </div>
       </article>
 
       <article class="activity-row" id="inc0gnito">
-        <div class="activity-heading"><p class="project-meta">February 2026</p><h3>INC0GNITO Quals</h3><p>Lead organizer / Web author</p></div>
+        <div class="activity-heading"><p class="project-meta">February ~ May 2026</p><h3>INC0GNITO CTF</h3><p>Lead organizer / Challenge author</p></div>
         <div class="activity-body">
-          <p>Led planning and operations for a qualifier with 108 teams and 315 participants<br> Authored three Web challenges: Edge Gate, INVISIBLE and MJSEC Forge Console</p>
-          <div class="link-row" aria-label="Related links"><a href="https://dreamhack.io/ctf/792" target="_blank" rel="noopener noreferrer">Competition &amp; challenges<span class="arrow" aria-hidden="true">↗</span></a></div>
+          <p>Led overall operations and team coordination for 108 teams and 315 players in the qualifier, followed by 8 teams and 30 players in the finals<br> Authored three qualifier Web challenges, two finals Jeopardy challenges and the Live Fire Web challenge</p>
+          <div class="link-row" aria-label="Related links"><a href="https://github.com/Incognito-CTF/incognito-ctf.github.io" target="_blank" rel="noopener noreferrer">GitHub</a>
+<a href="https://dreamhack.io/ctf/792" target="_blank" rel="noopener noreferrer">Qualifier</a>
+<a href="https://dreamhack.io/ctf/814" target="_blank" rel="noopener noreferrer">Finals</a>
+<a href="https://github.com/Incognito-CTF/incognito-ctf.github.io/blob/main/docs/final-plan.md" target="_blank" rel="noopener noreferrer">Finals plan</a>
+<a href="https://github.com/Incognito-CTF/incognito-ctf.github.io/blob/main/docs/finals-challenges.md" target="_blank" rel="noopener noreferrer">Finals authorship</a></div>
+          <div class="authored-links"><span>Authored challenges</span><div class="link-row" aria-label="Related links"><a href="https://dreamhack.io/wargame/challenges/2697" target="_blank" rel="noopener noreferrer">edge-gate</a>
+<a href="https://dreamhack.io/wargame/challenges/2698" target="_blank" rel="noopener noreferrer">MJSEC Forge Console</a>
+<a href="https://dreamhack.io/wargame/challenges/2699" target="_blank" rel="noopener noreferrer">INVISIBLE</a>
+<a href="https://dreamhack.io/wargame/challenges/2956" target="_blank" rel="noopener noreferrer">Checkmate Denied</a>
+<a href="https://dreamhack.io/wargame/challenges/2957" target="_blank" rel="noopener noreferrer">RENJU-SWAP</a></div></div>
         </div>
       </article>
       <article class="activity-row" id="mjsec">
         <div class="activity-heading"><p class="project-meta">Founded in 2024</p><h3>MJSEC</h3><p>Founder / First president</p></div>
         <div class="activity-body">
           <p>Founded Myongji University’s security club and led its early operations<br> Organized campus CTF and programming contests, built competition platforms and co-organized MSG CTF</p>
-          <div class="link-row" aria-label="Related links"><a href="https://mjsec.kr" target="_blank" rel="noopener noreferrer">Club website<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="https://github.com/MJSEC-MJU/MJSEC_CTF_2025" target="_blank" rel="noopener noreferrer">CTF 2025 GitHub<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="https://github.com/MJSEC-MJU/MJSEC_CTF_CHALLENGE" target="_blank" rel="noopener noreferrer">Challenge archive<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="https://plucky-ink-23c.notion.site/MJSEC_CTF-2025-21e0f19c72be80cb9d3ec9241321762f?pvs=74" target="_blank" rel="noopener noreferrer">CTF 2025 notes<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="https://plucky-ink-23c.notion.site/MJSEC-CTF-2024-21b0f19c72be8148b977c04ddca143ed" target="_blank" rel="noopener noreferrer">CTF 2024 notes<span class="arrow" aria-hidden="true">↗</span></a></div>
+          <p>Mentored four cohorts in web security, forensics, Android and DevOps, with Pwnable and reversing study sessions from September 2024 to August 2025<br> Presented reCAPTCHA v2 research at the 2025 club seminar</p>
+          <div class="link-row" aria-label="Related links"><a href="https://mjsec.kr" target="_blank" rel="noopener noreferrer">Club website</a>
+<a href="https://github.com/MJSEC-MJU/MJSEC_CTF_2025" target="_blank" rel="noopener noreferrer">CTF 2025 GitHub</a>
+<a href="https://github.com/MJSEC-MJU/MJSEC_CTF_CHALLENGE" target="_blank" rel="noopener noreferrer">Challenge archive</a>
+<a href="https://plucky-ink-23c.notion.site/MJSEC_CTF-2025-21e0f19c72be80cb9d3ec9241321762f?pvs=74" target="_blank" rel="noopener noreferrer">CTF 2025 notes</a>
+<a href="https://plucky-ink-23c.notion.site/MJSEC-CTF-2024-21b0f19c72be8148b977c04ddca143ed" target="_blank" rel="noopener noreferrer">CTF 2024 notes</a></div>
         </div>
       </article>
       <article class="activity-row" id="military">
         <div class="activity-heading"><p class="project-meta">2022/04 ~ 2023/10</p><h3>ROK Army</h3><p>Information security specialist</p></div>
         <div class="activity-body">
           <p>Operated security appliances, managed security policies and supported monitoring<br> Reported internal web vulnerabilities and developed a browser policy management utility</p>
-          <div class="link-row" aria-label="Related links"><a href="assets/achv-sec-report.png" target="_blank" rel="noopener noreferrer">Security report record<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="assets/award.png" target="_blank" rel="noopener noreferrer">Security competition award<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="https://github.com/jongcoding/DELDEVTOOL" target="_blank" rel="noopener noreferrer">DELDEVTOOL GitHub<span class="arrow" aria-hidden="true">↗</span></a></div>
+          <div class="link-row" aria-label="Related links"><a href="assets/achv-sec-report.png" target="_blank" rel="noopener noreferrer">Security report record</a>
+<a href="assets/award.png" target="_blank" rel="noopener noreferrer">Security competition award</a>
+<a href="https://github.com/jongcoding/DELDEVTOOL" target="_blank" rel="noopener noreferrer">DELDEVTOOL GitHub</a></div>
         </div>
       </article>
     </section>
 <section class="section" id="archive" aria-labelledby="archive-title">
-      <div class="section-heading"><h2 id="archive-title">More projects</h2><p>Repositories, documentation &amp; records</p></div>
-      <article class="archive-row" id="watchdog">
+      <div class="section-heading"><h2 id="archive-title">More projects</h2><p></p></div>
+      <article class="archive-row" id="tokencat">
       <p class="archive-year">2026</p>
-      <div class="archive-copy"><h3>Watchdog</h3><p>A security research workflow project for managing runs and findings</p><p class="archive-role">Run and finding models / API contracts / CI validation</p><div class="link-row" aria-label="Related links"><a href="https://github.com/jongcoding/watchdog" target="_blank" rel="noopener noreferrer">GitHub<span class="arrow" aria-hidden="true">↗</span></a></div></div>
+      <div class="archive-copy"><h3>TokenCat</h3><p>A Windows desktop widget for Claude and Codex usage limits</p><p class="archive-role">Electron / Multiple profiles / Adaptive layouts / Automatic updates</p><div class="link-row" aria-label="Related links"><a href="https://github.com/jongcoding/TokenCat" target="_blank" rel="noopener noreferrer">GitHub</a>
+<a href="https://github.com/jongcoding/TokenCat/releases/latest" target="_blank" rel="noopener noreferrer">Download</a></div></div>
+    </article><article class="archive-row" id="watchdog">
+      <p class="archive-year">2026</p>
+      <div class="archive-copy"><h3>Watchdog</h3><p>A security research workflow project for managing runs and findings</p><p class="archive-role">Run and finding models / API contracts / CI validation</p><div class="link-row" aria-label="Related links"><a href="https://github.com/WATCHDOG-INCOGNITO/watchdog" target="_blank" rel="noopener noreferrer">GitHub</a></div></div>
     </article><article class="archive-row" id="detail-msg-ctf">
       <p class="archive-year">2025</p>
-      <div class="archive-copy"><h3>MSG CTF</h3><p>A competition platform connecting submissions, scoring, leaderboards and Discord operations</p><p class="archive-role">Platform development and integration / Competition operations / Web challenges</p><div class="link-row" aria-label="Related links"><a href="https://github.com/jongcoding/MSG_CTF_WEB" target="_blank" rel="noopener noreferrer">Frontend GitHub<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="https://github.com/jongcoding/MSG_CTF_BACK" target="_blank" rel="noopener noreferrer">Backend GitHub<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="https://github.com/MJSEC-MJU/MSG_CTF_BACK" target="_blank" rel="noopener noreferrer">Team backend<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="https://github.com/jongcoding/MSG_DISCORDBOT" target="_blank" rel="noopener noreferrer">Discord Bot<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="https://github.com/MJSEC-MJU/MSG_CTF_PROBLEM" target="_blank" rel="noopener noreferrer">Challenge GitHub<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="https://plucky-ink-23c.notion.site/MSG_CTF_WEB-Project-1770f19c72be802e9358da5441dec400" target="_blank" rel="noopener noreferrer">Project notes<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="https://discord.gg/2qRzrXjjxZ" target="_blank" rel="noopener noreferrer">Discord<span class="arrow" aria-hidden="true">↗</span></a></div><div class="authored-links"><span>Authored challenges</span><div class="link-row" aria-label="Related links"><a href="https://github.com/MJSEC-MJU/MSG_CTF_PROBLEM/tree/main/jmt" target="_blank" rel="noopener noreferrer">jmt<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="https://github.com/MJSEC-MJU/MSG_CTF_PROBLEM/tree/main/django_session" target="_blank" rel="noopener noreferrer">django_session<span class="arrow" aria-hidden="true">↗</span></a></div></div><details class="resource-details"><summary>Screenshots &amp; materials</summary><div class="link-row" aria-label="Related links"><a href="assets/msg-ctf-hero.png" target="_blank" rel="noopener noreferrer">Competition<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="assets/msg-ctf-rank.png" target="_blank" rel="noopener noreferrer">Results<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="assets/msg-ctf-discord.png" target="_blank" rel="noopener noreferrer">Discord operations<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="assets/msgctf-arch.png" target="_blank" rel="noopener noreferrer">Architecture<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="assets/msgctf-scoreboard.png" target="_blank" rel="noopener noreferrer">Scoreboard<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="assets/msgctf-bot.png" target="_blank" rel="noopener noreferrer">Bot screenshot<span class="arrow" aria-hidden="true">↗</span></a></div></details></div>
+      <div class="archive-copy"><h3>MSG CTF</h3><p>A competition platform connecting submissions, scoring, leaderboards and Discord tools<br> Co-organized two events in 2025, with five university security clubs and about 100 participants across 50 teams in the second event</p><p class="archive-role">Platform development and integration / Competition operations / Web &amp; MISC challenges</p><div class="link-row" aria-label="Related links"><a href="https://github.com/jongcoding/MSG_CTF_WEB" target="_blank" rel="noopener noreferrer">Frontend GitHub</a>
+<a href="https://github.com/jongcoding/MSG_CTF_BACK" target="_blank" rel="noopener noreferrer">Backend GitHub</a>
+<a href="https://github.com/MJSEC-MJU/MSG_CTF_BACK" target="_blank" rel="noopener noreferrer">Team backend</a>
+<a href="https://github.com/jongcoding/MSG_DISCORDBOT" target="_blank" rel="noopener noreferrer">Discord Bot</a>
+<a href="https://github.com/MJSEC-MJU/MSG_DISCORDBOT" target="_blank" rel="noopener noreferrer">Team Discord Bot</a>
+<a href="https://github.com/MJSEC-MJU/MSG_CTF_PROBLEM" target="_blank" rel="noopener noreferrer">Challenge GitHub</a>
+<a href="https://plucky-ink-23c.notion.site/MSG_CTF_WEB-Project-1770f19c72be802e9358da5441dec400" target="_blank" rel="noopener noreferrer">Project notes</a>
+<a href="https://www.notion.so/2220f19c72be80c78e83e6f56ebefa63" target="_blank" rel="noopener noreferrer">Second event notes</a>
+<a href="https://discord.gg/2qRzrXjjxZ" target="_blank" rel="noopener noreferrer">Discord</a></div><div class="authored-links"><span>Authored challenges</span><div class="link-row" aria-label="Related links"><a href="https://github.com/MJSEC-MJU/MSG_CTF_PROBLEM/tree/main/jmt" target="_blank" rel="noopener noreferrer">jmt</a>
+<a href="https://github.com/MJSEC-MJU/MSG_CTF_PROBLEM/tree/main/django_session" target="_blank" rel="noopener noreferrer">django_session</a>
+<a href="https://github.com/MJSEC-MJU/MSG_CTF_WARGAME/tree/main/MISC" target="_blank" rel="noopener noreferrer">Second event MISC</a></div></div><details class="resource-details"><summary>Screenshots &amp; materials</summary><div class="link-row" aria-label="Related links"><a href="assets/msg-ctf-hero.png" target="_blank" rel="noopener noreferrer">Competition</a>
+<a href="assets/msg-ctf-rank.png" target="_blank" rel="noopener noreferrer">Results</a>
+<a href="assets/msg-ctf-discord.png" target="_blank" rel="noopener noreferrer">Discord operations</a>
+<a href="assets/msgctf-arch.png" target="_blank" rel="noopener noreferrer">Architecture</a>
+<a href="assets/msgctf-scoreboard.png" target="_blank" rel="noopener noreferrer">Scoreboard</a>
+<a href="assets/msgctf-bot.png" target="_blank" rel="noopener noreferrer">Bot screenshot</a></div></details></div>
     </article><article class="archive-row" id="detail-mjsec">
       <p class="archive-year">2025</p>
-      <div class="archive-copy"><h3>MJSEC Homepage &amp; LMS</h3><p>A club website and deployment environment for a learning management service</p><p class="archive-role">Project management / React &amp; Vite / Automated deployment / Security checks</p><div class="link-row" aria-label="Related links"><a href="https://github.com/MJSEC-MJU/MJSEC_LMS_FRONT" target="_blank" rel="noopener noreferrer">Homepage GitHub<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="https://github.com/MJSEC-MJU/MJSEC_LMS_FRONT_LMS" target="_blank" rel="noopener noreferrer">LMS GitHub<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="https://mjsec.kr" target="_blank" rel="noopener noreferrer">Website<span class="arrow" aria-hidden="true">↗</span></a></div><details class="resource-details"><summary>Screenshots &amp; materials</summary><div class="link-row" aria-label="Related links"><a href="assets/mjsec_hompage.png" target="_blank" rel="noopener noreferrer">Homepage<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="assets/mjsec-ci.png" target="_blank" rel="noopener noreferrer">CI<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="assets/mjsec-cd.png" target="_blank" rel="noopener noreferrer">CD<span class="arrow" aria-hidden="true">↗</span></a></div></details></div>
+      <div class="archive-copy"><h3>MJSEC Homepage &amp; LMS</h3><p>A club website and deployment environment for a learning management service</p><p class="archive-role">Project management / React &amp; Vite / Automated deployment / Security checks</p><div class="link-row" aria-label="Related links"><a href="https://github.com/MJSEC-MJU/MJSEC_LMS_FRONT" target="_blank" rel="noopener noreferrer">Homepage GitHub</a>
+<a href="https://github.com/MJSEC-MJU/MJSEC_LMS_FRONT_LMS" target="_blank" rel="noopener noreferrer">LMS GitHub</a>
+<a href="https://mjsec.kr" target="_blank" rel="noopener noreferrer">Homepage</a>
+<a href="https://mjsec.kr/lms" target="_blank" rel="noopener noreferrer">LMS</a></div><details class="resource-details"><summary>Screenshots &amp; materials</summary><div class="link-row" aria-label="Related links"><a href="assets/mjsec_hompage.png" target="_blank" rel="noopener noreferrer">Homepage</a>
+<a href="assets/mjsec-ci.png" target="_blank" rel="noopener noreferrer">CI</a>
+<a href="assets/mjsec-cd.png" target="_blank" rel="noopener noreferrer">CD</a></div></details></div>
     </article><article class="archive-row" id="detail-reagan">
       <p class="archive-year">2025</p>
-      <div class="archive-copy"><h3>Reagan</h3><p>A browser extension and Django REST backend for malicious URL detection</p><p class="archive-role">DevOps / Docker deployment / BreakCAPTCHA research</p><div class="link-row" aria-label="Related links"><a href="https://github.com/MJSEC-MJU/Reagan" target="_blank" rel="noopener noreferrer">GitHub<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="https://github.com/MJSEC-MJU/breakrecapcha_v2" target="_blank" rel="noopener noreferrer">Related research<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="https://hub.docker.com/r/ialleejy/reagan-backend" target="_blank" rel="noopener noreferrer">Docker Hub<span class="arrow" aria-hidden="true">↗</span></a></div><details class="resource-details"><summary>Screenshots &amp; materials</summary><div class="link-row" aria-label="Related links"><a href="assets/reagan-motivation.png" target="_blank" rel="noopener noreferrer">Background<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="assets/reagan-arch.png" target="_blank" rel="noopener noreferrer">Architecture<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="assets/reagan-recaptcha.png" target="_blank" rel="noopener noreferrer">Research material<span class="arrow" aria-hidden="true">↗</span></a></div></details></div>
+      <div class="archive-copy"><h3>Reagan</h3><p>A browser extension and Django REST backend for malicious URL detection</p><p class="archive-role">DevOps / Docker deployment / BreakCAPTCHA research</p><div class="link-row" aria-label="Related links"><a href="https://github.com/MJSEC-MJU/Reagan" target="_blank" rel="noopener noreferrer">GitHub</a>
+<a href="https://github.com/MJSEC-MJU/breakrecapcha_v2" target="_blank" rel="noopener noreferrer">Related research</a>
+<a href="https://hub.docker.com/r/ialleejy/reagan-backend" target="_blank" rel="noopener noreferrer">Docker Hub</a></div><details class="resource-details"><summary>Screenshots &amp; materials</summary><div class="link-row" aria-label="Related links"><a href="assets/reagan-motivation.png" target="_blank" rel="noopener noreferrer">Background</a>
+<a href="assets/reagan-arch.png" target="_blank" rel="noopener noreferrer">Architecture</a>
+<a href="assets/reagan-recaptcha.png" target="_blank" rel="noopener noreferrer">Research material</a></div></details></div>
     </article><article class="archive-row" id="detail-boj">
       <p class="archive-year">2024 ~ 2025</p>
-      <div class="archive-copy"><h3>MJSEC BOJ Contest</h3><p>A programming contest leaderboard and operations tool using Baekjoon submission records</p><p class="archive-role">Django / Submission validation &amp; scoring / GCP deployment</p><div class="link-row" aria-label="Related links"><a href="https://github.com/MJSEC-MJU/MJSEC_BOJ" target="_blank" rel="noopener noreferrer">GitHub<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="https://plucky-ink-23c.notion.site/MJSEC-BOJ-CONTEST-2025-21b0f19c72be8111acf8ef4458b67514" target="_blank" rel="noopener noreferrer">2025 notes<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="https://plucky-ink-23c.notion.site/MJSEC-BOJ-CONTEST-2024-21b0f19c72be81f5b8f5e5e2efa8662d?source=copy_link" target="_blank" rel="noopener noreferrer">2024 notes<span class="arrow" aria-hidden="true">↗</span></a></div><details class="resource-details"><summary>Screenshots &amp; materials</summary><div class="link-row" aria-label="Related links"><a href="assets/boj-dashboard.png" target="_blank" rel="noopener noreferrer">Dashboard<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="assets/boj-leaderboard.png" target="_blank" rel="noopener noreferrer">Leaderboard<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="assets/boj-admin.png" target="_blank" rel="noopener noreferrer">Administration<span class="arrow" aria-hidden="true">↗</span></a></div></details></div>
+      <div class="archive-copy"><h3>MJSEC BOJ Contest</h3><p>A programming contest leaderboard and operations tool using Baekjoon submission records</p><p class="archive-role">Django / Submission validation &amp; scoring / GCP deployment</p><div class="link-row" aria-label="Related links"><a href="https://github.com/MJSEC-MJU/MJSEC_BOJ" target="_blank" rel="noopener noreferrer">GitHub</a>
+<a href="https://plucky-ink-23c.notion.site/MJSEC-BOJ-CONTEST-2025-21b0f19c72be8111acf8ef4458b67514" target="_blank" rel="noopener noreferrer">2025 notes</a>
+<a href="https://plucky-ink-23c.notion.site/MJSEC-BOJ-CONTEST-2024-21b0f19c72be81f5b8f5e5e2efa8662d?source=copy_link" target="_blank" rel="noopener noreferrer">2024 notes</a></div><details class="resource-details"><summary>Screenshots &amp; materials</summary><div class="link-row" aria-label="Related links"><a href="assets/boj-dashboard.png" target="_blank" rel="noopener noreferrer">Dashboard</a>
+<a href="assets/boj-leaderboard.png" target="_blank" rel="noopener noreferrer">Leaderboard</a>
+<a href="assets/boj-admin.png" target="_blank" rel="noopener noreferrer">Administration</a></div></details></div>
     </article><article class="archive-row" id="detail-deldevtool">
       <p class="archive-year">2022 ~ 2023</p>
-      <div class="archive-copy"><h3>DELDEVTOOL</h3><p>A Windows utility for managing browser developer-tools policies</p><p class="archive-role">Python / Windows policies / PyInstaller distribution</p><div class="link-row" aria-label="Related links"><a href="https://github.com/jongcoding/DELDEVTOOL" target="_blank" rel="noopener noreferrer">GitHub<span class="arrow" aria-hidden="true">↗</span></a></div><details class="resource-details"><summary>Screenshots &amp; materials</summary><div class="link-row" aria-label="Related links"><a href="assets/deldevtool-run.png" target="_blank" rel="noopener noreferrer">Utility<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="assets/deldevtool-registry.png" target="_blank" rel="noopener noreferrer">Policy settings<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="assets/deldevtool-exe.png" target="_blank" rel="noopener noreferrer">Distribution<span class="arrow" aria-hidden="true">↗</span></a></div></details></div>
+      <div class="archive-copy"><h3>DELDEVTOOL</h3><p>A Windows utility for managing browser developer-tools policies</p><p class="archive-role">Python / Windows policies / PyInstaller distribution</p><div class="link-row" aria-label="Related links"><a href="https://github.com/jongcoding/DELDEVTOOL" target="_blank" rel="noopener noreferrer">GitHub</a></div><details class="resource-details"><summary>Screenshots &amp; materials</summary><div class="link-row" aria-label="Related links"><a href="assets/deldevtool-run.png" target="_blank" rel="noopener noreferrer">Utility</a>
+<a href="assets/deldevtool-registry.png" target="_blank" rel="noopener noreferrer">Policy settings</a>
+<a href="assets/deldevtool-exe.png" target="_blank" rel="noopener noreferrer">Distribution</a></div></details></div>
     </article>
     </section><section class="section" id="achievements" aria-labelledby="awards-title">
-      <div class="section-heading"><h2 id="awards-title">Awards &amp; competitions</h2><p>Results &amp; write-ups</p></div>
+      <div class="section-heading"><h2 id="awards-title">Awards &amp; competitions</h2><p></p></div>
+      <div class="team-record"><div><h3>RubiyaLab</h3><p>Joined in 2026</p></div><div><p>UofTCTF 2026, 8th place / 0xL4ugh CTF v5, 4th place<br> Also competed in 0xFUN CTF 2026</p><div class="link-row" aria-label="Related links"><a href="https://ctftime.org/team/303159/" target="_blank" rel="noopener noreferrer">Team results</a>
+<a href="https://rubiyalab.team/" target="_blank" rel="noopener noreferrer">Team website</a></div></div></div>
       <div class="awards-grid">
-        <article><p class="project-meta">2025 / Individual</p><h3>Gamgyul CTF</h3><p class="award-result">1st place</p><p>156 participants</p><div class="link-row" aria-label="Related links"><a href="https://dreamhack.io/ctf/766" target="_blank" rel="noopener noreferrer">Competition record<span class="arrow" aria-hidden="true">↗</span></a></div></article>
-        <article><p class="project-meta">2025 / Web</p><h3>SPACE WAR URANUS</h3><p class="award-result">1st place</p><p>Individual Web category</p><div class="link-row" aria-label="Related links"><a href="https://ialleejy.tistory.com/54" target="_blank" rel="noopener noreferrer">Write-up<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="assets/ctf-uranus-web.png" target="_blank" rel="noopener noreferrer">Web result<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="assets/ctf-uranus-rank.png" target="_blank" rel="noopener noreferrer">Scoreboard<span class="arrow" aria-hidden="true">↗</span></a></div></article>
-        <article><p class="project-meta">2023 / Intelligence Command</p><h3>Security Competition</h3><p class="award-result">Excellence Award</p><p>Security tooling &amp; policy proposal</p><div class="link-row" aria-label="Related links"><a href="assets/award.png" target="_blank" rel="noopener noreferrer">Award record<span class="arrow" aria-hidden="true">↗</span></a></div></article>
+        <article><p class="project-meta">2025 / Individual</p><h3>Gamgyul CTF</h3><p class="award-result">1st place</p><p>156 participants</p><div class="link-row" aria-label="Related links"><a href="https://dreamhack.io/ctf/766" target="_blank" rel="noopener noreferrer">Competition record</a></div></article>
+        <article><p class="project-meta">2025 / Web</p><h3>SPACE WAR URANUS</h3><p class="award-result">1st place</p><p>Individual Web category</p><div class="link-row" aria-label="Related links"><a href="https://ialleejy.tistory.com/54" target="_blank" rel="noopener noreferrer">Write-up</a>
+<a href="assets/ctf-uranus-web.png" target="_blank" rel="noopener noreferrer">Web result</a>
+<a href="assets/ctf-uranus-rank.png" target="_blank" rel="noopener noreferrer">Scoreboard</a></div></article>
+        <article><p class="project-meta">2023 / Intelligence Command</p><h3>Security Competition</h3><p class="award-result">Excellence Award</p><p>Security tooling &amp; policy proposal</p><div class="link-row" aria-label="Related links"><a href="assets/award.png" target="_blank" rel="noopener noreferrer">Award record</a></div></article>
       </div>
-      <div class="writeups"><h3>More competition write-ups</h3><div class="link-row" aria-label="Related links"><a href="https://ialleejy.tistory.com/55" target="_blank" rel="noopener noreferrer">CCE 2025<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="https://ialleejy.tistory.com/49" target="_blank" rel="noopener noreferrer">HACKTHEON 2025<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="https://ialleejy.tistory.com/11" target="_blank" rel="noopener noreferrer">LG U+ 2024<span class="arrow" aria-hidden="true">↗</span></a></div></div>
+      <div class="writeups"><h3>More competition write-ups</h3><div class="link-row" aria-label="Related links"><a href="https://ialleejy.tistory.com/55" target="_blank" rel="noopener noreferrer">CCE 2025</a>
+<a href="https://ialleejy.tistory.com/49" target="_blank" rel="noopener noreferrer">HACKTHEON 2025</a>
+<a href="https://ialleejy.tistory.com/11" target="_blank" rel="noopener noreferrer">LG U+ 2024</a></div></div>
+      <p class="participation-note">Also competed / WhiteHat School CTF 2025, FIESTA 2024, CCE general division 2024 &amp; 2025, CCE public sector division 2022 &amp; 2023</p>
     </section><section class="section" id="about" aria-labelledby="about-title">
-      <div class="section-heading"><h2 id="about-title">Background</h2><p>Education &amp; toolkit</p></div>
+      <div class="section-heading"><h2 id="about-title">Background</h2><p></p></div>
       <div class="about-grid">
         <dl class="education" id="education">
           <div><dt>Myongji University<span class="education-status">Graduated</span></dt><dd>Information &amp; Communication Engineering</dd></div>
           <div><dt>WhiteHat School, 3rd cohort</dt><dd>KITRI / March ~ September 2025</dd></div>
+          <div><dt>seKUrity</dt><dd>Completed web security training / March ~ September 2019</dd></div>
+          <div><dt>Dongpae High School</dt><dd>Graduated</dd></div>
           <div><dt>Certifications</dt><dd>SQLD / Craftsman Information Processing</dd></div>
         </dl>
         <dl class="toolkit" id="skills">
@@ -300,11 +352,11 @@
       </div>
     </section>
     <section class="contact" id="contact" aria-labelledby="contact-title">
-      <div><h2 id="contact-title">For research &amp; project conversations</h2><a href="mailto:ialleejy@gmail.com" class="contact-email">ialleejy@gmail.com<span class="arrow" aria-hidden="true">↗</span></a></div>
-      <div class="link-row" aria-label="Contact &amp; profiles"><a href="https://github.com/jongcoding" target="_blank" rel="noopener noreferrer">GitHub<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="https://www.linkedin.com/in/jongyun-lee-753747122/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="https://ialleejy.tistory.com" target="_blank" rel="noopener noreferrer">Blog<span class="arrow" aria-hidden="true">↗</span></a>
-<a href="mailto:ialleejy@gmail.com">Email<span class="arrow" aria-hidden="true">↗</span></a></div>
+      <div><h2 id="contact-title">For research &amp; project conversations</h2><a href="mailto:ialleejy@gmail.com" class="contact-email">ialleejy@gmail.com</a></div>
+      <div class="link-row" aria-label="Contact &amp; profiles"><a href="https://github.com/jongcoding" target="_blank" rel="noopener noreferrer">GitHub</a>
+<a href="https://www.linkedin.com/in/jongyun-lee-753747122/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+<a href="https://ialleejy.tistory.com" target="_blank" rel="noopener noreferrer">Blog</a>
+<a href="mailto:ialleejy@gmail.com">Email</a></div>
     </section>
   </main>
   <footer class="wrap site-footer"><span>© 2026 Jong-Yun Lee</span><span>Updated September 2026</span><a href="#top">Back to top ↑</a></footer>
