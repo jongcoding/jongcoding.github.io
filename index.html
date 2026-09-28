@@ -22,6 +22,7 @@
   <link rel="preload" href="assets/fonts/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/portfolio.css">
   <link rel="stylesheet" href="assets/portfolio-motion.css">
+  <link rel="stylesheet" href="assets/portfolio-platform.css">
   <script src="assets/portfolio-motion.js" defer></script>
 </head>
 <body id="top">
@@ -83,88 +84,81 @@
       <article class="feature" id="msgctf">
         <div class="feature-main">
           <div class="feature-copy">
+            <div class="feature-summary">
             <p class="project-meta"><span class="status">In progress</span><span>2026</span></p>
             <div class="project-brand"><img class="brand-mark msgctf-mark" src="assets/brands/msgctf.png" alt="" width="400" height="400"><h3>MSGCTF<br> <span>Cloud Platform</span></h3></div>
-            <p class="project-description">A CTF operations platform connecting resources across cloud providers for challenge deployment, team instances and service monitoring</p>
+            <p class="project-description">A multi-cloud CTF platform connecting the participant experience, challenge delivery and instance operations</p>
+            <a href="https://github.com/MSG-CTF" target="_blank" rel="noopener noreferrer" class="feature-link">MSG-CTF on GitHub</a>
+            </div>
             <dl class="contribution">
               <div><dt>My role</dt><dd>Architecture design and cross-service integration review<br> Instance lifecycle and operational validation</dd></div>
               <div><dt>Cloud providers</dt><dd><a href="https://github.com/MSG-CTF/resource-broker/tree/staging/app/adapters" target="_blank" rel="noopener noreferrer">AWS / Azure / GCP</a><br> Provider VM discovery and shared inventory integration</dd></div>
               <div><dt>Current scope</dt><dd>Isolated runtimes / CI/CD / monitoring / KOTH scoring</dd></div>
             </dl>
-            <a href="https://github.com/MSG-CTF" target="_blank" rel="noopener noreferrer" class="feature-link">MSG-CTF on GitHub</a>
           </div>
-          <figure class="project-film film-msgctf" data-film="msgctf" data-state="ready" data-duration="9000">
-      <div class="film-stage"><svg class="story-canvas branded-canvas" viewBox="0 0 560 376" role="img" aria-labelledby="msgctf-story-title msgctf-story-desc">
-      <title id="msgctf-story-title">From cloud providers to team workspaces</title><desc id="msgctf-story-desc">A conceptual view of AWS, Azure and Google Cloud inventory, Resource Broker integration, scheduling and isolated team workspaces</desc>
-      <defs><clipPath id="msgctf-story-clip"><rect x="16" y="62" width="528" height="268"/></clipPath><filter id="msgctf-soft-shadow" x="-30%" y="-30%" width="170%" height="180%"><feDropShadow dx="0" dy="7" stdDeviation="7" flood-color="#1e2b37" flood-opacity=".08"/></filter></defs>
-      <rect class="film-header-paper" width="560" height="57"/><image href="assets/brands/msgctf.png" x="24" y="8" width="43" height="43" preserveAspectRatio="xMidYMid meet"/><text class="story-brand" x="80" y="35">MSGCTF</text><text class="story-label" x="532" y="34" text-anchor="end">Cloud Platform</text>
-      <g clip-path="url(#msgctf-story-clip)"><g class="motion story-scene scene-one" style="--motion: shot-one">
-          <text class="showcase-heading" x="28" y="101">Different clouds, one platform</text><g class="motion vendor-plate" style="--motion: plate-rise-1">
-              <rect class="plate-layer layer-back" x="35" y="155" width="146" height="121" rx="11"/>
-              <rect class="plate-layer layer-middle" x="31" y="149" width="154" height="121" rx="11"/>
-              <rect class="plate-face" x="28" y="140" width="160" height="124" rx="11" filter="url(#msgctf-soft-shadow)"/>
-              <image href="assets/brands/aws.svg" x="76.0" y="164.0" width="64" height="64" preserveAspectRatio="xMidYMid meet"/>
-              <text class="vendor-service" x="108" y="248" text-anchor="middle">EC2</text>
-            </g>
-            <text class="vendor-caption" x="108" y="302" text-anchor="middle">AWS</text><g class="motion vendor-plate" style="--motion: plate-rise-2">
-              <rect class="plate-layer layer-back" x="207" y="155" width="146" height="121" rx="11"/>
-              <rect class="plate-layer layer-middle" x="203" y="149" width="154" height="121" rx="11"/>
-              <rect class="plate-face" x="200" y="140" width="160" height="124" rx="11" filter="url(#msgctf-soft-shadow)"/>
-              <image href="assets/brands/azure.svg" x="257.0" y="173.0" width="46" height="46" preserveAspectRatio="xMidYMid meet"/>
-              <text class="vendor-service" x="280" y="248" text-anchor="middle">Virtual Machines</text>
-            </g>
-            <text class="vendor-caption" x="280" y="302" text-anchor="middle">Azure</text><g class="motion vendor-plate" style="--motion: plate-rise-3">
-              <rect class="plate-layer layer-back" x="379" y="155" width="146" height="121" rx="11"/>
-              <rect class="plate-layer layer-middle" x="375" y="149" width="154" height="121" rx="11"/>
-              <rect class="plate-face" x="372" y="140" width="160" height="124" rx="11" filter="url(#msgctf-soft-shadow)"/>
-              <image href="assets/brands/google-cloud.svg" x="393.0" y="183.0" width="118" height="26" preserveAspectRatio="xMidYMid meet"/>
-              <text class="vendor-service" x="452" y="248" text-anchor="middle">Compute Engine</text>
-            </g>
-            <text class="vendor-caption" x="452" y="302" text-anchor="middle">Google Cloud</text></g>
-        <g class="motion story-scene scene-two" style="--motion: shot-two">
-          <text class="showcase-heading" x="28" y="101">From inventory to allocation</text>
-          <g class="motion inventory-ledger" style="--motion: ledger-open">
-            <rect class="plate-layer layer-back" x="34" y="140" width="490" height="181" rx="9"/>
-            <rect class="plate-face" x="28" y="132" width="496" height="182" rx="9" filter="url(#msgctf-soft-shadow)"/>
-            <text class="ledger-title" x="47" y="161">Resource Broker</text>
-            <path class="ledger-rule" d="M47 175H317"/>
-            <image href="assets/brands/aws.svg" x="46" y="184" width="28" height="28" preserveAspectRatio="xMidYMid meet"/><text class="ledger-provider" x="90" y="203">AWS EC2</text>
-            <image href="assets/brands/azure.svg" x="51" y="221" width="20" height="20" preserveAspectRatio="xMidYMid meet"/><text class="ledger-provider" x="90" y="237">Azure VM</text>
-            <image href="assets/brands/google-cloud.svg" x="47" y="258" width="101" height="18" preserveAspectRatio="xMidYMid meet"/>
-            <text class="ledger-detail" x="307" y="203" text-anchor="end">VM inventory</text><text class="ledger-detail" x="307" y="237" text-anchor="end">VM inventory</text><text class="ledger-detail" x="307" y="271" text-anchor="end">VM inventory</text>
-            <text class="ledger-foot" x="47" y="298">CPU / Memory / Storage</text>
-          </g>
-          <g class="motion allocation-slip" style="--motion: allocation-slip"><rect x="277" y="227" width="49" height="35" rx="4"/><path d="M288 239h26m-26 7h18m-18 7h22"/></g>
-          <g class="motion allocation-receipt" style="--motion: allocation-arrive">
-            <rect x="340" y="166" width="192" height="133" rx="9" filter="url(#msgctf-soft-shadow)"/>
-            <text x="358" y="195">Scheduler</text>
-            <path class="receipt-rule" d="M358 208H514"/>
-            <g class="motion reservation-step" style="--motion: reserve-one"><path d="m359 227 4 4 8-9"/><text x="381" y="231">Select a candidate</text></g>
-            <g class="motion reservation-step" style="--motion: reserve-two"><path d="m359 258 4 4 8-9"/><text x="381" y="262">Reserve resources</text></g>
-          </g>
-        </g>
-        <g class="motion story-scene scene-three" style="--motion: shot-three">
-          <text class="showcase-heading" x="28" y="101">A dedicated workspace for every team</text><g class="motion workspace-window" style="--motion: workspace-rise-1">
-              <rect class="workspace-back" x="36" y="162" width="150" height="151" rx="10"/>
-              <rect class="workspace-middle" x="32" y="157" width="150" height="151" rx="10"/>
-              <rect class="plate-face" x="28" y="149" width="150" height="151" rx="10" filter="url(#msgctf-soft-shadow)"/>
-              <text class="workspace-label" x="44" y="174">TEAM A</text><path class="ledger-rule" d="M44 186h118"/>
-              <g class="motion workload" style="--motion: workload-in-1"><rect x="44" y="201" width="118" height="36" rx="5"/><path d="m58 213-5 6 5 6m12-12 5 6-5 6"/><text x="87" y="224">Web</text><rect x="44" y="248" width="118" height="28" rx="5"/><path d="M56 256h16v10h-16zm8 10v3m-5 0h10"/><text x="87" y="267">Network</text></g>
-            </g><g class="motion workspace-window" style="--motion: workspace-rise-2">
-              <rect class="workspace-back" x="208" y="162" width="150" height="151" rx="10"/>
-              <rect class="workspace-middle" x="204" y="157" width="150" height="151" rx="10"/>
-              <rect class="plate-face" x="200" y="149" width="150" height="151" rx="10" filter="url(#msgctf-soft-shadow)"/>
-              <text class="workspace-label" x="216" y="174">TEAM B</text><path class="ledger-rule" d="M216 186h118"/>
-              <g class="motion workload" style="--motion: workload-in-2"><rect x="216" y="201" width="118" height="36" rx="5"/><path d="m230 213-5 6 5 6m12-12 5 6-5 6"/><text x="259" y="224">Web</text><rect x="216" y="248" width="118" height="28" rx="5"/><path d="M228 256h16v10h-16zm8 10v3m-5 0h10"/><text x="259" y="267">Network</text></g>
-            </g><g class="motion workspace-window" style="--motion: workspace-rise-3">
-              <rect class="workspace-back" x="380" y="162" width="150" height="151" rx="10"/>
-              <rect class="workspace-middle" x="376" y="157" width="150" height="151" rx="10"/>
-              <rect class="plate-face" x="372" y="149" width="150" height="151" rx="10" filter="url(#msgctf-soft-shadow)"/>
-              <text class="workspace-label" x="388" y="174">TEAM C</text><path class="ledger-rule" d="M388 186h118"/>
-              <g class="motion workload" style="--motion: workload-in-3"><rect x="388" y="201" width="118" height="36" rx="5"/><path d="m402 213-5 6 5 6m12-12 5 6-5 6"/><text x="431" y="224">Web</text><rect x="388" y="248" width="118" height="28" rx="5"/><path d="M400 256h16v10h-16zm8 10v3m-5 0h10"/><text x="431" y="267">Network</text></g>
-            </g></g></g><g class="chapter chapter-1"><path class="chapter-track" d="M28 341h160"/><path class="motion chapter-fill" style="--motion: chapter-1" pathLength="100" d="M28 341h160"/><text x="28" y="364"><tspan class="chapter-number">01</tspan><tspan dx="10">Providers</tspan></text></g><g class="chapter chapter-2"><path class="chapter-track" d="M200 341h160"/><path class="motion chapter-fill" style="--motion: chapter-2" pathLength="100" d="M200 341h160"/><text x="200" y="364"><tspan class="chapter-number">02</tspan><tspan dx="10">Allocation</tspan></text></g><g class="chapter chapter-3"><path class="chapter-track" d="M372 341h160"/><path class="motion chapter-fill" style="--motion: chapter-3" pathLength="100" d="M372 341h160"/><text x="372" y="364"><tspan class="chapter-number">03</tspan><tspan dx="10">Workspaces</tspan></text></g></svg></div>
-      <figcaption><span id="msgctf-film-caption">From cloud providers to team workspaces</span><button type="button" hidden aria-describedby="msgctf-film-caption" data-play="Play preview" data-pause="Pause" data-resume="Resume" data-replay="Replay"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path class="play-icon" d="M4 2.5 12 8 4 13.5Z"/><path class="pause-icon" d="M5 3v10M11 3v10"/></svg><span>Play preview</span></button></figcaption>
+          <figure class="project-film film-msgctf platform-film" data-film="msgctf" data-state="ready" data-duration="16000">
+      <div class="film-stage platform-stage">
+        <div class="platform-film-header"><div><img src="assets/brands/msgctf.png" alt="" width="400" height="400"><strong>MSGCTF <span>Cloud Platform</span></strong></div><span>How it works</span></div>
+        <div class="platform-scenes"><section class="platform-scene platform-scene-0 motion" data-scene="0" style="--motion: platform-scene-1" aria-label="Release">
+          <div class="scene-copy"><span class="scene-eyebrow">01 / Release</span><h4>From a challenge<br> to a ready release</h4><p>Validate the challenge, build its image and register a release</p><div class="scene-roles" aria-label="Services involved"><span data-role-name="DevSecOps">DevSecOps</span><span data-role-name="Backend">Backend</span></div></div>
+          <div class="demo-surface release-demo" role="img" aria-label="An example of validating a challenge, building an image, publishing artifacts and registering a release in Backend">
+      <div class="demo-toolbar"><svg class="demo-icon " viewBox="0 0 24 24" aria-hidden="true"><path d="m3 6 9-4 9 4v12l-9 4-9-4V6Zm0 0 9 4 9-4M12 10v12M7.5 4 16.5 8"/></svg><span>Challenge release</span><small>DevSecOps</small></div>
+      <div class="demo-body">
+        <div class="motion release-source" style="--motion: release-source"><svg class="demo-icon " viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 20"/></svg><div><strong>Web challenge</strong><span>Container image &amp; release bundle</span></div></div>
+        <div class="release-checks">
+          <div><span class="motion draw-check" style="--motion: release-check-1"><svg class="demo-icon " viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6" pathLength="100"/></svg></span><span>Validate the challenge</span></div>
+          <div><span class="motion draw-check" style="--motion: release-check-2"><svg class="demo-icon " viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6" pathLength="100"/></svg></span><span>Build the image</span></div>
+          <div><span class="motion draw-check" style="--motion: release-check-3"><svg class="demo-icon " viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6" pathLength="100"/></svg></span><span>Publish the release bundle</span></div>
+        </div>
+        <div class="motion demo-result release-result" style="--motion: release-result"><svg class="demo-icon " viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6" pathLength="100"/></svg><div><strong>Ready to deploy</strong><span>Release registered in Backend</span></div></div>
+      </div>
+    </div>
+        </section><section class="platform-scene platform-scene-1 motion" data-scene="1" style="--motion: platform-scene-2" aria-label="Request">
+          <div class="scene-copy"><span class="scene-eyebrow">02 / Request</span><h4>A participant asks<br> for a workspace</h4><p>Check team access and queue the request to create a workspace</p><div class="scene-roles" aria-label="Services involved"><span data-role-name="Frontend">Frontend</span><span data-role-name="Backend">Backend</span><span data-role-name="Scheduler">Scheduler</span></div></div>
+          <div class="demo-surface request-demo" role="img" aria-label="A participant requests a workspace, Backend checks access and Scheduler receives the creation request">
+      <div class="demo-toolbar"><svg class="demo-icon " viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M2 8h20M7 3v5"/></svg><span>Participant view</span><small>TEAM A</small></div>
+      <div class="demo-body">
+        <div class="request-challenge"><span class="challenge-type">WEB</span><div><strong>Web challenge</strong><span>A workspace for our team</span></div></div>
+        <div class="motion request-action" style="--motion: request-press"><span class="motion state-before" style="--motion: request-before">Create workspace</span><span class="motion state-after" style="--motion: request-after"><svg class="demo-icon " viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6" pathLength="100"/></svg>Request received</span></div>
+        <span class="motion request-cursor" style="--motion: request-cursor"><svg class="demo-icon " viewBox="0 0 24 24" aria-hidden="true"><path d="m4 2 15 11-7 1-3 7L4 2Z"/></svg></span>
+        <div class="motion request-access" style="--motion: request-access"><svg class="demo-icon " viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 3 6v6c0 5 9 10 9 10s9-5 9-10V6l-9-4Z"/><path d="m8 12 3 3 5-6"/></svg><span>Team access verified</span><small>Backend</small></div>
+        <div class="motion demo-result request-result" style="--motion: request-result"><svg class="demo-icon " viewBox="0 0 24 24" aria-hidden="true"><path d="m3 3 19 9-19 9 4-9-4-9Zm4 9h15"/></svg><div><strong>Creation request queued</strong><span>Scheduler</span></div></div>
+      </div>
+    </div>
+        </section><section class="platform-scene platform-scene-2 motion" data-scene="2" style="--motion: platform-scene-3" aria-label="Workspace">
+          <div class="scene-copy"><span class="scene-eyebrow">03 / Workspace</span><h4>Cloud resources<br> become a team space</h4><p>Select available resources and create an isolated team environment</p><div class="scene-roles" aria-label="Services involved"><span data-role-name="Resource Broker">Resource Broker</span><span data-role-name="Scheduler">Scheduler</span><span data-role-name="Runtime">Runtime</span></div></div>
+          <div class="demo-surface run-demo" role="img" aria-label="Scheduler selects a cloud candidate provided by Resource Broker and Runtime creates an isolated team workspace, with AWS, Azure and Google Cloud as providers">
+      <div class="demo-toolbar"><svg class="demo-icon " viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="7" rx="1"/><rect x="3" y="14" width="18" height="7" rx="1"/><path d="M7 6.5h3m-3 11h3"/></svg><span>Cloud placement</span><small>Example</small></div>
+      <div class="demo-body">
+        <div class="provider-choices">
+          <div class="motion provider-option provider-choice" style="--motion: run-provider"><img src="assets/brands/aws.svg" width="36" height="36" alt="AWS"><span class="motion provider-check" style="--motion: run-provider-check"><svg class="demo-icon " viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6" pathLength="100"/></svg></span></div>
+          <div class="provider-option"><img src="assets/brands/azure.svg" width="29" height="29" alt="Azure"></div>
+          <div class="provider-option"><img src="assets/brands/google-cloud.svg" width="102" height="25" alt="Google Cloud"></div>
+        </div>
+        <div class="motion team-workspace" style="--motion: run-workspace">
+          <div class="workspace-title"><svg class="demo-icon " viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 3 6v6c0 5 9 10 9 10s9-5 9-10V6l-9-4Z"/><path d="m8 12 3 3 5-6"/></svg><strong>TEAM A</strong><span>Isolated workspace</span></div>
+          <div class="motion runtime-instance" style="--motion: run-instance"><svg class="demo-icon " viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 20"/></svg><div><strong>Web instance</strong><span>A container assigned to our team</span></div></div>
+          <div class="motion workspace-ready" style="--motion: run-ready"><svg class="demo-icon " viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6" pathLength="100"/></svg><span>Instance ready</span></div>
+        </div>
+      </div>
+    </div>
+        </section><section class="platform-scene platform-scene-3 motion" data-scene="3" style="--motion: platform-scene-4" aria-label="Recovery">
+          <div class="scene-copy"><span class="scene-eyebrow">04 / Recovery</span><h4>When health changes,<br> request recovery</h4><p>Observe runtime health and ask Scheduler to coordinate recovery</p><div class="scene-roles" aria-label="Services involved"><span data-role-name="Runtime">Runtime</span><span data-role-name="Monitoring">Monitoring</span><span data-role-name="Scheduler">Scheduler</span></div></div>
+          <div class="demo-surface operate-demo" role="img" aria-label="Monitoring detects a change in Runtime health and sends a recovery request to Scheduler">
+      <div class="demo-toolbar"><svg class="demo-icon " viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 3 6v6c0 5 9 10 9 10s9-5 9-10V6l-9-4Z"/><path d="m8 12 3 3 5-6"/></svg><span>Runtime observation</span><small>Monitoring</small></div>
+      <div class="demo-body">
+        <div class="health-service"><svg class="demo-icon " viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="7" rx="1"/><rect x="3" y="14" width="18" height="7" rx="1"/><path d="M7 6.5h3m-3 11h3"/></svg><strong>Runtime</strong><span class="health-state"><span class="motion state-before" style="--motion: operate-before">Checking health</span><span class="motion state-after" style="--motion: operate-after">Attention needed</span></span></div>
+        <div class="motion health-alert" style="--motion: operate-alert"><svg class="demo-icon " viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 10 18H2L12 3Zm0 6v5m0 3v1"/></svg><div><strong>Health change detected</strong><span>Instance response delayed</span></div></div>
+        <div class="motion recovery-ticket" style="--motion: operate-ticket"><div><svg class="demo-icon " viewBox="0 0 24 24" aria-hidden="true"><path d="m3 3 19 9-19 9 4-9-4-9Zm4 9h15"/></svg><strong>Recovery request</strong><span>Scheduler</span></div><p>Request a runtime recheck</p></div>
+        <div class="motion recovery-sent" style="--motion: operate-result"><svg class="demo-icon " viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6" pathLength="100"/></svg><span>Recovery request delivered</span></div>
+      </div>
+    </div>
+        </section></div>
+        <div class="platform-steps" role="group" aria-label="Choose a preview scene"><button class="platform-step" type="button" data-seek="3400" data-scene-select="0" aria-pressed="true" hidden><span class="step-number">01</span><span>Release</span><span class="step-progress motion" style="--motion: platform-progress-1" aria-hidden="true"></span></button><button class="platform-step" type="button" data-seek="7400" data-scene-select="1" aria-pressed="false" hidden><span class="step-number">02</span><span>Request</span><span class="step-progress motion" style="--motion: platform-progress-2" aria-hidden="true"></span></button><button class="platform-step" type="button" data-seek="11400" data-scene-select="2" aria-pressed="false" hidden><span class="step-number">03</span><span>Workspace</span><span class="step-progress motion" style="--motion: platform-progress-3" aria-hidden="true"></span></button><button class="platform-step" type="button" data-seek="15400" data-scene-select="3" aria-pressed="false" hidden><span class="step-number">04</span><span>Recovery</span><span class="step-progress motion" style="--motion: platform-progress-4" aria-hidden="true"></span></button></div>
+      </div>
+      <figcaption><span id="msgctf-film-caption">Illustrating the platform design</span><button type="button" hidden aria-describedby="msgctf-film-caption" data-play="Play preview" data-pause="Pause" data-resume="Resume" data-replay="Replay"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path class="play-icon" d="M4 2.5 12 8 4 13.5Z"/><path class="pause-icon" d="M5 3v10M11 3v10"/></svg><span>Play preview</span></button></figcaption>
     </figure>
+    <details class="platform-overview"><summary>View all roles and connections</summary><dl><div><dt>Frontend</dt><dd><p>Participant and admin interfaces</p><span>Backend</span></dd></div><div><dt>Backend</dt><dd><p>Authentication, teams, scores and releases</p><span>Frontend / DevSecOps / Scheduler</span></dd></div><div><dt>DevSecOps</dt><dd><p>Challenge validation, images and release bundles</p><span>Backend / Runtime</span></dd></div><div><dt>Resource Broker</dt><dd><p>Cloud inventory and placement candidates</p><span>AWS / Azure / GCP / Scheduler</span></dd></div><div><dt>Scheduler</dt><dd><p>Placement and instance lifecycle</p><span>Backend / Resource Broker / Runtime / Monitoring</span></dd></div><div><dt>Runtime</dt><dd><p>Workload creation and isolation</p><span>Scheduler / DevSecOps / Monitoring</span></dd></div><div><dt>Monitoring</dt><dd><p>Health observation and recovery signals</p><span>Backend / Runtime / Resource Broker / Scheduler</span></dd></div></dl></details>
         </div>
         <div class="feature-repositories">
           <p>Component repositories</p>

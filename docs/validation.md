@@ -10,6 +10,10 @@ Both English and Korean pages checked at widths of 320, 390, 768, 1024 and 1440 
 - No broken page images or missing local files
 - MSGCTF, GnawLab, WEAVE, INC0GNITO and ENKI WhiteHat marks checked at their displayed size
 - Official AWS, Azure, Google Cloud, Bedrock, S3 and Lambda artwork loads from local files
+- All seven MSGCTF roles appear across four selectable scenes at every tested width
+- Each selected scene shows one action and its outcome, with two or three supporting service names and no page movement when changing scenes
+- Mobile scenes place 24-pixel action headings above their interface illustrations
+- The complete role descriptions remain available in a native disclosure and all seven repository links remain visible outside it
 - No JavaScript exceptions or browser console errors during the checks
 - One primary heading per page, unique element IDs, named links, and valid in-page anchor targets
 - English/Korean links reach the corresponding language page
@@ -25,41 +29,49 @@ Both English and Korean pages checked at widths of 320, 390, 768, 1024 and 1440 
 - Both pages link the DEF CON Demo Labs session and speaker profile
 - All 69 original external and evidence-image destinations accounted for in each language, with 68 retained verbatim and Watchdog corrected to its current public repository
 - The two language pages contain identical sets of 110 unique link destinations, including navigation, contacts, references and image materials
-- AWS, Azure and GCP appear in the MSGCTF copy and the first preview scene, with a visible link to the public provider adapters
+- AWS, Azure and GCP appear in the MSGCTF copy and the workspace preview scene, with a visible link to the public provider adapters
 - INC0GNITO's official repository, qualifier, finals, planning document and challenge authorship links are present in both languages
 - `git diff --check` passes
 
 Desktop and mobile layouts inspected visually, including the expanded ENKI section
-Project previews stack below the description on narrow screens, with larger diagram labels on mobile
+MSGCTF's preview spans the project width and places action headings above the interface examples on mobile
+The other project previews stack below their descriptions on narrow screens
 Mobile paragraph spacing checked after removing sentence-ending periods
 
 ## Project motion
 
-Four nine-second project previews use local SVG, CSS and the native Web Animations API
+Four project previews use local HTML, SVG, CSS and the native Web Animations API
+MSGCTF runs for sixteen seconds and the other three run for nine seconds
 
 - Automatic playback begins when the preview enters the viewport
-- SVG brand images are decoded before playback starts, with all 15 image placements successfully decoded in the motion check
-- A natural nine-second run completes once and remains stopped
+- HTML and SVG brand images are decoded before playback starts
+- A natural sixteen-second MSGCTF run completes once and remains stopped
+- Release validation checks complete before the release receipt appears
+- The participant action changes to an accepted request before the creation request appears
+- Provider selection precedes the isolated workspace and instance-ready state
+- A health change appears before the recovery request and delivery confirmation
 - Manual pause freezes the animation timeline and persists after scrolling away and back
+- Selecting any of the four MSGCTF stages seeks to that scene and pauses playback until the visitor resumes
+- Scene selection checked in both languages at five widths under normal and reduced-motion preferences
 - Scrolling a running preview outside the viewport pauses it, and returning resumes it
 - Replay restarts at the beginning with a fresh animation timeline
 - A replay defect found during testing was fixed by committing the removed CSS animation before starting it again
-- Changing the system reduced-motion preference resets all four previews to static content with no active animations or playback controls
+- Changing the system reduced-motion preference resets all four previews to static content with no active animations or playback controls, while the four MSGCTF stage buttons remain usable
 - Original research image assets remain available through the supplementary materials links
 - Playback controls have a 44-pixel minimum height
-- With JavaScript disabled, controls remain hidden, all four previews display their first scene and content remains usable
+- With JavaScript disabled, preview controls remain hidden and each preview displays its first scene, while the native MSGCTF overview still exposes all seven role descriptions
 - Simulated browser data-saving mode disables autoplay while allowing explicit manual playback
 
 Animation states, scene transitions and mobile diagrams were inspected through browser screenshots
-The MSGCTF GIF and the four-project GIF in `docs/preview/` capture the website's vector animations for review
-The four-project capture arranges the previews into a grid for comparison; the portfolio itself retains its existing project rows
+The MSGCTF GIF in `docs/preview/` captures the four-scene website animation for review
+The earlier four-project GIF documents the previous branded revision and is superseded for MSGCTF by the individual capture
 Neither GIF is a runtime dependency
 
-The refined version was checked at 1,700 ms, 4,500 ms and 8,500 ms in both languages
-These checkpoints cover all three scenes in the provider, agent, taxonomy and compression previews
+The four platform scenes were selected at 3,400 ms, 7,400 ms, 11,400 ms and 15,400 ms, covering release preparation, participant requests, workspace creation, and observation and recovery
+The other previews were checked at 1,700 ms, 4,500 ms and 8,500 ms in both languages
 SVG labels fit inside the scene viewport and the primary header and heading use ialleejy in both languages
 The review GIF is captured at 30 frames per second while browser playback uses the native animation timeline
-The branded revision also checks WEAVE's folder index and interpretation comparison, MSGCTF's inventory and workspace panels, and GnawLab's original wordmark and service icons
+The branded revision also checks WEAVE's folder index and interpretation comparison, MSGCTF's role scenes, and GnawLab's original wordmark and service icons
 
 ## Limits
 

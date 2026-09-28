@@ -11,6 +11,7 @@ Updated 28 September 2026
 - The owner's direct confirmation of DEF CON finals participation, Demo Labs presentation and graduation from Myongji University
 - [MSG-CTF organization](https://github.com/MSG-CTF), including the public frontend, backend, scheduler, broker, runtime, DevSecOps and monitoring repositories
 - [Resource Broker provider inventory](https://github.com/MSG-CTF/resource-broker/blob/41f53e2502dff6e4c315431eec805151fdd89d6e/README.md) and [provider enum](https://github.com/MSG-CTF/resource-broker/blob/41f53e2502dff6e4c315431eec805151fdd89d6e/app/domain/enums.py), confirming AWS, Azure and GCP VM inventory and Kubernetes runtime support
+- [Frontend platform contract](https://github.com/MSG-CTF/front-team/blob/main/README.md), [DevSecOps release flow](https://github.com/MSG-CTF/msgctf-devsecops/blob/main/README.md) and [Sentinel responsibilities](https://github.com/MSG-CTF/sentinel/blob/dev/README.md), used for the platform scenes and role descriptions
 - The owner's clarification that vendors means cloud providers, rather than event sponsors
 - Existing MSGCTF architecture and integration-review records, used to describe the owner's architecture, review and validation work
 - Previously published portfolio descriptions of Sealed Board, Phantompass and Observatory, including their event dates and deployment deliverables
@@ -44,7 +45,7 @@ Its authentication wall prevented direct profile review, so the relevant additio
 - Retain DBREACH's documented start date without assuming a completion date
 - Preserve 68 of the original 69 external and evidence-image destinations verbatim and correct Watchdog's unavailable former URL to its verified current public repository
 - Keep every GitHub repository, website and documentation link visible by default
-- Reserve native disclosures for supplementary screenshots and materials
+- Reserve native disclosures for supplementary screenshots, materials and the complete MSGCTF role descriptions
 - Omit sentence-ending periods and decorative dots from both language pages
 - Restore the previous portfolio's MJSEC mentoring, seKUrity training, high-school graduation and additional competition participation in concise form
 - Show mentoring and study sessions with their original distinction, rather than implying that every topic was a mentoring assignment
@@ -64,15 +65,26 @@ All four animations are conceptual illustrations of documented architecture and 
 They do not claim to be live production telemetry or recordings of an operational system
 The existing WEAVE and DBREACH screenshots remain accessible through the supplementary materials links
 
-MSGCTF shows the three provider adapters, shared VM inventory, scheduler selection and team isolation
-The runtime panels are illustrative and do not assert a specific deployed capacity or number of active teams
+MSGCTF introduces Frontend, Backend, Scheduler, Runtime, DevSecOps, Resource Broker and Monitoring across four readable scenes
+Release preparation shows DevSecOps and Backend, participant requests show Frontend, Backend and Scheduler, execution shows Resource Broker, Scheduler and Runtime, and operations show Runtime, Monitoring and Scheduler
+An action heading and a compact interface example lead each scene, with two or three service names as supporting context
+The animated examples show validation checks completing before release registration, a participant action followed by access verification and request acceptance, cloud selection followed by a team workspace, and a runtime health event followed by a recovery request
+The examples are labelled as design illustrations and do not represent a recorded production interface or live health data
+The optional role overview retains the fuller responsibility descriptions and connections, including DevSecOps artifacts consumed by Runtime
+These scenes summarize responsibility boundaries rather than enumerating every API call or network dependency
+Monitoring is not shown directly creating or deleting workloads, and DevSecOps is not shown directly writing Scheduler or Broker state
+KOTH scoring remains in the current project scope and Backend's competition responsibilities
 GnawLab's document transfer and permissions panels summarize research scope without adding exploit mechanics or claiming a security fix
 WEAVE's five categories and example topics come from the existing taxonomy screenshot, with HTTP Parameter Pollution under syntax parsing and duplicate-key handling
 DBREACH's data blocks illustrate compression rather than measured data, a benchmark or a compression ratio
-The sequences use staged entrances, document transfer, taxonomy expansion, data-block movement and chapter progress on a shared nine-second timeline
+The MSGCTF flow runs for sixteen seconds across release, request, workspace and recovery scenes
+Visitors can select any scene to pause there, including static selection when reduced motion is enabled
+The other three previews use staged entrances, document transfer, taxonomy expansion, data-block movement and chapter progress on nine-second timelines
 
 Project headings use the original MSGCTF, GnawLab, WEAVE and INC0GNITO marks, with the ENKI WhiteHat wordmark in the employment section
-The provider preview uses official AWS, Azure and Google Cloud artwork and layered inventory panels rather than a node-and-arrow map
+The full-width platform preview places a large action heading beside an interface illustration on desktop, stacking the two on mobile
+Official AWS, Azure and Google Cloud artwork appears inside the placement example, with the selected provider leading to creation of an isolated team workspace
+The seven component repository links remain visible outside the optional role overview
 GnawLab uses AWS S3, Bedrock and Lambda service icons to identify the illustrated knowledge source, agent and action group
 WEAVE moves through a folder index, an expanded case sheet and a two-column interpretation comparison
 All brand images are local assets, retain their original colors and aspect ratios, and are decoded before their preview begins
