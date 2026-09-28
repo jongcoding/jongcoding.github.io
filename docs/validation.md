@@ -13,7 +13,7 @@ Both English and Korean pages checked at widths of 320, 390, 768, 1024 and 1440 
 - Official AWS, Azure, Google Cloud, Bedrock, S3, Lambda, Kubernetes and GitHub artwork loads from local files
 - All seven MSGCTF roles appear across four selectable scenes at every tested width
 - Each selected scene shows a prominent service name, one action and its outcome, supporting service names and no page movement when changing scenes
-- Mobile scenes place 24-pixel action headings above the illustrated objects
+- Mobile scenes place concise 20-pixel action headings above the illustrated objects
 - Preview descriptions use 15–16-pixel text, primary service names use 15–16-pixel text and results use 16–17-pixel text
 - All 39 GitHub destinations per language display decoded official icons and have accessible names, with 10 generic GitHub links using icon-only controls at least 44 pixels high
 - Larger shared body and link text and stronger secondary-text contrast checked across both language versions
@@ -38,7 +38,7 @@ Both English and Korean pages checked at widths of 320, 390, 768, 1024 and 1440 
 - `git diff --check` passes
 
 Desktop and mobile layouts inspected visually, including the expanded ENKI section
-MSGCTF's preview spans the project width and places action headings above the illustrated objects on mobile
+MSGCTF's introduction and preview share a row on desktop and stack on mobile
 The other project previews stack below their descriptions on narrow screens
 Mobile paragraph spacing checked after removing sentence-ending periods
 
@@ -100,11 +100,19 @@ The branded revision also checks WEAVE's folder index and interpretation compari
 
 - Official MJSEC logo copied unchanged from the club website repository, with identical source and local SHA-256 hashes
 - Logo rendering inspected in the club activity entry, Homepage & LMS and BOJ Contest headings
-- CCE 2026 credits match the owner's confirmation of Web authorship in both the qualifier and finals, naming GRID_FLAG and LIVEFIRE 가온증권
+- CCE 2026 appears inside the ENKI WhiteHat role as a short Web challenge authorship credit for the qualifier and finals, matching the owner's clarification
 - Korean and English pages checked at 320, 390, 768, 1024 and 1440 pixels with no horizontal overflow, missing images, duplicate IDs, broken anchors or browser errors
-- CCE challenge names remain readable on narrow screens and MJSEC heading marks retain their aspect ratios without duplicated accessible names
+- The concise CCE authorship line wraps within narrow screens and MJSEC heading marks retain their aspect ratios without duplicated accessible names
 - Both pages retain the same 110 link destinations and all 69 previously inventoried destinations, including the corrected Watchdog repository URL
 - Desktop and mobile screenshots reviewed for CCE, MJSEC activity and the homepage project
+
+## Compact project layout
+
+- Korean MSGCTF project height reduced from 1,104 to 712 pixels at a 1,440-pixel viewport, and from 1,534 to 1,115 pixels at a 390-pixel viewport with details collapsed
+- The compact preview retains all four scenes and seven service roles, with the existing timing and action dependencies unchanged
+- Both languages checked at 320, 390, 768, 1024 and 1440 pixels under normal and reduced-motion preferences
+- Scene selection retains a stable frame height, pauses at the selected action and preserves selection after scrolling
+- The complete role disclosure still expands and provider logos decode correctly at all tested widths
 
 ## Limits
 

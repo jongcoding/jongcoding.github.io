@@ -33,7 +33,8 @@ The Lottie renderer is used only to prepare that static asset and is not include
 
 The 2026 MSGCTF logo is copied unchanged from frontend commit 1ee323c27cb4ce2fed99cb8a86abe6389761528d
 An inline SVG viewBox of 231 321 792 581 frames the artwork inside the original 1254-pixel square PNG, leaving its colors, pixels and transparency unchanged
-The updated mark is used in the current project's heading and motion preview, while the earlier 2025 project materials retain their original artwork
+The updated mark is used in the current project's heading, while the earlier 2025 project materials retain their original artwork
+The compact motion preview sits beside that introduction without a duplicate logo header
 
 Other source files are copied unchanged and displayed with their original aspect ratios and colors
 The MJSEC mark uses the unchanged 512-pixel source image within an inline SVG viewBox of 96 96 320 320, removing outer whitespace only in the display viewport

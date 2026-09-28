@@ -64,7 +64,9 @@ Completion marks follow their corresponding actions, and all animated objects sh
 MSGCTF, GnawLab, WEAVE, INC0GNITO, MJSEC and ENKI WhiteHat use their source artwork alongside the relevant project or role
 The current MSGCTF project uses the 2026 frontend's maple-leaf and mountain mark, with the original transparent PNG preserved and its empty margins cropped only in the display viewport
 The separate 2025 archive keeps its historical artwork
-The MSGCTF preview spans the project width, placing service names and action headings beside the animated objects on desktop and above them on mobile
+The MSGCTF introduction and compact preview sit side by side on desktop, with the description, responsibilities and cloud providers kept concise
+The preview uses a short action heading and its resulting operation, while the seven repository links remain visible below the project
+On narrow screens the introduction and preview stack, with smaller gaps and no repeated logo header
 Image layers, inventory racks, reservation receipts and ribbed containers distinguish each service's input and output
 Shared body and link text use larger sizes and stronger contrast
 GitHub destinations carry the official icon, with destination names for assistive technology and visible repository labels where needed
@@ -86,6 +88,8 @@ See [brand asset sources](assets/brands/README.md) for provenance
 - JavaScript-disabled browsers retain the previews' first frames, the expandable MSGCTF role overview, text and all project links
 
 Keep motion limited to the project previews and avoid ambient loops, decorative dots and entrance animations on text
+
+CCE 2026 appears as a short qualifier and finals Web challenge authorship credit within ENKI WhiteHat's work
 
 MSGCTF's build scene shows source validation, layer assembly, image scanning, SBOM preparation and publication in that order
 The Scheduler receipt stays HELD until Runtime creation succeeds, then changes to COMMITTED before the final result

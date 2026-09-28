@@ -9,7 +9,7 @@ Updated 28 September 2026
 - [Hacker Tracker / ialleejy speaker profile](https://info.defcon.org/defcon34/people/67239), confirming ENKI affiliation, CODEGATE and HACKTHEON challenge authoring, and web, cloud and AI agent research topics
 - [DEF CON CTF Qualifier 2026 scoreboard](https://ctftime.org/event/3205/), listing The Seoul Sauna Shogunate in seventh place with 8,641 points
 - The owner's direct confirmation of DEF CON finals participation, Demo Labs presentation and graduation from Myongji University
-- The owner's direct confirmation on 28 September 2026 of CCE 2026 qualifier and finals Web challenge authorship, naming GRID_FLAG and LIVEFIRE 가온증권
+- The owner's direct confirmation on 28 September 2026 of CCE 2026 qualifier and finals Web challenge authorship as part of the ENKI WhiteHat role
 - [MSG-CTF organization](https://github.com/MSG-CTF), including the public frontend, backend, scheduler, broker, runtime, DevSecOps and monitoring repositories
 - [MSGCTF 2026 frontend logo](https://github.com/MSG-CTF/front-team/blob/1ee323c27cb4ce2fed99cb8a86abe6389761528d/public/assets/login/logo-cutout.png), used by the official login screen and copied unchanged for the current project
 - [Resource Broker provider inventory](https://github.com/MSG-CTF/resource-broker/blob/41f53e2502dff6e4c315431eec805151fdd89d6e/README.md) and [provider enum](https://github.com/MSG-CTF/resource-broker/blob/41f53e2502dff6e4c315431eec805151fdd89d6e/app/domain/enums.py), confirming AWS, Azure and GCP VM inventory and Kubernetes runtime support
@@ -38,7 +38,7 @@ Its authentication wall prevented direct profile review, so the relevant additio
 - Separate the seventh-place qualifier result from finals participation without implying a finals ranking
 - Describe ENKI work through web and cloud security research, vulnerability analysis and research environment engineering
 - Keep CTF authorship in the named event credits rather than in the profile introduction or the general job summary
-- Add CCE 2026 as a separate activity credit with the confirmed stages, Web category and challenge names, without assigning individual challenges to a stage or an employer
+- Present CCE 2026 as a concise Web challenge authorship line within ENKI WhiteHat, with the confirmed qualifier and finals scope and no individual challenge-name list
 - Preserve the earlier CCE participation records and 2025 write-up separately from 2026 authorship
 - Keep INC0GNITO's February to May 2026 community organizing and authorship separate from the ENKI role that started in March
 - Keep community work on GnawLab distinct from employer ownership
@@ -98,9 +98,13 @@ Monitoring omits the previous full-trace backdrop so future samples are not visi
 The HELD and COMMITTED receipt states distinguish capacity reservation from successful Runtime creation
 
 Project headings use the original MSGCTF, GnawLab, WEAVE, INC0GNITO and MJSEC marks, with the ENKI WhiteHat wordmark in the employment section
-The current MSGCTF project and preview use the 2026 frontend's maple-leaf and mountain mark instead of the organization's older red avatar
+The current MSGCTF project uses the 2026 frontend's maple-leaf and mountain mark instead of the organization's older red avatar
 The PNG's colors and transparency are unchanged, with an SVG display viewport removing empty outer margins, while the 2025 archive retains its historical material
-The full-width platform preview places an action heading beside dimensional SVG objects on desktop, stacking the two on mobile
+The project introduction and preview sit side by side on desktop, reducing the vertical space devoted to MSGCTF
+The introduction retains its architecture, integration and lifecycle responsibilities, cloud-provider link and development scope
+Each scene uses a service name, a short action heading and the operation result, with detailed role descriptions available in the existing disclosure
+The repeated logo header and duplicate scene descriptions have been removed, while motion timing and all seven service links remain intact
+The compact layout stacks the introduction and preview on mobile without reducing body type sizes
 The new scenes use layered images, inventory racks, containers, namespaces and a response trace, with concise HTML labels remaining readable around the drawings
 The shared page styles increase smaller body and link text sizes and strengthen muted text contrast
 Official AWS, Azure and Google Cloud artwork identifies the inventory sources, while the Kubernetes icon identifies the illustrated Runtime
