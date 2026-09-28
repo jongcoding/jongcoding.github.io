@@ -24,7 +24,7 @@ Open `http://127.0.0.1:8000/` or `http://127.0.0.1:8000/index_ko.html`
 | `index_ko.html` | Korean content |
 | `assets/portfolio.css` | Shared layout, responsive rules, and print styles |
 | `assets/portfolio-motion.css` | Project-specific vector sequences |
-| `assets/portfolio-platform.css` | Four readable MSGCTF scenes and the optional role overview |
+| `assets/portfolio-platform.css` | MSGCTF supply chain, inventory, container placement and monitoring scenes |
 | `assets/portfolio-motion.js` | Visibility, pause, replay and motion preferences |
 | `assets/fonts/` | Local Pretendard font and its SIL OFL license |
 | `assets/brands/` | Official project, company and provider artwork, with source notes |
@@ -47,23 +47,26 @@ The earlier MSG CTF 2025 platform has a separate entry in More projects
 
 The header, primary heading and browser title use the owner's handle, ialleejy, with the full name in the identity line
 
-MSGCTF introduces all seven platform roles across four short scenes: release preparation, participant requests, resource selection and execution, then observation and recovery
-Each scene pairs one concrete action and outcome with an animated interface example, with the responsible services listed as supporting text
-DevSecOps publishes release bundles and images, Backend registers releases, Scheduler coordinates resource candidates and Runtime execution, and Monitoring sends recovery signals to Scheduler
-AWS, Azure and Google Cloud appear in the resource-selection scene as providers whose integration is in progress
+MSGCTF introduces all seven platform roles across four scenes, led by DevSecOps, Resource Broker, Instance Scheduler and Monitoring
+DevSecOps assembles container image layers, scans them and publishes digest-pinned images and SBOM artifacts for Backend release registration
+Resource Broker queries shared AWS, Azure and Google Cloud inventory and holds selected capacity
+Instance Scheduler dispatches Runtime creation to the reserved target and commits the reservation after successful workload creation
+Isometric containers descend into separate team namespaces, while Monitoring's response trace leads to a recovery request sent to Scheduler
+Provider integrations remain in development and the illustrations do not imply production validation across all vendors
 GnawLab shows a document passing into a knowledge base, the Bedrock Agent flow and the boundary between context and authority
 WEAVE moves from its five root-cause categories to a case study and differing component interpretations
 DBREACH illustrates a Docker/MariaDB setup, data blocks compressing and the review of experiment conditions
 These are conceptual overviews, with the original research screenshots available in each project's materials
-All previews include chapter progress, with a sixteen-second timeline for MSGCTF and nine seconds for the other three
+All previews include chapter progress, with a twenty-second timeline for MSGCTF and nine seconds for the other three
 
 MSGCTF, GnawLab, WEAVE, INC0GNITO and ENKI WhiteHat use their source artwork alongside the relevant project or role
 The current MSGCTF project uses the 2026 frontend's maple-leaf and mountain mark, with the original transparent PNG preserved and its empty margins cropped only in the display viewport
 The separate 2025 archive keeps its historical artwork
-The MSGCTF preview spans the project width, placing an action heading beside an interface example on desktop and above it on mobile
-Body and link text use larger sizes and stronger contrast, while the preview removes repeated toolbars and captions to emphasize the action and result
-Validation checks lead to a registered release, a participant action produces a creation request, cloud selection reveals a team workspace, and a health alert leads to a recovery request
-The illustrations summarize the design and do not claim to be recordings of the production interface
+The MSGCTF preview spans the project width, placing service names and action headings beside the animated objects on desktop and above them on mobile
+Image layers, inventory racks, reservation receipts and ribbed containers distinguish each service's input and output
+Shared body and link text use larger sizes and stronger contrast
+GitHub destinations carry the official icon, with destination names for assistive technology and visible repository labels where needed
+The illustrations summarize the design and do not claim to be production recordings or measured telemetry
 Four scene buttons let visitors choose a stage and pause there to read at their own pace
 An optional native disclosure lists all seven roles and their connections, while all seven repository links remain visible outside it
 GnawLab combines its wordmark with AWS service icons and document movement

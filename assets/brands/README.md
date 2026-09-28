@@ -18,6 +18,8 @@ Cloud-provider marks describe the project's integrations and do not imply sponso
 | `lambda.svg` | Same AWS package / `Architecture-Service-Icons_07312026/Arch_Compute/64/Arch_AWS-Lambda_64.svg` |
 | `azure.svg` | [Azure architecture icons](https://learn.microsoft.com/en-us/azure/architecture/icons/) / `Azure_Public_Service_Icons/Icons/other/10018-icon-service-Azure-A.svg` |
 | `google-cloud.svg` | [Google Cloud](https://cloud.google.com/icons) / [official full-color logo](https://www.gstatic.com/cgc/google-cloud-logo-fullcolor.svg) |
+| `github.svg` | [GitHub Primer Octicons / mark-github](https://github.com/primer/octicons/blob/main/icons/mark-github-16.svg), with the upstream license retained in `Octicons-LICENSE.txt` |
+| `kubernetes.svg` | [CNCF Kubernetes icon](https://github.com/cncf/artwork/blob/main/projects/kubernetes/icon/color/kubernetes-icon-color.svg), identifying the illustrated Runtime |
 
 The existing `../gnawlab.png` is the [GnawLab repository logo](https://github.com/Beaver-Dam-Community/GnawLab/blob/main/logo.png) and is reused without adding a duplicate
 
@@ -33,4 +35,6 @@ An inline SVG viewBox of 231 321 792 581 frames the artwork inside the original 
 The updated mark is used in the current project's heading and motion preview, while the earlier 2025 project materials retain their original artwork
 
 Other source files are copied unchanged and displayed with their original aspect ratios and colors
+GitHub links use the official mark, with accessible destination names and text labels where multiple repository choices need to be distinguished
+The layered image, inventory racks and isolated container objects are original SVG illustrations of software responsibilities rather than vendor logos or production screenshots
 Names and trademarks belong to their respective owners

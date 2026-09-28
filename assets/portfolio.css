@@ -63,6 +63,11 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
 .link-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0 21px; }
 .link-row a { display: inline-flex; align-items: center; min-height: 36px; padding-block: 5px; font-size: 14px; color: var(--ink); text-decoration-color: #c0c5bb; }
 .link-row a:hover { color: var(--accent); text-decoration-color: currentColor; }
+.github-link { display: inline-flex; align-items: center; gap: 7px; }
+.github-link .link-icon { width: 18px; height: 18px; flex: 0 0 18px; object-fit: contain; }
+.link-row a.github-link--icon { width: 40px; min-height: 44px; padding: 0; justify-content: center; border-radius: 5px; text-decoration: none; }
+.link-row a.github-link--icon:hover { background: #f0f2ef; }
+.hero-links .github-link--icon .link-icon { width: 22px; height: 22px; flex-basis: 22px; }
 .hero-links .link-row { column-gap: 28px; }
 .hero-links a { font-size: 15px; min-height: 44px; font-weight: 500; }
 .portrait { align-self: start; margin-top: 7px; }

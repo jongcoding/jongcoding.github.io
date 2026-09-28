@@ -13,6 +13,8 @@ Updated 28 September 2026
 - [MSGCTF 2026 frontend logo](https://github.com/MSG-CTF/front-team/blob/1ee323c27cb4ce2fed99cb8a86abe6389761528d/public/assets/login/logo-cutout.png), used by the official login screen and copied unchanged for the current project
 - [Resource Broker provider inventory](https://github.com/MSG-CTF/resource-broker/blob/41f53e2502dff6e4c315431eec805151fdd89d6e/README.md) and [provider enum](https://github.com/MSG-CTF/resource-broker/blob/41f53e2502dff6e4c315431eec805151fdd89d6e/app/domain/enums.py), confirming AWS, Azure and GCP VM inventory and Kubernetes runtime support
 - [Frontend platform contract](https://github.com/MSG-CTF/front-team/blob/main/README.md), [DevSecOps release flow](https://github.com/MSG-CTF/msgctf-devsecops/blob/main/README.md) and [Sentinel responsibilities](https://github.com/MSG-CTF/sentinel/blob/dev/README.md), used for the platform scenes and role descriptions
+- [DevSecOps supply chain](https://github.com/MSG-CTF/msgctf-devsecops/blob/b39f232fc4759b70928c4960e7a17bb33264bcec/README.md), confirming Docker builds, Gitleaks and Trivy checks, CycloneDX SBOM, GHCR publication and Backend release ingestion
+- [Broker reservation contract](https://github.com/MSG-CTF/resource-broker/blob/41f53e2502dff6e4c315431eec805151fdd89d6e/docs/SCHEDULER_API.md) and [Scheduler operations](https://github.com/MSG-CTF/instance-scheduler/blob/38a05dd9b5311cb13ba1762035082c38d9599218/src/main/kotlin/kr/msgctf/scheduler/instance/service/InstanceOperationService.kt), used to distinguish candidate discovery, capacity holds, Runtime creation and subsequent commit
 - The owner's clarification that vendors means cloud providers, rather than event sponsors
 - Existing MSGCTF architecture and integration-review records, used to describe the owner's architecture, review and validation work
 - Previously published portfolio descriptions of Sealed Board, Phantompass and Observatory, including their event dates and deployment deliverables
@@ -67,10 +69,13 @@ They do not claim to be live production telemetry or recordings of an operationa
 The existing WEAVE and DBREACH screenshots remain accessible through the supplementary materials links
 
 MSGCTF introduces Frontend, Backend, Scheduler, Runtime, DevSecOps, Resource Broker and Monitoring across four readable scenes
-Release preparation shows DevSecOps and Backend, participant requests show Frontend, Backend and Scheduler, execution shows Resource Broker, Scheduler and Runtime, and operations show Runtime, Monitoring and Scheduler
-An action heading and a compact interface example lead each scene, with two or three service names as supporting context
-The animated examples show validation checks completing before release registration, a participant action followed by access verification and request acceptance, cloud selection followed by a team workspace, and a runtime health event followed by a recovery request
-The examples are labelled as design illustrations and do not represent a recorded production interface or live health data
+DevSecOps, Resource Broker, Instance Scheduler and Monitoring each lead one scene with a prominent service name and action heading
+Source files become image layers, security checks and SBOM artifacts before registry publication and Backend ingestion
+Cloud-provider inventory appears as racks, with the chosen target producing a held reservation for Scheduler
+Scheduler dispatches a Runtime operation and isolated containers enter separate team namespaces before the reservation is committed
+Monitoring shows a conceptual response trace and passes the resulting recovery request to Scheduler
+Frontend and Backend remain identified as the participant request path in the Broker scene and all seven roles retain their complete descriptions and repository links
+The examples are labelled as design illustrations and do not represent production recordings, measured capacity or live health data
 The optional role overview retains the fuller responsibility descriptions and connections, including DevSecOps artifacts consumed by Runtime
 These scenes summarize responsibility boundaries rather than enumerating every API call or network dependency
 Monitoring is not shown directly creating or deleting workloads, and DevSecOps is not shown directly writing Scheduler or Broker state
@@ -78,17 +83,18 @@ KOTH scoring remains in the current project scope and Backend's competition resp
 GnawLab's document transfer and permissions panels summarize research scope without adding exploit mechanics or claiming a security fix
 WEAVE's five categories and example topics come from the existing taxonomy screenshot, with HTTP Parameter Pollution under syntax parsing and duplicate-key handling
 DBREACH's data blocks illustrate compression rather than measured data, a benchmark or a compression ratio
-The MSGCTF flow runs for sixteen seconds across release, request, workspace and recovery scenes
+The MSGCTF flow runs for twenty seconds across build, resource brokerage, scheduling and monitoring scenes
 Visitors can select any scene to pause there, including static selection when reduced motion is enabled
 The other three previews use staged entrances, document transfer, taxonomy expansion, data-block movement and chapter progress on nine-second timelines
 
 Project headings use the original MSGCTF, GnawLab, WEAVE and INC0GNITO marks, with the ENKI WhiteHat wordmark in the employment section
 The current MSGCTF project and preview use the 2026 frontend's maple-leaf and mountain mark instead of the organization's older red avatar
 The PNG's colors and transparency are unchanged, with an SVG display viewport removing empty outer margins, while the 2025 archive retains its historical material
-The full-width platform preview places a large action heading beside an interface illustration on desktop, stacking the two on mobile
-Repeated interface toolbars and captions are removed, leaving larger action results and short descriptions with service names as secondary context
+The full-width platform preview places an action heading beside dimensional SVG objects on desktop, stacking the two on mobile
+The new scenes use layered images, inventory racks, containers, namespaces and a response trace, with concise HTML labels remaining readable around the drawings
 The shared page styles increase smaller body and link text sizes and strengthen muted text contrast
-Official AWS, Azure and Google Cloud artwork appears inside the placement example, with the selected provider leading to creation of an isolated team workspace
+Official AWS, Azure and Google Cloud artwork identifies the inventory sources, while the Kubernetes icon identifies the illustrated Runtime
+The GitHub icon replaces generic GitHub text links and accompanies descriptive repository labels, with accessible destination names and 44-pixel icon-only targets
 The seven component repository links remain visible outside the optional role overview
 GnawLab uses AWS S3, Bedrock and Lambda service icons to identify the illustrated knowledge source, agent and action group
 WEAVE moves through a folder index, an expanded case sheet and a two-column interpretation comparison
