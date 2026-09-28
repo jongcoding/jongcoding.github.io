@@ -1,4 +1,4 @@
-# Jong-Yun Lee / ialleejy
+# ialleejy / Jong-Yun Lee
 
 Personal portfolio for web and cloud security research, CTF infrastructure, and selected engineering projects
 
@@ -43,8 +43,12 @@ The earlier MSG CTF 2025 platform has a separate entry in More projects
 
 ## Project previews
 
-MSGCTF and GnawLab use inline SVG illustrations of the architecture and research scope
-WEAVE and DBREACH use original project screenshots and research materials
+The header, primary heading and browser title use the owner's handle, ialleejy, with the full name in the identity line
+
+MSGCTF uses a three-scene SVG preview of an instance request, resource allocation and a ready runtime
+GnawLab shows document context, the Bedrock Agent flow and the boundary between input and permissions
+WEAVE and DBREACH use original project screenshots with framed transitions and slow camera movement
+All previews include chapter progress and share a nine-second timeline
 
 - Each sequence runs once for nine seconds when at least 35% of the preview is visible
 - Playback pauses outside the viewport or while the document is hidden

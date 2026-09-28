@@ -49,6 +49,11 @@ Four nine-second project previews use local SVG, original research images, CSS a
 Animation states, image transitions and the mobile diagram were inspected through browser screenshots
 The MSGCTF GIF in `docs/preview/` is a capture of the website's vector animation for review, not a runtime dependency
 
+The refined version was checked at 1,700 ms, 4,500 ms and 8,500 ms in both languages
+These checkpoints cover the request or document scene, orchestration, and the final runtime or permissions scene
+SVG labels fit inside the scene viewport and the primary header and heading use ialleejy in both languages
+The review GIF is captured at 30 frames per second while browser playback uses the native animation timeline
+
 ## Limits
 
 Checks cover local Chromium behavior rather than exhaustive browser or accessibility certification

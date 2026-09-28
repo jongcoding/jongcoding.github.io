@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#ffffff">
-  <title>Jong-Yun Lee / Security Research &amp; Cloud Platforms</title>
+  <title>ialleejy / Jong-Yun Lee / Security Research &amp; Cloud Platforms</title>
   <meta name="description" content="Security researcher at ENKI WhiteHat / DEF CON 34 CTF finalist and Demo Labs speaker / Building MSGCTF Cloud Platform">
   <link rel="canonical" href="https://jongcoding.github.io/">
   <link rel="alternate" hreflang="en" href="https://jongcoding.github.io/">
   <link rel="alternate" hreflang="ko" href="https://jongcoding.github.io/index_ko.html">
   <link rel="alternate" hreflang="x-default" href="https://jongcoding.github.io/">
   <meta property="og:type" content="profile">
-  <meta property="og:title" content="Jong-Yun Lee / Security Research &amp; Cloud Platforms">
+  <meta property="og:title" content="ialleejy / Jong-Yun Lee / Security Research &amp; Cloud Platforms">
   <meta property="og:description" content="Security researcher at ENKI WhiteHat / DEF CON 34 CTF finalist and Demo Labs speaker / Building MSGCTF Cloud Platform">
   <meta property="og:url" content="https://jongcoding.github.io/">
   <meta property="og:image" content="https://jongcoding.github.io/assets/profile.jpg">
@@ -28,7 +28,7 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="wordmark" href="#top" aria-label="Jong-Yun Lee">Jong-Yun Lee</a>
+      <a class="wordmark" href="#top" aria-label="ialleejy">ialleejy</a>
       <div class="header-right">
         <nav class="nav" aria-label="Main navigation">
           <a href="#projects">Work</a>
@@ -45,8 +45,8 @@
   <main class="wrap" id="main" tabindex="-1">
     <section class="hero" aria-labelledby="intro-title">
       <div class="hero-text">
-        <h1 id="intro-title">Jong-Yun Lee</h1>
-        <p class="hero-identity">이종윤<span>ialleejy</span></p>
+        <h1 id="intro-title">ialleejy</h1>
+        <p class="hero-identity">Jong-Yun Lee<span>이종윤</span></p>
         <p class="hero-role">Web &amp; cloud security researcher</p>
         <p class="hero-copy">Security research and CTF challenge design at ENKI WhiteHat<br> Currently designing and building MSGCTF Cloud Platform with the team</p>
         <div class="hero-links"><div class="link-row" aria-label="Contact &amp; profiles"><a href="https://github.com/jongcoding" target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -93,24 +93,50 @@
             <a href="https://github.com/MSG-CTF" target="_blank" rel="noopener noreferrer" class="feature-link">MSG-CTF on GitHub</a>
           </div>
           <figure class="project-film film-msgctf" data-film="msgctf" data-state="ready" data-duration="9000">
-      <div class="film-stage"><svg class="flow-scene" viewBox="0 0 560 348" role="img" aria-labelledby="msg-film-title msg-film-desc">
-          <title id="msg-film-title">Instance lifecycle</title>
-          <desc id="msg-film-desc">A schematic of an API request reaching the scheduler, capacity selection through the broker and instance creation in an isolated runtime</desc>
-          <text class="scene-name" x="30" y="34">MSGCTF</text><text class="scene-kind" x="530" y="34" text-anchor="end">Architecture</text>
-          <path class="scene-rule" d="M30 52H530"/>
-          <g class="flow-guides"><path d="M164 172H216"/><path d="M350 172H378V112H406"/><path d="M350 172H378V248H406"/></g>
-          <g class="flow-traces"><path class="trace-api" pathLength="100" d="M164 172H216"/><path class="trace-broker" pathLength="100" d="M350 172H378V112H406"/><path class="trace-runtime" pathLength="100" d="M350 172H378V248H406"/></g>
-          <g class="flow-node api-node"><rect x="32" y="142" width="132" height="60"/><text x="98" y="177">Platform API</text></g>
-          <g class="flow-node scheduler-node"><rect x="216" y="136" width="134" height="72"/><text x="283" y="177">Scheduler</text></g>
-          <g class="flow-node broker-node"><rect x="406" y="82" width="126" height="60"/><text x="469" y="117">Resource Broker</text></g>
-          <g class="flow-node runtime-node"><rect x="406" y="218" width="126" height="60"/><text x="469" y="253">Isolated Runtime</text></g>
-          <text class="flow-label" x="188" y="158" text-anchor="middle">request</text>
-          <text class="flow-label" x="400" y="68" text-anchor="end">capacity</text>
-          <text class="flow-label" x="400" y="299" text-anchor="end">workload</text>
-          <g class="instance-slip"><rect x="434" y="279" width="72" height="22"/><path d="m447 290 4 4 7-8"/><text x="477" y="294">ready</text></g>
-          <text class="scene-foot" x="30" y="324">Request</text><text class="scene-foot" x="216" y="324">Schedule</text><text class="scene-foot" x="532" y="324" text-anchor="end">Isolate</text>
-        </svg><div class="film-progress" aria-hidden="true"></div></div>
-      <figcaption><span id="msgctf-film-caption">Instance lifecycle</span><button type="button" hidden aria-describedby="msgctf-film-caption" data-play="Play preview" data-pause="Pause" data-resume="Resume" data-replay="Replay"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path class="play-icon" d="M4 2.5 12 8 4 13.5Z"/><path class="pause-icon" d="M5 3v10M11 3v10"/></svg><span>Play preview</span></button></figcaption>
+      <div class="film-stage"><svg class="story-canvas" viewBox="0 0 560 348" role="img" aria-labelledby="msgctf-story-title msgctf-story-desc">
+        <title id="msgctf-story-title">From request to runtime</title><desc id="msgctf-story-desc">An illustrated instance request, scheduling and broker allocation, followed by an isolated runtime</desc>
+        <defs><clipPath id="msgctf-story-clip"><rect x="16" y="60" width="528" height="244"/></clipPath></defs>
+        <text class="story-brand" x="28" y="34">MSGCTF</text><text class="story-label" x="532" y="34" text-anchor="end">Architecture preview</text>
+        <path class="story-rule" d="M28 53H532"/>
+        <g clip-path="url(#msgctf-story-clip)">
+          <g class="story-scene scene-one">
+            <text class="story-heading" x="32" y="93">An environment for your team</text>
+            <g class="request-panel">
+              <rect class="surface" x="62" y="121" width="436" height="158" rx="8"/>
+              <text class="micro-label" x="86" y="149">CHALLENGE INSTANCE</text>
+              <g class="code-emblem"><rect x="86" y="169" width="51" height="51" rx="6"/><path d="m105 184-7 10 7 10m14-20 7 10-7 10"/></g>
+              <text class="panel-heading" x="151" y="192">Web environment</text>
+              <text class="panel-subtitle" x="151" y="213">An isolated team instance</text>
+              <path class="panel-rule" d="M86 235H306"/>
+              <text class="micro-label" x="86" y="257">TEAM WORKSPACE</text>
+              <g class="create-button"><rect x="332" y="233" width="142" height="31" rx="4"/><text x="403" y="253" text-anchor="middle">Create instance</text></g>
+            </g>
+            <g class="request-cursor"><path d="m440 272 0-24 17 17-10-1-7 8Z"/></g>
+            <g class="request-receipt"><rect x="328" y="165" width="146" height="49" rx="5"/><path class="receipt-check" d="m345 189 5 5 10-11"/><text x="416" y="194" text-anchor="middle">Request received</text></g>
+          </g>
+          <g class="story-scene scene-two">
+            <text class="story-heading" x="32" y="93">Allocate the runtime</text>
+            <g class="route-guides"><path d="M159 195H212"/><path d="M354 195H383V144H410"/><path d="M354 195H383V254H410"/></g>
+            <g class="route-ink"><path class="route-one" pathLength="100" d="M159 195H212"/><path class="route-two" pathLength="100" d="M354 195H383V144H410"/><path class="route-three" pathLength="100" d="M354 195H383V254H410"/></g>
+            <g class="orchestrator node-one"><rect x="32" y="160" width="127" height="70" rx="5"/><text x="95" y="199" text-anchor="middle">Platform API</text></g>
+            <g class="orchestrator scheduler node-two"><rect x="212" y="154" width="142" height="82" rx="5"/><path class="scheduler-mark" d="M229 171h8v8h-8zm13 0h8v8h-8zm-13 13h8v8h-8zm13 0h8v8h-8z"/><text x="283" y="215" text-anchor="middle">Scheduler</text></g>
+            <g class="orchestrator node-three"><rect x="410" y="114" width="119" height="60" rx="5"/><text x="469" y="141" text-anchor="middle">Resource</text><text x="469" y="158" text-anchor="middle">Broker</text></g>
+            <g class="orchestrator runtime node-four"><rect x="410" y="222" width="119" height="60" rx="5"/><text x="469" y="249" text-anchor="middle">Isolated</text><text x="469" y="266" text-anchor="middle">Runtime</text></g>
+          </g>
+          <g class="story-scene scene-three">
+            <text class="story-heading" x="32" y="93">Your instance is ready</text>
+            <g class="ready-panel">
+              <rect class="surface" x="62" y="116" width="436" height="173" rx="8"/>
+              <rect class="ready-icon" x="86" y="141" width="37" height="37" rx="5"/><path class="ready-check" pathLength="100" d="m96 159 7 7 12-14"/>
+              <text class="ready-heading" x="141" y="159">Instance ready</text>
+              <text class="panel-subtitle" x="141" y="181">An isolated runtime for the team</text>
+              <path class="panel-rule" d="M86 202H474"/>
+              <g class="service service-one"><path class="service-icon" d="m90 222-5 6 5 6m13-12 5 6-5 6"/><text x="86" y="258">Web</text></g>
+              <g class="service service-two"><path class="service-icon" d="M235 221h18v13h-18zm4 17h10m-5-4v4"/><text x="235" y="258">Network</text></g>
+              <g class="service service-three"><path class="service-icon" d="M382 237v-16m8 16v-10m8 10v-20"/><text x="381" y="258">Monitoring</text></g>
+            </g>
+          </g></g><g class="chapter chapter-1"><path class="chapter-track" d="M28 313h160"/><path class="chapter-fill" pathLength="100" d="M28 313h160"/><text x="28" y="335"><tspan class="chapter-number">01</tspan><tspan dx="10">Request</tspan></text></g><g class="chapter chapter-2"><path class="chapter-track" d="M200 313h160"/><path class="chapter-fill" pathLength="100" d="M200 313h160"/><text x="200" y="335"><tspan class="chapter-number">02</tspan><tspan dx="10">Allocate</tspan></text></g><g class="chapter chapter-3"><path class="chapter-track" d="M372 313h160"/><path class="chapter-fill" pathLength="100" d="M372 313h160"/><text x="372" y="335"><tspan class="chapter-number">03</tspan><tspan dx="10">Ready</tspan></text></g></svg></div>
+      <figcaption><span id="msgctf-film-caption">From request to runtime</span><button type="button" hidden aria-describedby="msgctf-film-caption" data-play="Play preview" data-pause="Pause" data-resume="Resume" data-replay="Replay"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path class="play-icon" d="M4 2.5 12 8 4 13.5Z"/><path class="pause-icon" d="M5 3v10M11 3v10"/></svg><span>Play preview</span></button></figcaption>
     </figure>
         </div>
         <div class="feature-repositories">
@@ -127,20 +153,46 @@
 
       <article class="project-row" id="detail-gnawlab">
         <figure class="project-film film-gnawlab" data-film="gnawlab" data-state="ready" data-duration="9000">
-      <div class="film-stage"><svg class="cloud-scene" viewBox="0 0 560 348" role="img" aria-labelledby="gnaw-film-title gnaw-film-desc">
-          <title id="gnaw-film-title">RAG & agent trust boundaries</title><desc id="gnaw-film-desc">A conceptual view of documents, a Bedrock Agent and an action group across trust boundaries</desc>
-          <text class="scene-name" x="30" y="34">GnawLab</text><text class="scene-kind" x="530" y="34" text-anchor="end">AWS Bedrock</text><path class="scene-rule" d="M30 52H530"/>
-          <path class="cloud-boundary" d="M200 89V268M383 89V268"/>
-          <g class="flow-guides"><path d="M169 179H226"/><path d="M346 179H405"/></g>
-          <g class="flow-traces"><path class="trace-knowledge" pathLength="100" d="M169 179H226"/><path class="trace-action" pathLength="100" d="M346 179H405"/></g>
-          <g class="document-sheet"><path d="M67 109V82h34l12 12v29H67"/><path d="M101 82v13h12M78 105h23M78 114h16"/></g>
-          <g class="flow-node kb-node"><rect x="37" y="140" width="132" height="78"/><text x="103" y="178">Knowledge</text><text x="103" y="197">base</text></g>
-          <g class="flow-node agent-node"><rect x="226" y="140" width="120" height="78"/><text x="286" y="178">Bedrock</text><text x="286" y="197">Agent</text></g>
-          <g class="flow-node action-node"><rect x="405" y="140" width="119" height="78"/><text x="464" y="178">Action</text><text x="464" y="197">group</text></g>
-          <text class="flow-label" x="200" y="286" text-anchor="middle">Documents & model</text><text class="flow-label" x="383" y="286" text-anchor="middle">Response & action</text>
-          <text class="scene-foot" x="30" y="324">Bedrock Agent scenario contribution</text><text class="scene-foot" x="530" y="324" text-anchor="end">Terraform / AWS</text>
-        </svg><div class="film-progress" aria-hidden="true"></div></div>
-      <figcaption><span id="gnawlab-film-caption">RAG & agent trust boundaries</span><button type="button" hidden aria-describedby="gnawlab-film-caption" data-play="Play preview" data-pause="Pause" data-resume="Resume" data-replay="Replay"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path class="play-icon" d="M4 2.5 12 8 4 13.5Z"/><path class="pause-icon" d="M5 3v10M11 3v10"/></svg><span>Play preview</span></button></figcaption>
+      <div class="film-stage"><svg class="story-canvas" viewBox="0 0 560 348" role="img" aria-labelledby="gnawlab-story-title gnawlab-story-desc">
+        <title id="gnawlab-story-title">From context to permissions</title><desc id="gnawlab-story-desc">An illustrated research overview of knowledge-base documents, a Bedrock Agent and execution permissions</desc>
+        <defs><clipPath id="gnawlab-story-clip"><rect x="16" y="60" width="528" height="244"/></clipPath></defs>
+        <text class="story-brand" x="28" y="34">GnawLab</text><text class="story-label" x="532" y="34" text-anchor="end">AWS Bedrock</text>
+        <path class="story-rule" d="M28 53H532"/>
+        <g clip-path="url(#gnawlab-story-clip)">
+          <g class="story-scene scene-one">
+            <text class="story-heading" x="32" y="93">The documents an agent reads</text>
+            <g class="paper paper-back"><rect x="152" y="123" width="270" height="161" rx="5"/></g>
+            <g class="paper paper-middle"><rect x="132" y="119" width="282" height="166" rx="5"/></g>
+            <g class="paper paper-front"><rect x="118" y="116" width="293" height="163" rx="5"/>
+              <path class="paper-icon" d="M142 138h18l7 7v19h-25zm18 0v8h7M148 153h12M148 158h8"/>
+              <text class="panel-heading" x="179" y="154">Knowledge base</text>
+              <text class="panel-subtitle" x="142" y="186">Context retrieved from documents</text>
+              <path class="paper-line" d="M142 206H386M142 219H367M142 245H326"/>
+              <rect class="context-highlight" x="140" y="228" width="234" height="8" rx="2"/>
+            </g>
+          </g>
+          <g class="story-scene scene-two">
+            <text class="story-heading" x="32" y="93">Where context becomes an action</text>
+            <path class="trust-divider" d="M190 119V278M382 119V278"/>
+            <g class="route-guides"><path d="M163 195H217"/><path d="M350 195H404"/></g>
+            <g class="route-ink"><path class="route-one" pathLength="100" d="M163 195H217"/><path class="route-three" pathLength="100" d="M350 195H404"/></g>
+            <g class="orchestrator node-one"><rect x="33" y="158" width="130" height="75" rx="5"/><text x="98" y="189" text-anchor="middle">Knowledge</text><text x="98" y="208" text-anchor="middle">base</text></g>
+            <g class="orchestrator scheduler node-two"><rect x="217" y="151" width="133" height="88" rx="5"/><text x="283" y="188" text-anchor="middle">Bedrock</text><text x="283" y="209" text-anchor="middle">Agent</text></g>
+            <g class="orchestrator node-four"><rect x="404" y="158" width="123" height="75" rx="5"/><text x="465" y="189" text-anchor="middle">Action</text><text x="465" y="208" text-anchor="middle">group</text></g>
+            <text class="micro-label boundary-label" x="190" y="271" text-anchor="middle">CONTEXT</text><text class="micro-label boundary-label" x="382" y="271" text-anchor="middle">ACTION</text>
+          </g>
+          <g class="story-scene scene-three">
+            <text class="story-heading" x="32" y="93">The boundary between input and authority</text>
+            <g class="boundary-panel"><rect class="surface" x="62" y="116" width="436" height="173" rx="8"/>
+              <g class="boundary-input"><path class="paper-icon" d="M90 144h22l8 8v28H90zm22 0v9h8M97 163h16M97 171h11"/>
+                <text class="panel-heading" x="89" y="214">Document context</text><text class="panel-subtitle" x="89" y="237">Knowledge base</text></g>
+              <g class="boundary-action"><path class="paper-icon" d="M325 157h22v23h-22zm5 0v-7a6 6 0 0 1 12 0v7M336 166v6"/>
+                <text class="panel-heading" x="323" y="214">Execution permissions</text><text class="panel-subtitle" x="323" y="237">Bedrock Agent</text></g>
+              <path class="boundary-line" pathLength="100" d="M282 136V252"/>
+              <text class="micro-label" x="280" y="274" text-anchor="middle">DEF CON 34 / DEMO LABS</text>
+            </g>
+          </g></g><g class="chapter chapter-1"><path class="chapter-track" d="M28 313h160"/><path class="chapter-fill" pathLength="100" d="M28 313h160"/><text x="28" y="335"><tspan class="chapter-number">01</tspan><tspan dx="10">Context</tspan></text></g><g class="chapter chapter-2"><path class="chapter-track" d="M200 313h160"/><path class="chapter-fill" pathLength="100" d="M200 313h160"/><text x="200" y="335"><tspan class="chapter-number">02</tspan><tspan dx="10">Agent</tspan></text></g><g class="chapter chapter-3"><path class="chapter-track" d="M372 313h160"/><path class="chapter-fill" pathLength="100" d="M372 313h160"/><text x="372" y="335"><tspan class="chapter-number">03</tspan><tspan dx="10">Boundaries</tspan></text></g></svg></div>
+      <figcaption><span id="gnawlab-film-caption">From context to permissions</span><button type="button" hidden aria-describedby="gnawlab-film-caption" data-play="Play preview" data-pause="Pause" data-resume="Resume" data-replay="Replay"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path class="play-icon" d="M4 2.5 12 8 4 13.5Z"/><path class="pause-icon" d="M5 3v10M11 3v10"/></svg><span>Play preview</span></button></figcaption>
     </figure>
         <div class="project-copy">
           <p class="project-meta">2026</p>
@@ -154,8 +206,8 @@
 
       <article class="project-row" id="detail-weave">
         <figure class="project-film film-weave" data-film="weave" data-state="ready" data-duration="9000">
-      <div class="film-stage"><div class="research-scene"><div class="research-scene-head"><span>WEAVE</span><span>Project materials</span></div><div class="research-frames"><div class="research-frame frame-1"><img src="assets/weave-site.png" alt="Vulnerability taxonomy" loading="lazy" width="1000" height="640"><p>Vulnerability taxonomy</p></div><div class="research-frame frame-2"><img src="assets/weave-arch.png" alt="Platform architecture" loading="lazy" width="1000" height="640"><p>Platform architecture</p></div><div class="research-frame frame-3"><img src="assets/weave-document.png" alt="Research documentation" loading="lazy" width="1000" height="640"><p>Research documentation</p></div></div></div><div class="film-progress" aria-hidden="true"></div></div>
-      <figcaption><span id="weave-film-caption">From cases to a taxonomy</span><button type="button" hidden aria-describedby="weave-film-caption" data-play="Play preview" data-pause="Pause" data-resume="Resume" data-replay="Replay"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path class="play-icon" d="M4 2.5 12 8 4 13.5Z"/><path class="pause-icon" d="M5 3v10M11 3v10"/></svg><span>Play preview</span></button></figcaption>
+      <div class="film-stage"><div class="research-scene"><div class="research-scene-head"><span>WEAVE</span><span>Project materials</span></div><div class="research-frames"><div class="research-frame frame-1"><div class="research-window"><img src="assets/weave-site.png" alt="Organize cases by root cause" loading="lazy" width="1000" height="640"></div><p><span>01 / 03</span>Organize cases by root cause</p></div><div class="research-frame frame-2"><div class="research-window"><img src="assets/weave-arch.png" alt="A platform connecting the research" loading="lazy" width="1000" height="640"></div><p><span>02 / 03</span>A platform connecting the research</p></div><div class="research-frame frame-3"><div class="research-window"><img src="assets/weave-document.png" alt="From taxonomy to documentation" loading="lazy" width="1000" height="640"></div><p><span>03 / 03</span>From taxonomy to documentation</p></div></div><div class="research-chapters" aria-hidden="true"><span class="research-chapter chapter-1"><i></i>Explore</span><span class="research-chapter chapter-2"><i></i>Architecture</span><span class="research-chapter chapter-3"><i></i>Research</span></div></div></div>
+      <figcaption><span id="weave-film-caption">Explore cases and research</span><button type="button" hidden aria-describedby="weave-film-caption" data-play="Play preview" data-pause="Pause" data-resume="Resume" data-replay="Replay"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path class="play-icon" d="M4 2.5 12 8 4 13.5Z"/><path class="pause-icon" d="M5 3v10M11 3v10"/></svg><span>Play preview</span></button></figcaption>
     </figure>
         <div class="project-copy">
           <p class="project-meta">2025</p>
@@ -173,8 +225,8 @@
 
       <article class="project-row" id="dbreach">
         <figure class="project-film film-dbreach" data-film="dbreach" data-state="ready" data-duration="9000">
-      <div class="film-stage"><div class="research-scene"><div class="research-scene-head"><span>DBREACH</span><span>Project materials</span></div><div class="research-frames"><div class="research-frame frame-1"><img src="assets/dbreach-setup.png" alt="MariaDB experiment setup" loading="lazy" width="1000" height="640"><p>MariaDB experiment setup</p></div><div class="research-frame frame-2"><img src="assets/dbreach-loop.png" alt="Measurement flow" loading="lazy" width="1000" height="640"><p>Measurement flow</p></div><div class="research-frame frame-3"><img src="assets/dbreach-group.png" alt="Experiment record" loading="lazy" width="1000" height="640"><p>Experiment record</p></div></div></div><div class="film-progress" aria-hidden="true"></div></div>
-      <figcaption><span id="dbreach-film-caption">Experiment setup & research</span><button type="button" hidden aria-describedby="dbreach-film-caption" data-play="Play preview" data-pause="Pause" data-resume="Resume" data-replay="Replay"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path class="play-icon" d="M4 2.5 12 8 4 13.5Z"/><path class="pause-icon" d="M5 3v10M11 3v10"/></svg><span>Play preview</span></button></figcaption>
+      <div class="film-stage"><div class="research-scene"><div class="research-scene-head"><span>DBREACH</span><span>Project materials</span></div><div class="research-frames"><div class="research-frame frame-1"><div class="research-window"><img src="assets/dbreach-setup.png" alt="A reproducible experiment setup" loading="lazy" width="1000" height="640"></div><p><span>01 / 03</span>A reproducible experiment setup</p></div><div class="research-frame frame-2"><div class="research-window"><img src="assets/dbreach-loop.png" alt="Document the measurement process" loading="lazy" width="1000" height="640"></div><p><span>02 / 03</span>Document the measurement process</p></div><div class="research-frame frame-3"><div class="research-window"><img src="assets/dbreach-group.png" alt="Review experiments and results" loading="lazy" width="1000" height="640"></div><p><span>03 / 03</span>Review experiments and results</p></div></div><div class="research-chapters" aria-hidden="true"><span class="research-chapter chapter-1"><i></i>Setup</span><span class="research-chapter chapter-2"><i></i>Measure</span><span class="research-chapter chapter-3"><i></i>Review</span></div></div></div>
+      <figcaption><span id="dbreach-film-caption">Experiment setup and research</span><button type="button" hidden aria-describedby="dbreach-film-caption" data-play="Play preview" data-pause="Pause" data-resume="Resume" data-replay="Replay"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path class="play-icon" d="M4 2.5 12 8 4 13.5Z"/><path class="pause-icon" d="M5 3v10M11 3v10"/></svg><span>Play preview</span></button></figcaption>
     </figure>
         <div class="project-copy">
           <p class="project-meta">Started December 2024</p>
@@ -359,6 +411,6 @@
 <a href="mailto:ialleejy@gmail.com">Email</a></div>
     </section>
   </main>
-  <footer class="wrap site-footer"><span>© 2026 Jong-Yun Lee</span><span>Updated September 2026</span><a href="#top">Back to top ↑</a></footer>
+  <footer class="wrap site-footer"><span>© 2026 ialleejy</span><span>Updated September 2026</span><a href="#top">Back to top ↑</a></footer>
 </body>
 </html>

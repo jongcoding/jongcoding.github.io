@@ -34,7 +34,7 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
 .skip-link:focus-visible { transform: translateY(0); }
 .site-header { position: sticky; top: 0; z-index: 5; background: var(--paper); }
 .header-inner { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; border-bottom: 1px solid var(--line); }
-.wordmark { font-size: 15px; font-weight: 650; letter-spacing: -.025em; text-decoration: none; }
+.wordmark { font-size: 19px; font-weight: 650; letter-spacing: -.035em; text-decoration: none; }
 .header-right, .nav, .language-switch { display: flex; align-items: center; }
 .header-right { gap: 34px; }
 .nav { gap: 30px; }
@@ -217,8 +217,7 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
   .contact { align-items: flex-start; flex-direction: column; gap: 18px; padding-block: 30px; }
 }
 @media (max-width: 520px) {
-  .wordmark { font-size: 14px; }
-  html[lang="en"] .wordmark { font-size: 13px; }
+  .wordmark { font-size: 18px; }
   .header-right { gap: 12px; }
   .nav { gap: 18px; }
   .nav a { font-size: 12px; }
@@ -227,8 +226,7 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
   .language-switch a { min-width: 27px; }
   .hero { grid-template-columns: minmax(0, 1fr) 77px; gap: 0 16px; align-items: start; padding-top: 38px; }
   .hero-text { display: contents; }
-  .hero h1 { grid-column: 1; font-size: clamp(30px, 8.5vw, 42px); margin-top: 5px; }
-  html[lang="ko"] .hero h1 { font-size: 44px; }
+  .hero h1 { grid-column: 1; font-size: 49px; margin-top: 5px; }
   .hero-identity { grid-column: 1; font-size: 12px; gap: 12px; margin-top: 11px; }
   .hero-role, .hero-copy, .hero-links { grid-column: 1 / -1; }
   .hero-role { font-size: 23px; margin-top: 32px; }
@@ -275,8 +273,7 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
   .language-switch { padding-left: 5px; }
   .language-switch a { min-width: 23px; }
   .hero { grid-template-columns: minmax(0, 1fr) 61px; column-gap: 12px; }
-  .hero h1 { font-size: 31px; }
-  html[lang="ko"] .hero h1 { font-size: 40px; }
+  .hero h1 { font-size: 45px; }
   .portrait img { width: 61px; height: 80px; }
   .hero-role { font-size: 21px; }
   .hero-links .link-row { column-gap: 23px; }

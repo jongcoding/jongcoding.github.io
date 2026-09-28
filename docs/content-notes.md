@@ -24,7 +24,8 @@ Its authentication wall prevented direct profile review, so the relevant additio
 
 ## Editorial decisions
 
-- Lead with name, current work, contact links, DEF CON finals participation and the Demo Labs presentation
+- Lead with the owner's handle ialleejy, current work, contact links, DEF CON finals participation and the Demo Labs presentation
+- Keep the full Korean and English names below the primary handle and retain the real-name profile metadata
 - Separate the seventh-place qualifier result from finals participation without implying a finals ranking
 - Describe ENKI work through research topics, challenge authorship and reproducible lab delivery
 - Keep INC0GNITO's February to May 2026 community organizing and authorship separate from the ENKI role that started in March
@@ -56,6 +57,10 @@ An optional local script controls four short project previews with explicit paus
 The MSGCTF and GnawLab animations are conceptual illustrations of documented architecture and research scope
 They do not claim to be live production telemetry or recordings of an operational system
 WEAVE and DBREACH previews show the project's existing image assets
+
+MSGCTF's request form, cursor action and runtime screen are illustrative interface elements within the architecture preview
+GnawLab's documents and permissions panels summarize research scope without adding exploit mechanics or claiming a security fix
+The sequences use staged entrances, chapter progress, smooth lateral transitions and restrained image zoom
 
 The original research assets and unrelated repository files are retained
 The two portfolio entry pages use a shared stylesheet and local presentation assets
