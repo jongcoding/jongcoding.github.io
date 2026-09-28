@@ -29,7 +29,8 @@ Its authentication wall prevented direct profile review, so the relevant additio
 - Lead with the owner's handle ialleejy, current work, contact links, DEF CON finals participation and the Demo Labs presentation
 - Keep the full Korean and English names below the primary handle and retain the real-name profile metadata
 - Separate the seventh-place qualifier result from finals participation without implying a finals ranking
-- Describe ENKI work through research topics, challenge authorship and reproducible lab delivery
+- Describe ENKI work through web and cloud security research, vulnerability analysis and research environment engineering
+- Keep CTF authorship in the named event credits rather than in the profile introduction or the general job summary
 - Keep INC0GNITO's February to May 2026 community organizing and authorship separate from the ENKI role that started in March
 - Keep community work on GnawLab distinct from employer ownership
 - Mark MSGCTF Cloud Platform as a team project in development, with integration and operational validation ongoing
