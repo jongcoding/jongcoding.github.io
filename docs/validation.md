@@ -42,6 +42,18 @@ MSGCTF's preview spans the project width and places action headings above the il
 The other project previews stack below their descriptions on narrow screens
 Mobile paragraph spacing checked after removing sentence-ending periods
 
+## Typography and finish
+
+- Official SUIT and Manrope SIL Open Font License 1.1 notices retained with the local font files
+- Font metadata checked for variable weight ranges of 100–900 for SUIT and 200–800 for Manrope
+- Chromium's rendered-font inspection confirms Manrope for the nickname and illustration labels, and SUIT for body copy, Korean headings and SVG scene text in both languages
+- Both pages request only the two local WOFF2 files, with no Pretendard or external font requests
+- All SVG text remains inside its illustration viewport with the new font metrics
+- Header, profile, ENKI experience and all four project previews inspected after the font change
+- Responsive checks repeated for both languages at 320, 390, 768, 1024 and 1440 pixels, with no overflow or console errors
+- All four MSGCTF scenes retain a stable frame height at every tested width under both normal and reduced-motion preferences
+- Shared type weights, text wrapping, border contrast, preview corners, shadows and inner spacing checked on desktop and mobile
+
 ## Project motion
 
 Four project previews use local HTML, SVG, CSS and the native Web Animations API

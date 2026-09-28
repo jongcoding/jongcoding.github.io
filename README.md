@@ -26,7 +26,7 @@ Open `http://127.0.0.1:8000/` or `http://127.0.0.1:8000/index_ko.html`
 | `assets/portfolio-motion.css` | Project-specific vector sequences |
 | `assets/portfolio-platform.css` | MSGCTF supply chain, inventory, container placement and monitoring scenes |
 | `assets/portfolio-motion.js` | Visibility, pause, replay and motion preferences |
-| `assets/fonts/` | Local Pretendard font and its SIL OFL license |
+| `assets/fonts/` | Local SUIT and Manrope fonts, SIL OFL licenses and source notes |
 | `assets/brands/` | Official project, company and provider artwork, with source notes |
 | `docs/content-notes.md` | Content sources and editorial decisions |
 
@@ -92,5 +92,13 @@ Feature branches are for review and do not change the live site
 
 ## Fonts
 
-[Pretendard Variable](https://github.com/orioncactus/pretendard) is bundled locally under the SIL Open Font License 1.1
-Retain `assets/fonts/Pretendard-LICENSE.txt` when distributing the font
+[SUIT Variable](https://github.com/sun-typeface/SUIT) handles Korean and body copy, while [Manrope](https://github.com/googlefonts/manrope) handles the nickname, Latin headings and selected illustration labels
+Both are distributed under the SIL Open Font License 1.1, which permits use in commercial websites and bundling with the site while retaining the copyright and license notices
+Their unchanged WOFF2 files are served locally and preloaded, with no runtime request to Google Fonts or another external font service
+
+Type uses regular body text, medium links, semibold titles and bold section labels, with shared spacing and restrained tracking across both languages
+Project previews share the same font stacks, lighter borders, six-pixel corners and consistent inner alignment
+
+Retain `assets/fonts/SUIT-LICENSE.txt` and `assets/fonts/Manrope-LICENSE.txt` when distributing these fonts
+See [font sources](assets/fonts/README.md) for exact source files and provenance
+The former Pretendard file and its license remain in the repository for historical assets and are not requested by either page

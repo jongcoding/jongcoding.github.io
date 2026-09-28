@@ -25,6 +25,7 @@ Updated 28 September 2026
 - [RubiyaLab results](https://ctftime.org/team/303159/), checked against the events named in the owner's previous portfolio
 - [Watchdog's current public repository](https://github.com/WATCHDOG-INCOGNITO/watchdog), confirmed from the local repository's origin and GitHub metadata
 - [Brand asset sources](../assets/brands/README.md), covering official project and organization avatars, the ENKI wordmark and cloud-provider artwork
+- [Font sources and licenses](../assets/fonts/README.md), covering the local SUIT and Manrope distributions and their SIL Open Font License 1.1 notices
 
 The supplied LinkedIn profile remains linked
 Its authentication wall prevented direct profile review, so the relevant additions use the public sources above and the owner's corrections
@@ -63,6 +64,8 @@ Its authentication wall prevented direct profile review, so the relevant additio
 Both language versions share the same sections, project ordering, link destinations and visual design
 Content and navigation require no JavaScript, external font service, external image host or third-party widget
 An optional local script controls four short project previews with explicit pause/replay controls
+SUIT handles the Korean text and body copy, while Manrope handles the nickname, Latin headings and selected illustration labels
+Shared type weights, restrained tracking, consistent alignment and lighter preview borders provide the visual hierarchy
 
 All four animations are conceptual illustrations of documented architecture and research scope
 They do not claim to be live production telemetry or recordings of an operational system
