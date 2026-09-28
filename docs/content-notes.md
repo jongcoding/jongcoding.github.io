@@ -20,6 +20,7 @@ Updated 28 September 2026
 - [TokenCat](https://github.com/jongcoding/TokenCat), for the Windows widget's product description and download link
 - [RubiyaLab results](https://ctftime.org/team/303159/), checked against the events named in the owner's previous portfolio
 - [Watchdog's current public repository](https://github.com/WATCHDOG-INCOGNITO/watchdog), confirmed from the local repository's origin and GitHub metadata
+- [Brand asset sources](../assets/brands/README.md), covering official project and organization avatars, the ENKI wordmark and cloud-provider artwork
 
 The supplied LinkedIn profile remains linked
 Its authentication wall prevented direct profile review, so the relevant additions use the public sources above and the owner's corrections
@@ -69,6 +70,14 @@ GnawLab's document transfer and permissions panels summarize research scope with
 WEAVE's five categories and example topics come from the existing taxonomy screenshot, with HTTP Parameter Pollution under syntax parsing and duplicate-key handling
 DBREACH's data blocks illustrate compression rather than measured data, a benchmark or a compression ratio
 The sequences use staged entrances, document transfer, taxonomy expansion, data-block movement and chapter progress on a shared nine-second timeline
+
+Project headings use the original MSGCTF, GnawLab, WEAVE and INC0GNITO marks, with the ENKI WhiteHat wordmark in the employment section
+The provider preview uses official AWS, Azure and Google Cloud artwork and layered inventory panels rather than a node-and-arrow map
+GnawLab uses AWS S3, Bedrock and Lambda service icons to identify the illustrated knowledge source, agent and action group
+WEAVE moves through a folder index, an expanded case sheet and a two-column interpretation comparison
+All brand images are local assets, retain their original colors and aspect ratios, and are decoded before their preview begins
+Decorative brand images in headings have empty alt text and the complete project or company name remains available as heading text
+The SVG previews keep their accessible titles and descriptions in both languages
 
 The original research assets and unrelated repository files are retained
 The two portfolio entry pages use a shared stylesheet and local presentation assets

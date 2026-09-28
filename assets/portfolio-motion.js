@@ -13,7 +13,8 @@
     let wanted = false;
     let started = false;
     let generation = 0;
-    let assetsReady = !element.querySelector('img');
+    const images = [...element.querySelectorAll('img, image')];
+    let assetsReady = images.length === 0;
     let pendingAssets = null;
 
     function state(value, text) {
@@ -43,8 +44,10 @@
       if (preference.matches) return;
       wanted = true;
       if (!assetsReady) {
-        pendingAssets ||= Promise.all([...element.querySelectorAll('img')].map(img => {
-          img.loading = 'eager';
+        pendingAssets ||= Promise.all(images.map(source => {
+          const img = source instanceof HTMLImageElement ? source : new Image();
+          if (source instanceof HTMLImageElement) img.loading = 'eager';
+          else img.src = source.href.baseVal;
           return img.decode().catch(() => {});
         })).then(() => {
           assetsReady = true;

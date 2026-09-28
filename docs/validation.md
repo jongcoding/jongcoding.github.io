@@ -8,6 +8,8 @@ Both English and Korean pages checked at widths of 320, 390, 768, 1024 and 1440 
 
 - No horizontal page overflow at any of the ten language/viewport combinations
 - No broken page images or missing local files
+- MSGCTF, GnawLab, WEAVE, INC0GNITO and ENKI WhiteHat marks checked at their displayed size
+- Official AWS, Azure, Google Cloud, Bedrock, S3 and Lambda artwork loads from local files
 - No JavaScript exceptions or browser console errors during the checks
 - One primary heading per page, unique element IDs, named links, and valid in-page anchor targets
 - English/Korean links reach the corresponding language page
@@ -36,6 +38,7 @@ Mobile paragraph spacing checked after removing sentence-ending periods
 Four nine-second project previews use local SVG, CSS and the native Web Animations API
 
 - Automatic playback begins when the preview enters the viewport
+- SVG brand images are decoded before playback starts, with all 15 image placements successfully decoded in the motion check
 - A natural nine-second run completes once and remains stopped
 - Manual pause freezes the animation timeline and persists after scrolling away and back
 - Scrolling a running preview outside the viewport pauses it, and returning resumes it
@@ -56,6 +59,7 @@ The refined version was checked at 1,700 ms, 4,500 ms and 8,500 ms in both langu
 These checkpoints cover all three scenes in the provider, agent, taxonomy and compression previews
 SVG labels fit inside the scene viewport and the primary header and heading use ialleejy in both languages
 The review GIF is captured at 30 frames per second while browser playback uses the native animation timeline
+The branded revision also checks WEAVE's folder index and interpretation comparison, MSGCTF's inventory and workspace panels, and GnawLab's original wordmark and service icons
 
 ## Limits
 

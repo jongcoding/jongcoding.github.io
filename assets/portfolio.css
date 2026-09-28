@@ -28,6 +28,16 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 button { font: inherit; }
 ::selection { color: #1e3023; background: #e1e9dd; }
 img { display: block; max-width: 100%; height: auto; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.brand-title, .project-brand { display: flex; align-items: center; gap: 14px; }
+.brand-mark { flex: 0 0 auto; width: 42px; height: 42px; object-fit: contain; }
+.project-brand { margin: 17px 0 20px; gap: 18px; }
+.project-brand .msgctf-mark { width: 74px; height: 74px; }
+.feature .project-brand h3 { margin: 0; }
+.wordmark-title img { width: auto; object-fit: contain; object-position: left center; }
+.gnawlab-wordmark img { height: 62px; max-width: 206px; }
+.enki-wordmark img { width: 202px; height: 54px; max-width: 100%; }
+.incognito-mark { width: 43px; height: 43px; }
 a, button, summary { -webkit-tap-highlight-color: transparent; }
 .wrap { width: min(var(--page-width), calc(100% - 96px)); margin-inline: auto; }
 .skip-link { position: fixed; top: 10px; left: 10px; padding: 10px 18px; z-index: 10; color: #fff; background: var(--ink); transform: translateY(-160%); }
@@ -243,6 +253,9 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
   .highlights h2 { font-size: 22px; }
   .highlights h2 span { display: inline; }
   .feature h3 { font-size: 32px; }
+  .project-brand { gap: 12px; }
+  .project-brand .msgctf-mark { width: 58px; height: 58px; }
+  .feature .project-brand h3 { font-size: 30px; }
   .feature h3 br { display: initial; }
   .feature h3 span::before { content: none; }
   .project-description, .project-copy > p:not(.project-meta) { font-size: 14px; }
@@ -279,6 +292,8 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
   .hero-role { font-size: 21px; }
   .hero-links .link-row { column-gap: 23px; }
   .highlights h2 { font-size: 20px; }
+  .project-brand .msgctf-mark { width: 48px; height: 48px; }
+  .feature .project-brand h3 { font-size: 29px; }
   .contact-email { font-size: 25px; }
 }
 @media (prefers-reduced-motion: reduce) {

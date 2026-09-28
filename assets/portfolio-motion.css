@@ -10,15 +10,18 @@
   min-width: 0;
   background: var(--film-bg);
   border: 1px solid var(--film-rule);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px -16px #24324160;
 }
 .film-msgctf {
-  --film-bg: #202d26;
-  --film-surface: #293930;
-  --film-ink: #f0f3ec;
-  --film-muted: #aabdad;
-  --film-rule: #425749;
-  --film-accent: #d0e8a9;
-  --film-tint: #344936;
+  --film-bg: #f1f3f5;
+  --film-surface: #fff;
+  --film-ink: #25303a;
+  --film-muted: #697780;
+  --film-rule: #d5dce1;
+  --film-accent: #c44643;
+  --film-tint: #e9edf1;
 }
 .film-weave {
   --film-bg: #eff1f7;
@@ -53,45 +56,65 @@
 .story-label { font-size: 11px; fill: var(--film-muted); }
 .story-rule { stroke: var(--film-rule); stroke-width: 1; }
 .story-heading { font-size: 20px; font-weight: 540; fill: var(--film-ink); letter-spacing: -.45px; }
+.film-header-paper { fill: #fff; }
+.showcase-heading { font-size: 21px; font-weight: 560; fill: var(--film-ink); letter-spacing: -.5px; }
+.plate-layer { stroke: var(--film-rule); stroke-width: .8; }
+.layer-back { fill: #e2e6ea; }
+.layer-middle { fill: #ecf0f3; }
+.plate-face { fill: var(--film-surface); stroke: var(--film-rule); stroke-width: .8; }
+.vendor-service { fill: var(--film-muted); font-size: 12px; }
+.vendor-caption { fill: var(--film-ink); font-size: 15px; font-weight: 510; letter-spacing: -.2px; }
+.ledger-title { fill: var(--film-ink); font-size: 16px; font-weight: 600; letter-spacing: -.3px; }
+.ledger-rule { fill: none; stroke: #e3e7ea; stroke-width: 1; }
+.ledger-provider { fill: #384853; font-size: 14px; font-weight: 490; }
+.ledger-detail { fill: #77828b; font-size: 11px; }
+.ledger-foot { fill: #7c878e; font-size: 11px; letter-spacing: .2px; }
+.allocation-slip { opacity: 0; }
+.allocation-slip rect { fill: #f5ece9; stroke: #c8847b; stroke-width: .8; }
+.allocation-slip path { fill: none; stroke: #bd7a70; stroke-width: 1.4; }
+.allocation-receipt > rect { fill: #28343e; stroke: #17262f; stroke-width: .7; }
+.allocation-receipt > text { fill: #f8f9fa; font-size: 16px; font-weight: 540; letter-spacing: -.25px; }
+.receipt-rule { stroke: #4a5760; stroke-width: 1; }
+.reservation-step text { fill: #e4e9ed; font-size: 13px; }
+.reservation-step path { fill: none; stroke: #e79d90; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.workspace-back { fill: #dbe2e7; stroke: #c9d2da; stroke-width: .8; }
+.workspace-middle { fill: #e8edf1; stroke: #d5dde3; stroke-width: .8; }
+.workspace-label { fill: #677985; font-size: 12px; font-weight: 570; letter-spacing: .8px; }
+.workload rect { fill: #f3f6f8; stroke: #e6ebee; stroke-width: .7; }
+.workload path { stroke: #637f91; stroke-width: 1.4; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.workload text { fill: #455968; font-size: 13px; }
+.film-gnawlab .layer-back { fill: #e7e0d3; }
+.folio-back { transform-origin: 178px 226px; transform: rotate(4deg); }
+.folio-back path { fill: #e4dccd; stroke: #d3c6b3; stroke-width: .8; }
+.research-folio { transform-origin: 170px 280px; }
+.folio-paper { fill: #fffefb; stroke: #d3c9b7; stroke-width: .8; }
+.folio-fold { fill: #ede6d8; stroke: #d3c9b7; stroke-width: .8; }
+.folio-kicker { fill: #968362; font-size: 10px; font-weight: 520; letter-spacing: 1.25px; }
+.folio-title { fill: #4c4333; font-size: 21px; font-weight: 530; letter-spacing: -.5px; }
+.folio-lines { stroke: #e6dfd2; stroke-width: 4; }
+.document-delivery { opacity: 0; }
+.document-delivery rect { fill: #fffdf6; stroke: #c6b58f; stroke-width: 1; }
+.document-delivery path { stroke: #b8a47b; stroke-width: 1.3; fill: none; }
+.service-caption { fill: #5e5443; font-size: 12px; font-weight: 500; }
+.service-primary { font-size: 16px; font-weight: 560; letter-spacing: -.3px; }
+.object-note { fill: #8a7f6b; font-size: 12px; }
+.context-wire { stroke: #d7cdbc; stroke-width: 1.2; fill: none; }
+.context-wire-ink { stroke: #a28b60; stroke-width: 1.5; fill: none; stroke-dasharray: 100; stroke-dashoffset: 0; }
+.lab-signature { fill: #958468; font-size: 10px; font-weight: 500; letter-spacing: 1.4px; }
 .story-scene { transform-origin: 280px 200px; }
 .scene-two, .scene-three { opacity: 0; }
 .scene-one { opacity: 1; }
 .surface { fill: var(--film-surface); stroke: var(--film-rule); stroke-width: 1; }
-.accent-surface { fill: var(--film-tint); stroke: var(--film-accent); stroke-width: 1; stroke-opacity: .45; }
 .node-title { font-size: 16px; font-weight: 520; fill: var(--film-ink); letter-spacing: -.25px; }
 .small-label, .scene-note { font-size: 13px; fill: var(--film-muted); }
 .route-guide { stroke: var(--film-rule); stroke-width: 1.5; fill: none; stroke-linejoin: round; }
 .route-ink { stroke: var(--film-accent); stroke-width: 1.5; fill: none; stroke-linejoin: round; stroke-dasharray: 100; stroke-dashoffset: 0; }
-.provider-name { font-size: 23px; font-weight: 560; fill: var(--film-ink); letter-spacing: -.5px; }
-.provider-mark { stroke-width: 2; }
-.provider-aws .provider-mark { stroke: #e9b676; }
-.provider-azure .provider-mark { stroke: #88bdde; }
-.provider-gcp .provider-mark { stroke: #b3c69b; }
-.provider-service { font-size: 12px; fill: var(--film-muted); }
-.inventory-rack rect { fill: #31473a; stroke: #516859; stroke-width: .8; }
-.inventory-rack path { stroke: #97b59f; stroke-width: 1; }
-.pool-label { font-size: 15px; fill: var(--film-muted); font-weight: 480; }
-.provider-list text { font-size: 18px; fill: var(--film-ink); font-weight: 500; }
-.resource-fields text { font-size: 12px; fill: var(--film-muted); }
-.resource-fields .field-unit { fill: #c5d7bc; }
-.team-runtime > rect { fill: #314537; stroke: #526b53; stroke-width: 1; }
-.team-label { font-size: 13px; fill: var(--film-accent); letter-spacing: .7px; }
-.runtime-services path { fill: none; stroke: #bad397; stroke-width: 1.5; }
-.runtime-services text { fill: #d1decd; font-size: 15px; }
-.note-back { transform-origin: 170px 224px; transform: rotate(4deg); }
-.note-back rect { fill: #e7e0d2; stroke: #cfc5b2; }
-.document-rule { stroke: #d6ccba; stroke-width: 1; }
-.document-title { font-size: 18px; fill: var(--film-ink); font-weight: 540; }
-.document-line { stroke: #ddd4c4; stroke-width: 4; }
 .context-stroke { stroke: #baa06d; stroke-width: 7; stroke-dasharray: 100; stroke-dashoffset: 0; }
-.context-packet { opacity: 0; }
-.context-packet path { fill: var(--film-tint); stroke: var(--film-accent); stroke-width: 1; }
-.trust-divider { stroke: #c7b79b; stroke-width: 1; stroke-dasharray: 3 5; }
-.agent-emblem path { fill: #e2d3b6; stroke: #a18a60; stroke-width: 1; stroke-linejoin: round; }
-.research-icon path { fill: #eee5d5; stroke: #aa9064; stroke-width: 1.5; }
-.boundary-heading { font-size: 30px; font-weight: 510; fill: var(--film-ink); letter-spacing: -.7px; }
 .trust-boundary { stroke: var(--film-accent); stroke-width: 1.5; stroke-dasharray: 100; stroke-dashoffset: 0; }
 .taxonomy-column > rect { fill: #fbfcff; stroke: #d0d7e4; stroke-width: 1; }
+.folder-tab { fill: #e2e7f0; stroke: #c5cfdf; stroke-width: .8; }
+.selected-column .folder-tab { fill: #8da6d6; stroke: #7696cd; }
+.case-underlay { fill: #dce2ed; stroke: #cbd5e7; stroke-width: .8; }
 .taxonomy-column > text { fill: var(--film-ink); font-size: 14px; font-weight: 550; }
 .taxonomy-divider { stroke: #d8deea; stroke-width: 1; }
 .case-list text { fill: #8290aa; font-size: 10px; }
@@ -102,7 +125,15 @@
 .case-heading { fill: #354765; font-size: 30px; letter-spacing: -.8px; font-weight: 520; }
 .case-description { fill: #6b7690; font-size: 16px; }
 .case-page-mark path { stroke: #8194bb; stroke-width: 1.5; fill: #ecf0fa; }
-.result-b .surface { fill: #e4eaf6; stroke: #b4c1dc; }
+.comparison-kicker { font-size: 10px; font-weight: 550; letter-spacing: 1.3px; fill: #8c99af; }
+.comparison-input { font-size: 14px; fill: #536682; }
+.comparison-component { font-size: 12px; fill: #7d8ca6; }
+.comparison-output { font-size: 23px; font-weight: 530; fill: #38598c; letter-spacing: -.5px; }
+.interpretation-b .comparison-output { fill: #7d6450; }
+.interpretation-line { stroke: #82a2d3; stroke-width: 6; }
+.interpretation-tail { stroke: #d3ddee; stroke-width: 6; }
+.interpretation-b .interpretation-line { stroke: #b8a48d; }
+.interpretation-b .interpretation-tail { stroke: #e5dccf; }
 .compose-frame { fill: none; stroke: #c3d1d9; stroke-width: 1; }
 .runner-mark rect { fill: #9fb8c6; stroke: #7899ab; stroke-width: .7; }
 .database-mark path { fill: #d6e3eb; stroke: #7295a8; stroke-width: 1.3; }
@@ -121,29 +152,37 @@
 .chapter-number { font-size: 10px; font-variant-numeric: tabular-nums; }
 .is-started .motion { animation-name: var(--motion); animation-duration: var(--film-duration); animation-timing-function: cubic-bezier(.22, 1, .36, 1); animation-fill-mode: both; animation-play-state: paused; }
 .is-started .chapter-fill { animation-timing-function: linear; }
+@keyframes plate-rise-1 { 0% { opacity: 0; transform: translateY(22px); } 11%, 100% { opacity: 1; transform: translateY(0); } }
+@keyframes plate-rise-2 { 0%, 3% { opacity: 0; transform: translateY(22px); } 14%, 100% { opacity: 1; transform: translateY(0); } }
+@keyframes plate-rise-3 { 0%, 6% { opacity: 0; transform: translateY(22px); } 17%, 100% { opacity: 1; transform: translateY(0); } }
+@keyframes ledger-open { 0%, 28% { opacity: 0; transform: translateY(16px); } 39%, 100% { opacity: 1; transform: translateY(0); } }
+@keyframes allocation-slip { 0%, 39% { opacity: 0; transform: translate(-20px, 5px) rotate(-3deg); transform-origin: 301px 244px; } 42% { opacity: 1; } 52% { opacity: 1; transform: translate(83px, -10px) rotate(0); } 55%, 100% { opacity: 0; transform: translate(93px, -10px) rotate(0); } }
+@keyframes allocation-arrive { 0%, 34% { opacity: 0; transform: translate(28px, 10px); } 46%, 100% { opacity: 1; transform: translate(0, 0); } }
+@keyframes reserve-one { 0%, 46% { opacity: 0; transform: translateY(5px); } 53%, 100% { opacity: 1; transform: translateY(0); } }
+@keyframes reserve-two { 0%, 50% { opacity: 0; transform: translateY(5px); } 58%, 100% { opacity: 1; transform: translateY(0); } }
+@keyframes workspace-rise-1 { 0%, 61% { opacity: 0; transform: translateY(20px); } 74%, 100% { opacity: 1; transform: translateY(0); } }
+@keyframes workspace-rise-2 { 0%, 64% { opacity: 0; transform: translateY(20px); } 77%, 100% { opacity: 1; transform: translateY(0); } }
+@keyframes workspace-rise-3 { 0%, 67% { opacity: 0; transform: translateY(20px); } 80%, 100% { opacity: 1; transform: translateY(0); } }
+@keyframes workload-in-1 { 0%, 72% { opacity: 0; transform: translateY(5px); } 83%, 100% { opacity: 1; transform: translateY(0); } }
+@keyframes workload-in-2 { 0%, 75% { opacity: 0; transform: translateY(5px); } 86%, 100% { opacity: 1; transform: translateY(0); } }
+@keyframes workload-in-3 { 0%, 78% { opacity: 0; transform: translateY(5px); } 89%, 100% { opacity: 1; transform: translateY(0); } }
+@keyframes folio-back { 0% { opacity: 0; transform: rotate(0) translateY(18px); } 14%, 100% { opacity: 1; transform: rotate(4deg) translateY(0); } }
+@keyframes folio-front { 0% { opacity: 0; transform: translateY(14px) rotate(-3deg); } 12%, 100% { opacity: 1; transform: translateY(0) rotate(0); } }
+@keyframes document-delivery { 0%, 17% { opacity: 0; transform: translate(-20px, 4px) rotate(-6deg); transform-origin: 318px 232px; } 20% { opacity: 1; } 27% { opacity: 1; transform: translate(47px, -10px) rotate(0); } 29%, 100% { opacity: 0; transform: translate(57px, -10px) rotate(0); } }
+@keyframes knowledge-lift { 0%, 8% { opacity: 0; transform: translateY(18px); } 19%, 100% { opacity: 1; transform: translateY(0); } }
+@keyframes context-wire-draw { 0%, 39% { stroke-dashoffset: 100; } 55%, 100% { stroke-dashoffset: 0; } }
+@keyframes bedrock-lift { 0%, 33% { opacity: 0; transform: translateY(19px); } 45%, 100% { opacity: 1; transform: translateY(0); } }
 @keyframes shot-one { 0%, 28% { opacity: 1; transform: translateX(0); } 34%, 100% { opacity: 0; transform: translateX(-22px); } }
 @keyframes shot-two { 0%, 28% { opacity: 0; transform: translateX(25px); } 36%, 60% { opacity: 1; transform: translateX(0); } 67%, 100% { opacity: 0; transform: translateX(-22px); } }
 @keyframes shot-three { 0%, 60% { opacity: 0; transform: translateX(25px); } 70%, 100% { opacity: 1; transform: translateX(0); } }
 @keyframes intro-1 { 0% { opacity: 0; transform: translateY(14px); } 9%, 100% { opacity: 1; transform: translateY(0); } }
 @keyframes intro-2 { 0%, 3% { opacity: 0; transform: translateY(14px); } 12%, 100% { opacity: 1; transform: translateY(0); } }
-@keyframes intro-3 { 0%, 6% { opacity: 0; transform: translateY(14px); } 15%, 100% { opacity: 1; transform: translateY(0); } }
-@keyframes inventory-1 { 0%, 6% { opacity: 0; transform: translateY(6px); } 14%, 100% { opacity: 1; transform: translateY(0); } }
-@keyframes inventory-2 { 0%, 9% { opacity: 0; transform: translateY(6px); } 17%, 100% { opacity: 1; transform: translateY(0); } }
-@keyframes inventory-3 { 0%, 12% { opacity: 0; transform: translateY(6px); } 20%, 100% { opacity: 1; transform: translateY(0); } }
-@keyframes provider-collect { 0%, 16% { stroke-dashoffset: 100; } 28%, 100% { stroke-dashoffset: 0; } }
 @keyframes middle-1 { 0%, 29% { opacity: 0; transform: translateY(10px); } 37%, 100% { opacity: 1; transform: translateY(0); } }
-@keyframes middle-2 { 0%, 33% { opacity: 0; transform: translateY(10px); } 42%, 100% { opacity: 1; transform: translateY(0); } }
 @keyframes middle-3 { 0%, 37% { opacity: 0; transform: translateY(10px); } 47%, 100% { opacity: 1; transform: translateY(0); } }
-@keyframes middle-lines { 0%, 39% { stroke-dashoffset: 100; } 56%, 100% { stroke-dashoffset: 0; } }
 @keyframes last-1 { 0%, 60% { opacity: 0; transform: translateY(10px); } 70%, 100% { opacity: 1; transform: translateY(0); } }
 @keyframes last-2 { 0%, 68% { opacity: 0; transform: translateY(10px); } 78%, 100% { opacity: 1; transform: translateY(0); } }
 @keyframes last-3 { 0%, 72% { opacity: 0; transform: translateY(10px); } 82%, 100% { opacity: 1; transform: translateY(0); } }
-@keyframes runtime-1 { 0%, 74% { opacity: 0; transform: translateY(4px); } 81%, 100% { opacity: 1; transform: translateY(0); } }
-@keyframes runtime-2 { 0%, 77% { opacity: 0; transform: translateY(4px); } 84%, 100% { opacity: 1; transform: translateY(0); } }
-@keyframes runtime-3 { 0%, 80% { opacity: 0; transform: translateY(4px); } 87%, 100% { opacity: 1; transform: translateY(0); } }
-@keyframes paper-spread { 0% { transform: rotate(0deg) translateY(8px); } 14%, 100% { transform: rotate(4deg) translateY(0); } }
 @keyframes highlight-context { 0%, 12% { stroke-dashoffset: 100; } 22%, 100% { stroke-dashoffset: 0; } }
-@keyframes context-transfer { 0%, 17% { opacity: 0; transform: translateX(-10px); } 20% { opacity: 1; transform: translateX(-10px); } 27% { opacity: 1; transform: translateX(27px); } 29%, 100% { opacity: 0; transform: translateX(32px); } }
 @keyframes boundary-draw { 0%, 74% { stroke-dashoffset: 100; } 89%, 100% { stroke-dashoffset: 0; } }
 @keyframes taxonomy-1 { 0% { opacity: 0; transform: translateY(18px); } 8%, 100% { opacity: 1; transform: translateY(0); } }
 @keyframes taxonomy-2 { 0%, 2% { opacity: 0; transform: translateY(18px); } 10%, 100% { opacity: 1; transform: translateY(0); } }
@@ -154,7 +193,6 @@
 @keyframes case-list-2 { 0%, 9% { opacity: 0; transform: translateY(6px); } 18%, 100% { opacity: 1; transform: translateY(0); } }
 @keyframes case-list-3 { 0%, 12% { opacity: 0; transform: translateY(6px); } 22%, 100% { opacity: 1; transform: translateY(0); } }
 @keyframes case-expand { 0%, 29% { opacity: 0; transform: translate(30px, 9px) scale(.94); transform-origin: 480px 220px; } 41%, 100% { opacity: 1; transform: translate(0, 0) scale(1); transform-origin: 480px 220px; } }
-@keyframes semantic-fork { 0%, 72% { stroke-dashoffset: 100; } 84%, 100% { stroke-dashoffset: 0; } }
 @keyframes experiment-connect { 0%, 13% { stroke-dashoffset: 100; } 26%, 100% { stroke-dashoffset: 0; } }
 @keyframes compression-pass { 0%, 39% { stroke-dashoffset: 100; } 53%, 100% { stroke-dashoffset: 0; } }
 @keyframes raw-stage { 0%, 29% { opacity: 0; transform: translateY(10px); } 37%, 41% { opacity: 1; transform: translateY(0); } 54%, 100% { opacity: .42; transform: translateY(0); } }
@@ -172,12 +210,15 @@
   .story-brand { font-size: 19px; }
   .story-label { font-size: 14px; }
   .story-heading { font-size: 21px; }
+  .showcase-heading { font-size: 23px; }
+  .vendor-caption { font-size: 16px; }
+  .vendor-service { font-size: 14px; }
+  .ledger-detail, .ledger-foot { font-size: 12px; }
+  .service-caption, .object-note { font-size: 13px; }
+  .service-primary { font-size: 16px; }
   .small-label, .scene-note { font-size: 14px; }
-  .provider-service { font-size: 14px; }
-  .pool-label { font-size: 16px; }
   .chapter text { font-size: 14px; }
   .chapter-number { font-size: 12px; }
-  .resource-fields text { font-size: 13px; }
   .taxonomy-column > text { font-size: 14px; }
   .record-detail { font-size: 14px; }
 }
