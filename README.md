@@ -48,10 +48,10 @@ The earlier MSG CTF 2025 platform has a separate entry in More projects
 The header, primary heading and browser title use the owner's handle, ialleejy, with the full name in the identity line
 
 MSGCTF introduces all seven platform roles across four scenes, led by DevSecOps, Resource Broker, Instance Scheduler and Monitoring
-DevSecOps assembles container image layers, scans them and publishes digest-pinned images and SBOM artifacts for Backend release registration
+DevSecOps assembles and scans container images during challenge registration, publishing images to GHCR and SBOM/release files as Actions artifacts for Backend ingestion
 Resource Broker queries shared AWS, Azure and Google Cloud inventory and holds selected capacity
 Instance Scheduler dispatches Runtime creation to the reserved target and commits the reservation after successful workload creation
-Isometric containers descend into separate team namespaces, while Monitoring's response trace leads to a recovery request sent to Scheduler
+Isometric containers descend into separate team namespaces, while a separately labelled planned Monitoring flow illustrates a future Scheduler recovery handoff
 Provider integrations remain in development and the illustrations do not imply production validation across all vendors
 GnawLab shows a document passing into a knowledge base, the Bedrock Agent flow and the boundary between context and authority
 WEAVE moves from its five root-cause categories to a case study and differing component interpretations
@@ -64,7 +64,9 @@ Completion marks follow their corresponding actions, and all animated objects sh
 MSGCTF, GnawLab, WEAVE, INC0GNITO, MJSEC and ENKI WhiteHat use their source artwork alongside the relevant project or role
 The current MSGCTF project uses the 2026 frontend's maple-leaf and mountain mark, with the original transparent PNG preserved and its empty margins cropped only in the display viewport
 The separate 2025 archive keeps its historical artwork
-The MSGCTF introduction and compact preview sit side by side on desktop, with the description, responsibilities and cloud providers kept concise
+The MSGCTF introduction and compact preview sit side by side on desktop, separating the resource-management goal, personal review role, team scope and implemented inventory adapters
+Two attributed review links preserve their local-test boundaries, while live deployment and recovery validation remain explicitly separate
+Broker and Runtime links point to their implementation branches rather than the README-only defaults
 The preview uses a short action heading and its resulting operation, while the seven repository links remain visible below the project
 On narrow screens the introduction and preview stack, with smaller gaps and no repeated logo header
 Image layers, inventory racks, reservation receipts and ribbed containers distinguish each service's input and output
