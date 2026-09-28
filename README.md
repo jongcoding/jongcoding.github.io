@@ -61,7 +61,7 @@ All previews include chapter progress, with a 24-second timeline for MSGCTF and 
 Scene layers have exclusive visibility, with each completed result held before the next scene begins
 Completion marks follow their corresponding actions, and all animated objects share one playback clock
 
-MSGCTF, GnawLab, WEAVE, INC0GNITO and ENKI WhiteHat use their source artwork alongside the relevant project or role
+MSGCTF, GnawLab, WEAVE, INC0GNITO, MJSEC and ENKI WhiteHat use their source artwork alongside the relevant project or role
 The current MSGCTF project uses the 2026 frontend's maple-leaf and mountain mark, with the original transparent PNG preserved and its empty margins cropped only in the display viewport
 The separate 2025 archive keeps its historical artwork
 The MSGCTF preview spans the project width, placing service names and action headings beside the animated objects on desktop and above them on mobile

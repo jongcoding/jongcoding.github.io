@@ -96,6 +96,16 @@ SVG labels fit inside the scene viewport and the primary header and heading use 
 The review GIF is captured at 30 frames per second while browser playback uses the native animation timeline
 The branded revision also checks WEAVE's folder index and interpretation comparison, MSGCTF's role scenes, and GnawLab's original wordmark and service icons
 
+## MJSEC and CCE additions
+
+- Official MJSEC logo copied unchanged from the club website repository, with identical source and local SHA-256 hashes
+- Logo rendering inspected in the club activity entry, Homepage & LMS and BOJ Contest headings
+- CCE 2026 credits match the owner's confirmation of Web authorship in both the qualifier and finals, naming GRID_FLAG and LIVEFIRE 가온증권
+- Korean and English pages checked at 320, 390, 768, 1024 and 1440 pixels with no horizontal overflow, missing images, duplicate IDs, broken anchors or browser errors
+- CCE challenge names remain readable on narrow screens and MJSEC heading marks retain their aspect ratios without duplicated accessible names
+- Both pages retain the same 110 link destinations and all 69 previously inventoried destinations, including the corrected Watchdog repository URL
+- Desktop and mobile screenshots reviewed for CCE, MJSEC activity and the homepage project
+
 ## Limits
 
 Checks cover local Chromium behavior rather than exhaustive browser or accessibility certification

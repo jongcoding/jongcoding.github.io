@@ -10,6 +10,7 @@ Cloud-provider marks describe the project's integrations and do not imply sponso
 | `msgctf-2026.png` | [MSGCTF 2026 frontend logo](https://github.com/MSG-CTF/front-team/blob/1ee323c27cb4ce2fed99cb8a86abe6389761528d/public/assets/login/logo-cutout.png), also used by its login and rules screens |
 | `msgctf.png` | Earlier [MSG-CTF organization avatar](https://avatars.githubusercontent.com/u/299351422?v=4), retained as a historical asset and no longer used for the current project |
 | `incognito.png` | [Incognito-CTF organization](https://github.com/Incognito-CTF) / [organization avatar](https://avatars.githubusercontent.com/u/244930413?v=4) |
+| `mjsec.png` | [MJSEC official website repository / logo512.png](https://github.com/MJSEC-MJU/MJSEC_LMS_FRONT/blob/e6b64ed0812c16eaa161ee13bb680651100608aa/mjsec-frontend/public/logo512.png) |
 | `weave.png` | [WEAVE website repository](https://github.com/WHS-webao/WHS-webao.github.io) / [logo2.png](https://raw.githubusercontent.com/WHS-webao/WHS-webao.github.io/main/logo2.png) |
 | `enki.svg` | [ENKI WhiteHat official site](https://www.enki.co.kr/company/about) / [English logo animation](https://framerusercontent.com/assets/uAXOsr6dTwP5KiabgPyxGYJGvWw.json) |
 | `aws.svg` | [AWS Architecture Icons](https://aws.amazon.com/architecture/icons/) / `Architecture-Group-Icons_07312026/AWS-Cloud-logo_32.svg` |
@@ -35,6 +36,8 @@ An inline SVG viewBox of 231 321 792 581 frames the artwork inside the original 
 The updated mark is used in the current project's heading and motion preview, while the earlier 2025 project materials retain their original artwork
 
 Other source files are copied unchanged and displayed with their original aspect ratios and colors
+The MJSEC mark uses the unchanged 512-pixel source image within an inline SVG viewBox of 96 96 320 320, removing outer whitespace only in the display viewport
+It identifies the club's activity entry, Homepage & LMS project and BOJ Contest project
 GitHub links use the official mark, with accessible destination names and text labels where multiple repository choices need to be distinguished
 The layered image, inventory racks and isolated container objects are original SVG illustrations of software responsibilities rather than vendor logos or production screenshots
 Names and trademarks belong to their respective owners
