@@ -15,7 +15,8 @@ Both English and Korean pages checked at widths of 320, 390, 768, 1024 and 1440 
 - Each selected scene shows a prominent service name, one action and its outcome, supporting service names and no page movement when changing scenes
 - Mobile scenes place concise 20-pixel action headings above the illustrated objects
 - Preview descriptions use 15–16-pixel text, primary service names use 15–16-pixel text and results use 16–17-pixel text
-- All 39 GitHub destinations per language display decoded official icons and have accessible names, with 10 generic GitHub links using icon-only controls at least 44 pixels high
+- All 39 GitHub links per language remain visible and have accessible destination names
+- GitHub marks are limited to 11 primary links and 6 group labels, with one mark per repository group and no icons on document, challenge-path or download links
 - Larger shared body and link text and stronger secondary-text contrast checked across both language versions
 - The complete role descriptions remain available in a native disclosure and all seven repository links remain visible outside it
 - No JavaScript exceptions or browser console errors during the checks
@@ -113,6 +114,13 @@ The branded revision also checks WEAVE's folder index and interpretation compari
 - Both languages checked at 320, 390, 768, 1024 and 1440 pixels under normal and reduced-motion preferences
 - Scene selection retains a stable frame height, pauses at the selected action and preserves selection after scrolling
 - The complete role disclosure still expands and provider logos decode correctly at all tested widths
+
+## Repository links
+
+Repository-link presentation checked in both languages at 320, 390, 768, 1024 and 1440 pixels
+No horizontal overflow, missing labels, hidden GitHub destinations, repeated marks inside repository groups or browser errors were found
+Keyboard navigation moves from Frontend to Backend in the component links with a visible two-pixel focus outline
+Desktop and mobile screenshots reviewed for MSGCTF, WEAVE, INC0GNITO, the 2025 MSG CTF archive and the MJSEC homepage project
 
 ## Limits
 

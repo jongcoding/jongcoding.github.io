@@ -76,10 +76,16 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
 .link-row a { display: inline-flex; align-items: center; min-height: 40px; padding-block: 6px; font-size: 14px; font-weight: 500; color: var(--ink); text-decoration-color: #c2c8d0; text-underline-offset: 4px; }
 .link-row a:hover { color: var(--accent); text-decoration-color: currentColor; }
 .github-link { display: inline-flex; align-items: center; gap: 7px; }
-.github-link .link-icon { width: 18px; height: 18px; flex: 0 0 18px; object-fit: contain; }
-.link-row a.github-link--icon { width: 40px; min-height: 44px; padding: 0; justify-content: center; border-radius: 5px; text-decoration: none; }
-.link-row a.github-link--icon:hover { background: #f2f5f7; }
-.hero-links .github-link--icon .link-icon { width: 22px; height: 22px; flex-basis: 22px; }
+.link-icon { width: 16px; height: 16px; flex: 0 0 16px; object-fit: contain; }
+.github-link--primary { text-decoration: none; }
+.github-link--primary > span { text-decoration: underline; text-decoration-color: #c2c8d0; text-underline-offset: 4px; }
+.github-link--primary:hover > span { text-decoration-color: currentColor; }
+.hero-links .link-icon { width: 18px; height: 18px; flex-basis: 18px; }
+.link-set { display: flex; flex-wrap: wrap; align-items: center; gap: 0 24px; }
+.repository-links { display: flex; align-items: flex-start; gap: 18px; max-width: 100%; min-width: 0; }
+.repository-label { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 7px; min-height: 40px; font-size: 12px; font-weight: 500; color: var(--muted); }
+.repository-label .link-icon { opacity: .7; }
+.repository-links > .link-row { flex: 1; min-width: 0; }
 .hero-links .link-row { column-gap: 28px; }
 .hero-links a { font-size: 15px; min-height: 44px; font-weight: 500; }
 .portrait { align-self: start; margin-top: 8px; }
@@ -107,7 +113,7 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
 .contribution dd { color: var(--secondary); font-size: 14px; line-height: 1.8; word-break: keep-all; }
 .contribution dd a { display: inline-flex; align-items: center; min-height: 32px; color: var(--ink); text-decoration-color: #c0c5bb; }
 .feature-link { display: inline-flex; align-items: center; min-height: 44px; margin-top: 11px; font-size: 14px; text-decoration-color: #c0c5bb; }
-.feature-repositories { display: grid; grid-template-columns: 170px minmax(0, 1fr); align-items: baseline; gap: 20px; padding-top: 21px; margin-top: 29px; border-top: 1px solid var(--line); }
+.feature-repositories { display: grid; grid-template-columns: 110px minmax(0, 1fr); align-items: start; gap: 24px; padding-top: 21px; margin-top: 29px; border-top: 1px solid var(--line); }
 .feature-repositories > p { color: var(--muted); font-size: 13px; }
 .feature-repositories .link-row { column-gap: 24px; }
 .feature-repositories a { font-size: 13px; }
@@ -120,7 +126,7 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
 .project-copy > p:not(.project-meta) { font-size: 16px; line-height: 1.85; color: var(--secondary); word-break: keep-all; }
 .project-copy p.role-line { font-size: 13px; margin-top: 18px; color: var(--muted); }
 .role-line span { margin-left: 11px; color: var(--secondary); }
-.project-copy > .link-row { margin-top: 15px; }
+.project-copy > .link-row, .project-copy > .link-set { margin-top: 15px; }
 .resource-details { margin-top: 10px; font-size: 13px; color: var(--muted); }
 .resource-details summary { display: inline-flex; gap: 8px; align-items: center; list-style: none; min-height: 36px; cursor: pointer; }
 .resource-details summary::-webkit-details-marker { display: none; }
@@ -149,6 +155,7 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
 .activity-body > p { font-size: 15px; line-height: 1.8; color: var(--secondary); word-break: keep-all; }
 .activity-body > p + p { margin-top: 13px; }
 .activity-body .link-row { margin-top: 11px; }
+.activity-body > .link-set { margin-top: 11px; }
 .activity-body .link-row a { font-size: 14px; }
 .authorship-note { display: flex; flex-wrap: wrap; align-items: baseline; gap: 5px 18px; margin-top: 20px; padding-top: 17px; border-top: 1px solid var(--line); font-size: 14px; line-height: 1.8; color: var(--secondary); }
 .authorship-note strong { color: var(--ink); font-weight: 600; }
@@ -163,8 +170,11 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
 .archive-copy h3 { font-size: 21px; font-weight: 600; letter-spacing: -.02em; }
 .archive-copy > p { color: var(--secondary); font-size: 15px; margin-top: 7px; word-break: keep-all; }
 .archive-copy > p.archive-role { font-size: 13px; color: var(--muted); margin-top: 7px; }
-.archive-copy > .link-row { margin-top: 10px; }
+.archive-copy > .link-row, .archive-copy > .link-set { margin-top: 10px; }
 .archive-copy .link-row a { font-size: 14px; }
+.link-set > .link-row, .repository-links > .link-row { margin-top: 0; }
+.repository-links .link-row a, .feature-repositories .link-row a { color: var(--secondary); text-decoration: none; }
+.repository-links .link-row a:hover, .feature-repositories .link-row a:hover { color: var(--accent); text-decoration: underline; }
 .team-record { display: grid; grid-template-columns: 265px 1fr; gap: 55px; padding-bottom: 30px; margin-bottom: 31px; border-bottom: 1px solid var(--line); }
 .team-record h3 { font-size: 21px; font-weight: 600; }
 .team-record p { font-size: 15px; color: var(--secondary); }
@@ -202,7 +212,7 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
   .highlights { gap: 35px; }
   .highlights h2 { font-size: 20px; }
   .job, .activity-row, .team-record { grid-template-columns: 215px minmax(0, 1fr); gap: 35px; }
-  .feature-repositories { grid-template-columns: 145px minmax(0, 1fr); }
+  .feature-repositories { grid-template-columns: 90px minmax(0, 1fr); }
   .about-grid { gap: 40px; }
 }
 @media (max-width: 760px) {
@@ -280,7 +290,7 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
   .feature h3 span::before { content: none; }
   .project-description, .project-copy > p:not(.project-meta) { font-size: 15px; }
   .project-copy p.role-line { font-size: 13px; }
-  .project-copy > .link-row { margin-top: 12px; }
+  .project-copy > .link-row, .project-copy > .link-set { margin-top: 12px; }
   .link-row { column-gap: 22px; }
   .link-row a, .resource-details summary { min-height: 40px; }
   .challenge-grid { grid-template-columns: 1fr; gap: 22px; }

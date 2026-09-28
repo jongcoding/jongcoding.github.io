@@ -39,6 +39,8 @@ The compact motion preview sits beside that introduction without a duplicate log
 Other source files are copied unchanged and displayed with their original aspect ratios and colors
 The MJSEC mark uses the unchanged 512-pixel source image within an inline SVG viewBox of 96 96 320 320, removing outer whitespace only in the display viewport
 It identifies the club's activity entry, Homepage & LMS project and BOJ Contest project
-GitHub links use the official mark, with accessible destination names and text labels where multiple repository choices need to be distinguished
+GitHub repository groups use one official mark beside the group label, while individual primary code links pair the mark with visible text
+Document, challenge-path and release-download links keep descriptive text without repeating the logo
+Accessible names identify the destination of every GitHub link
 The layered image, inventory racks and isolated container objects are original SVG illustrations of software responsibilities rather than vendor logos or production screenshots
 Names and trademarks belong to their respective owners

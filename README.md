@@ -69,7 +69,9 @@ The preview uses a short action heading and its resulting operation, while the s
 On narrow screens the introduction and preview stack, with smaller gaps and no repeated logo header
 Image layers, inventory racks, reservation receipts and ribbed containers distinguish each service's input and output
 Shared body and link text use larger sizes and stronger contrast
-GitHub destinations carry the official icon, with destination names for assistive technology and visible repository labels where needed
+Repository groups use one restrained GitHub mark followed by their repository names, while individual primary code links retain an icon and visible label
+Document, challenge, provider-adapter and download links use descriptive text without repeated GitHub marks
+All destinations remain visible, with accessible names and clear keyboard focus styles
 The illustrations summarize the design and do not claim to be production recordings or measured telemetry
 Four scene buttons let visitors choose a stage and pause there to read at their own pace
 An optional native disclosure lists all seven roles and their connections, while all seven repository links remain visible outside it

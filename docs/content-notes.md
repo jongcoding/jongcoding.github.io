@@ -108,7 +108,11 @@ The compact layout stacks the introduction and preview on mobile without reducin
 The new scenes use layered images, inventory racks, containers, namespaces and a response trace, with concise HTML labels remaining readable around the drawings
 The shared page styles increase smaller body and link text sizes and strengthen muted text contrast
 Official AWS, Azure and Google Cloud artwork identifies the inventory sources, while the Kubernetes icon identifies the illustrated Runtime
-The GitHub icon replaces generic GitHub text links and accompanies descriptive repository labels, with accessible destination names and 44-pixel icon-only targets
+GitHub marks identify repository groups once rather than repeating before each repository name
+Single primary repository links retain one small mark and a visible label, using Code for otherwise generic repository links and GitHub for profile links
+Document, challenge, provider-adapter and release-download links use their content labels without a GitHub icon
+The five multi-repository groups and MSGCTF component row use quiet text links with hover underlines and visible keyboard focus
+This reduces the link-area marks from 39 to 17 per language while retaining all 39 GitHub anchors and their accessible destination names
 The seven component repository links remain visible outside the optional role overview
 GnawLab uses AWS S3, Bedrock and Lambda service icons to identify the illustrated knowledge source, agent and action group
 WEAVE moves through a folder index, an expanded case sheet and a two-column interpretation comparison
