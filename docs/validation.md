@@ -57,15 +57,22 @@ Mobile paragraph spacing checked after removing sentence-ending periods
 ## Project motion
 
 Four project previews use local HTML, SVG, CSS and the native Web Animations API
-MSGCTF runs for twenty seconds and the other three run for nine seconds
+MSGCTF runs for 24 seconds and the other three run for 12 seconds
 
 - Automatic playback begins when the preview enters the viewport
 - HTML and SVG brand images are decoded before playback starts
-- A natural twenty-second MSGCTF run completes once and remains stopped
+- A natural 24-second MSGCTF run completes once and remains stopped
 - Container image layers appear before the scan seal, SBOM and published-image result
 - Cloud candidate selection precedes the held reservation and Broker result
 - Runtime dispatch precedes container placement, ready state and reservation commit
 - The response trace precedes the health alert and recovery request
+- Every film's scene visibility sampled at 25 ms intervals across the complete timeline with no overlapping scene layers
+- Native animation clocks checked while playing, with zero spread between actors and matching duration metadata
+- Initial frames prepared at time zero before autoplay, with future results and completion checks hidden
+- Action dependencies checked at 29 checkpoints across all four films, including source checks before assembly, scan and SBOM before publication, workload readiness before COMMITTED, and graph delivery before alert and request states
+- GnawLab's second connection completes before the action group appears, and WEAVE's input panel appears before either interpretation
+- DBREACH's output blocks arrive before the size bracket appears
+- Shadow bounds reduced to avoid harsh clipping at the SVG content boundary
 - Manual pause freezes the animation timeline and persists after scrolling away and back
 - Selecting any of the four MSGCTF stages seeks to that scene and pauses playback until the visitor resumes
 - Scene selection checked in both languages at five widths under normal and reduced-motion preferences
@@ -83,8 +90,8 @@ The MSGCTF GIF in `docs/preview/` captures the four-scene website animation for 
 The earlier four-project GIF documents the previous branded revision and is superseded for MSGCTF by the individual capture
 Neither GIF is a runtime dependency
 
-The four platform scenes were selected at 4,650 ms, 9,650 ms, 14,650 ms and 19,650 ms, covering build and publication, capacity reservations, container scheduling, and observation and recovery
-The other previews were checked at 1,700 ms, 4,500 ms and 8,500 ms in both languages
+The four platform scenes were selected at 5,400 ms, 11,400 ms, 17,400 ms and 23,400 ms, covering build and publication, capacity reservations, container scheduling, and observation and recovery
+Transition boundaries and intermediate dependency states were inspected in all four previews, with both language versions checked for SVG text overflow
 SVG labels fit inside the scene viewport and the primary header and heading use ialleejy in both languages
 The review GIF is captured at 30 frames per second while browser playback uses the native animation timeline
 The branded revision also checks WEAVE's folder index and interpretation comparison, MSGCTF's role scenes, and GnawLab's original wordmark and service icons

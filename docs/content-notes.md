@@ -86,9 +86,13 @@ KOTH scoring remains in the current project scope and Backend's competition resp
 GnawLab's document transfer and permissions panels summarize research scope without adding exploit mechanics or claiming a security fix
 WEAVE's five categories and example topics come from the existing taxonomy screenshot, with HTTP Parameter Pollution under syntax parsing and duplicate-key handling
 DBREACH's data blocks illustrate compression rather than measured data, a benchmark or a compression ratio
-The MSGCTF flow runs for twenty seconds across build, resource brokerage, scheduling and monitoring scenes
+The MSGCTF flow runs for 24 seconds across build, resource brokerage, scheduling and monitoring scenes
 Visitors can select any scene to pause there, including static selection when reduced motion is enabled
-The other three previews use staged entrances, document transfer, taxonomy expansion, data-block movement and chapter progress on nine-second timelines
+The other three previews use staged entrances, document transfer, taxonomy expansion, data-block movement and chapter progress on 12-second timelines
+Scenes do not crossfade their text or objects into one another, and each final result stays visible before advancing
+Build checks, publication, reservations and runtime readiness appear only after the illustrated prerequisite action
+Monitoring omits the previous full-trace backdrop so future samples are not visible before observation
+The HELD and COMMITTED receipt states distinguish capacity reservation from successful Runtime creation
 
 Project headings use the original MSGCTF, GnawLab, WEAVE and INC0GNITO marks, with the ENKI WhiteHat wordmark in the employment section
 The current MSGCTF project and preview use the 2026 frontend's maple-leaf and mountain mark instead of the organization's older red avatar

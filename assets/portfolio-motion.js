@@ -58,6 +58,13 @@
       select(0);
       state(preference.matches ? 'static' : 'ready', 'play');
       button.hidden = preference.matches;
+      if (!preference.matches) {
+        // Prepare the first frame before autoplay so finished objects cannot flash
+        void element.offsetWidth;
+        element.classList.add('is-started');
+        animations = element.getAnimations({ subtree: true });
+        animations.forEach(animation => { animation.pause(); animation.currentTime = 0; });
+      }
     }
 
     function pause(manual = false) {
@@ -93,13 +100,8 @@
       }
       if (element.dataset.state === 'complete') {
         reset();
-        // Commit the removed CSS animation before starting a fresh replay
-        void element.offsetWidth;
       }
       if (!started) {
-        // Each preview uses one native CSS animation timeline
-        element.classList.add('is-started');
-        animations = element.getAnimations({ subtree: true });
         started = true;
         const current = ++generation;
         Promise.all(animations.map(animation => animation.finished)).then(() => {
@@ -111,7 +113,10 @@
         }).catch(() => {});
       }
       wanted = true;
-      animations.forEach(animation => animation.play());
+      // Use one start time for actors, scene visibility and chapter indicators
+      const time = Number(animations[0]?.currentTime || 0);
+      const startTime = document.timeline.currentTime - time;
+      animations.forEach(animation => { animation.play(); animation.startTime = startTime; });
       state('running', 'pause');
       stopClock();
       updateClock();

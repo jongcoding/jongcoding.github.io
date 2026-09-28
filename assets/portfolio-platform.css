@@ -2,7 +2,7 @@
 .feature-copy { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr); gap: 64px; align-items: start; }
 .feature-copy .contribution { margin-top: 4px; grid-template-columns: 1fr 1fr; gap: 19px 30px; }
 .feature-copy .contribution > div:first-child { grid-column: 1 / -1; }
-.platform-film { --film-duration: 20s; --film-bg: #f8fafb; --film-rule: #dfe5e9; }
+.platform-film { --film-duration: 24s; --film-bg: #f8fafb; --film-rule: #dfe5e9; }
 .platform-stage { aspect-ratio: auto; }
 .project-brand .msgctf-mark { width: 96px; height: 70px; }
 .feature .project-brand h3 { font-size: 32px; line-height: 1.25; letter-spacing: -.025em; }
@@ -27,6 +27,9 @@
 .pipeline-flow li { display: flex; align-items: center; gap: 6px; color: #526875; font-size: 13px; font-weight: 500; white-space: nowrap; }
 .pipeline-flow svg, .pipeline-result > svg { width: 17px; height: 17px; flex: 0 0 17px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .pipeline-flow svg { stroke-dasharray: 100; stroke-dashoffset: 0; }
+.phase-marker { position: relative; display: grid; place-items: center; width: 17px; height: 17px; flex: 0 0 17px; border: 1px solid #c8d2d9; border-radius: 50%; }
+.phase-check { display: grid; place-items: center; color: #41687e; }
+.pipeline-flow .phase-check svg { width: 12px; height: 12px; }
 .inventory-criteria { display: flex; align-items: center; justify-content: center; gap: 22px; min-height: 30px; color: #556c7f; font-size: 13px; }
 .inventory-criteria span + span { padding-left: 22px; border-left: 1px solid #d9e1e6; }
 .monitor-label { padding-inline: 10px; min-height: 30px; font-size: 14px; color: #62717c; }
@@ -54,7 +57,9 @@
 .registry-wall { fill: #d2dce3; stroke: #8ba0af; stroke-width: 1.4; }
 .registry-top { fill: #f0f4f6; stroke: #8ba0af; stroke-width: 1.4; }
 .registry-line { stroke: #95a9b8; fill: none; stroke-width: 1.5; }
-.build-packet { opacity: 0; }
+.build-packet, .publish-packet { opacity: 0; }
+.tool-caption { fill: #64816e; font-family: var(--font-display); font-size: 13px; font-weight: 600; }
+.image-scan { fill: none; stroke: #7caa9b; stroke-width: 5; stroke-linecap: round; opacity: 0; }
 .rack-top { fill: #e1e8ec; stroke: #93a6b4; stroke-width: 1.2; }
 .rack-side { fill: #9daeba; stroke: #889eae; stroke-width: 1.2; }
 .rack-front { fill: #c4d0d8; stroke: #92a6b4; stroke-width: 1.3; }
@@ -69,6 +74,10 @@
 .queue-back { fill: #d9e2e8; stroke: #a6b6c0; stroke-width: 1.2; }
 .queue-mid { fill: #e7edf0; stroke: #b3c1ca; stroke-width: 1.2; }
 .queue-lines { fill: none; stroke: #8ea5b5; stroke-width: 3; }
+.reservation-receipt rect { fill: #eef3f6; stroke: #b5c5cf; stroke-width: 1; }
+.reservation-receipt text { font-family: var(--font-display); font-size: 13px; font-weight: 600; letter-spacing: .5px; fill: #58748a; }
+.receipt-held { opacity: 0; }
+.reservation-receipt .receipt-committed { fill: #4c7661; }
 .container .iso-front { fill: #799fbb; stroke: #527d9f; stroke-width: 1.3; }
 .container .iso-side { fill: #456f90; stroke: #3d6481; stroke-width: 1.3; }
 .container .iso-top { fill: #d5e6f1; stroke: #7297b2; stroke-width: 1.3; }
@@ -88,7 +97,7 @@
 .health-grid { stroke: #e0e7e9; stroke-width: 1; fill: none; }
 .health-baseline { stroke: #dee6e9; stroke-width: 2; fill: none; }
 .health-trace { stroke: #7296af; stroke-width: 2.7; fill: none; stroke-dasharray: 100; stroke-dashoffset: 0; stroke-linejoin: round; }
-.health-delay { stroke: #b99558; stroke-width: 3; fill: none; }
+.health-delay { stroke: #b99558; stroke-width: 3; fill: none; stroke-dasharray: 100; stroke-dashoffset: 0; }
 .platform-steps { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 24px; margin: 0 28px 16px; }
 .platform-film .platform-step { position: relative; display: flex; align-items: center; gap: 10px; min-height: 45px; padding: 13px 0 0; border-top: 2px solid #dce3e8; color: #667580; font-size: 14px; text-decoration: none; }
 .platform-film .platform-step:hover { color: #324f65; text-decoration: none; }
@@ -114,47 +123,338 @@
 .platform-overview dt { font-weight: 600; color: #344b5c; font-size: 16px; }
 .platform-overview dd p { font-size: 16px; color: var(--secondary); }
 .platform-overview dd > span { display: block; margin-top: 4px; color: var(--muted); font-size: 13px; line-height: 1.8; }
-@keyframes platform-scene-1 { 0%,23.5% { opacity:1;visibility:visible;transform:translateY(0); } 25%,100% { opacity:0;visibility:hidden;transform:translateY(-5px); } }
-@keyframes platform-scene-2 { 0%,24.5% { opacity:0;visibility:hidden;transform:translateY(7px); } 26%,48.5% { opacity:1;visibility:visible;transform:translateY(0); } 50%,100% { opacity:0;visibility:hidden;transform:translateY(-5px); } }
-@keyframes platform-scene-3 { 0%,49.5% { opacity:0;visibility:hidden;transform:translateY(7px); } 51%,73.5% { opacity:1;visibility:visible;transform:translateY(0); } 75%,100% { opacity:0;visibility:hidden;transform:translateY(-5px); } }
-@keyframes platform-scene-4 { 0%,74.5% { opacity:0;visibility:hidden;transform:translateY(7px); } 76%,100% { opacity:1;visibility:visible;transform:translateY(0); } }
-@keyframes platform-progress-1 { 0% { transform:scaleX(0); } 25%,100% { transform:scaleX(1); } }
-@keyframes platform-progress-2 { 0%,25% { transform:scaleX(0); } 50%,100% { transform:scaleX(1); } }
-@keyframes platform-progress-3 { 0%,50% { transform:scaleX(0); } 75%,100% { transform:scaleX(1); } }
-@keyframes platform-progress-4 { 0%,75% { transform:scaleX(0); } 100% { transform:scaleX(1); } }
-@keyframes build-source { 0% { opacity:0;transform:translateY(8px); } 4%,100% { opacity:1;transform:translateY(0); } }
-@keyframes build-layer-1 { 0%,5% { opacity:0;transform:translateY(-27px); } 8%,100% { opacity:1;transform:translateY(0); } }
-@keyframes build-layer-2 { 0%,8% { opacity:0;transform:translateY(-27px); } 11%,100% { opacity:1;transform:translateY(0); } }
-@keyframes build-layer-3 { 0%,11% { opacity:0;transform:translateY(-27px); } 14%,100% { opacity:1;transform:translateY(0); } }
-@keyframes build-seal { 0%,14% { opacity:0;transform:translateY(-6px); } 17%,100% { opacity:1;transform:translateY(0); } }
-@keyframes build-registry { 0%,17% { opacity:.25; } 20%,100% { opacity:1; } }
-@keyframes build-manifest { 0%,18% { opacity:0;transform:translateY(12px); } 21%,100% { opacity:1;transform:translateY(0); } }
-@keyframes build-path { 0%,4% { stroke-dashoffset:100; } 20%,100% { stroke-dashoffset:0; } }
-@keyframes build-packet { 0%,3% { opacity:0;transform:translate(130px,157px); } 4% { opacity:1;transform:translate(130px,157px); } 9% { opacity:1;transform:translate(208px,157px); } 10%,100% { opacity:0;transform:translate(208px,157px); } }
-@keyframes build-gate-1 { 0%,5% { opacity:.35; } 8%,100% { opacity:1; } }
-@keyframes build-gate-2 { 0%,12% { opacity:.35; } 17%,100% { opacity:1; } }
-@keyframes build-gate-3 { 0%,18% { opacity:.35; } 22%,100% { opacity:1; } }
-@keyframes build-result { 0%,21% { opacity:0;transform:translateY(6px); } 23%,100% { opacity:1;transform:translateY(0); } }
-@keyframes broker-rack { 0%,26% { opacity:0;transform:translateY(10px); } 30%,34% { opacity:1;transform:translateY(0); } 39%,100% { opacity:.46;transform:translateY(0); } }
-@keyframes broker-rack-selected { 0%,26% { opacity:0;transform:translateY(10px); } 30%,100% { opacity:1;transform:translateY(0); } }
-@keyframes broker-match { 0%,33% { opacity:0; } 37%,100% { opacity:1; } }
-@keyframes broker-route { 0%,35% { stroke-dashoffset:100; } 41%,100% { stroke-dashoffset:0; } }
-@keyframes broker-target { 0%,40% { opacity:0;transform:translateY(-9px); } 44%,100% { opacity:1;transform:translateY(0); } }
-@keyframes broker-result { 0%,43% { opacity:0;transform:translateY(6px); } 47%,100% { opacity:1;transform:translateY(0); } }
-@keyframes schedule-dispatch { 0%,52% { stroke-dashoffset:100; } 58%,100% { stroke-dashoffset:0; } }
-@keyframes schedule-namespace { 0%,55% { opacity:0; } 59%,100% { opacity:1; } }
-@keyframes schedule-web { 0%,58% { opacity:0;transform:translate(-28px,-65px); } 64%,100% { opacity:1;transform:translate(0,0); } }
-@keyframes schedule-db { 0%,61% { opacity:0;transform:translate(-20px,-50px); } 66%,100% { opacity:1;transform:translate(0,0); } }
-@keyframes schedule-ready { 0%,66% { opacity:0; } 70%,100% { opacity:1; } }
-@keyframes schedule-gate-1 { 0%,51% { opacity:.35; } 54%,100% { opacity:1; } }
-@keyframes schedule-gate-2 { 0%,58% { opacity:.35; } 66%,100% { opacity:1; } }
-@keyframes schedule-gate-3 { 0%,68% { opacity:.35; } 72%,100% { opacity:1; } }
-@keyframes schedule-result { 0%,70% { opacity:0;transform:translateY(6px); } 73%,100% { opacity:1;transform:translateY(0); } }
-@keyframes monitor-trace { 0%,75% { stroke-dashoffset:100; } 87%,100% { stroke-dashoffset:0; } }
-@keyframes monitor-alert { 0%,84% { opacity:0; } 89%,100% { opacity:1; } }
-@keyframes monitor-marker { 0%,86% { opacity:0;transform:translateY(-5px); } 90%,100% { opacity:1;transform:translateY(0); } }
-@keyframes monitor-request { 0%,90% { opacity:0;transform:translateX(8px); } 95%,100% { opacity:1;transform:translateX(0); } }
-@keyframes monitor-result { 0%,94% { opacity:0;transform:translateY(6px); } 98%,100% { opacity:1;transform:translateY(0); } }
+/* Four 6-second scenes, with exclusive visibility and at least one second to read the result */
+@keyframes platform-scene-1 {
+  0% { opacity: 1; visibility: visible; }
+  24% { opacity: 1; visibility: visible; }
+  24.8333% { opacity: 0; visibility: hidden; }
+  100% { opacity: 0; visibility: hidden; }
+}
+@keyframes platform-progress-1 {
+  0% { transform: scaleX(0); }
+  25% { transform: scaleX(1); }
+  100% { transform: scaleX(1); }
+}
+@keyframes platform-scene-2 {
+  0% { opacity: 0; visibility: hidden; }
+  25% { opacity: 0; visibility: hidden; }
+  25.75% { opacity: 1; visibility: visible; }
+  49% { opacity: 1; visibility: visible; }
+  49.8333% { opacity: 0; visibility: hidden; }
+  100% { opacity: 0; visibility: hidden; }
+}
+@keyframes platform-progress-2 {
+  0% { transform: scaleX(0); }
+  25% { transform: scaleX(0); }
+  50% { transform: scaleX(1); }
+  100% { transform: scaleX(1); }
+}
+@keyframes platform-scene-3 {
+  0% { opacity: 0; visibility: hidden; }
+  50% { opacity: 0; visibility: hidden; }
+  50.75% { opacity: 1; visibility: visible; }
+  74% { opacity: 1; visibility: visible; }
+  74.8333% { opacity: 0; visibility: hidden; }
+  100% { opacity: 0; visibility: hidden; }
+}
+@keyframes platform-progress-3 {
+  0% { transform: scaleX(0); }
+  50% { transform: scaleX(0); }
+  75% { transform: scaleX(1); }
+  100% { transform: scaleX(1); }
+}
+@keyframes platform-scene-4 {
+  0% { opacity: 0; visibility: hidden; }
+  75% { opacity: 0; visibility: hidden; }
+  75.75% { opacity: 1; visibility: visible; }
+  100% { opacity: 1; visibility: visible; }
+}
+@keyframes platform-progress-4 {
+  0% { transform: scaleX(0); }
+  75% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+/* Source check → layers → image scan → SBOM → upload → release result */
+@keyframes build-source {
+  0% { opacity: 1; transform: translateY(4px); }
+  1.25% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes build-source-check {
+  0% { opacity: 0; transform: translateY(4px); }
+  2.2917% { opacity: 0; transform: translateY(4px); }
+  3.4167% { opacity: 1; transform: translate(0, 0); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes build-gate-1 {
+  0% { opacity: 0; transform: translate(0, 0); }
+  3.4167% { opacity: 0; transform: translate(0, 0); }
+  4.1667% { opacity: 1; transform: translate(0, 0); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes build-shadow {
+  0% { opacity: 0; transform: translate(0, 0); }
+  5.8333% { opacity: 0; transform: translate(0, 0); }
+  7.0833% { opacity: 1; transform: translate(0, 0); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes build-layer-1 {
+  0% { opacity: 0; transform: translateY(-18px); }
+  5.8333% { opacity: 0; transform: translateY(-18px); }
+  7.0833% { opacity: 1; transform: translate(0, 0); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes build-layer-2 {
+  0% { opacity: 0; transform: translateY(-18px); }
+  7.1667% { opacity: 0; transform: translateY(-18px); }
+  8.4167% { opacity: 1; transform: translate(0, 0); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes build-layer-3 {
+  0% { opacity: 0; transform: translateY(-18px); }
+  8.5% { opacity: 0; transform: translateY(-18px); }
+  9.75% { opacity: 1; transform: translate(0, 0); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes build-image-label {
+  0% { opacity: 0; transform: translateY(4px); }
+  9.75% { opacity: 0; transform: translateY(4px); }
+  10.5833% { opacity: 1; transform: translate(0, 0); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes build-seal {
+  0% { opacity: 0; transform: translateY(4px); }
+  13.3333% { opacity: 0; transform: translateY(4px); }
+  14.375% { opacity: 1; transform: translate(0, 0); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes build-gate-2 {
+  0% { opacity: 0; transform: translate(0, 0); }
+  14.375% { opacity: 0; transform: translate(0, 0); }
+  15% { opacity: 1; transform: translate(0, 0); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes build-manifest {
+  0% { opacity: 0; transform: translateY(4px); }
+  14.375% { opacity: 0; transform: translateY(4px); }
+  15.4167% { opacity: 1; transform: translate(0, 0); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes build-registry {
+  0% { opacity: 0; transform: translate(0, 0); }
+  15.4167% { opacity: 0; transform: translate(0, 0); }
+  16.1667% { opacity: 1; transform: translate(0, 0); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes build-gate-3 {
+  0% { opacity: 0; transform: translate(0, 0); }
+  18.125% { opacity: 0; transform: translate(0, 0); }
+  18.75% { opacity: 1; transform: translate(0, 0); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes build-result {
+  0% { opacity: 0; transform: translateY(4px); }
+  19.1667% { opacity: 0; transform: translateY(4px); }
+  20% { opacity: 1; transform: translate(0, 0); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes build-path {
+  0% { stroke-dashoffset: 100; }
+  4.1667% { stroke-dashoffset: 100; }
+  5.75% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 0; }
+}
+@keyframes build-publish {
+  0% { stroke-dashoffset: 100; }
+  16.1667% { stroke-dashoffset: 100; }
+  17.8333% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 0; }
+}
+@keyframes build-packet {
+  0% { opacity: 0; transform: translate(125px, 157px); }
+  4.1667% { opacity: 0; transform: translate(125px, 157px); }
+  4.5% { opacity: 1; transform: translate(125px, 157px); }
+  5.8333% { opacity: 1; transform: translate(216px, 157px); }
+  6.25% { opacity: 0; transform: translate(224px, 157px); }
+  100% { opacity: 0; transform: translate(224px, 157px); }
+}
+@keyframes build-scan {
+  0% { opacity: 0; transform: translateY(-22px); }
+  10.625% { opacity: 0; transform: translateY(-22px); }
+  10.9167% { opacity: .85; transform: translateY(-22px); }
+  12.8333% { opacity: .85; transform: translateY(58px); }
+  13.125% { opacity: 0; transform: translateY(58px); }
+  100% { opacity: 0; transform: translateY(58px); }
+}
+@keyframes build-upload {
+  0% { opacity: 0; transform: translate(364px, 157px); }
+  16.1667% { opacity: 0; transform: translate(364px, 157px); }
+  16.4583% { opacity: 1; transform: translate(364px, 157px); }
+  17.8333% { opacity: 1; transform: translate(438px, 157px); }
+  18.125% { opacity: 0; transform: translate(452px, 157px); }
+  100% { opacity: 0; transform: translate(452px, 157px); }
+}
+/* Inventory appears before candidate selection, followed by the reservation and handoff */
+@keyframes broker-rack-selected {
+  0% { opacity: 0; transform: translateY(6px); }
+  25.8333% { opacity: 0; transform: translateY(6px); }
+  27.5% { opacity: 1; transform: translate(0, 0); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes broker-rack {
+  0% { opacity: 0; transform: translateY(6px); }
+  25.8333% { opacity: 0; transform: translateY(6px); }
+  27.5% { opacity: 1; transform: translateY(0); }
+  33.75% { opacity: 1; transform: translateY(0); }
+  34.7917% { opacity: .5; transform: translateY(0); }
+  100% { opacity: .5; transform: translateY(0); }
+}
+@keyframes broker-selected-front {
+  0% { fill: #c4d0d8; }
+  31.25% { fill: #c4d0d8; }
+  32.5% { fill: #7e9eb5; }
+  100% { fill: #7e9eb5; }
+}
+@keyframes broker-selected-top {
+  0% { fill: #e1e8ec; }
+  31.25% { fill: #e1e8ec; }
+  32.5% { fill: #cfdfeb; }
+  100% { fill: #cfdfeb; }
+}
+@keyframes broker-selected-side {
+  0% { fill: #9daeba; }
+  31.25% { fill: #9daeba; }
+  32.5% { fill: #577d9a; }
+  100% { fill: #577d9a; }
+}
+@keyframes broker-match {
+  0% { opacity: 0; transform: translateY(6px); }
+  32.7083% { opacity: 0; transform: translateY(6px); }
+  33.5417% { opacity: 1; transform: translate(0, 0); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes broker-route {
+  0% { stroke-dashoffset: 100; }
+  34.1667% { stroke-dashoffset: 100; }
+  38.5417% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 0; }
+}
+@keyframes broker-target {
+  0% { opacity: 0; transform: translateY(6px); }
+  38.75% { opacity: 0; transform: translateY(6px); }
+  39.9167% { opacity: 1; transform: translate(0, 0); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes broker-result {
+  0% { opacity: 0; transform: translateY(6px); }
+  40.625% { opacity: 0; transform: translateY(6px); }
+  41.6667% { opacity: 1; transform: translate(0, 0); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+/* Dispatch → namespace → both workloads ready → commit → result */
+@keyframes schedule-dispatch {
+  0% { stroke-dashoffset: 100; }
+  50.8333% { stroke-dashoffset: 100; }
+  54.1667% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 0; }
+}
+@keyframes schedule-gate-1 {
+  0% { opacity: 0; transform: translate(0, 0); }
+  54.1667% { opacity: 0; transform: translate(0, 0); }
+  54.6667% { opacity: 1; transform: translate(0, 0); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes schedule-namespace {
+  0% { opacity: 0; transform: translate(0, 0); }
+  54.6667% { opacity: 0; transform: translate(0, 0); }
+  55.8333% { opacity: 1; transform: translate(0, 0); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes schedule-web {
+  0% { opacity: 0; transform: translateY(-32px); }
+  56.25% { opacity: 0; transform: translateY(-32px); }
+  58.5417% { opacity: 1; transform: translate(0, 0); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes schedule-db {
+  0% { opacity: 0; transform: translateY(-32px); }
+  59.1667% { opacity: 0; transform: translateY(-32px); }
+  61.4583% { opacity: 1; transform: translate(0, 0); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes schedule-ready {
+  0% { opacity: 0; transform: translate(0, 0); }
+  61.875% { opacity: 0; transform: translate(0, 0); }
+  62.7083% { opacity: 1; transform: translate(0, 0); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes schedule-gate-2 {
+  0% { opacity: 0; transform: translate(0, 0); }
+  62.7083% { opacity: 0; transform: translate(0, 0); }
+  63.25% { opacity: 1; transform: translate(0, 0); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes schedule-commit {
+  0% { opacity: 0; transform: translate(0, 0); }
+  65.3333% { opacity: 0; transform: translate(0, 0); }
+  66.25% { opacity: 1; transform: translate(0, 0); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes schedule-gate-3 {
+  0% { opacity: 0; transform: translate(0, 0); }
+  66.4583% { opacity: 0; transform: translate(0, 0); }
+  67.2917% { opacity: 1; transform: translate(0, 0); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes schedule-result {
+  0% { opacity: 0; transform: translate(0, 0); }
+  67.5833% { opacity: 0; transform: translate(0, 0); }
+  68.5417% { opacity: 1; transform: translate(0, 0); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes schedule-held {
+  0% { opacity: 1; }
+  64.5833% { opacity: 1; }
+  65.0833% { opacity: 0; }
+  100% { opacity: 0; }
+}
+/* Only observed trace segments are drawn, then alert, request delivery and result */
+@keyframes monitor-trace {
+  0% { stroke-dashoffset: 100; }
+  75.8333% { stroke-dashoffset: 100; }
+  82.5% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 0; }
+}
+@keyframes monitor-alert {
+  0% { stroke-dashoffset: 100; }
+  82.7083% { stroke-dashoffset: 100; }
+  85.8333% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 0; }
+}
+@keyframes monitor-marker {
+  0% { opacity: 0; transform: translateY(6px); }
+  86.25% { opacity: 0; transform: translateY(6px); }
+  87.0833% { opacity: 1; transform: translate(0, 0); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes monitor-route {
+  0% { stroke-dashoffset: 100; }
+  87.5833% { stroke-dashoffset: 100; }
+  89.9167% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 0; }
+}
+@keyframes monitor-request {
+  0% { opacity: 0; transform: translateY(6px); }
+  90.0833% { opacity: 0; transform: translateY(6px); }
+  90.9167% { opacity: 1; transform: translate(0, 0); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes monitor-result {
+  0% { opacity: 0; transform: translateY(6px); }
+  91.4583% { opacity: 0; transform: translateY(6px); }
+  92.5% { opacity: 1; transform: translate(0, 0); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
 @media (max-width:1000px) {
   .project-brand .msgctf-mark { width:88px;height:65px; }
   .feature .project-brand h3 { font-size:30px; }

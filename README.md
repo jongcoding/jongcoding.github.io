@@ -57,7 +57,9 @@ GnawLab shows a document passing into a knowledge base, the Bedrock Agent flow a
 WEAVE moves from its five root-cause categories to a case study and differing component interpretations
 DBREACH illustrates a Docker/MariaDB setup, data blocks compressing and the review of experiment conditions
 These are conceptual overviews, with the original research screenshots available in each project's materials
-All previews include chapter progress, with a twenty-second timeline for MSGCTF and nine seconds for the other three
+All previews include chapter progress, with a 24-second timeline for MSGCTF and 12 seconds for the other three
+Scene layers have exclusive visibility, with each completed result held before the next scene begins
+Completion marks follow their corresponding actions, and all animated objects share one playback clock
 
 MSGCTF, GnawLab, WEAVE, INC0GNITO and ENKI WhiteHat use their source artwork alongside the relevant project or role
 The current MSGCTF project uses the 2026 frontend's maple-leaf and mountain mark, with the original transparent PNG preserved and its empty margins cropped only in the display viewport
@@ -75,6 +77,7 @@ Logo colors and aspect ratios are preserved and all assets are hosted locally
 See [brand asset sources](assets/brands/README.md) for provenance
 
 - Each sequence runs once when at least 35% of the preview is visible
+- The initial animation frame is prepared before autoplay so completed objects cannot flash before their actions
 - Brand images are decoded before playback begins
 - Playback pauses outside the viewport or while the document is hidden
 - A manual pause persists until the viewer resumes it, and a finished sequence can be replayed
@@ -83,6 +86,11 @@ See [brand asset sources](assets/brands/README.md) for provenance
 - JavaScript-disabled browsers retain the previews' first frames, the expandable MSGCTF role overview, text and all project links
 
 Keep motion limited to the project previews and avoid ambient loops, decorative dots and entrance animations on text
+
+MSGCTF's build scene shows source validation, layer assembly, image scanning, SBOM preparation and publication in that order
+The Scheduler receipt stays HELD until Runtime creation succeeds, then changes to COMMITTED before the final result
+Monitoring draws only the observed trace before revealing the warning and recovery request
+GnawLab separates context delivery from the subsequent action call, WEAVE reveals interpretations after their input, and DBREACH waits for compressed data before showing its size bracket
 
 ## Hosting
 
