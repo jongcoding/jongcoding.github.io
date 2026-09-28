@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="286" viewBox="0 0 460 286" fill="none">
+  <title>MSGCTF instance lifecycle</title>
+  <desc>The platform API requests an instance from the scheduler. The scheduler asks the resource broker for capacity, then asks the isolated runtime to create the workload.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M1 1 5.5 3.5 1 6" stroke="#849486" stroke-width="1.2" fill="none"/></marker>
+  </defs>
+  <g stroke="#c5cec3" stroke-width="1.2">
+    <path d="M230 69v28" marker-end="url(#arrow)"/>
+    <path d="M210 153v29H106v29" marker-end="url(#arrow)"/>
+    <path d="M250 153v29h104v29" marker-end="url(#arrow)"/>
+  </g>
+  <rect x="154" y="21" width="152" height="48" rx="4" fill="#fcfcfa" stroke="#c5cec3"/>
+  <rect x="137" y="101" width="186" height="52" rx="4" fill="#e1ebdf" stroke="#8caa8e"/>
+  <rect x="22" y="215" width="168" height="50" rx="4" fill="#fcfcfa" stroke="#c5cec3"/>
+  <rect x="270" y="215" width="168" height="50" rx="4" fill="#fcfcfa" stroke="#c5cec3"/>
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <text x="230" y="50" font-size="13" fill="#3d4940">Platform API</text>
+    <text x="230" y="132" font-size="14" font-weight="600" fill="#326348">Instance Scheduler</text>
+    <text x="106" y="245" font-size="13" fill="#3d4940">Resource Broker</text>
+    <text x="354" y="245" font-size="13" fill="#3d4940">Isolated Runtime</text>
+    <text x="294" y="87" font-size="10" fill="#667369">request</text>
+    <text x="106" y="199" font-size="10" fill="#667369">select capacity</text>
+    <text x="354" y="199" font-size="10" fill="#667369">create workload</text>
+  </g>
+</svg>
