@@ -20,6 +20,14 @@ Cloud-provider marks describe the project's integrations and do not imply sponso
 | `azure.svg` | [Azure architecture icons](https://learn.microsoft.com/en-us/azure/architecture/icons/) / `Azure_Public_Service_Icons/Icons/other/10018-icon-service-Azure-A.svg` |
 | `google-cloud.svg` | [Google Cloud](https://cloud.google.com/icons) / [official full-color logo](https://www.gstatic.com/cgc/google-cloud-logo-fullcolor.svg) |
 | `github.svg` | [GitHub Primer Octicons / mark-github](https://github.com/primer/octicons/blob/main/icons/mark-github-16.svg), with the upstream license retained in `Octicons-LICENSE.txt` |
+| `linkedin.png` | [LinkedIn brand downloads](https://brand.linkedin.com/downloads) / unchanged `in-logo/LI-In-Bug.png` from the official [in-logo package](https://content.linkedin.com/content/dam/me/business/en-us/amp/xbu/linkedin-revised-brand-guidelines/logos/in-logo.zip) |
+| `tistory.svg` | [Tistory](https://www.tistory.com) / [official SVG favicon](https://t1.daumcdn.net/tistory_admin/top_v2/bi-tistory-favicon.svg) |
+| `notion.png` | [Notion](https://www.notion.com) / [official touch icon](https://www.notion.com/front-static/logo-ios.png) |
+| `dreamhack.png` | [Dreamhack](https://dreamhack.io) / [official touch icon](https://dreamhack.io/apple-touch-icon.png) |
+| `ctftime.png` | [CTFtime](https://ctftime.org) / [official favicon](https://ctftime.org/favicon.png) |
+| `discord.svg` | [Discord brand assets](https://discord.com/branding) / [original Blurple symbol](https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/66e3d80db9971f10a9757c99_Symbol.svg) |
+| `docker.svg` | [Docker media resources](https://www.docker.com/company/newsroom/media-resources/) / unchanged `docker-logos/SVG/docker-mark-ocean-blue.svg` from the [official logo package](https://www.docker.com/static/Docker-Logos-1.zip) |
+| `mail.svg` | [GitHub Primer Octicons / mail](https://github.com/primer/octicons/blob/main/icons/mail-16.svg), covered by the retained `Octicons-LICENSE.txt` |
 | `kubernetes.svg` | [CNCF Kubernetes icon](https://github.com/cncf/artwork/blob/main/projects/kubernetes/icon/color/kubernetes-icon-color.svg), identifying the illustrated Runtime |
 
 The existing `../gnawlab.png` is the [GnawLab repository logo](https://github.com/Beaver-Dam-Community/GnawLab/blob/main/logo.png) and is reused without adding a duplicate
@@ -42,5 +50,10 @@ It identifies the club's activity entry, Homepage & LMS project and BOJ Contest 
 GitHub repository groups use one official mark beside the group label, while individual primary code links pair the mark with visible text
 Document, challenge-path and release-download links keep descriptive text without repeating the logo
 Accessible names identify the destination of every GitHub link
+Service marks identify LinkedIn, Tistory, Notion, Dreamhack, CTFtime, Discord and Docker Hub links, while the mail icon identifies the contact action
+Marks appear alongside visible text and repeated links to one service share a single group mark
+Service assets retain their original colors, proportions and pixels or SVG paths, with no recoloring or added background badges
+The Docker symbol is displayed in a 24-pixel square, and the Discord name remains visible beside its symbol
+Decorative link icons have empty alternative text, with the service or destination included in the link's accessible name
 The layered image, inventory racks and isolated container objects are original SVG illustrations of software responsibilities rather than vendor logos or production screenshots
 Names and trademarks belong to their respective owners

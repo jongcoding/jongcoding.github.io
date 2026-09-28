@@ -71,6 +71,9 @@ Image layers, inventory racks, reservation receipts and ribbed containers distin
 Shared body and link text use larger sizes and stronger contrast
 Repository groups use one restrained GitHub mark followed by their repository names, while individual primary code links retain an icon and visible label
 Document, challenge, provider-adapter and download links use descriptive text without repeated GitHub marks
+Other service links use the original LinkedIn, Tistory, Notion, Dreamhack, CTFtime, Discord and Docker artwork, plus a simple email icon
+Repeated Dreamhack challenges, Notion records and Tistory write-ups share one service mark per group, with every destination name kept visible
+The contact links form a two-column layout on phones, with consistent icon alignment and keyboard focus
 All destinations remain visible, with accessible names and clear keyboard focus styles
 The illustrations summarize the design and do not claim to be production recordings or measured telemetry
 Four scene buttons let visitors choose a stage and pause there to read at their own pace

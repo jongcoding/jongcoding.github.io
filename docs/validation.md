@@ -122,6 +122,19 @@ No horizontal overflow, missing labels, hidden GitHub destinations, repeated mar
 Keyboard navigation moves from Frontend to Backend in the component links with a visible two-pixel focus outline
 Desktop and mobile screenshots reviewed for MSGCTF, WEAVE, INC0GNITO, the 2025 MSG CTF archive and the MJSEC homepage project
 
+## Other service links
+
+LinkedIn, Tistory, Notion, Dreamhack, CTFtime, Discord and Docker Hub links use locally hosted source artwork, with the Primer mail icon on the smaller email actions
+The same-service groups contain one mark each, and the existing 11 primary GitHub marks plus six GitHub group marks remain unchanged
+
+- Both language pages checked at 320, 390, 768, 1024 and 1440 pixels with all eight added icon types present
+- No page or link-row overflow, missing images, hidden GitHub links, repeated group marks or browser errors
+- All 110 unique destinations remain identical across the two languages, including all 69 originally inventoried destinations and the corrected Watchdog URL
+- New marks have empty alt text and visible labels, with the link's accessible name identifying its service or email destination
+- Desktop and mobile screenshots inspected for the profile, contact, INC0GNITO, MJSEC, MSG CTF archive, Docker Hub and competition write-ups
+- Mobile profile and contact links form two aligned columns, and icon sizing preserves the original artwork's aspect ratios
+- Existing keyboard focus remains visible on the component links
+
 ## Limits
 
 Checks cover local Chromium behavior rather than exhaustive browser or accessibility certification

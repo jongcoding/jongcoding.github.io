@@ -113,6 +113,12 @@ Single primary repository links retain one small mark and a visible label, using
 Document, challenge, provider-adapter and release-download links use their content labels without a GitHub icon
 The five multi-repository groups and MSGCTF component row use quiet text links with hover underlines and visible keyboard focus
 This reduces the link-area marks from 39 to 17 per language while retaining all 39 GitHub anchors and their accessible destination names
+Other link services use original LinkedIn, Tistory, Notion, Dreamhack, CTFtime, Discord and Docker artwork from their own brand downloads or website icons
+Email links use the Primer mail icon under the existing Octicons license
+Repeated references to the same service share one label and mark per list, preserving individual link text and all destinations
+These marks identify link destinations and are not additional project affiliations or sponsor claims
+The large contact email heading stays typographic, while the smaller profile and contact actions pair each icon with visible text
+Mobile contact actions use two columns so the added marks do not create an isolated wrapped link
 The seven component repository links remain visible outside the optional role overview
 GnawLab uses AWS S3, Bedrock and Lambda service icons to identify the illustrated knowledge source, agent and action group
 WEAVE moves through a folder index, an expanded case sheet and a two-column interpretation comparison
