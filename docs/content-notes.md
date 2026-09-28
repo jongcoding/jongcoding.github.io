@@ -10,6 +10,8 @@ Updated 28 September 2026
 - [DEF CON CTF Qualifier 2026 scoreboard](https://ctftime.org/event/3205/), listing The Seoul Sauna Shogunate in seventh place with 8,641 points
 - The owner's direct confirmation of DEF CON finals participation, Demo Labs presentation and graduation from Myongji University
 - [MSG-CTF organization](https://github.com/MSG-CTF), including the public frontend, backend, scheduler, broker, runtime, DevSecOps and monitoring repositories
+- [Resource Broker provider inventory](https://github.com/MSG-CTF/resource-broker/blob/41f53e2502dff6e4c315431eec805151fdd89d6e/README.md) and [provider enum](https://github.com/MSG-CTF/resource-broker/blob/41f53e2502dff6e4c315431eec805151fdd89d6e/app/domain/enums.py), confirming AWS, Azure and GCP VM inventory and Kubernetes runtime support
+- The owner's clarification that vendors means cloud providers, rather than event sponsors
 - Existing MSGCTF architecture and integration-review records, used to describe the owner's architecture, review and validation work
 - Previously published portfolio descriptions of Sealed Board, Phantompass and Observatory, including their event dates and deployment deliverables
 - [INC0GNITO official repository](https://github.com/Incognito-CTF/incognito-ctf.github.io), supplied by the owner, with the organizer table and qualifier/finals participation counts
@@ -31,6 +33,8 @@ Its authentication wall prevented direct profile review, so the relevant additio
 - Keep INC0GNITO's February to May 2026 community organizing and authorship separate from the ENKI role that started in March
 - Keep community work on GnawLab distinct from employer ownership
 - Mark MSGCTF Cloud Platform as a team project in development, with integration and operational validation ongoing
+- Describe AWS, Azure and GCP as cloud providers with adapter implementations, without implying sponsorship, a formal partnership or completed production validation across every provider
+- Link the adapter implementation from the cloud-provider line, in addition to retaining the seven component repository links
 - Treat the MSGCTF image as a simplified responsibility diagram and KOTH as part of the current scope
 - Make no unverified production capacity, uptime or completion claims
 - Keep the earlier 2025 MSG CTF platform separate from the current cloud platform
@@ -54,13 +58,16 @@ Both language versions share the same sections, project ordering, link destinati
 Content and navigation require no JavaScript, external font service, external image host or third-party widget
 An optional local script controls four short project previews with explicit pause/replay controls
 
-The MSGCTF and GnawLab animations are conceptual illustrations of documented architecture and research scope
+All four animations are conceptual illustrations of documented architecture and research scope
 They do not claim to be live production telemetry or recordings of an operational system
-WEAVE and DBREACH previews show the project's existing image assets
+The existing WEAVE and DBREACH screenshots remain accessible through the supplementary materials links
 
-MSGCTF's request form, cursor action and runtime screen are illustrative interface elements within the architecture preview
-GnawLab's documents and permissions panels summarize research scope without adding exploit mechanics or claiming a security fix
-The sequences use staged entrances, chapter progress, smooth lateral transitions and restrained image zoom
+MSGCTF shows the three provider adapters, shared VM inventory, scheduler selection and team isolation
+The runtime panels are illustrative and do not assert a specific deployed capacity or number of active teams
+GnawLab's document transfer and permissions panels summarize research scope without adding exploit mechanics or claiming a security fix
+WEAVE's five categories and example topics come from the existing taxonomy screenshot, with HTTP Parameter Pollution under syntax parsing and duplicate-key handling
+DBREACH's data blocks illustrate compression rather than measured data, a benchmark or a compression ratio
+The sequences use staged entrances, document transfer, taxonomy expansion, data-block movement and chapter progress on a shared nine-second timeline
 
 The original research assets and unrelated repository files are retained
 The two portfolio entry pages use a shared stylesheet and local presentation assets

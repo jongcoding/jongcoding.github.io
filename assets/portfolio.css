@@ -78,6 +78,7 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
 .contribution { margin-top: 23px; display: grid; gap: 12px; }
 .contribution dt { font-size: 12px; font-weight: 600; margin-bottom: 3px; }
 .contribution dd { color: var(--secondary); font-size: 13px; line-height: 1.8; word-break: keep-all; }
+.contribution dd a { display: inline-flex; align-items: center; min-height: 32px; color: var(--ink); text-decoration-color: #c0c5bb; }
 .feature-link { display: inline-flex; align-items: center; min-height: 44px; margin-top: 11px; font-size: 13px; text-decoration-color: #c0c5bb; }
 .feature-repositories { display: grid; grid-template-columns: 170px minmax(0, 1fr); align-items: baseline; gap: 20px; padding-top: 21px; margin-top: 29px; border-top: 1px solid var(--line); }
 .feature-repositories > p { color: var(--muted); font-size: 12px; }

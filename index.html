@@ -85,58 +85,99 @@
           <div class="feature-copy">
             <p class="project-meta"><span class="status">In progress</span><span>2026</span></p>
             <h3>MSGCTF<br> <span>Cloud Platform</span></h3>
-            <p class="project-description">A CTF operations platform connecting challenge deployment, team instances and service monitoring</p>
+            <p class="project-description">A CTF operations platform connecting resources across cloud providers for challenge deployment, team instances and service monitoring</p>
             <dl class="contribution">
               <div><dt>My role</dt><dd>Architecture design and cross-service integration review<br> Instance lifecycle and operational validation</dd></div>
+              <div><dt>Cloud providers</dt><dd><a href="https://github.com/MSG-CTF/resource-broker/tree/staging/app/adapters" target="_blank" rel="noopener noreferrer">AWS / Azure / GCP</a><br> Provider VM discovery and shared inventory integration</dd></div>
               <div><dt>Current scope</dt><dd>Isolated runtimes / CI/CD / monitoring / KOTH scoring</dd></div>
             </dl>
             <a href="https://github.com/MSG-CTF" target="_blank" rel="noopener noreferrer" class="feature-link">MSG-CTF on GitHub</a>
           </div>
           <figure class="project-film film-msgctf" data-film="msgctf" data-state="ready" data-duration="9000">
-      <div class="film-stage"><svg class="story-canvas" viewBox="0 0 560 348" role="img" aria-labelledby="msgctf-story-title msgctf-story-desc">
-        <title id="msgctf-story-title">From request to runtime</title><desc id="msgctf-story-desc">An illustrated instance request, scheduling and broker allocation, followed by an isolated runtime</desc>
-        <defs><clipPath id="msgctf-story-clip"><rect x="16" y="60" width="528" height="244"/></clipPath></defs>
-        <text class="story-brand" x="28" y="34">MSGCTF</text><text class="story-label" x="532" y="34" text-anchor="end">Architecture preview</text>
-        <path class="story-rule" d="M28 53H532"/>
-        <g clip-path="url(#msgctf-story-clip)">
-          <g class="story-scene scene-one">
-            <text class="story-heading" x="32" y="93">An environment for your team</text>
-            <g class="request-panel">
-              <rect class="surface" x="62" y="121" width="436" height="158" rx="8"/>
-              <text class="micro-label" x="86" y="149">CHALLENGE INSTANCE</text>
-              <g class="code-emblem"><rect x="86" y="169" width="51" height="51" rx="6"/><path d="m105 184-7 10 7 10m14-20 7 10-7 10"/></g>
-              <text class="panel-heading" x="151" y="192">Web environment</text>
-              <text class="panel-subtitle" x="151" y="213">An isolated team instance</text>
-              <path class="panel-rule" d="M86 235H306"/>
-              <text class="micro-label" x="86" y="257">TEAM WORKSPACE</text>
-              <g class="create-button"><rect x="332" y="233" width="142" height="31" rx="4"/><text x="403" y="253" text-anchor="middle">Create instance</text></g>
-            </g>
-            <g class="request-cursor"><path d="m440 272 0-24 17 17-10-1-7 8Z"/></g>
-            <g class="request-receipt"><rect x="328" y="165" width="146" height="49" rx="5"/><path class="receipt-check" d="m345 189 5 5 10-11"/><text x="416" y="194" text-anchor="middle">Request received</text></g>
+      <div class="film-stage"><svg class="story-canvas" viewBox="0 0 560 376" role="img" aria-labelledby="msgctf-story-title msgctf-story-desc">
+      <title id="msgctf-story-title">From cloud resources to team runtimes</title><desc id="msgctf-story-desc">A conceptual view of AWS, Azure and GCP VM inventory, a common Resource Broker, scheduling and isolated team runtimes</desc>
+      <defs><clipPath id="msgctf-story-clip"><rect x="16" y="62" width="528" height="268"/></clipPath></defs>
+      <text class="story-brand" x="28" y="34">MSGCTF</text><text class="story-label" x="532" y="34" text-anchor="end">Multi-cloud architecture</text>
+      <path class="story-rule" d="M28 53H532"/>
+      <g clip-path="url(#msgctf-story-clip)"><g class="motion story-scene scene-one" style="--motion: shot-one">
+          <text class="story-heading" x="28" y="97">Multiple clouds, one resource pool</text>
+          <g class="route-guide"><path d="M108 262V287H452V262M280 262V301"/></g>
+          <g class="motion route-ink" style="--motion: provider-collect"><path pathLength="100" d="M108 262V287H280M452 262V287H280M280 262V301"/></g><g class="motion provider provider-aws" style="--motion: intro-1">
+              <rect class="surface" x="28" y="132" width="160" height="130" rx="6"/>
+              <text class="provider-name" x="48" y="163">AWS</text>
+              <path class="provider-mark" d="M48 174h26"/>
+              <g class="motion inventory-rack" style="--motion: inventory-1">
+                <rect x="48" y="191" width="120" height="12" rx="2"/><path d="M57 197h37m44 0h19"/>
+                <rect x="48" y="209" width="120" height="12" rx="2"/><path d="M57 215h55m26 0h19"/>
+              </g>
+              <text class="provider-service" x="48" y="244">EC2</text>
+            </g><g class="motion provider provider-azure" style="--motion: intro-2">
+              <rect class="surface" x="200" y="132" width="160" height="130" rx="6"/>
+              <text class="provider-name" x="220" y="163">Azure</text>
+              <path class="provider-mark" d="M220 174h26"/>
+              <g class="motion inventory-rack" style="--motion: inventory-2">
+                <rect x="220" y="191" width="120" height="12" rx="2"/><path d="M229 197h37m44 0h19"/>
+                <rect x="220" y="209" width="120" height="12" rx="2"/><path d="M229 215h55m26 0h19"/>
+              </g>
+              <text class="provider-service" x="220" y="244">Virtual Machines</text>
+            </g><g class="motion provider provider-gcp" style="--motion: intro-3">
+              <rect class="surface" x="372" y="132" width="160" height="130" rx="6"/>
+              <text class="provider-name" x="392" y="163">GCP</text>
+              <path class="provider-mark" d="M392 174h26"/>
+              <g class="motion inventory-rack" style="--motion: inventory-3">
+                <rect x="392" y="191" width="120" height="12" rx="2"/><path d="M401 197h37m44 0h19"/>
+                <rect x="392" y="209" width="120" height="12" rx="2"/><path d="M401 215h55m26 0h19"/>
+              </g>
+              <text class="provider-service" x="392" y="244">Compute Engine</text>
+            </g><text class="pool-label" x="280" y="322" text-anchor="middle">Resource Broker</text>
+        </g>
+        <g class="motion story-scene scene-two" style="--motion: shot-two">
+          <text class="story-heading" x="28" y="97">Collect inventory, choose a runtime</text>
+          <g class="route-guide"><path d="M153 159H181V210H215M153 210H215M153 261H181V210M376 210H406M469 152V180"/></g>
+          <g class="motion route-ink" style="--motion: middle-lines"><path pathLength="100" d="M153 159H181V210H215M153 210H215M153 261H181V210M376 210H406"/></g>
+          <g class="motion provider-list" style="--motion: middle-1">
+            <rect class="surface" x="28" y="132" width="125" height="156" rx="5"/>
+            <path class="story-rule" d="M43 184H138M43 235H138"/>
+            <text x="47" y="165">AWS</text><text x="47" y="217">Azure</text><text x="47" y="270">GCP</text>
           </g>
-          <g class="story-scene scene-two">
-            <text class="story-heading" x="32" y="93">Allocate the runtime</text>
-            <g class="route-guides"><path d="M159 195H212"/><path d="M354 195H383V144H410"/><path d="M354 195H383V254H410"/></g>
-            <g class="route-ink"><path class="route-one" pathLength="100" d="M159 195H212"/><path class="route-two" pathLength="100" d="M354 195H383V144H410"/><path class="route-three" pathLength="100" d="M354 195H383V254H410"/></g>
-            <g class="orchestrator node-one"><rect x="32" y="160" width="127" height="70" rx="5"/><text x="95" y="199" text-anchor="middle">Platform API</text></g>
-            <g class="orchestrator scheduler node-two"><rect x="212" y="154" width="142" height="82" rx="5"/><path class="scheduler-mark" d="M229 171h8v8h-8zm13 0h8v8h-8zm-13 13h8v8h-8zm13 0h8v8h-8z"/><text x="283" y="215" text-anchor="middle">Scheduler</text></g>
-            <g class="orchestrator node-three"><rect x="410" y="114" width="119" height="60" rx="5"/><text x="469" y="141" text-anchor="middle">Resource</text><text x="469" y="158" text-anchor="middle">Broker</text></g>
-            <g class="orchestrator runtime node-four"><rect x="410" y="222" width="119" height="60" rx="5"/><text x="469" y="249" text-anchor="middle">Isolated</text><text x="469" y="266" text-anchor="middle">Runtime</text></g>
+          <g class="motion broker-panel" style="--motion: middle-2">
+            <rect class="accent-surface" x="215" y="132" width="161" height="156" rx="5"/>
+            <text class="node-title" x="232" y="163">Resource Broker</text>
+            <text class="small-label" x="232" y="184">VM inventory</text>
+            <g class="resource-fields"><text x="232" y="214">CPU</text><text class="field-unit" x="358" y="214" text-anchor="end">vCPU</text><text x="232" y="240">Memory</text><text class="field-unit" x="358" y="240" text-anchor="end">RAM</text><text x="232" y="266">Storage</text><text class="field-unit" x="358" y="266" text-anchor="end">Disk</text></g>
           </g>
-          <g class="story-scene scene-three">
-            <text class="story-heading" x="32" y="93">Your instance is ready</text>
-            <g class="ready-panel">
-              <rect class="surface" x="62" y="116" width="436" height="173" rx="8"/>
-              <rect class="ready-icon" x="86" y="141" width="37" height="37" rx="5"/><path class="ready-check" pathLength="100" d="m96 159 7 7 12-14"/>
-              <text class="ready-heading" x="141" y="159">Instance ready</text>
-              <text class="panel-subtitle" x="141" y="181">An isolated runtime for the team</text>
-              <path class="panel-rule" d="M86 202H474"/>
-              <g class="service service-one"><path class="service-icon" d="m90 222-5 6 5 6m13-12 5 6-5 6"/><text x="86" y="258">Web</text></g>
-              <g class="service service-two"><path class="service-icon" d="M235 221h18v13h-18zm4 17h10m-5-4v4"/><text x="235" y="258">Network</text></g>
-              <g class="service service-three"><path class="service-icon" d="M382 237v-16m8 16v-10m8 10v-20"/><text x="381" y="258">Monitoring</text></g>
-            </g>
-          </g></g><g class="chapter chapter-1"><path class="chapter-track" d="M28 313h160"/><path class="chapter-fill" pathLength="100" d="M28 313h160"/><text x="28" y="335"><tspan class="chapter-number">01</tspan><tspan dx="10">Request</tspan></text></g><g class="chapter chapter-2"><path class="chapter-track" d="M200 313h160"/><path class="chapter-fill" pathLength="100" d="M200 313h160"/><text x="200" y="335"><tspan class="chapter-number">02</tspan><tspan dx="10">Allocate</tspan></text></g><g class="chapter chapter-3"><path class="chapter-track" d="M372 313h160"/><path class="chapter-fill" pathLength="100" d="M372 313h160"/><text x="372" y="335"><tspan class="chapter-number">03</tspan><tspan dx="10">Ready</tspan></text></g></svg></div>
-      <figcaption><span id="msgctf-film-caption">From request to runtime</span><button type="button" hidden aria-describedby="msgctf-film-caption" data-play="Play preview" data-pause="Pause" data-resume="Resume" data-replay="Replay"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path class="play-icon" d="M4 2.5 12 8 4 13.5Z"/><path class="pause-icon" d="M5 3v10M11 3v10"/></svg><span>Play preview</span></button></figcaption>
+          <g class="motion scheduler-panel" style="--motion: middle-3">
+            <text class="small-label" x="469" y="144" text-anchor="middle">Request</text>
+            <rect class="surface" x="406" y="180" width="126" height="60" rx="5"/>
+            <text class="node-title" x="469" y="215" text-anchor="middle">Scheduler</text>
+            <text class="small-label" x="469" y="266" text-anchor="middle">Select / Reserve</text>
+          </g>
+          <text class="scene-note" x="28" y="322">A common inventory across cloud providers</text>
+        </g>
+        <g class="motion story-scene scene-three" style="--motion: shot-three">
+          <text class="story-heading" x="28" y="97">An isolated environment for each team</text>
+          <g class="motion runtime-frame" style="--motion: last-1"><rect class="surface" x="28" y="132" width="504" height="190" rx="6"/>
+            <text class="small-label" x="48" y="159">ISOLATED RUNTIME</text><text class="small-label" x="512" y="159" text-anchor="end">Kubernetes</text><path class="story-rule" d="M48 175H512"/>
+          </g><g class="motion team-runtime" style="--motion: last-1">
+              <rect x="48" y="191" width="136" height="111" rx="4"/>
+              <text class="team-label" x="62" y="215">TEAM A</text>
+              <g class="motion runtime-services" style="--motion: runtime-1"><path d="m64 237 5 5 9-10m-14 30 5 5 9-10"/>
+                <text x="87" y="242">Web</text><text x="87" y="267">Network</text>
+              </g>
+            </g><g class="motion team-runtime" style="--motion: last-2">
+              <rect x="212" y="191" width="136" height="111" rx="4"/>
+              <text class="team-label" x="226" y="215">TEAM B</text>
+              <g class="motion runtime-services" style="--motion: runtime-2"><path d="m228 237 5 5 9-10m-14 30 5 5 9-10"/>
+                <text x="251" y="242">Web</text><text x="251" y="267">Network</text>
+              </g>
+            </g><g class="motion team-runtime" style="--motion: last-3">
+              <rect x="376" y="191" width="136" height="111" rx="4"/>
+              <text class="team-label" x="390" y="215">TEAM C</text>
+              <g class="motion runtime-services" style="--motion: runtime-3"><path d="m392 237 5 5 9-10m-14 30 5 5 9-10"/>
+                <text x="415" y="242">Web</text><text x="415" y="267">Network</text>
+              </g>
+            </g></g></g><g class="chapter chapter-1"><path class="chapter-track" d="M28 341h160"/><path class="motion chapter-fill" style="--motion: chapter-1" pathLength="100" d="M28 341h160"/><text x="28" y="364"><tspan class="chapter-number">01</tspan><tspan dx="10">Providers</tspan></text></g><g class="chapter chapter-2"><path class="chapter-track" d="M200 341h160"/><path class="motion chapter-fill" style="--motion: chapter-2" pathLength="100" d="M200 341h160"/><text x="200" y="364"><tspan class="chapter-number">02</tspan><tspan dx="10">Scheduling</tspan></text></g><g class="chapter chapter-3"><path class="chapter-track" d="M372 341h160"/><path class="motion chapter-fill" style="--motion: chapter-3" pathLength="100" d="M372 341h160"/><text x="372" y="364"><tspan class="chapter-number">03</tspan><tspan dx="10">Isolation</tspan></text></g></svg></div>
+      <figcaption><span id="msgctf-film-caption">From cloud resources to team runtimes</span><button type="button" hidden aria-describedby="msgctf-film-caption" data-play="Play preview" data-pause="Pause" data-resume="Resume" data-replay="Replay"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path class="play-icon" d="M4 2.5 12 8 4 13.5Z"/><path class="pause-icon" d="M5 3v10M11 3v10"/></svg><span>Play preview</span></button></figcaption>
     </figure>
         </div>
         <div class="feature-repositories">
@@ -153,46 +194,53 @@
 
       <article class="project-row" id="detail-gnawlab">
         <figure class="project-film film-gnawlab" data-film="gnawlab" data-state="ready" data-duration="9000">
-      <div class="film-stage"><svg class="story-canvas" viewBox="0 0 560 348" role="img" aria-labelledby="gnawlab-story-title gnawlab-story-desc">
-        <title id="gnawlab-story-title">From context to permissions</title><desc id="gnawlab-story-desc">An illustrated research overview of knowledge-base documents, a Bedrock Agent and execution permissions</desc>
-        <defs><clipPath id="gnawlab-story-clip"><rect x="16" y="60" width="528" height="244"/></clipPath></defs>
-        <text class="story-brand" x="28" y="34">GnawLab</text><text class="story-label" x="532" y="34" text-anchor="end">AWS Bedrock</text>
-        <path class="story-rule" d="M28 53H532"/>
-        <g clip-path="url(#gnawlab-story-clip)">
-          <g class="story-scene scene-one">
-            <text class="story-heading" x="32" y="93">The documents an agent reads</text>
-            <g class="paper paper-back"><rect x="152" y="123" width="270" height="161" rx="5"/></g>
-            <g class="paper paper-middle"><rect x="132" y="119" width="282" height="166" rx="5"/></g>
-            <g class="paper paper-front"><rect x="118" y="116" width="293" height="163" rx="5"/>
-              <path class="paper-icon" d="M142 138h18l7 7v19h-25zm18 0v8h7M148 153h12M148 158h8"/>
-              <text class="panel-heading" x="179" y="154">Knowledge base</text>
-              <text class="panel-subtitle" x="142" y="186">Context retrieved from documents</text>
-              <path class="paper-line" d="M142 206H386M142 219H367M142 245H326"/>
-              <rect class="context-highlight" x="140" y="228" width="234" height="8" rx="2"/>
-            </g>
+      <div class="film-stage"><svg class="story-canvas" viewBox="0 0 560 376" role="img" aria-labelledby="gnawlab-story-title gnawlab-story-desc">
+      <title id="gnawlab-story-title">Trust boundaries in an agent workflow</title><desc id="gnawlab-story-desc">A research overview of documents becoming Bedrock Agent context and the trust boundary between input data and execution permissions</desc>
+      <defs><clipPath id="gnawlab-story-clip"><rect x="16" y="62" width="528" height="268"/></clipPath></defs>
+      <text class="story-brand" x="28" y="34">GnawLab</text><text class="story-label" x="532" y="34" text-anchor="end">AWS Bedrock</text>
+      <path class="story-rule" d="M28 53H532"/>
+      <g clip-path="url(#gnawlab-story-clip)"><g class="motion story-scene scene-one" style="--motion: shot-one">
+          <text class="story-heading" x="28" y="97">A document becomes agent context</text>
+          <g class="motion note-back" style="--motion: paper-spread"><rect x="53" y="144" width="239" height="163" rx="4"/></g>
+          <g class="motion document-sheet" style="--motion: intro-1"><rect class="surface" x="42" y="130" width="242" height="173" rx="4"/>
+            <text class="small-label" x="62" y="157">RESEARCH NOTE</text><path class="document-rule" d="M62 177H257"/>
+            <text class="document-title" x="62" y="201">Retrieved context</text>
+            <path class="document-line" d="M62 221H244M62 240H235M62 278H206"/>
+            <path class="motion context-stroke" style="--motion: highlight-context" pathLength="100" d="M62 259H250"/>
           </g>
-          <g class="story-scene scene-two">
-            <text class="story-heading" x="32" y="93">Where context becomes an action</text>
-            <path class="trust-divider" d="M190 119V278M382 119V278"/>
-            <g class="route-guides"><path d="M163 195H217"/><path d="M350 195H404"/></g>
-            <g class="route-ink"><path class="route-one" pathLength="100" d="M163 195H217"/><path class="route-three" pathLength="100" d="M350 195H404"/></g>
-            <g class="orchestrator node-one"><rect x="33" y="158" width="130" height="75" rx="5"/><text x="98" y="189" text-anchor="middle">Knowledge</text><text x="98" y="208" text-anchor="middle">base</text></g>
-            <g class="orchestrator scheduler node-two"><rect x="217" y="151" width="133" height="88" rx="5"/><text x="283" y="188" text-anchor="middle">Bedrock</text><text x="283" y="209" text-anchor="middle">Agent</text></g>
-            <g class="orchestrator node-four"><rect x="404" y="158" width="123" height="75" rx="5"/><text x="465" y="189" text-anchor="middle">Action</text><text x="465" y="208" text-anchor="middle">group</text></g>
-            <text class="micro-label boundary-label" x="190" y="271" text-anchor="middle">CONTEXT</text><text class="micro-label boundary-label" x="382" y="271" text-anchor="middle">ACTION</text>
+          <path class="route-guide" d="M284 219H332"/>
+          <g class="motion context-packet" style="--motion: context-transfer"><path d="M292 213h18v12h-18zM297 217h8m-8 4h6"/></g>
+          <g class="motion knowledge-target" style="--motion: intro-3"><rect class="accent-surface" x="332" y="171" width="200" height="100" rx="5"/>
+            <text class="node-title" x="352" y="206">Knowledge base</text><text class="small-label" x="352" y="234">RAG context</text>
           </g>
-          <g class="story-scene scene-three">
-            <text class="story-heading" x="32" y="93">The boundary between input and authority</text>
-            <g class="boundary-panel"><rect class="surface" x="62" y="116" width="436" height="173" rx="8"/>
-              <g class="boundary-input"><path class="paper-icon" d="M90 144h22l8 8v28H90zm22 0v9h8M97 163h16M97 171h11"/>
-                <text class="panel-heading" x="89" y="214">Document context</text><text class="panel-subtitle" x="89" y="237">Knowledge base</text></g>
-              <g class="boundary-action"><path class="paper-icon" d="M325 157h22v23h-22zm5 0v-7a6 6 0 0 1 12 0v7M336 166v6"/>
-                <text class="panel-heading" x="323" y="214">Execution permissions</text><text class="panel-subtitle" x="323" y="237">Bedrock Agent</text></g>
-              <path class="boundary-line" pathLength="100" d="M282 136V252"/>
-              <text class="micro-label" x="280" y="274" text-anchor="middle">DEF CON 34 / DEMO LABS</text>
-            </g>
-          </g></g><g class="chapter chapter-1"><path class="chapter-track" d="M28 313h160"/><path class="chapter-fill" pathLength="100" d="M28 313h160"/><text x="28" y="335"><tspan class="chapter-number">01</tspan><tspan dx="10">Context</tspan></text></g><g class="chapter chapter-2"><path class="chapter-track" d="M200 313h160"/><path class="chapter-fill" pathLength="100" d="M200 313h160"/><text x="200" y="335"><tspan class="chapter-number">02</tspan><tspan dx="10">Agent</tspan></text></g><g class="chapter chapter-3"><path class="chapter-track" d="M372 313h160"/><path class="chapter-fill" pathLength="100" d="M372 313h160"/><text x="372" y="335"><tspan class="chapter-number">03</tspan><tspan dx="10">Boundaries</tspan></text></g></svg></div>
-      <figcaption><span id="gnawlab-film-caption">From context to permissions</span><button type="button" hidden aria-describedby="gnawlab-film-caption" data-play="Play preview" data-pause="Pause" data-resume="Resume" data-replay="Replay"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path class="play-icon" d="M4 2.5 12 8 4 13.5Z"/><path class="pause-icon" d="M5 3v10M11 3v10"/></svg><span>Play preview</span></button></figcaption>
+        </g>
+        <g class="motion story-scene scene-two" style="--motion: shot-two">
+          <text class="story-heading" x="28" y="97">Where context becomes an action</text>
+          <path class="trust-divider" d="M194 129V287M393 129V287"/>
+          <path class="route-guide" d="M166 210H222M374 210H407"/>
+          <g class="motion route-ink" style="--motion: middle-lines"><path pathLength="100" d="M166 210H222M374 210H407"/></g>
+          <g class="motion agent-node" style="--motion: middle-1"><rect class="surface" x="28" y="167" width="138" height="86" rx="4"/><text class="node-title" x="47" y="199">Knowledge</text><text class="node-title" x="47" y="221">base</text></g>
+          <g class="motion agent-core" style="--motion: middle-2"><rect class="accent-surface" x="222" y="140" width="152" height="140" rx="5"/>
+            <g class="agent-emblem"><path d="m281 159 17-9 17 9-17 9zM281 159v20l17 9 17-9v-20M298 168v20"/></g>
+            <text class="node-title" x="298" y="222" text-anchor="middle">Bedrock</text><text class="node-title" x="298" y="244" text-anchor="middle">Agent</text>
+          </g>
+          <g class="motion agent-node" style="--motion: middle-3"><rect class="surface" x="407" y="167" width="125" height="86" rx="4"/><text class="node-title" x="426" y="199">Action</text><text class="node-title" x="426" y="221">group</text></g>
+          <text class="scene-note" x="28" y="322">Studying the boundary between input and tool execution</text>
+        </g>
+        <g class="motion story-scene scene-three" style="--motion: shot-three">
+          <text class="story-heading" x="28" y="97">Separate context from authority</text>
+          <g class="motion trust-context" style="--motion: last-1">
+            <g class="research-icon"><path d="M59 145h37l12 12v45H59zm37 0v13h12M68 171h28M68 182h21"/></g>
+            <text class="boundary-heading" x="52" y="242">Context</text><text class="small-label" x="52" y="267">RAG knowledge base</text>
+          </g>
+          <path class="motion trust-boundary" style="--motion: boundary-draw" pathLength="100" d="M280 138V282"/>
+          <g class="motion trust-authority" style="--motion: last-2">
+            <g class="research-icon"><path d="M337 165h48v37h-48zm9 0v-10a15 15 0 0 1 30 0v10M361 178v11"/></g>
+            <text class="boundary-heading" x="330" y="242">Authority</text><text class="small-label" x="330" y="267">Agent permissions</text>
+          </g>
+          <g class="motion lab-credit" style="--motion: last-3"><path class="story-rule" d="M28 298H532"/><text class="scene-note" x="28" y="321">Terraform lab</text><text class="scene-note" x="532" y="321" text-anchor="end">DEF CON 34 Demo Labs</text></g>
+        </g></g><g class="chapter chapter-1"><path class="chapter-track" d="M28 341h160"/><path class="motion chapter-fill" style="--motion: chapter-1" pathLength="100" d="M28 341h160"/><text x="28" y="364"><tspan class="chapter-number">01</tspan><tspan dx="10">Documents</tspan></text></g><g class="chapter chapter-2"><path class="chapter-track" d="M200 341h160"/><path class="motion chapter-fill" style="--motion: chapter-2" pathLength="100" d="M200 341h160"/><text x="200" y="364"><tspan class="chapter-number">02</tspan><tspan dx="10">Agent</tspan></text></g><g class="chapter chapter-3"><path class="chapter-track" d="M372 341h160"/><path class="motion chapter-fill" style="--motion: chapter-3" pathLength="100" d="M372 341h160"/><text x="372" y="364"><tspan class="chapter-number">03</tspan><tspan dx="10">Boundaries</tspan></text></g></svg></div>
+      <figcaption><span id="gnawlab-film-caption">Trust boundaries in an agent workflow</span><button type="button" hidden aria-describedby="gnawlab-film-caption" data-play="Play preview" data-pause="Pause" data-resume="Resume" data-replay="Replay"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path class="play-icon" d="M4 2.5 12 8 4 13.5Z"/><path class="pause-icon" d="M5 3v10M11 3v10"/></svg><span>Play preview</span></button></figcaption>
     </figure>
         <div class="project-copy">
           <p class="project-meta">2026</p>
@@ -206,8 +254,53 @@
 
       <article class="project-row" id="detail-weave">
         <figure class="project-film film-weave" data-film="weave" data-state="ready" data-duration="9000">
-      <div class="film-stage"><div class="research-scene"><div class="research-scene-head"><span>WEAVE</span><span>Project materials</span></div><div class="research-frames"><div class="research-frame frame-1"><div class="research-window"><img src="assets/weave-site.png" alt="Organize cases by root cause" loading="lazy" width="1000" height="640"></div><p><span>01 / 03</span>Organize cases by root cause</p></div><div class="research-frame frame-2"><div class="research-window"><img src="assets/weave-arch.png" alt="A platform connecting the research" loading="lazy" width="1000" height="640"></div><p><span>02 / 03</span>A platform connecting the research</p></div><div class="research-frame frame-3"><div class="research-window"><img src="assets/weave-document.png" alt="From taxonomy to documentation" loading="lazy" width="1000" height="640"></div><p><span>03 / 03</span>From taxonomy to documentation</p></div></div><div class="research-chapters" aria-hidden="true"><span class="research-chapter chapter-1"><i></i>Explore</span><span class="research-chapter chapter-2"><i></i>Architecture</span><span class="research-chapter chapter-3"><i></i>Research</span></div></div></div>
-      <figcaption><span id="weave-film-caption">Explore cases and research</span><button type="button" hidden aria-describedby="weave-film-caption" data-play="Play preview" data-pause="Pause" data-resume="Resume" data-replay="Replay"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path class="play-icon" d="M4 2.5 12 8 4 13.5Z"/><path class="pause-icon" d="M5 3v10M11 3v10"/></svg><span>Play preview</span></button></figcaption>
+      <div class="film-stage"><svg class="story-canvas" viewBox="0 0 560 376" role="img" aria-labelledby="weave-story-title weave-story-desc">
+      <title id="weave-story-title">From root causes to individual cases</title><desc id="weave-story-desc">A five-part Semantic Gap taxonomy and an HTTP Parameter Pollution case under syntax parsing and duplicate-key handling differences</desc>
+      <defs><clipPath id="weave-story-clip"><rect x="16" y="62" width="528" height="268"/></clipPath></defs>
+      <text class="story-brand" x="28" y="34">WEAVE</text><text class="story-label" x="532" y="34" text-anchor="end">Semantic Gap</text>
+      <path class="story-rule" d="M28 53H532"/>
+      <g clip-path="url(#weave-story-clip)"><g class="motion story-scene scene-one" style="--motion: shot-one">
+          <text class="story-heading" x="28" y="97">A taxonomy of interpretation differences</text><g class="motion taxonomy-column" style="--motion: taxonomy-1">
+              <rect x="28" y="132" width="92" height="188" rx="4"/>
+              <text x="40" y="161">Data</text><text x="40" y="183">model</text>
+              <path class="taxonomy-divider" d="M40 199h68"/>
+              <g class="motion case-list" style="--motion: case-list-1"><text class="case-topic" x="40" y="220">Encoding</text><text class="case-topic" x="40" y="246">Unicode</text><text class="case-topic" x="40" y="272">IDN</text><text class="case-topic" x="40" y="298">Homoglyph</text></g></g><g class="motion taxonomy-column" style="--motion: taxonomy-2">
+              <rect x="131" y="132" width="92" height="188" rx="4"/>
+              <text x="143" y="161">Metadata</text><text x="143" y="183">meaning</text>
+              <path class="taxonomy-divider" d="M143 199h68"/>
+              <g class="motion case-list" style="--motion: case-list-2"><text class="case-topic" x="143" y="220">JWT</text><text class="case-topic" x="143" y="246">Headers</text><text class="case-topic" x="143" y="272">Cookies</text><text class="case-topic" x="143" y="298">Cache</text></g></g><g class="motion taxonomy-column" style="--motion: taxonomy-3">
+              <rect x="234" y="132" width="92" height="188" rx="4"/>
+              <text x="246" y="161">Perceptual</text><text x="246" y="183">context</text>
+              <path class="taxonomy-divider" d="M246 199h68"/>
+              <g class="motion case-list" style="--motion: case-list-3"><text class="case-topic" x="246" y="220">Tabs</text><text class="case-topic" x="246" y="246">Focus</text><text class="case-topic" x="246" y="272">Documents</text><text class="case-topic" x="246" y="298">Clickjacking</text></g></g><g class="motion taxonomy-column" style="--motion: taxonomy-4">
+              <rect x="337" y="132" width="92" height="188" rx="4"/>
+              <text x="349" y="161">Security</text><text x="349" y="183">policy</text>
+              <path class="taxonomy-divider" d="M349 199h68"/>
+              <g class="motion case-list" style="--motion: case-list-3"><text class="case-topic" x="349" y="220">CSP</text><text class="case-topic" x="349" y="246">TLS</text><text class="case-topic" x="349" y="272">Validation</text><text class="case-topic" x="349" y="298">Cross-origin</text></g></g><g class="motion taxonomy-column selected-column" style="--motion: taxonomy-5">
+              <rect x="440" y="132" width="92" height="188" rx="4"/>
+              <text x="452" y="161">Syntax</text><text x="452" y="183">parsing</text>
+              <path class="taxonomy-divider" d="M452 199h68"/>
+              <g class="motion case-list" style="--motion: case-list-3"><text class="case-topic" x="452" y="220">HTTP</text><text class="case-topic" x="452" y="246">JSON</text><text class="case-topic" x="452" y="272">YAML</text><text class="case-topic" x="452" y="298">Paths</text></g></g></g>
+        <g class="motion story-scene scene-two" style="--motion: shot-two">
+          <text class="story-heading" x="28" y="97">Follow a cause to an individual case</text>
+          <g class="motion case-document" style="--motion: case-expand"><rect class="surface" x="28" y="132" width="504" height="188" rx="5"/>
+            <text class="taxonomy-breadcrumb" x="48" y="161">Syntax Parsing / Duplicate Keys</text>
+            <text class="case-heading" x="48" y="207">HTTP Parameter</text><text class="case-heading" x="48" y="239">Pollution</text>
+            <g class="case-page-mark"><path d="M460 183h30l12 12v49h-42zm30 0v13h12M470 211h22M470 222h22M470 233h14"/></g>
+            <path class="story-rule" d="M48 261H512"/>
+            <text class="case-description" x="48" y="291">Different interpretations across components</text>
+          </g>
+        </g>
+        <g class="motion story-scene scene-three" style="--motion: shot-three">
+          <text class="story-heading" x="28" y="97">One input, different interpretations</text>
+          <g class="motion semantic-input" style="--motion: last-1"><rect class="accent-surface" x="201" y="129" width="158" height="45" rx="4"/><text class="node-title" x="280" y="158" text-anchor="middle">Same input</text></g>
+          <path class="route-guide" d="M280 174V197H143V223M280 197H417V223"/>
+          <g class="motion route-ink" style="--motion: semantic-fork"><path pathLength="100" d="M280 174V197H143V223M280 197H417V223"/></g>
+          <g class="motion semantic-result" style="--motion: last-2"><rect class="surface" x="28" y="223" width="230" height="75" rx="4"/><text class="small-label" x="48" y="248">Component A</text><text class="node-title" x="48" y="277">Interpretation A</text></g>
+          <g class="motion semantic-result result-b" style="--motion: last-3"><rect class="surface" x="302" y="223" width="230" height="75" rx="4"/><text class="small-label" x="322" y="248">Component B</text><text class="node-title" x="322" y="277">Interpretation B</text></g>
+          <text class="scene-note" x="28" y="323">Connect the interpretation gap to the research</text>
+        </g></g><g class="chapter chapter-1"><path class="chapter-track" d="M28 341h160"/><path class="motion chapter-fill" style="--motion: chapter-1" pathLength="100" d="M28 341h160"/><text x="28" y="364"><tspan class="chapter-number">01</tspan><tspan dx="10">Taxonomy</tspan></text></g><g class="chapter chapter-2"><path class="chapter-track" d="M200 341h160"/><path class="motion chapter-fill" style="--motion: chapter-2" pathLength="100" d="M200 341h160"/><text x="200" y="364"><tspan class="chapter-number">02</tspan><tspan dx="10">Case study</tspan></text></g><g class="chapter chapter-3"><path class="chapter-track" d="M372 341h160"/><path class="motion chapter-fill" style="--motion: chapter-3" pathLength="100" d="M372 341h160"/><text x="372" y="364"><tspan class="chapter-number">03</tspan><tspan dx="10">Semantic gap</tspan></text></g></svg></div>
+      <figcaption><span id="weave-film-caption">From root causes to individual cases</span><button type="button" hidden aria-describedby="weave-film-caption" data-play="Play preview" data-pause="Pause" data-resume="Resume" data-replay="Replay"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path class="play-icon" d="M4 2.5 12 8 4 13.5Z"/><path class="pause-icon" d="M5 3v10M11 3v10"/></svg><span>Play preview</span></button></figcaption>
     </figure>
         <div class="project-copy">
           <p class="project-meta">2025</p>
@@ -225,8 +318,38 @@
 
       <article class="project-row" id="dbreach">
         <figure class="project-film film-dbreach" data-film="dbreach" data-state="ready" data-duration="9000">
-      <div class="film-stage"><div class="research-scene"><div class="research-scene-head"><span>DBREACH</span><span>Project materials</span></div><div class="research-frames"><div class="research-frame frame-1"><div class="research-window"><img src="assets/dbreach-setup.png" alt="A reproducible experiment setup" loading="lazy" width="1000" height="640"></div><p><span>01 / 03</span>A reproducible experiment setup</p></div><div class="research-frame frame-2"><div class="research-window"><img src="assets/dbreach-loop.png" alt="Document the measurement process" loading="lazy" width="1000" height="640"></div><p><span>02 / 03</span>Document the measurement process</p></div><div class="research-frame frame-3"><div class="research-window"><img src="assets/dbreach-group.png" alt="Review experiments and results" loading="lazy" width="1000" height="640"></div><p><span>03 / 03</span>Review experiments and results</p></div></div><div class="research-chapters" aria-hidden="true"><span class="research-chapter chapter-1"><i></i>Setup</span><span class="research-chapter chapter-2"><i></i>Measure</span><span class="research-chapter chapter-3"><i></i>Review</span></div></div></div>
-      <figcaption><span id="dbreach-film-caption">Experiment setup and research</span><button type="button" hidden aria-describedby="dbreach-film-caption" data-play="Play preview" data-pause="Pause" data-resume="Resume" data-replay="Replay"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path class="play-icon" d="M4 2.5 12 8 4 13.5Z"/><path class="pause-icon" d="M5 3v10M11 3v10"/></svg><span>Play preview</span></button></figcaption>
+      <div class="film-stage"><svg class="story-canvas" viewBox="0 0 560 376" role="img" aria-labelledby="dbreach-story-title dbreach-story-desc">
+      <title id="dbreach-story-title">From experiment setup to reproducibility</title><desc id="dbreach-story-desc">A Docker-based MariaDB experiment setup, a conceptual illustration of data compression and a review of measurement noise and reproducibility conditions</desc>
+      <defs><clipPath id="dbreach-story-clip"><rect x="16" y="62" width="528" height="268"/></clipPath></defs>
+      <text class="story-brand" x="28" y="34">DBREACH</text><text class="story-label" x="532" y="34" text-anchor="end">Compression research</text>
+      <path class="story-rule" d="M28 53H532"/>
+      <g clip-path="url(#dbreach-story-clip)"><g class="motion story-scene scene-one" style="--motion: shot-one">
+          <text class="story-heading" x="28" y="97">An environment built for repeatability</text>
+          <rect class="compose-frame" x="28" y="132" width="504" height="188" rx="5"/>
+          <text class="small-label" x="48" y="158">DOCKER COMPOSE</text>
+          <path class="route-guide" d="M228 226H331"/>
+          <g class="motion route-ink" style="--motion: experiment-connect"><path pathLength="100" d="M228 226H331"/></g>
+          <g class="motion experiment-service" style="--motion: intro-1"><rect class="surface" x="48" y="177" width="180" height="122" rx="4"/>
+            <g class="runner-mark"><rect x="112" y="194" width="13" height="13"/><rect x="130" y="194" width="13" height="13"/><rect x="148" y="194" width="13" height="13"/><rect x="112" y="212" width="13" height="13"/><rect x="130" y="212" width="13" height="13"/></g>
+            <text class="node-title" x="138" y="257" text-anchor="middle">Experiment runner</text><text class="small-label" x="138" y="282" text-anchor="middle">Python</text>
+          </g>
+          <g class="motion database-service" style="--motion: intro-2"><rect class="surface" x="331" y="177" width="181" height="122" rx="4"/>
+            <g class="database-mark"><path d="M397 198c0-10 48-10 48 0v27c0 10-48 10-48 0zM397 198c0 10 48 10 48 0M397 211c0 10 48 10 48 0"/></g>
+            <text class="node-title" x="421" y="257" text-anchor="middle">MariaDB</text><text class="small-label" x="421" y="282" text-anchor="middle">Compression settings</text>
+          </g>
+        </g>
+        <g class="motion story-scene scene-two" style="--motion: shot-two">
+          <text class="story-heading" x="28" y="97">Observe how compression changes size</text>
+          <text class="node-title" x="48" y="143">Raw data</text><text class="node-title" x="350" y="143">Compressed data</text>
+          <g class="motion raw-bytes" style="--motion: raw-stage"><rect class="byte-tone-0" x="48" y="165" width="22" height="18" rx="2"/><rect class="byte-tone-1" x="76" y="165" width="22" height="18" rx="2"/><rect class="byte-tone-2" x="104" y="165" width="22" height="18" rx="2"/><rect class="byte-tone-0" x="132" y="165" width="22" height="18" rx="2"/><rect class="byte-tone-1" x="160" y="165" width="22" height="18" rx="2"/><rect class="byte-tone-2" x="188" y="165" width="22" height="18" rx="2"/><rect class="byte-tone-0" x="216" y="165" width="22" height="18" rx="2"/><rect class="byte-tone-1" x="48" y="190" width="22" height="18" rx="2"/><rect class="byte-tone-2" x="76" y="190" width="22" height="18" rx="2"/><rect class="byte-tone-0" x="104" y="190" width="22" height="18" rx="2"/><rect class="byte-tone-1" x="132" y="190" width="22" height="18" rx="2"/><rect class="byte-tone-2" x="160" y="190" width="22" height="18" rx="2"/><rect class="byte-tone-0" x="188" y="190" width="22" height="18" rx="2"/><rect class="byte-tone-1" x="216" y="190" width="22" height="18" rx="2"/><rect class="byte-tone-2" x="48" y="215" width="22" height="18" rx="2"/><rect class="byte-tone-0" x="76" y="215" width="22" height="18" rx="2"/><rect class="byte-tone-1" x="104" y="215" width="22" height="18" rx="2"/><rect class="byte-tone-2" x="132" y="215" width="22" height="18" rx="2"/><rect class="byte-tone-0" x="160" y="215" width="22" height="18" rx="2"/><rect class="byte-tone-1" x="188" y="215" width="22" height="18" rx="2"/><rect class="byte-tone-2" x="216" y="215" width="22" height="18" rx="2"/><rect class="byte-tone-0" x="48" y="240" width="22" height="18" rx="2"/><rect class="byte-tone-1" x="76" y="240" width="22" height="18" rx="2"/><rect class="byte-tone-2" x="104" y="240" width="22" height="18" rx="2"/><rect class="byte-tone-0" x="132" y="240" width="22" height="18" rx="2"/><rect class="byte-tone-1" x="160" y="240" width="22" height="18" rx="2"/><rect class="byte-tone-2" x="188" y="240" width="22" height="18" rx="2"/><rect class="byte-tone-0" x="216" y="240" width="22" height="18" rx="2"/><rect class="byte-tone-1" x="48" y="265" width="22" height="18" rx="2"/><rect class="byte-tone-2" x="76" y="265" width="22" height="18" rx="2"/><rect class="byte-tone-0" x="104" y="265" width="22" height="18" rx="2"/><rect class="byte-tone-1" x="132" y="265" width="22" height="18" rx="2"/><rect class="byte-tone-2" x="160" y="265" width="22" height="18" rx="2"/><rect class="byte-tone-0" x="188" y="265" width="22" height="18" rx="2"/><rect class="byte-tone-1" x="216" y="265" width="22" height="18" rx="2"/></g><path class="route-guide" d="M259 225H320m-8-6 8 6-8 6"/>
+          <g class="motion compression-ink" style="--motion: compression-pass"><path pathLength="100" d="M259 225H320"/></g>
+          <g class="compressed-bytes"><rect class="motion byte-tone-0" style="--motion: compress-byte-1" x="350" y="190" width="22" height="18" rx="2"/><rect class="motion byte-tone-1" style="--motion: compress-byte-2" x="378" y="190" width="22" height="18" rx="2"/><rect class="motion byte-tone-2" style="--motion: compress-byte-3" x="406" y="190" width="22" height="18" rx="2"/><rect class="motion byte-tone-0" style="--motion: compress-byte-4" x="434" y="190" width="22" height="18" rx="2"/><rect class="motion byte-tone-1" style="--motion: compress-byte-5" x="462" y="190" width="22" height="18" rx="2"/><rect class="motion byte-tone-1" style="--motion: compress-byte-1" x="350" y="215" width="22" height="18" rx="2"/><rect class="motion byte-tone-2" style="--motion: compress-byte-2" x="378" y="215" width="22" height="18" rx="2"/><rect class="motion byte-tone-0" style="--motion: compress-byte-3" x="406" y="215" width="22" height="18" rx="2"/><rect class="motion byte-tone-1" style="--motion: compress-byte-4" x="434" y="215" width="22" height="18" rx="2"/><rect class="motion byte-tone-2" style="--motion: compress-byte-5" x="462" y="215" width="22" height="18" rx="2"/><rect class="motion byte-tone-2" style="--motion: compress-byte-1" x="350" y="240" width="22" height="18" rx="2"/><rect class="motion byte-tone-0" style="--motion: compress-byte-2" x="378" y="240" width="22" height="18" rx="2"/><rect class="motion byte-tone-1" style="--motion: compress-byte-3" x="406" y="240" width="22" height="18" rx="2"/><rect class="motion byte-tone-2" style="--motion: compress-byte-4" x="434" y="240" width="22" height="18" rx="2"/><rect class="motion byte-tone-0" style="--motion: compress-byte-5" x="462" y="240" width="22" height="18" rx="2"/></g><path class="size-bracket" d="M501 190h10v68h-10"/>
+          <text class="scene-note" x="28" y="322">A conceptual illustration of data compression</text>
+        </g>
+        <g class="motion story-scene scene-three" style="--motion: shot-three">
+          <text class="story-heading" x="28" y="97">Review measurements and conditions</text>
+          <rect class="surface" x="28" y="132" width="504" height="188" rx="5"/><g class="motion experiment-record" style="--motion: last-1"><text class="record-number" x="48" y="168">01</text><text class="record-title" x="92" y="168">Environment</text><text class="record-detail" x="512" y="168" text-anchor="end">Docker / MariaDB</text><path class="story-rule" d="M48 190H512"/></g><g class="motion experiment-record" style="--motion: last-2"><text class="record-number" x="48" y="226">02</text><text class="record-title" x="92" y="226">Measurements</text><text class="record-detail" x="512" y="226" text-anchor="end">Noise and variability</text><path class="story-rule" d="M48 248H512"/></g><g class="motion experiment-record" style="--motion: last-3"><text class="record-number" x="48" y="284">03</text><text class="record-title" x="92" y="284">Reproducibility</text><text class="record-detail" x="512" y="284" text-anchor="end">Conditions and records</text></g></g></g><g class="chapter chapter-1"><path class="chapter-track" d="M28 341h160"/><path class="motion chapter-fill" style="--motion: chapter-1" pathLength="100" d="M28 341h160"/><text x="28" y="364"><tspan class="chapter-number">01</tspan><tspan dx="10">Setup</tspan></text></g><g class="chapter chapter-2"><path class="chapter-track" d="M200 341h160"/><path class="motion chapter-fill" style="--motion: chapter-2" pathLength="100" d="M200 341h160"/><text x="200" y="364"><tspan class="chapter-number">02</tspan><tspan dx="10">Compression</tspan></text></g><g class="chapter chapter-3"><path class="chapter-track" d="M372 341h160"/><path class="motion chapter-fill" style="--motion: chapter-3" pathLength="100" d="M372 341h160"/><text x="372" y="364"><tspan class="chapter-number">03</tspan><tspan dx="10">Review</tspan></text></g></svg></div>
+      <figcaption><span id="dbreach-film-caption">From experiment setup to reproducibility</span><button type="button" hidden aria-describedby="dbreach-film-caption" data-play="Play preview" data-pause="Pause" data-resume="Resume" data-replay="Replay"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path class="play-icon" d="M4 2.5 12 8 4 13.5Z"/><path class="pause-icon" d="M5 3v10M11 3v10"/></svg><span>Play preview</span></button></figcaption>
     </figure>
         <div class="project-copy">
           <p class="project-meta">Started December 2024</p>

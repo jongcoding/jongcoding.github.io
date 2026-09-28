@@ -22,7 +22,8 @@ Both English and Korean pages checked at widths of 320, 390, 768, 1024 and 1440 
 - Both pages show the owner's confirmed university graduation status
 - Both pages link the DEF CON Demo Labs session and speaker profile
 - All 69 original external and evidence-image destinations accounted for in each language, with 68 retained verbatim and Watchdog corrected to its current public repository
-- The two language pages contain identical sets of 109 unique link destinations, including navigation, contacts, references and image materials
+- The two language pages contain identical sets of 110 unique link destinations, including navigation, contacts, references and image materials
+- AWS, Azure and GCP appear in the MSGCTF copy and the first preview scene, with a visible link to the public provider adapters
 - INC0GNITO's official repository, qualifier, finals, planning document and challenge authorship links are present in both languages
 - `git diff --check` passes
 
@@ -32,7 +33,7 @@ Mobile paragraph spacing checked after removing sentence-ending periods
 
 ## Project motion
 
-Four nine-second project previews use local SVG, original research images, CSS and the native Web Animations API
+Four nine-second project previews use local SVG, CSS and the native Web Animations API
 
 - Automatic playback begins when the preview enters the viewport
 - A natural nine-second run completes once and remains stopped
@@ -41,16 +42,18 @@ Four nine-second project previews use local SVG, original research images, CSS a
 - Replay restarts at the beginning with a fresh animation timeline
 - A replay defect found during testing was fixed by committing the removed CSS animation before starting it again
 - Changing the system reduced-motion preference resets all four previews to static content with no active animations or playback controls
-- All research images loaded and decoded successfully
+- Original research image assets remain available through the supplementary materials links
 - Playback controls have a 44-pixel minimum height
-- With JavaScript disabled, controls remain hidden, research previews display their first frame and content remains usable
+- With JavaScript disabled, controls remain hidden, all four previews display their first scene and content remains usable
 - Simulated browser data-saving mode disables autoplay while allowing explicit manual playback
 
-Animation states, image transitions and the mobile diagram were inspected through browser screenshots
-The MSGCTF GIF in `docs/preview/` is a capture of the website's vector animation for review, not a runtime dependency
+Animation states, scene transitions and mobile diagrams were inspected through browser screenshots
+The MSGCTF GIF and the four-project GIF in `docs/preview/` capture the website's vector animations for review
+The four-project capture arranges the previews into a grid for comparison; the portfolio itself retains its existing project rows
+Neither GIF is a runtime dependency
 
 The refined version was checked at 1,700 ms, 4,500 ms and 8,500 ms in both languages
-These checkpoints cover the request or document scene, orchestration, and the final runtime or permissions scene
+These checkpoints cover all three scenes in the provider, agent, taxonomy and compression previews
 SVG labels fit inside the scene viewport and the primary header and heading use ialleejy in both languages
 The review GIF is captured at 30 frames per second while browser playback uses the native animation timeline
 
