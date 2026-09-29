@@ -2,6 +2,14 @@
 
 28 September 2026 / Local Chromium through Playwright CLI / Python static HTTP server on loopback
 
+## Career and activities / 29 September 2026
+
+- Separate Experience and Activities sections checked in both languages at 320, 390, 768, 1024 and 1440 pixels
+- Experience contains ENKI WhiteHat and military information-security work, while Activities contains INC0GNITO and MJSEC
+- CODEGATE, HACKTHEON and CCE authorship remain inside ENKI's work, and all existing content and evidence links remain available
+- Four section-navigation links stay visible on phones, with the brand and language switch above them
+- Both new and existing section destinations clear the sticky header, with no horizontal overflow, duplicate IDs, missing images or browser errors
+
 ## Responsive and functional checks
 
 Both English and Korean pages checked at widths of 320, 390, 768, 1024 and 1440 pixels

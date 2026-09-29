@@ -9,6 +9,8 @@ Personal portfolio for web and cloud security research, CTF infrastructure, and 
 
 Static HTML and CSS with no build dependencies
 A small optional script controls the project previews, while content and navigation work without JavaScript
+Professional experience and community activities have separate sections and navigation links
+ENKI WhiteHat and military security work appear under Experience, followed by INC0GNITO and MJSEC under Activities
 
 ```sh
 python -m http.server 8000 --bind 127.0.0.1

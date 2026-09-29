@@ -37,6 +37,8 @@ Its authentication wall prevented direct profile review, so the relevant additio
 - Keep the full Korean and English names below the primary handle and retain the real-name profile metadata
 - Separate the seventh-place qualifier result from finals participation without implying a finals ranking
 - Describe ENKI work through web and cloud security research, vulnerability analysis and research environment engineering
+- Separate Experience from Activities in both the page structure and navigation
+- Keep ENKI WhiteHat and military information-security work under Experience, with INC0GNITO organizing and MJSEC leadership under Activities
 - Keep CTF authorship in the named event credits rather than in the profile introduction or the general job summary
 - Present CCE 2026 as a concise Web challenge authorship line within ENKI WhiteHat, with the confirmed qualifier and finals scope and no individual challenge-name list
 - Preserve the earlier CCE participation records and 2025 write-up separately from 2026 authorship
