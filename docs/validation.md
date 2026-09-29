@@ -5,7 +5,8 @@
 ## Career and activities / 29 September 2026
 
 - Separate Experience and Activities sections checked in both languages at 320, 390, 768, 1024 and 1440 pixels
-- Experience contains ENKI WhiteHat and military information-security work, while Activities contains INC0GNITO and MJSEC
+- Experience contains only ENKI WhiteHat, while Activities contains INC0GNITO and MJSEC
+- Military service has a separate labelled section after Background, retaining the service dates, responsibilities and supporting links
 - CODEGATE, HACKTHEON and CCE authorship remain inside ENKI's work, and all existing content and evidence links remain available
 - Four section-navigation links stay visible on phones, with the brand and language switch above them
 - Both new and existing section destinations clear the sticky header, with no horizontal overflow, duplicate IDs, missing images or browser errors

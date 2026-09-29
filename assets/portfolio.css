@@ -141,9 +141,6 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
 .job:last-child { padding-bottom: 0; }
 .job-heading h3 { font-size: 24px; line-height: 1.4; font-weight: 600; letter-spacing: -.03em; margin: 8px 0; }
 .job-role { color: var(--secondary); font-size: 14px; line-height: 1.7; }
-.job--compact .job-heading h3 { font-size: 21px; margin: 6px 0 4px; }
-.job--compact .job-body > p { font-size: 15px; line-height: 1.8; color: var(--secondary); word-break: keep-all; }
-.job--compact .link-row { margin-top: 11px; }
 .text-link { display: inline-flex; align-items: center; min-height: 36px; margin-top: 11px; font-size: 13px; text-decoration-color: #c0c5bb; }
 .workstreams { display: grid; gap: 23px; }
 .workstreams dt { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
@@ -204,6 +201,13 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
 .education-status { font-size: 13px; font-weight: 500; color: var(--accent); }
 .toolkit dt { font-size: 14px; font-weight: 600; margin-bottom: 5px; }
 .toolkit dd { font-size: 15px; color: var(--secondary); line-height: 1.8; }
+.military-service { display: grid; grid-template-columns: 265px minmax(0, 1fr); gap: 55px; padding-block: 42px; }
+.military-heading h2 { font-size: 24px; font-weight: 700; letter-spacing: -.02em; }
+.military-heading .project-meta { margin-top: 10px; }
+.military-body h3 { font-size: 21px; font-weight: 600; letter-spacing: -.02em; }
+.military-body > p { margin-top: 12px; font-size: 15px; line-height: 1.8; color: var(--secondary); word-break: keep-all; }
+.military-body > .military-role { margin-top: 4px; font-size: 14px; color: var(--muted); }
+.military-body .link-row { margin-top: 11px; }
 .contact { display: flex; justify-content: space-between; align-items: center; gap: 25px; padding: 42px 0; border-bottom: 1px solid var(--line); }
 .contact h2 { font-size: 14px; font-weight: 400; color: var(--muted); margin-bottom: 9px; }
 .contact-email { font-family: var(--font-display); font-size: 30px; line-height: 1.4; letter-spacing: -.025em; text-decoration: none; }
@@ -218,7 +222,7 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
   .hero h1 { font-size: 66px; }
   .highlights { gap: 35px; }
   .highlights h2 { font-size: 20px; }
-  .job, .activity-row, .team-record { grid-template-columns: 215px minmax(0, 1fr); gap: 35px; }
+  .job, .activity-row, .team-record, .military-service { grid-template-columns: 215px minmax(0, 1fr); gap: 35px; }
   .feature-repositories { grid-template-columns: 90px minmax(0, 1fr); }
   .about-grid { gap: 40px; }
 }
@@ -267,6 +271,8 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
   .awards-grid .award-result { font-size: 25px; }
   .about-grid { grid-template-columns: 1fr; gap: 35px; }
   .toolkit { padding-top: 28px; border-top: 1px solid var(--line); }
+  .military-service { grid-template-columns: 1fr; gap: 20px; padding-block: 32px; }
+  .military-heading h2 { font-size: 23px; }
   .contact { align-items: flex-start; flex-direction: column; gap: 18px; padding-block: 30px; }
 }
 @media (max-width: 520px) {
