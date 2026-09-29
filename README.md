@@ -34,6 +34,8 @@ Open `http://127.0.0.1:8000/` or `http://127.0.0.1:8000/index_ko.html`
 | `docs/content-notes.md` | Content sources and editorial decisions |
 
 Update both language pages together and preserve the same links in each
+The presentation stylesheets and script use version query strings so returning visitors receive the updated assets
+When changing those files, update their `?v=` values in both HTML heads together
 
 - Keep the personal contribution clear and link to supporting work
 - Keep repository, website and documentation links visible without expanding a disclosure

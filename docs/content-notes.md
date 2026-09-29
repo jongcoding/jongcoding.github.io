@@ -72,6 +72,9 @@ Content and navigation require no JavaScript, external font service, external im
 An optional local script controls four short project previews with explicit pause/replay controls
 SUIT handles the Korean text and body copy, while Manrope handles the nickname, Latin headings and selected illustration labels
 Shared type weights, restrained tracking, consistent alignment and lighter preview borders provide the visual hierarchy
+The final layout pass tightens section and project spacing, strengthens section headings and limits long role descriptions to a readable measure
+Profile and contact links retain their service marks and labels, with underlines appearing on hover and a visible keyboard focus outline
+Versioned presentation-asset URLs prevent an older cached stylesheet from masking these updates
 
 All four animations are conceptual illustrations of documented architecture and research scope
 They do not claim to be live production telemetry or recordings of an operational system

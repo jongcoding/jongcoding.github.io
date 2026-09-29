@@ -2,6 +2,19 @@
 
 28 September 2026 / Local Chromium through Playwright CLI / Python static HTTP server on loopback
 
+## Final spacing and link finish / 29 September 2026
+
+- Both languages checked at 320, 390, 768, 1024 and 1440 pixels after the spacing and heading changes
+- No horizontal page or visible text overflow, missing images, broken anchors, duplicate IDs or browser console errors in the ten checked layouts
+- ENKI remains the only professional experience entry, INC0GNITO and MJSEC remain under Activities, and Military service follows Background
+- Section targets clear the sticky header and the local SUIT and Manrope fonts load successfully
+- Profile and contact actions remain aligned on mobile, with a visible two-pixel keyboard focus outline on the contact links
+- Versioned stylesheet and script URLs load the revised styles without a cache-bypass browser setting
+- Every link destination present before this design pass is retained, with matching destination sets in both languages
+- Desktop and mobile profile captures, the career and activities view, and the archive repository-link view updated after visual review
+
+The pass changes layout and asset URLs only, leaving the content and project-animation timelines intact
+
 ## Career and activities / 29 September 2026
 
 - Separate Experience and Activities sections checked in both languages at 320, 390, 768, 1024 and 1440 pixels
